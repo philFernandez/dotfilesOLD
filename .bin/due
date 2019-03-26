@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# makes file DUEDATE in pwd which contains the text that user enters
+
+printf "Due Date? "
+
+read THE_DUE_DATE
+
+echo $THE_DUE_DATE >> $(pwd)/DUEDATE
+
+

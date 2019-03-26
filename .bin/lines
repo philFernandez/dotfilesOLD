@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# prints file to and from specified line numbers
+# lines <start line> <end line> <file>
+
+START=$1
+END=$2
+FILE=$3
+
+awk 'NR=="'"$START"'", NR=="'"$END"'" {print $0}' $FILE
+
