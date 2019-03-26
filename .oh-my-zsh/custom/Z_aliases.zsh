@@ -1,4 +1,3 @@
-alias sysinf='neofetch'
 alias wdue='cat DUEDATE'
 alias which='which -a'
 alias qq='tmux kill-server'
