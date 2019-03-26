@@ -33,6 +33,7 @@ alias config='git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME'
 alias cst='config status'
 alias ca='config add'
 alias ccam='config commit -a -m'
+alias cpush='config push -u origin master'
 
 
 # make man pages display line numbers
