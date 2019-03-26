@@ -29,11 +29,15 @@ alias lh="ls -AF | egrep --color=none '^\.'"
 alias wiki='vim -c VimwikiIndex'
 alias f='vifm'
 alias vimode='pcat /Users/philthy/.oh-my-zsh/plugins/vi-mode/README.md | less'
+
+# dotfile/config bar repo aliases
 alias config='git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME'
 alias cst='config status'
 alias ca='config add'
 alias ccam='config commit -a -m'
 alias cpush='config push -u origin master'
+alias clog='config log --stat -p'
+alias cdiff='config diff'
 
 
 # make man pages display line numbers
