@@ -8,7 +8,8 @@ Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+"Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'philFernandez/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'jacoborus/tender.vim'
