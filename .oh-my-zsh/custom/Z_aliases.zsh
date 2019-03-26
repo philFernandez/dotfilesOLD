@@ -33,6 +33,7 @@ alias vimode='pcat /Users/philthy/.oh-my-zsh/plugins/vi-mode/README.md | less'
 alias config='git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME'
 alias cst='config status'
 alias ca='config add'
+alias ccam='config commit -a -m'
 
 
 # make man pages display line numbers
@@ -46,7 +47,7 @@ alias ev='vi ~/.vimrc'
 alias ef='vi ~/.oh-my-zsh/custom/myFunctions.zsh'
 alias ep='vi ~/.oh-my-zsh/custom/Z_aliases.zsh'
 alias rc='vi ~/.zshrc'
-alias eg='vi ~/global_aliases.zsh'
+alias eg='vi ~/.oh-my-zsh/custom/global_aliases.zsh'
 alias ett='vi ~/.zsh_theme'
 
 # Package Management
