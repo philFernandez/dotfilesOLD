@@ -42,12 +42,11 @@ alias man='LESS+="-N" man'
 alias pcat='pygmentize -f terminal256 -O style=fruity -g'
 
 # Edit config shortcuts
-alias et='vi ~/.dotfiles/tmux/.tmux.conf.local'
-alias ev='vi ~/.dotfiles/vim/.vimrc'
-alias ef='vi ~/.dotfiles/zsh/myFunctions.zsh'
-alias ep='vi ~/.dotfiles/zsh/Z_aliases.zsh'
-alias rc='vi ~/.dotfiles/zsh/.zshrc'
-alias eg='vi ~/.dotfiles/zsh/global_aliases.zsh'
+alias ev='vi ~/.vimrc'
+alias ef='vi ~/.oh-my-zsh/custom/myFunctions.zsh'
+alias ep='vi ~/.oh-my-zsh/custom/Z_aliases.zsh'
+alias rc='vi ~/.zshrc'
+alias eg='vi ~/global_aliases.zsh'
 alias ett='vi ~/.zsh_theme'
 
 # Package Management
