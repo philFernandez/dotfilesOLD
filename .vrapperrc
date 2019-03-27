@@ -1,0 +1,10 @@
+" vi: ft=vim
+
+imap jj <esc>
+set incsearch
+set hlsearch
+
+nnoremap J }
+nnoremap K {
+nnoremap <space> A
+nnoremap <bs> I
