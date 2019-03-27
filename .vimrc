@@ -222,4 +222,3 @@ nnoremap <leader>rj :!clear;java %:r<cr>
 nnoremap <c-b><c-j> :!clear;node %<cr>
 nnoremap <c-b><c-p> :!clear;python3 %<cr>
 
-set guifont=Meslo\ LG\ S\ Regular\ Nerd\ Font\ Complete:h15
