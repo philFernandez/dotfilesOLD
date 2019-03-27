@@ -78,8 +78,6 @@ set smartcase
 " text rendering settings
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
-set scrolloff=3
-set sidescrolloff=5
 set nowrap
 "set wrap
 
