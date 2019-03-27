@@ -38,6 +38,7 @@ alias ccam='config commit -a -m'
 alias cpush='config push -u origin master'
 alias clog='config log --stat -p'
 alias cdiff='config diff'
+alias configls='config ls-tree -r master --name-only $HOME'
 
 
 # make man pages display line numbers
