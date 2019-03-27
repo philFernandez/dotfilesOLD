@@ -49,6 +49,7 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   colored-man-pages
+  iterm2
 )
 
 setopt NONOMATCH \
