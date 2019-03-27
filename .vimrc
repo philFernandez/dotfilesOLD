@@ -33,6 +33,7 @@ call plug#end()
 "set background=dark
 
 color onehalfdark
+"color onehalflight
 
 let NERDTreeIgnore = ['\.class$']
 
