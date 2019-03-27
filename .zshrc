@@ -73,5 +73,3 @@ compdef _gnu_generic password
 compdef _gnu_generic ctm
 compdef _git gdl=git-diff
 compdef _gnu_generic lsd
-
-iterm2_profile Default
