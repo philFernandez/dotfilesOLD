@@ -138,7 +138,7 @@ hi Repeat cterm=bold
 hi jsReturn cterm=bold
 
 " Airline settings ========================
-let g:airline_theme = 'badcat'
+"let g:airline_theme = 'badcat'
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
