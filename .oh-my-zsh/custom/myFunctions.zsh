@@ -44,8 +44,10 @@ function cl {
   # spectrum_ls; show all FG color codes
   # spectrum_bls; show all BG color codes
   # Must use print -P to work with $ZSH/lib/spectrum.zsh
+  local backColor=010
+  local textColor=235
 
-  print -P $FG[044]$BG[235]' PWD '$reset_color$FG[235]$BG[044]'\ue0b0'$FG[000]' '$(pwd)' '$reset_color$FG[044]'\ue0b0'
+  print -P $FG[$backColor]$BG[$textColor]' PWD '$reset_color$FG[$textColor]$BG[$backColor]'\ue0b0'$FG[000]' '$(pwd)' '$reset_color$FG[$backColor]'\ue0b0'
 
   # must use this no matter which of the 2 above are used
   echo $reset_color; # must reset or other output (/bin/ls) will get messed up
