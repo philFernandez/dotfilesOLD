@@ -148,7 +148,7 @@ endif
 
 let g:cursormode_color_map = {
       \ "i": '#1CCB13',
-      \ "n": '#ff4500',
+      \ "n": '#939393',
       \ "R": '#FF0000',
       \ "v": '#F11BFF',
       \ "V": '#6A1BFF',
