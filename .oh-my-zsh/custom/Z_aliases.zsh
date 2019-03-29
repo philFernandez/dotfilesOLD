@@ -29,6 +29,7 @@ alias lh="ls -AF | egrep --color=none '^\.'"
 alias wiki='vim -c VimwikiIndex'
 alias f='vifm'
 alias vimode='pcat /Users/philthy/.oh-my-zsh/plugins/vi-mode/README.md | less'
+alias chkbu='watch -n 0.1 ls -all /Volumes'
 
 # dotfile/config bar repo aliases
 alias config='git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME'
