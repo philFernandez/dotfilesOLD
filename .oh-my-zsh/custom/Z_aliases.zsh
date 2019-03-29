@@ -43,7 +43,6 @@ alias cdiff='config diff'
 alias configls='config ls-tree -r master --name-only $HOME'
 alias cdl='cdiff COLOR L'
 
-
 # make man pages display line numbers
 alias man='LESS+="-N" man'
 
