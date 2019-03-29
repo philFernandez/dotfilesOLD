@@ -19,6 +19,11 @@ function gcamp {
   git commit -a -m $commitMessage && git push origin $(git_current_branch)
 }
 
+function ccamp {
+  git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME commit -a -m "$@" \
+    && git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME push -u origin master
+}
+
 function gdl {
   if [ $# -ge  1 ]; then
     git diff "$@" | pygmentize -f terminal256 -O style=vim -g -l diff | less
