@@ -8,7 +8,6 @@ Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
@@ -36,7 +35,6 @@ call plug#end()
 color onehalfdark
 "color onehalflight
 
-let NERDTreeIgnore = ['\.class$']
 
 " Completion Settings =============================
 set completeopt+=menuone
@@ -180,6 +178,10 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
+
+" VIFM =======================================
+" turn of help mapping because it messes with K quick move in vifm files
+let g:vifm_help_mapping=''
 
 " Keymappings ================================
 let g:AutoPairsShortcutToggle = '<F10>'
