@@ -28,8 +28,15 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'vim-scripts/dbext.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'vifm/vifm.vim'
 call plug#end()
 
+" vifm file picker commands
+" :EditVifm   - opens file (is set to <leader>f)
+" :SplitVifm  - open in split
+" :VsplitVifm - open in vsplit
+" :DiffVifm   - diff
+" :TabVifm    - open in new tab
 "set background=dark
 
 color onehalfdark
@@ -203,7 +210,7 @@ nnoremap <silent> <leader>n :set number!<cr>
 nnoremap <silent> <leader>s :set spell!<cr>
 nnoremap <bs> I
 nnoremap sa ggVG
-nnoremap <silent> <leader>f :NERDTreeToggle<cr>
+nnoremap <silent> <leader>f :EditVifm<cr>
 nnoremap <silent> bn :bnext<cr>
 nnoremap <silent> bp :bNext<cr>
 nnoremap <silent> bc :bdelete!<cr>
