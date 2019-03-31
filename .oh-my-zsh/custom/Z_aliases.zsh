@@ -56,6 +56,7 @@ alias ep='vi ~/.oh-my-zsh/custom/Z_aliases.zsh'
 alias rc='vi ~/.zshrc'
 alias eg='vi ~/.oh-my-zsh/custom/global_aliases.zsh'
 alias ett='vi ~/.zsh_theme'
+alias evf='vi ~/.config/vifm/vifmrc'
 
 # Package Management
 alias update='brew -v update'
