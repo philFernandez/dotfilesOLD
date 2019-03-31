@@ -236,3 +236,9 @@ nnoremap <silent> <leader>ft :TabVifm<cr>
 " :vsp | bN
 " :spl | bN
 
+" resize splits
+nnoremap <silent> <F5> :resize +2<cr>
+nnoremap <silent> <F6> :resize -2<cr>
+nnoremap <silent> <F7> :vertical resize +2<cr>
+nnoremap <silent> <F8> :vertical resize -2<cr>
+
