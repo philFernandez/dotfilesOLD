@@ -18,9 +18,9 @@
 # that alias breaks this function with lsd
 function la {
   if [ $# -ge 1 ]; then
-    lsd $@ --group-dirs first
+    lsd -a $@ --group-dirs first
   else
-    lsd $pwd --group-dirs first
+    lsd -a $pwd --group-dirs first
   fi
 }
 
