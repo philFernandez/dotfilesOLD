@@ -165,6 +165,11 @@ command! reload :write | restart
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
+" txt
+filetype *.txt
+       \ {Open in vim}
+       \ vim,
+
 " Pdf
 filetype *.pdf
        \ {Open in Preview}
