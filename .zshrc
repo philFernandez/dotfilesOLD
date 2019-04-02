@@ -59,6 +59,7 @@ setopt NONOMATCH \
   APPEND_HISTORY \
 
 source $ZSH/oh-my-zsh.sh
+unalias la
 
 export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 

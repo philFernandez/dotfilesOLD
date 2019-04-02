@@ -12,6 +12,18 @@
 
 ##### USER FUNCTIONS #######
 
+# Have to use function, because need filename before
+# --group-dirs first
+# Also have to unset la in $HOME/.zshrc because
+# that alias breaks this function with lsd
+function la {
+  if [ $# -ge 1 ]; then
+    lsd $@ --group-dirs first
+  else
+    lsd $pwd --group-dirs first
+  fi
+}
+
 # this command adds, commits,
 # and pushes new changes in one command
 function gcamp {
