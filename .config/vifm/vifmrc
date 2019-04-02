@@ -108,6 +108,8 @@ set slowfs=curlftpfs
 
 set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
+"---------------------PHIL's SETTINGS --------------------
+set confirm=""
 " ------------------------------------------------------------------------------
 
 " :mark mark /full/directory/path [filename]
