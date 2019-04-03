@@ -54,7 +54,11 @@ function gdl {
 
 # show whole year when envoking cal
 function cal {
-  /usr/bin/cal $(date +%G)
+  if [ $1 == 1 ]; then
+    /usr/bin/cal
+  else
+    /usr/bin/cal $(date +%G)
+  fi
 }
 
 # grep things without highlighting results
