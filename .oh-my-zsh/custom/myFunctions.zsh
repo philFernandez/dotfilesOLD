@@ -24,6 +24,14 @@ function la {
   fi
 }
 
+function ls {
+  if [ $# -ge 1 ]; then
+    lsd $@ --group-dirs first
+  else
+    lsd $pwd --group-dirs first
+  fi
+}
+
 # this command adds, commits,
 # and pushes new changes in one command
 function gcamp {
@@ -68,7 +76,7 @@ function cl {
 
   # must use this no matter which of the 2 above are used
   echo $reset_color; # must reset or other output (/bin/ls) will get messed up
-  ls
+  lsd --group-dirs first
 }
 
 function scat {

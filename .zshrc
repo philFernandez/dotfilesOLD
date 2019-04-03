@@ -60,6 +60,7 @@ setopt NONOMATCH \
 
 source $ZSH/oh-my-zsh.sh
 unalias la
+unalias ls
 
 export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 
