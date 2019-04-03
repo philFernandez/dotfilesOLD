@@ -281,7 +281,6 @@ filetype *.img open
 filetype *.pkg open
 
 " Office files
-filetype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt open -a LibreOffice.app
 fileviewer *.doc antiword -
 fileviewer *.docx, docx2txt.pl %f -
 
