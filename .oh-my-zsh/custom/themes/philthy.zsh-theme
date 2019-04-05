@@ -31,6 +31,14 @@ if [ $VIMRUNTIME ]; then
   arrow=' '
 fi
 
+# add indicator for when inside vifm spawned shell
+if [ $VIFM ]; then
+  arrow_color=196
+  arrow=' '
+fi
+
+
+
 PROMPT='%{$FG[$cwd_color]%}$(last_two_dir)%{$FG[$git_branch_color]%}$(display_git) \
 %{$FG[$arrow_color]%}$arrow%{$reset_color%} '
 
