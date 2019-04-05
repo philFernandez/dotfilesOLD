@@ -59,8 +59,13 @@ setopt NONOMATCH \
   APPEND_HISTORY \
 
 source $ZSH/oh-my-zsh.sh
+
+if [[ $VIMRUNTIME == "" && $VIFM == "" ]]; then
+  # causes error if this is unaliased inside vim or vifm shell
+  # so only unalias it if we're not in vim or vifm
+  unalias ls
+fi
 unalias la
-unalias ls
 
 export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 
