@@ -110,6 +110,7 @@ set history=1000
 set noswapfile
 set autowrite
 set updatetime=100
+set scrolloff=3
 
 autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 autocmd BufWrite * :RemoveTrailingSpaces
