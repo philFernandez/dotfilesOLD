@@ -1,7 +1,9 @@
 # This is loaded by the shell that is spawned by vim's command line
+# as well as the shell that is spawned by vifm's command line
 
 # source functionality for use in vim's :!<command>
-if [[ $VIMRUNTIME ]]; then
+# as well as vifm's :!<command>
+if [[ $VIMRUNTIME || $VIFM ]]; then
   # get 256color for vim's :terminal command
   TERM=xterm-256color
   # source zsh aliases
