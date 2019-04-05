@@ -23,7 +23,8 @@ function la {
     lsd -a $pwd --group-dirs first
   fi
 }
-
+# Same philosophy as above function
+# Had to unset ls in .zshrc for this.
 function ls {
   if [ $# -ge 1 ]; then
     lsd $@ --group-dirs first
