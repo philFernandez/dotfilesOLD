@@ -14,7 +14,7 @@
 
 # Have to use function, because need filename before
 # --group-dirs first
-# Also have to unset la in $HOME/.zshrc because
+# Also have to unalias la in $HOME/.zshrc because
 # that alias breaks this function with lsd
 function la {
   if [ $# -ge 1 ]; then
@@ -24,7 +24,7 @@ function la {
   fi
 }
 # Same philosophy as above function
-# Had to unset ls in .zshrc for this.
+# Had to unalias ls in .zshrc for this.
 function ls {
   if [ $# -ge 1 ]; then
     lsd $@ --group-dirs first
@@ -40,6 +40,16 @@ function laa {
     lsd -la $@ --date relative --group-dirs first
   else
     lsd -la $pwd --date relative --group-dirs first
+  fi
+}
+
+# Same philosophy as above function
+# Had to unalias l
+function l() {
+  if [ $# -ge 1 ]; then
+    lsd -l $@ --date relative --group-dirs first
+  else
+    lsd -l $pwd --date relative --group-dirs first
   fi
 }
 

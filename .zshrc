@@ -66,6 +66,7 @@ if [[ $VIMRUNTIME == "" && $VIFM == "" ]]; then
   unalias ls
 fi
 unalias la
+unalias l
 
 export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 
