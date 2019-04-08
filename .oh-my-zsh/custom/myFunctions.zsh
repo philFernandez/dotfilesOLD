@@ -33,6 +33,16 @@ function ls {
   fi
 }
 
+# Same philosophy as above function
+# Nothing unset for this one
+function laa {
+  if [ $# -ge 1 ]; then
+    lsd -la $@ --date relative --group-dirs first
+  else
+    lsd -la $pwd --date relative --group-dirs first
+  fi
+}
+
 # this command adds, commits,
 # and pushes new changes in one command
 function gcamp {
