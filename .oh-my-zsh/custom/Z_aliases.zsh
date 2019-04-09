@@ -1,3 +1,5 @@
+# remove all spaces from all files in pwd
+# find . -type f -name "* *" -exec bash -c 'mv "$0" "${0// /_}"' {} \;
 alias wdue='cat DUEDATE'
 alias which='which -a'
 alias qq='tmux kill-server'
