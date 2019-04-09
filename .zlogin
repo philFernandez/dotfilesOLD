@@ -1,4 +1,5 @@
 #export CLASSPATH=$CLASSPATH:/Users/philthy/Source_Code/Java/.algs4/algs4.jar
 
-export PATH=$PATH:/Users/philthy/.bin
-export CDPATH=~/Nextcloud/CSUS/Spring_2019
+export CATALINA_HOME=$HOME/BinaryPrograms/apache-tomcat-9.0.17
+export PATH=$PATH:$HOME/.bin
+export CDPATH=$HOME/Nextcloud/CSUS/Spring_2019
