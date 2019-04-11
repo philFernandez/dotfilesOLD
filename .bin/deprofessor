@@ -1,5 +1,8 @@
 #!/bin/sh
 
 # replaces whitespace in files names with '_' in pwd.
+# It is called deprofessor because the only files that
+# i ever deal with that have spaces in their names, are
+# those that I download from professors.
 find $PWD -d 1 -type f -name "* *" -exec bash -c 'mv "$0" "${0// /_}"' {} \;
 
