@@ -15,18 +15,13 @@ alias vi='vim'
 alias rd='rm -frv'
 alias mv='mv -vi'
 alias cp='cp -vi'
-alias temp='take temp'
 alias ppath='print -l $path'
-alias lsblk='df -Hl'
-alias py='python3'
 alias ds='du -sh'
 alias server='ssh philthy@192.168.0.36'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
-alias lh="ls -AF | egrep --color=none '^\.'"
 alias wiki='vim -c VimwikiIndex'
 alias f='vifm'
-alias vimode='pcat /Users/philthy/.oh-my-zsh/plugins/vi-mode/README.md | less'
 alias chkbu='watch -n 0.1 ls -all /Volumes'
 
 # dotfile/config bar repo aliases
