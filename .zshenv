@@ -10,7 +10,8 @@ if [[ $VIMRUNTIME || $VIFM ]]; then
   source $HOME/.oh-my-zsh/custom/Z_aliases.zsh
 
   # source only the aliases from OMZSH's git plugin
-  source <(grep alias $HOME/.oh-my-zsh/plugins/git/git.plugin.zsh)
+  # this breaks things now
+  #source <(grep alias $HOME/.oh-my-zsh/plugins/git/git.plugin.zsh)
 
   # source zsh functions
   source $HOME/.oh-my-zsh/custom/myFunctions.zsh
