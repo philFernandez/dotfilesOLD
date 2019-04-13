@@ -4,15 +4,6 @@
 # https://github.com/ryanoasis/nerd-fonts
 #
 #
-function last_two_dir {
-  # if we're at ~/ just display ~
-  if [ $PWD = $HOME ]; then
-    echo '%c'
-  # display cwd and parent directory
-  else
-    echo '%2d'
-  fi
-}
 
 function display_git {
   if [ $(git_current_branch) ]; then
@@ -39,7 +30,7 @@ fi
 
 
 
-PROMPT='%{$FG[$cwd_color]%}$(last_two_dir)%{$FG[$git_branch_color]%}$(display_git) \
+PROMPT='%{$FG[$cwd_color]%}%2~%{$FG[$git_branch_color]%}$(display_git) \
 %{$FG[$arrow_color]%}$arrow%{$reset_color%} '
 
 RPROMPT='$(git_prompt_status)%{$reset_color%}'
