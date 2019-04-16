@@ -1,4 +1,6 @@
-cat ~/Notes/software_to_try.txt
+[[ -a ~/Notes/software_to_try.txt ]] && \
+  cat ~/Notes/software_to_try.txt
+
 ZSH_TMUX_AUTOCONNECT=false
 ZSH_TMUX_AUTOSTART=true
 # If you come from bash you might have to change your $PATH.
