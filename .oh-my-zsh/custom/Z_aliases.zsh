@@ -1,3 +1,4 @@
+alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias light='iterm2_profile Light'
 alias dark='iterm2_profile Default'
 alias wdue='cat DUEDATE'
