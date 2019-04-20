@@ -54,7 +54,7 @@ alias evf='vi ~/.config/vifm/vifmrc'
 
 # Package Management
 alias update='brew -v update'
-alias upgrade='brew -v upgrade'
+alias upgrade='brew upgrade'
 alias outdated='brew -v outdated'
 alias dryclean='brew cleanup --dry-run'
 alias clean='brew cleanup'
