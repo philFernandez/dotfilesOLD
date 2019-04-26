@@ -100,7 +100,7 @@ set foldnestmax=3
 set nofoldenable
 
 " other settings
-set mouse=n
+set mouse=a
 set lazyredraw
 set autoread
 set backspace=indent,eol,start
