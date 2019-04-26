@@ -339,6 +339,7 @@ set vifminfo=dhistory,chistory,state,tui,shistory,
 "  mappings written by me (PHIL FERNANDEZ)
 nnoremap q :q<cr>
 nnoremap ,<space> :nohl<cr>
+nnoremap ,d :!open %d<cr>
 " ------------------------------------------------------------------------------
 
 " Sample mappings
