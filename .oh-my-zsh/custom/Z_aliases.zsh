@@ -43,7 +43,7 @@ alias cdl='cdiff COLOR L'
 alias man='LESS+="-N" man'
 
 # run <pygmentize -L styles> to see all styles
-alias pcat='pygmentize -f terminal256 -O style=fruity -g'
+alias pcat='pygmentize -f terminal256 -O style=monokai -g'
 
 # Edit config shortcuts
 alias ev='vi ~/.vimrc'
