@@ -14,7 +14,7 @@
 
 function fcd {
   if [ $# == 1 ]; then
-    cd "$(find -L $1 -type d 2> /dev/null | sk)"
+    cd "$(find $1 -type d 2> /dev/null | sk)"
   else
     print 'give a directory'
   fi
