@@ -26,6 +26,7 @@ alias egrep='egrep --color=auto'
 alias wiki='vim -c VimwikiIndex'
 alias f='vifm'
 alias chkbu='watch -n 0.1 ls -all /Volumes'
+alias selbook='open $(mdfind -onlyin $HOME/Spring_2019 -interpret "pdf" | sk -m)'
 
 # dotfile/config bar repo aliases
 alias config='git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME'
