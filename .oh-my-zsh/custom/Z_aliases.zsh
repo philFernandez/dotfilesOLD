@@ -1,4 +1,3 @@
-alias fcd='cd "$(find . -type d 2> /dev/null | sk)"'
 alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias light='iterm2_profile Light'
 alias dark='iterm2_profile Default'

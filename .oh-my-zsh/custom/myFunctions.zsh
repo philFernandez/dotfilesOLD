@@ -12,6 +12,14 @@
 
 ##### USER FUNCTIONS #######
 
+function fcd {
+  if [ $# == 1 ]; then
+    cd "$(find -L $1 -type d 2> /dev/null | sk)"
+  else
+    print 'give a directory'
+  fi
+}
+
 # Have to use function, because need filename before
 # --group-dirs first
 # Also have to unalias la in $HOME/.zshrc because
