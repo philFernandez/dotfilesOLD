@@ -187,9 +187,9 @@ let g:vifm_help_mapping=''
 " Keymappings ================================
 let g:AutoPairsShortcutToggle = '<F10>'
 "copy into sys clipboard
-vnoremap cp "+y
+vnoremap <silent> cp "+y
 "past from sys clipboard
-nnoremap cv "+p
+nnoremap <silent> cv "+p
 
 
 
