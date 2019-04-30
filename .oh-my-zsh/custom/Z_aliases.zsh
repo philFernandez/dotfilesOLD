@@ -54,6 +54,7 @@ alias eg='vi ~/.oh-my-zsh/custom/global_aliases.zsh'
 alias ett='vi ~/.zsh_theme'
 alias evf='vi ~/.config/vifm/vifmrc'
 alias et='vi ~/.tmux.conf'
+alias es='vi ~/.oh-my-zsh/custom/spotify.zsh'
 
 # Package Management
 alias update='brew -v update'

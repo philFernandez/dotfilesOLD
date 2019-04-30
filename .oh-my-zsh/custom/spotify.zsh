@@ -8,6 +8,7 @@ alias twojoints='spotify play uri spotify:track:0FdTBwYr1aNF1smfqaoCde'
 alias ronjeremy='spotify play uri spotify:track:194iHn32nKcqWH8TOLWaov'
 alias gardengrove='spotify play uri spotify:track:0aI3sbV4I4TVoA'
 alias daterape='spotify play uri spotify:track:0ManjhaoAvBeijzAqTmSK3'
+alias april='spotify play uri spotify:track:2CLSHTGF4jYXx2RCz1h0dS'
 # Commands
 alias next='spotify next'
 alias pause='spotify pause'
