@@ -9,6 +9,18 @@ alias ronjeremy='spotify play uri spotify:track:194iHn32nKcqWH8TOLWaov'
 alias gardengrove='spotify play uri spotify:track:0aI3sbV4I4TVoA'
 alias daterape='spotify play uri spotify:track:0ManjhaoAvBeijzAqTmSK3'
 alias april='spotify play uri spotify:track:2CLSHTGF4jYXx2RCz1h0dS'
+# Deftones
+alias shoveit='spotify play uri spotify:track:1158ckiB5S4cpsdYHDB9IF'
+# Stepdad
+alias myfur='spotify play uri spotify:track:6bTbkW8kwKiWGH8F4WsNFb'
+# Poppy
+alias timeisup='spotify play uri spotify:track:1a4CA0tFvzwUrx8UxwoU64'
+# Daft Punk
+alias daftpunk='spotify play list Daft\ Punk'
 # Commands
 alias next='spotify next'
 alias pause='spotify pause'
+alias play='spotify play'
+alias song='spotify status track'
+alias artist='spotify status artist'
+alias album='spotify status album'
