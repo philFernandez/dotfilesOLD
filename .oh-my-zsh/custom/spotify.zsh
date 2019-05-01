@@ -17,6 +17,13 @@ alias myfur='spotify play uri spotify:track:6bTbkW8kwKiWGH8F4WsNFb'
 alias timeisup='spotify play uri spotify:track:1a4CA0tFvzwUrx8UxwoU64'
 # Daft Punk
 alias daftpunk='spotify play list Daft\ Punk'
+# A Perfect Circle (Maynard)
+alias apc='spotify play list A Perfect Circle'
+# Puscifer (Maynard)
+alias maynard='spotify play list Puscifer'
+# =====================================================================
+# ---------------------------------------------------------------------
+# =====================================================================
 # Commands
 alias next='spotify next'
 alias pause='spotify pause'
