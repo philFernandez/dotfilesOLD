@@ -75,9 +75,9 @@ function ccamp {
 
 function gdl {
   if [ $# -ge  1 ]; then
-    git diff "$@" | pygmentize -f terminal256 -O style=vim -g -l diff | less
+    git diff "$@" | pygmentize -f terminal256 -O style=vim -g -l diff | less -N
   else
-    git diff | pygmentize -f terminal256 -O style=vim -g -l diff | less
+    git diff | pygmentize -f terminal256 -O style=vim -g -l diff | less -N
   fi
 }
 
