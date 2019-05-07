@@ -1,3 +1,4 @@
+alias regex='man pcresyntax'
 alias player="pygmentize -l zsh -f terminal256 -O style=vim ~/.oh-my-zsh/custom/spotify.zsh"
 alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias light='iterm2_profile Light'
