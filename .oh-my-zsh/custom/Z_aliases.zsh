@@ -27,7 +27,7 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias wiki='vim -c VimwikiIndex'
 alias wiki2='vim ~/Nextcloud/CSUS/Fall_2019/wiki/index.wiki'
-alias f='vifm'
+alias f='ranger'
 alias chkbu='watch -n 0.1 ls -all /Volumes'
 alias selbook='open $(mdfind -onlyin $HOME/Spring_2019 -interpret "pdf" | sk -m)'
 
