@@ -1,3 +1,5 @@
+" Ranger for VIM
+" https://github.com/rafaqz/ranger.vim
 let mapleader=','
 syntax on
 set nocompatible
@@ -178,9 +180,6 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 
-" VIFM =======================================
-" turn of help mapping because it messes with K quick move in vifm files
-let g:vifm_help_mapping=''
 
 " Keymappings ================================
 let g:AutoPairsShortcutToggle = '<F10>'
@@ -223,10 +222,10 @@ nnoremap <leader>rj :!clear;java %:r<cr>
 nnoremap <c-b><c-j> :!clear;node %<cr>
 nnoremap <c-b><c-p> :!clear;python3 %<cr>
 " file picker shortcuts
-nnoremap <silent> <leader>ff :EditVifm<cr>
-nnoremap <silent> <leader>fs :SplitVifm<cr>
-nnoremap <silent> <leader>fv :VsplitVifm<cr>
-nnoremap <silent> <leader>ft :TabVifm<cr>
+"nnoremap <silent> <leader>ff :EditVifm<cr>
+"nnoremap <silent> <leader>fs :SplitVifm<cr>
+"nnoremap <silent> <leader>fv :VsplitVifm<cr>
+"nnoremap <silent> <leader>ft :TabVifm<cr>
 " vifm file picker commands
 " :EditVifm   - opens file (is set to <leader>f)
 " :SplitVifm  - open in split
