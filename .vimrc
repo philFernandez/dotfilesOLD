@@ -26,7 +26,6 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'vim-scripts/dbext.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'vifm/vifm.vim'
 call plug#end()
 
 "set background=dark
