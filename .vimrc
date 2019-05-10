@@ -58,7 +58,7 @@ let g:ctrlp_custom_ignore = '\.git$\|node_modules\|.*.class$'
 
 " Note settings ====================================
 let g:notes_directories = ['~/Notes/viNotes']
-let g:notes_suffix = '.txt'
+"let g:notes_suffix = '.txt'
 
 " VIM SETTINGS =========================
 set autoindent
