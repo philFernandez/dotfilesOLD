@@ -8,3 +8,4 @@ nmap <leader>q I<delete><space>
 set nonumber
 set spell
 autocmd BufEnter * setfiletype notes
+set tw=70
