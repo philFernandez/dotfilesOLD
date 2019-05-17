@@ -4,7 +4,7 @@ exe "MUcompleteAutoOff"
 imap <leader>w <esc><space><space>*<space>
 nmap <leader>w I<esc><space><space>*<space>
 " Remove bullet point
-nmap <leader>q I<delete><space>
+nmap <leader>q I<delete><space><esc>A
 
 set nonumber
 set spell
