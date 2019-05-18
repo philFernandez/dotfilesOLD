@@ -1,8 +1,6 @@
 #export CLASSPATH=$CLASSPATH:/Users/philthy/Source_Code/Java/.algs4/algs4.jar
 
-export CATALINA_HOME=$HOME/BinaryPrograms/apache-tomcat-9.0.17
 export PATH=$PATH:$HOME/.bin
-export CDPATH=$HOME/Nextcloud/CSUS/Spring_2019
 export RANGER_LOAD_DEFAULT_RC=false
 
 
