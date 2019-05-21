@@ -1,3 +1,4 @@
+alias wtf='wtf -o'
 alias vscode='code -n .'
 alias cpd='pwd|pbcopy'
 alias regex='man pcresyntax'
