@@ -1,27 +1,52 @@
 #!/usr/local/bin/bash
 ####################################
 # fuzzy finder for manpages
-# usage: fman <take no parameters>
+# usage: fman <take no parameters> OR fman -p for preview mode
+# depends on $HOME/.bin/cman for color output man pages
 ####################################
 # Funtion for returning file names from all directories containing manpages
 function get_manpages() {
   # extract the manpages
-  local COMMAND_LINE_DEV_MANPAGES1=$(find -L /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/share/man -type f | cut -f11 -d"/" | sed -e 's/\.[^.]*$//')
-  local COMMAND_LINE_DEV_MANPAGES2=$(find -L /Library/Developer/CommandLineTools/usr/share/man -type f | cut -f9 -d"/" | sed -e 's/\.[^.]*$//')
-  local SYS_MANPAGES=$(find -L /usr/share/man -type f | cut -f6 -d"/" | sed -e 's/\.[^.]*$//')
-  local BREW_MANPAGES=$(find -L /usr/local/share/man/man* -type f | cut -f7 -d"/" | sed -e 's/\.[^.]*$//')
+  local COMMAND_LINE_DEV_MANPAGES1=$(find -L \
+    /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/share/man \
+    -type f | cut -f11 -d"/" | sed -e 's/\.[^.]*$//')
+  local COMMAND_LINE_DEV_MANPAGES2=$(find -L \
+    /Library/Developer/CommandLineTools/usr/share/man \
+    -type f | cut -f9 -d"/" | sed -e 's/\.[^.]*$//')
+  local SYS_MANPAGES=$(find -L /usr/share/man -type f \
+    | cut -f6 -d"/" | sed -e 's/\.[^.]*$//')
+  local BREW_MANPAGES=$(find -L /usr/local/share/man/man* \
+    -type f | cut -f7 -d"/" | sed -e 's/\.[^.]*$//')
   # return the man pages
   echo "$COMMAND_LINE_DEV_MANPAGES1"
   echo "$COMMAND_LINE_DEV_MANPAGES2"
   echo "$SYS_MANPAGES"
   echo "$BREW_MANPAGES"
 }
+
+function help_msg() {
+  cat << EOF
+usage: fman [-p]
+-p <start in preview mode> {optional}
+EOF
+}
+
 # There are some duplicates between the directories so sort and filter out duplicates
-ALL_MANPAGES=$(sort -u <<< $(get_manpages))
+
 # call man with all manpages piped to fzf
-LESS+="-N" man $(echo "$ALL_MANPAGES" | fzf --reverse --header="Manpage Directory" --margin=2,2,0,2%)
 
-# this opens in a tmux split
-#LESS+="-N" man $(echo "$ALL_MANPAGES" | fzf-tmux -l 25%)
-
+if [ "$1" = "-p" ]; then
+  ALL_MANPAGES=$(sort -u <<< $(get_manpages))
+  echo "$ALL_MANPAGES" | \
+    fzf --ansi --reverse --header="Manpage Directory" \
+    --preview="man {}" --preview-window="down:90%" \
+    --prompt="man " --bind "enter:execute(LESS+="-N" MANWIDTH=105% cman {})"
+elif [ "$1" = "-h" -o "$1" = "--h" -o "$1" = "--help" ]; then
+  help_msg
+else
+  ALL_MANPAGES=$(sort -u <<< $(get_manpages))
+  echo "$ALL_MANPAGES" | \
+    fzf --ansi --reverse --header="Manpage Directory" \
+    --prompt="man " --bind "enter:execute(LESS+="-N" MANWIDTH=105% cman {})"
+fi
 
