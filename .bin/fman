@@ -60,7 +60,10 @@ if [ "$1" != "-h" -a "$1" != "--h" -a "$1" != "--help" -a "$1" != "-s" ]; then
 elif [ "$1" = '-s' ]; then
   cat ~/.saved_manpages | fzf --reverse --header="$HEADER {Bookmarks}" \
     --preview="man {}" --preview-window="down:90%" \
-    --prompt="man " --bind "enter:execute($CMD_TO_EXECUTE {})"
+    --prompt="man " --bind "enter:execute($CMD_TO_EXECUTE {})" \
+    --bind \
+    "ctrl-d:execute(sed '/{}/d' ~/.saved_manpages > \
+    ~/.tmp_save && /bin/mv -f ~/.tmp_save ~/.saved_manpages)"
 else
   help_msg
 fi
