@@ -3,14 +3,13 @@
 # fuzzy finder for manpages
 # usage: fman <take no parameters>
 ####################################
-# echo $var | awk -F\/ '{print $3}' | sed '/^[[:space:]]*$/d'
 # Funtion for returning file names from all directories containing manpages
 function get_manpages() {
   # extract the manpages
-  local COMMAND_LINE_DEV_MANPAGES1=$(find -L /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/share/man -type f | cut -f11 -d"/" | cut -f1 -d ".")
-  local COMMAND_LINE_DEV_MANPAGES2=$(basename $(find -L /Library/Developer/CommandLineTools/usr/share/man -type f | cut -f1 -d '.'))
-  local SYS_MANPAGES=$(basename $(find -L /usr/share/man -type f | cut -f1 -d '.'))
-  local BREW_MANPAGES=$(basename $(find -L /usr/local/share/man/man* -type f | cut -f1 -d "."))
+  local COMMAND_LINE_DEV_MANPAGES1=$(find -L /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/share/man -type f | cut -f11 -d"/" | sed -e 's/\.[^.]*$//')
+  local COMMAND_LINE_DEV_MANPAGES2=$(find -L /Library/Developer/CommandLineTools/usr/share/man -type f | cut -f9 -d"/" | sed -e 's/\.[^.]*$//')
+  local SYS_MANPAGES=$(find -L /usr/share/man -type f | cut -f6 -d"/" | sed -e 's/\.[^.]*$//')
+  local BREW_MANPAGES=$(find -L /usr/local/share/man/man* -type f | cut -f7 -d"/" | sed -e 's/\.[^.]*$//')
   # return the man pages
   echo "$COMMAND_LINE_DEV_MANPAGES1"
   echo "$COMMAND_LINE_DEV_MANPAGES2"
@@ -19,7 +18,10 @@ function get_manpages() {
 }
 # There are some duplicates between the directories so sort and filter out duplicates
 ALL_MANPAGES=$(sort -u <<< $(get_manpages))
-# call man with all manpages piped to sk
-LESS+="-N" man $(echo "$ALL_MANPAGES" | fzf-tmux -l 25%)
+# call man with all manpages piped to fzf
+LESS+="-N" man $(echo "$ALL_MANPAGES" | fzf)
+
+# this opens in a tmux split
+#LESS+="-N" man $(echo "$ALL_MANPAGES" | fzf-tmux -l 25%)
 
 
