@@ -26,29 +26,41 @@ function get_manpages() {
 
 function help_msg() {
   cat << EOF
-usage: fman [-p]
--p <start in preview mode> {optional}
+usage: fman [-p] or [-s] {only one or zero options at a time}
+-p <start in preview mode>            {optional}
+-s <only show bookmarked manpages>    {optional}
+
+press ctrl-s on a selected file to bookmark
 EOF
 }
 
-# call man with all manpages piped to fzf
-if [ "$1" != "-h" -a "$1" != "--h" -a "$1" != "--help" ]; then
+HEADER="Manpage Fuzzy Finder"
+# Command that fzf will execute when enter is pressed on selected file
+CMD_TO_EXECUTE="LESS+='N' MANWIDTH=$(tput cols)% cman"
+
+# if "-h" or "-p" is given we don't want to run get_manpages so we bypass
+# that because it is not needed and is resource intensive.
+if [ "$1" != "-h" -a "$1" != "--h" -a "$1" != "--help" -a "$1" != "-s" ]; then
   # There are some duplicates between the directories so sort and filter
   ALL_MANPAGES=$(sort -u <<< $(get_manpages))
-  # The header for fzf
-  HEADER="Manpage Fuzzy Finder"
-  # Command that fzf will execute when enter is pressed on selected file
-  CMD_TO_EXECUTE="LESS+='N' MANWIDTH=$(tput cols)% cman"
+  # call man with all manpages piped to fzf
   if [ "$1" = "-p" ]; then # start in preview mode
     echo "$ALL_MANPAGES" | \
       fzf --reverse --header="$HEADER" \
       --preview="man {}" --preview-window="down:90%" \
-      --prompt="man " --bind "enter:execute($CMD_TO_EXECUTE {})"
+      --prompt="man " --bind "enter:execute($CMD_TO_EXECUTE {})" \
+      --bind "ctrl-s:execute(echo {} >> ~/.saved_manpages)"
   else # start without preview mode
     echo "$ALL_MANPAGES" | \
       fzf --reverse --header="$HEADER" \
-      --prompt="man " --bind "enter:execute($CMD_TO_EXECUTE {})"
+      --prompt="man " --bind "enter:execute($CMD_TO_EXECUTE {})" \
+      --bind "ctrl-s:execute(echo {} >> ~/.saved_manpages)"
   fi
+# load up bookmark file if "-s" option is given
+elif [ "$1" = '-s' ]; then
+  cat ~/.saved_manpages | fzf --reverse --header="$HEADER {Bookmarks}" \
+    --preview="man {}" --preview-window="down:90%" \
+    --prompt="man " --bind "enter:execute($CMD_TO_EXECUTE {})"
 else
   help_msg
 fi
