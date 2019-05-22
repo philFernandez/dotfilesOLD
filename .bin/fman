@@ -38,7 +38,7 @@ if [ "$1" != "-h" -a "$1" != "--h" -a "$1" != "--help" ]; then
   # The header for fzf
   HEADER="Manpage Fuzzy Finder"
   # Command that fzf will execute when enter is pressed on selected file
-  CMD_TO_EXECUTE="LESS+='N' MANWIDTH=105% cman"
+  CMD_TO_EXECUTE="LESS+='N' MANWIDTH=$(tput cols)% cman"
   if [ "$1" = "-p" ]; then # start in preview mode
     echo "$ALL_MANPAGES" | \
       fzf --reverse --header="$HEADER" \
