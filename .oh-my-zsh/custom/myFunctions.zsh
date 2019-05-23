@@ -26,9 +26,9 @@ function fcd {
 # that alias breaks this function with lsd
 function la {
   if [ $# -ge 1 ]; then
-    lsd -a $@ --group-dirs first
+    lsd --almost-all $@ --group-dirs first
   else
-    lsd -a $pwd --group-dirs first
+    lsd --almost-all $pwd --group-dirs first
   fi
 }
 # Same philosophy as above function
