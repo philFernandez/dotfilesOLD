@@ -17,7 +17,6 @@ def get_program_names(path_to_walk):
         files.extend(filenames)
     return files
 
-
 man_paths = [
     '/usr/share/man',
     '/usr/local/share/man',
@@ -29,7 +28,6 @@ program_names = []
 
 for path in man_paths:
     program_names.extend(get_program_names(path))
-
 
 for i in range(len(program_names)):
     indexOfExtension = program_names[i].rfind('.')
@@ -62,7 +60,7 @@ CMD_TO_EXECUTE="LESS+='N' MANWIDTH=$(tput cols)% cman"
 
 # if "-h" or "-p" is given we don't want to run get_manpages so we bypass
 # that because it is not needed and is resource intensive.
-if [ "$1" != "-h" -a "$1" != "--h" -a "$1" != "--help" -a "$1" != "-s" ]; then
+if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-s" ]; then
   # There are some duplicates between the directories so sort and filter
   ALL_MANPAGES=$(sort -u <<< $(get_manpages))
   # call man with all manpages piped to fzf
