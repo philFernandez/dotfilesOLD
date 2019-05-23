@@ -4,24 +4,46 @@
 # usage: fman <take no parameters> OR fman -p for preview mode
 # depends on $HOME/.bin/cman for color output man pages
 ####################################
-# Funtion for returning file names from all directories containing manpages
+
+# Use embedded python3 script to walk through the manpath and extract
+# all of the filenames
 function get_manpages() {
-  # extract the manpages
-  local COMMAND_LINE_DEV_MANPAGES1=$(find -L \
-    /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/share/man \
-    -type f | cut -f11 -d"/" | sed -e 's/\.[^.]*$//')
-  local COMMAND_LINE_DEV_MANPAGES2=$(find -L \
-    /Library/Developer/CommandLineTools/usr/share/man \
-    -type f | cut -f9 -d"/" | sed -e 's/\.[^.]*$//')
-  local SYS_MANPAGES=$(find -L /usr/share/man -type f \
-    | cut -f6 -d"/" | sed -e 's/\.[^.]*$//')
-  local BREW_MANPAGES=$(find -L /usr/local/share/man/man* \
-    -type f | cut -f7 -d"/" | sed -e 's/\.[^.]*$//')
-  # return the man pages
-  echo "$COMMAND_LINE_DEV_MANPAGES1"
-  echo "$COMMAND_LINE_DEV_MANPAGES2"
-  echo "$SYS_MANPAGES"
-  echo "$BREW_MANPAGES"
+all_programs=$(python3 << END
+
+from os import walk
+def get_program_names(path_to_walk):
+    files = []
+    for (dirpath, dirnames, filenames) in walk(path_to_walk):
+        files.extend(filenames)
+    return files
+
+
+man_paths = [
+    '/usr/share/man',
+    '/usr/local/share/man',
+    '/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/share/man',
+    '/Library/Developer/CommandLineTools/usr/share/man'
+]
+
+program_names = []
+
+for path in man_paths:
+    program_names.extend(get_program_names(path))
+
+
+for i in range(len(program_names)):
+    indexOfExtension = program_names[i].rfind('.')
+    program_names[i] = program_names[i][:indexOfExtension]
+
+program_names = set(program_names)
+program_names = sorted(program_names)
+
+for program in program_names:
+    print(program)
+
+END
+)
+echo "$all_programs"
 }
 
 function help_msg() {
