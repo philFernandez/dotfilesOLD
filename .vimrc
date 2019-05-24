@@ -29,6 +29,8 @@ Plug 'xolox/vim-notes'
 Plug 'vim-scripts/dbext.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug '/usr/local/opt/fzf/'
+Plug 'w0rp/ale'
+Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
