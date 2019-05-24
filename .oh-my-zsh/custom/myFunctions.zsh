@@ -20,6 +20,14 @@ function fcd {
   fi
 }
 
+function fls {
+  if [ $# = "1" ]; then
+    find "$1" -type f 2> /dev/null | fzf
+  else
+    print "give a directory"
+  fi
+}
+
 # Have to use function, because need filename before
 # --group-dirs first
 # Also have to unalias la in $HOME/.zshrc because
