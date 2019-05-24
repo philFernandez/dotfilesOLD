@@ -11,32 +11,48 @@ function get_manpages() {
 all_programs=$(python3 << END
 
 from os import walk
+import re
+
 def get_program_names(path_to_walk):
     files = []
-    for (dirpath, dirnames, filenames) in walk(path_to_walk):
+    for (_, _, filenames) in walk(path_to_walk):
         files.extend(filenames)
     return files
 
-man_paths = [
-    '/usr/share/man',
-    '/usr/local/share/man',
-    '/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/share/man',
-    '/Library/Developer/CommandLineTools/usr/share/man'
-]
+def strip_file_extension(file_names):
+    for index_of_file, file_name in enumerate(file_names):
+        index_of_extension = file_name.rfind('.')
+        file_names[index_of_file] = file_name[:index_of_extension]
 
-program_names = []
+def special_strip_file_extension(file_names):
+    matchobj = re.compile(r'[a-z]\.\d$')
+    for index, file_name in enumerate(file_names):
+        if re.search(matchobj, file_name):
+            index_of_extension = file_name.rfind('.')
+            file_names[index] = file_name[:index_of_extension]
 
-for path in man_paths:
-    program_names.extend(get_program_names(path))
+MAN_PATHS = [
+        '/usr/share/man',
+        '/usr/local/share/man',
+        '/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/share/man',
+        '/Library/Developer/CommandLineTools/usr/share/man'
+        ]
 
-for i in range(len(program_names)):
-    indexOfExtension = program_names[i].rfind('.')
-    program_names[i] = program_names[i][:indexOfExtension]
+PROGRAM_NAMES = []
 
-program_names = set(program_names)
-program_names = sorted(program_names)
+for path in MAN_PATHS:
+    PROGRAM_NAMES.extend(get_program_names(path))
 
-for program in program_names:
+
+strip_file_extension(PROGRAM_NAMES)
+
+special_strip_file_extension(PROGRAM_NAMES)
+
+
+PROGRAM_NAMES = set(PROGRAM_NAMES)
+PROGRAM_NAMES = sorted(PROGRAM_NAMES)
+
+for program in PROGRAM_NAMES:
     print(program)
 
 END
