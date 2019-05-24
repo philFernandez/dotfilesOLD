@@ -13,8 +13,8 @@
 ##### USER FUNCTIONS #######
 
 function fcd {
-  if [ $# == 1 ]; then
-    cd "$(find $1 -type d 2> /dev/null | sk)"
+  if [ $# = "1" ]; then
+    cd "$(find $1 -type d 2> /dev/null | fzf)"
   else
     print 'give a directory'
   fi
