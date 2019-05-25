@@ -224,7 +224,6 @@ nnoremap <silent> <leader>m :pclose<cr>
 nnoremap <leader>bj :!clear;javac %<cr>
 nnoremap <leader>rj :!clear;java %:r<cr>
 nnoremap <c-b><c-j> :!clear;node %<cr>
-nnoremap <c-b><c-p> :!clear;python3 %<cr>
 " file picker shortcuts
 "nnoremap <silent> <leader>ff :EditVifm<cr>
 "nnoremap <silent> <leader>fs :SplitVifm<cr>
