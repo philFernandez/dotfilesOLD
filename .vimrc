@@ -19,11 +19,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-repeat'
 Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'vim-scripts/dbext.vim'
@@ -53,12 +51,6 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseSubstituteDefaults = 1
 
-" CTRL P =========================================
-
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
-let g:airline#extensions#ctrlp#show_adjacent_modes = 0
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\.git$\|node_modules\|.*.class$'
 
 " Note settings ====================================
 let g:notes_directories = ['~/Notes/viNotes']
@@ -218,12 +210,10 @@ nnoremap K {
 nnoremap q :q<cr>
 nnoremap <silent> cc :clo<cr>
 nnoremap <space> A
-nnoremap <silent> <leader>l :CtrlPBuffer<CR>
+nnoremap <silent> <leader>l :Buffers<CR>
 nnoremap <silent> <leader>m :pclose<cr>
+nnoremap <c-p> :Files<cr>
 " Build and run kb shortcuts
-nnoremap <leader>bj :!clear;javac %<cr>
-nnoremap <leader>rj :!clear;java %:r<cr>
-nnoremap <c-b><c-j> :!clear;node %<cr>
 " file picker shortcuts
 "nnoremap <silent> <leader>ff :EditVifm<cr>
 "nnoremap <silent> <leader>fs :SplitVifm<cr>
