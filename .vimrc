@@ -34,7 +34,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
 
-
 set showtabline=2
 set background=dark
 color palenight
@@ -167,8 +166,18 @@ set autowrite
 set updatetime=100
 set scrolloff=3
 
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
 " Toggle cursorline when entering/exiting insert mode
-autocmd InsertEnter,InsertLeave * set cul!
+"autocmd InsertEnter,InsertLeave * set cul!
 autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 autocmd BufWrite * :RemoveTrailingSpaces
 " =======================================
@@ -193,16 +202,12 @@ hi Function cterm=bold
 hi Repeat cterm=bold
 hi jsReturn cterm=bold
 
-
 " Keymappings ================================
 let g:AutoPairsShortcutToggle = '<F10>'
 "copy into sys clipboard
 vnoremap <silent> cp "+y
 "past from sys clipboard
 nnoremap <silent> cv "+p
-
-
-
 "Disable keybindings so that we can use <leader>ca for Calendar
 map <plug>DisableNERDCommenterAltDelims <plug>NERDCommenterAltDelims
 map <plug>DisableCalendarH <plug>CalendarH
@@ -229,22 +234,6 @@ nnoremap <space> A
 nnoremap <silent> <leader>l :Buffers<CR>
 nnoremap <silent> <leader>m :pclose<cr>
 nnoremap <c-p> :Files<cr>
-" Build and run kb shortcuts
-" file picker shortcuts
-"nnoremap <silent> <leader>ff :EditVifm<cr>
-"nnoremap <silent> <leader>fs :SplitVifm<cr>
-"nnoremap <silent> <leader>fv :VsplitVifm<cr>
-"nnoremap <silent> <leader>ft :TabVifm<cr>
-" vifm file picker commands
-" :EditVifm   - opens file (is set to <leader>f)
-" :SplitVifm  - open in split
-" :VsplitVifm - open in vsplit
-" :DiffVifm   - diff
-" :TabVifm    - open in new tab
-" ---------------------------------------
-" Open buffers in splits
-" :vsp | bN
-" :spl | bN
 
 " resize splits
 nnoremap <silent> <F5> :resize +2<cr>
