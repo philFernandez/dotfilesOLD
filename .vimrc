@@ -13,6 +13,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
@@ -34,6 +35,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'vheon/vim-cursormode'
 call plug#end()
 
+set showtabline=2
 set background=dark
 color palenight
 
@@ -54,6 +56,19 @@ let g:lightline = {
       \     'inactive': [ 'filename', 'modified' ]
       \   },
       \
+      \   'tabline': {
+      \     'left': [ ['buffers'] ],
+      \     'right': [ ['close'] ]
+      \   },
+      \
+      \   'component_expand': {
+      \     'buffers': 'lightline#bufferline#buffers'
+      \   },
+      \
+      \   'component_type': {
+      \     'buffers': 'tabsel'
+      \   },
+      \
       \   'separator': {
       \     'left': '',
       \     'right': ''
@@ -65,6 +80,22 @@ let g:lightline = {
       \   }
       \
       \ }
+
+let g:lightline#bufferline#show_number  = 1
+let g:lightline#bufferline#shorten_path = 1
+let g:lightline#bufferline#unnamed      = '[No Name]'
+let g:lightline#bufferline#filename_modifier = ':t'
+
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
 let g:cursormode_color_map = {
       \ "i": '#1CCB13',
@@ -87,7 +118,6 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " EASY CLIP  =========================================
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseSubstituteDefaults = 1
-
 
 " Note settings ====================================
 let g:notes_directories = ['~/Notes/viNotes']
@@ -193,7 +223,6 @@ nnoremap <silent> <leader>ph :GitGutterPrevHunk<cr>
 nnoremap <silent> <leader>rn :set relativenumber!<cr>
 nnoremap <silent> <leader>n :set number!<cr>
 nnoremap <silent> <leader>s :set spell!<cr>
-nnoremap <bs> I
 nnoremap sa ggVG
 nnoremap <silent> bn :bnext<cr>
 nnoremap <silent> bp :bNext<cr>
