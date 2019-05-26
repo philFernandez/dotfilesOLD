@@ -35,6 +35,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'vheon/vim-cursormode'
 call plug#end()
 
+
 set showtabline=2
 set background=dark
 color palenight
@@ -58,7 +59,7 @@ let g:lightline = {
       \
       \   'tabline': {
       \     'left': [ ['buffers'] ],
-      \     'right': [ ['close'] ]
+      \     'right': [ ['close', 'tabs'] ]
       \   },
       \
       \   'component_expand': {
