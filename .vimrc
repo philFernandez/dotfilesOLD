@@ -14,8 +14,8 @@ Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
 Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
@@ -30,13 +30,50 @@ Plug '/usr/local/opt/fzf/'
 Plug 'w0rp/ale'
 Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/fzf.vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'vheon/vim-cursormode'
 call plug#end()
 
-"set background=dark
+set background=dark
+color palenight
 
-color onehalfdark
-"color onehalflight
+let g:lightline = {
+      \ 'colorscheme': 'Tomorrow_Night',
+      \
+      \   'active': {
+      \     'left': [ [ 'mode', 'paste', 'spell' ],
+      \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \   },
+      \
+      \   'component_function': {
+      \     'gitbranch': 'fugitive#head'
+      \   },
+      \
+      \   'tab': {
+      \     'active': [ 'filename', 'modified' ],
+      \     'inactive': [ 'filename', 'modified' ]
+      \   },
+      \
+      \   'separator': {
+      \     'left': '',
+      \     'right': ''
+      \   },
+      \
+      \   'subseparator': {
+      \     'left': '',
+      \     'right': ''
+      \   }
+      \
+      \ }
 
+let g:cursormode_color_map = {
+      \ "i": '#1CCB13',
+      \ "n": '#939393',
+      \ "R": '#FF0000',
+      \ "v": '#F11BFF',
+      \ "V": '#6A1BFF',
+      \ "\<C-V>": '#CD82D8',
+      \}
 
 " Completion Settings =============================
 set completeopt+=menuone
@@ -132,49 +169,6 @@ hi jsFunction cterm=bold
 hi Function cterm=bold
 hi Repeat cterm=bold
 hi jsReturn cterm=bold
-
-" Airline settings ========================
-"let g:airline_theme = 'badcat'
-let g:airline_powerline_fonts = 1
-
-if !exists('g:airline_symbols')
- let g:airline_symbols = {}
-endif
-
-
-let g:cursormode_color_map = {
-      \ "i": '#1CCB13',
-      \ "n": '#939393',
-      \ "R": '#FF0000',
-      \ "v": '#F11BFF',
-      \ "V": '#6A1BFF',
-      \ "\<C-V>": '#CD82D8',
-      \}
-
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_tab_nr = 0 " turn of numbers in tabs
-let g:airline#extensions#tabline#fnamemod = ':t' " dont show full path tabline
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#cursormode#enabled = 1
-" exposes shortcuts to move to tabs/buffes
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
 
 
 " Keymappings ================================
