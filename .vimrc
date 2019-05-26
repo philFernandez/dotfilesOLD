@@ -32,7 +32,6 @@ Plug 'w0rp/ale'
 Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'vheon/vim-cursormode'
 call plug#end()
 
 
@@ -98,14 +97,6 @@ nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
-let g:cursormode_color_map = {
-      \ "i": '#1CCB13',
-      \ "n": '#939393',
-      \ "R": '#FF0000',
-      \ "v": '#F11BFF',
-      \ "V": '#6A1BFF',
-      \ "\<C-V>": '#CD82D8',
-      \}
 
 " Completion Settings =============================
 set completeopt+=menuone
@@ -176,6 +167,8 @@ set autowrite
 set updatetime=100
 set scrolloff=3
 
+" Toggle cursorline when entering/exiting insert mode
+autocmd InsertEnter,InsertLeave * set cul!
 autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 autocmd BufWrite * :RemoveTrailingSpaces
 " =======================================
@@ -194,7 +187,6 @@ hi PreCondit cterm=bold
 hi StorageClass cterm=bold
 hi Structure cterm=bold
 hi Typedef cterm=bold
-
 hi cssClassName cterm=bold
 hi jsFunction cterm=bold
 hi Function cterm=bold
