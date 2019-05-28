@@ -12,6 +12,11 @@
 
 ##### USER FUNCTIONS #######
 
+function vwtf {
+  wtf "$1"
+  say -v Dan "$(wtf $1)"
+}
+
 function fcd {
   if [ $# = "1" ]; then
     cd "$(find $1 -type d 2> /dev/null | fzf)"
