@@ -1,10 +1,6 @@
 # This is loaded by the shell that is spawned by vim's command line
 # as well as the shell that is spawned by vifm's command line
 
-if [ ! $TMUX ]; then
-  say -i -v Dan Hello Master Phil. It is $(date +"%I:%M%p")
-fi
-
 # source functionality for use in vim's :!<command>
 # as well as vifm's :!<command>
 if [[ $VIMRUNTIME || $VIFM ]]; then
