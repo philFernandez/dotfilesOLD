@@ -1,0 +1,21 @@
+snippet printf "printf"
+printf("${1:%s}", $2); $0
+endsnippet
+
+snippet nl
+printf("\n");
+$0
+endsnippet
+
+
+snippet include
+#include <${1:stdio.h}>
+endsnippet
+
+
+snippet for "for"
+for ($1; $2; $3) {
+	$4
+}
+$0
+endsnippet
