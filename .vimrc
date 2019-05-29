@@ -32,6 +32,7 @@ Plug 'w0rp/ale'
 Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'sirver/UltiSnips'
 call plug#end()
 
 set showtabline=2
@@ -96,6 +97,8 @@ nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
+let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
+let g:UltiSnipsSnippetDirectories=["ultisnips"]
 
 " Completion Settings =============================
 set completeopt+=menuone
