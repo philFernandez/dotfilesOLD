@@ -1,3 +1,5 @@
+alias dos2unix="perl -pi -e 's/\r\n$/\n/g'"
+alias unix2dos="perl -pi -e 's/$/\r/'"
 alias wtf='wtf -o'
 alias vscode='code -n .'
 alias cpd='pwd|pbcopy'
