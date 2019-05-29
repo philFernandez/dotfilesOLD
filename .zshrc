@@ -77,9 +77,12 @@ if [[ $ZSH_THEME == 'powerlevel9k/powerlevel9k' ]]; then
   source ~/.powerlevel_settings
 fi
 
+source /usr/local/Cellar/fzf/0.18.0/shell/completion.zsh
+
 # Auto Comp Defns
 compdef _gnu_generic file
 compdef _gnu_generic password
 compdef _gnu_generic ctm
 compdef _git gdl=git-diff
 compdef _gnu_generic lsd
+compdef _gnu_generic fzf
