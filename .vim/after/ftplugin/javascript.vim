@@ -1,1 +1,1 @@
-nnoremap <c-b><c-j> :!clear;node %<cr>
+nnoremap <c-b><c-b> :!clear;node %<cr>

@@ -1,1 +1,1 @@
-nnoremap <c-b><c-p> :!clear;perl6 %<cr>
+nnoremap <c-b><c-b> :!clear;perl6 %<cr>

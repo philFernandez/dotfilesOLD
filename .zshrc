@@ -77,7 +77,9 @@ if [[ $ZSH_THEME == 'powerlevel9k/powerlevel9k' ]]; then
   source ~/.powerlevel_settings
 fi
 
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 source /usr/local/Cellar/fzf/0.18.0/shell/completion.zsh
+
 
 # Auto Comp Defns
 compdef _gnu_generic file

@@ -1,1 +1,1 @@
-nnoremap <c-b><c-p> :!clear;python3 %<cr>
+nnoremap <c-b><c-b> :!clear;python3 %<cr>
