@@ -12,6 +12,22 @@
 
 ##### USER FUNCTIONS #######
 
+function diff {
+  if [ "$1" = "-h" ] || [ "$1" = "--h" ]; then
+    cat << EOF
+------------------------------------------------------------------- \\
+usage: diff <file1> <file2> <N (default 3)>                         |
+                                                                    |
+       file1 is first file in comparison                            |
+       file2 is second file in comparison                           |
+       N is the number of lines to show around each diff            |
+--------------------------------------------------------------------/
+EOF
+  else
+    colordiff -U "${3:-3}" --label "$1" "$1" --label "$2" "$2"
+  fi
+}
+
 function vwtf {
   wtf "$1"
   say -v Dan "$(wtf $1)"
