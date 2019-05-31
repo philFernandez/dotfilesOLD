@@ -59,8 +59,13 @@ setopt NONOMATCH \
   INC_APPEND_HISTORY \
   HIST_SAVE_NO_DUPS \
   APPEND_HISTORY \
+  SHARE_HISTORY
+
+
 
 source $ZSH/oh-my-zsh.sh
+
+export SAVEHIST=HISTSIZE=500000
 
 if [[ $VIMRUNTIME == "" && $VIFM == "" ]]; then
   # causes error if this is unaliased inside vim or vifm shell
