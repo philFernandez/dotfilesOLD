@@ -32,6 +32,7 @@ Plug 'w0rp/ale'
 Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'c9s/perlomni.vim'
 Plug 'sirver/UltiSnips'
 call plug#end()
 
@@ -101,6 +102,7 @@ let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
 let g:UltiSnipsSnippetDirectories=["ultisnips"]
 
 " Completion Settings =============================
+" c-x c-o forces completion
 set completeopt+=menuone
 set completeopt+=noselect
 set shortmess+=c
