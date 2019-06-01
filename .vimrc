@@ -246,3 +246,16 @@ nnoremap <silent> <F6> :resize -2<cr>
 nnoremap <silent> <F7> :vertical resize +2<cr>
 nnoremap <silent> <F8> :vertical resize -2<cr>
 
+
+fun DoubleQuoteLine()
+  exe 'normal! 0v$di""'
+  exe 'normal! hp'
+endfun
+nnoremap <leader>ql :call DoubleQuoteLine()<cr>
+
+fun DoubleQuoteWord()
+  "exe 'normal! viwdi""'
+  exe 'normal! BvEdi""'
+  exe 'normal! hp'
+endfun
+nnoremap <leader>qw :call DoubleQuoteWord()<cr>
