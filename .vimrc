@@ -110,6 +110,10 @@ let g:mucomplete#enable_auto_at_startup = 1
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" Python Completion ==================================
+" bring up documentation for text under cursor
+let g:jedi#documentation_command = 'D'
+
 " EASY CLIP  =========================================
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseSubstituteDefaults = 1
