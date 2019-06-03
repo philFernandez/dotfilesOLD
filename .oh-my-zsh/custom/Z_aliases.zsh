@@ -1,5 +1,5 @@
 alias dos2unix="perl -pi -e 's/\r\n$/\n/g'"
-alias cat=bat
+alias cat="bat --theme 'Monokai Extended Origin'"
 alias unix2dos="perl -pi -e 's/$/\r/'"
 alias wtf='wtf -o'
 alias vscode='code -n .'
