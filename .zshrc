@@ -45,6 +45,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(
   #globalias
+  command-not-found
   tmux
   git
   z
