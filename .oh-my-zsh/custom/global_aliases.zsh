@@ -12,5 +12,7 @@ alias -g COLOR=' | pygmentize -f terminal256 -O style=vim -g'
 alias -g LINES=' | wc -l'
 alias -g G='| ag --nocolor'
 alias -g CG='| ag'
+alias -g COLSOU='| sort | fzf --reverse --preview "bat --theme=Monokai\ Extended\ Bright \
+  --style=numbers,changes --color always {}" --preview-window="down:95%"'
 #alias -g G='| grep'
 #alias -g EG='| egrep'
