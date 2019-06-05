@@ -1,8 +1,8 @@
 " Ranger for VIM
 " https://github.com/rafaqz/ranger.vim
+set nocompatible
 let mapleader=','
 syntax on
-set nocompatible
 
 call plug#begin('~/.vim/plugged')
 Plug 'vimwiki/vimwiki'
@@ -35,6 +35,9 @@ Plug 'c9s/perlomni.vim'
 Plug 'sirver/UltiSnips'
 call plug#end()
 
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set showtabline=2
 set background=dark
 color palenight
@@ -138,6 +141,7 @@ set incsearch
 set smartcase
 
 " text rendering settings
+scriptencoding utf-8
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
 set nowrap
