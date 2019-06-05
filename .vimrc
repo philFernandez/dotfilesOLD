@@ -99,6 +99,7 @@ nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
 let g:UltiSnipsSnippetDirectories=["ultisnips"]
+let g:UltiSnipsExpandTrigger="<leader>n"
 
 " Completion Settings =============================
 " c-x c-o forces completion
