@@ -44,8 +44,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(
-  #globalias
-  command-not-found
   tmux
   git
   z
