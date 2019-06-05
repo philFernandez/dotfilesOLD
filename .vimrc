@@ -2,13 +2,13 @@
 " https://github.com/rafaqz/ranger.vim
 set nocompatible
 let mapleader=','
-syntax on
 
 call plug#begin('~/.vim/plugged')
 Plug 'vimwiki/vimwiki'
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
+Plug 'lifepillar/vim-solarized8'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
@@ -35,12 +35,12 @@ Plug 'c9s/perlomni.vim'
 Plug 'sirver/UltiSnips'
 call plug#end()
 
-set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 set showtabline=2
-set background=dark
-color palenight
+"set background=light
+color solarized8_high
 
 let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
@@ -141,7 +141,6 @@ set incsearch
 set smartcase
 
 " text rendering settings
-scriptencoding utf-8
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
 set nowrap
@@ -197,23 +196,23 @@ autocmd BufWrite * :RemoveTrailingSpaces
 
  "custom syntax settings
  "syntax bolding
-hi Question cterm=bold
-hi WarningMsg cterm=bold
-hi Statement cterm=bold
-hi PreProc cterm=bold
-hi Type cterm=bold
-hi Conditional cterm=bold
-hi Keyword cterm=bold
-hi Exception cterm=bold
-hi PreCondit cterm=bold
-hi StorageClass cterm=bold
-hi Structure cterm=bold
-hi Typedef cterm=bold
-hi cssClassName cterm=bold
-hi jsFunction cterm=bold
-hi Function cterm=bold
-hi Repeat cterm=bold
-hi jsReturn cterm=bold
+"hi Question cterm=bold
+"hi WarningMsg cterm=bold
+"hi Statement cterm=bold
+"hi PreProc cterm=bold
+"hi Type cterm=bold
+"hi Conditional cterm=bold
+"hi Keyword cterm=bold
+"hi Exception cterm=bold
+"hi PreCondit cterm=bold
+"hi StorageClass cterm=bold
+"hi Structure cterm=bold
+"hi Typedef cterm=bold
+"hi cssClassName cterm=bold
+"hi jsFunction cterm=bold
+"hi Function cterm=bold
+"hi Repeat cterm=bold
+"hi jsReturn cterm=bold
 
 " Keymappings ================================
 let g:AutoPairsShortcutToggle = '<F10>'
@@ -282,3 +281,4 @@ command! -bang -nargs=* Ag
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
+
