@@ -70,7 +70,7 @@ press ctrl-s on a selected file to bookmark
 EOF
 }
 
-HEADER="Manpage Fuzzy Finder"
+HEADER="Fuzzy Man"
 # Command that fzf will execute when enter is pressed on selected file
 if [ -e "$HOME/.bin/cman" ] || [ -e "$HOME/bin/cman" ]; then
   CMD_TO_EXECUTE="LESS+='N' MANWIDTH=$(tput cols)% cman"
@@ -88,7 +88,7 @@ if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-
     echo "$ALL_MANPAGES" | \
       fzf -i --reverse --header="$HEADER" \
       --preview="man {}" --preview-window="down:90%" \
-      --prompt="man " --bind "enter:execute($CMD_TO_EXECUTE {})" \
+      --prompt="man-> " --bind "enter:execute($CMD_TO_EXECUTE {})" \
       --bind "ctrl-s:execute(echo {} >> ~/.saved_manpages)"
   else # start without preview mode
     echo "$ALL_MANPAGES" | \
@@ -100,7 +100,7 @@ if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-
 elif [ "$1" = '-s' ]; then
   cat ~/.saved_manpages | fzf -i --reverse --header="$HEADER {Bookmarks}" \
     --preview="man {}" --preview-window="down:90%" \
-    --prompt="man " --bind "enter:execute($CMD_TO_EXECUTE {})" \
+    --prompt="man-> " --bind "enter:execute($CMD_TO_EXECUTE {})" \
     --bind \
     "ctrl-d:execute(sed '/{}/d' ~/.saved_manpages > \
     ~/.tmp_save && /bin/mv -f ~/.tmp_save ~/.saved_manpages)"
