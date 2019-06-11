@@ -5,6 +5,7 @@ let mapleader=','
 
 call plug#begin('~/.vim/plugged')
 Plug 'vimwiki/vimwiki'
+Plug 'xavierd/clang_complete'
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
@@ -118,6 +119,11 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " Python Completion ==================================
 " bring up documentation for text under cursor
 let g:jedi#documentation_command = 'D'
+
+" C Completion =======================================
+let g:AutoPairsMapCR = 0
+imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
+let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
 " EASY CLIP  =========================================
 let g:EasyClipAutoFormat = 1
