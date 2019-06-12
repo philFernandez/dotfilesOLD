@@ -11,7 +11,6 @@ alias light='iterm2_profile Light'
 alias dark='iterm2_profile Default'
 alias wdue='cat DUEDATE'
 alias which='which -a'
-alias qq='tmux kill-server'
 alias cls=clear
 alias rm='rm -v'
 alias cll='clear;ls -a'
