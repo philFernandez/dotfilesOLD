@@ -34,6 +34,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'c9s/perlomni.vim'
 Plug 'sirver/UltiSnips'
+Plug 'justinmk/vim-syntax-extra'
 call plug#end()
 
 " need these for truecolor in tmux
