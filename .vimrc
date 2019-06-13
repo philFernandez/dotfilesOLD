@@ -94,7 +94,7 @@ let g:lightline#bufferline#filename_modifier = ':t'
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'b'    : '#W',
-      \'c'    : "#(neofetch uptime --uptime_shorthand tiny)",
+      \'c'    : "#(neofetch uptime --uptime_shorthand tiny | awk -v OFS='\ ' '{print $2, $3, $4}')",
       \'win'  : '#I #W',
       \'cwin' : '#I #W',
       \'y'    : '%I:%M:%S',
