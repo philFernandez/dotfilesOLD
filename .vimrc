@@ -100,7 +100,17 @@ let g:tmuxline_preset = {
       \'y'    : '%I:%M:%S',
       \'z'    : '%D'}
 
-let g:tmuxline_theme = 'iceberg'
+let g:tmuxline_theme = {
+    \   'a'    : [ 235, 41 ],
+    \   'b'    : [ 41, 239 ],
+    \   'c'    : [ 244, 236 ],
+    \   'x'    : [ 244, 236 ],
+    \   'y'    : [ 253, 239 ],
+    \   'z'    : [ 235, 41 ],
+    \   'win'  : [ 103, 236 ],
+    \   'cwin' : [ 235, 41 ],
+    \   'bg'   : [ 244, 236 ],
+    \ }
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
