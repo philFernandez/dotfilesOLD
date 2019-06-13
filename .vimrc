@@ -33,6 +33,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'c9s/perlomni.vim'
 Plug 'sirver/UltiSnips'
 Plug 'justinmk/vim-syntax-extra'
+Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 " need these for truecolor in tmux
@@ -44,7 +45,7 @@ set showtabline=2
 color solarized8_high
 
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'materia',
       \
       \   'active': {
       \     'left': [ [ 'mode', 'paste', 'spell' ],
@@ -89,6 +90,26 @@ let g:lightline#bufferline#show_number  = 1
 let g:lightline#bufferline#shorten_path = 1
 let g:lightline#bufferline#unnamed      = '[No Name]'
 let g:lightline#bufferline#filename_modifier = ':t'
+
+
+
+"let g:tmuxline_separators = {
+    "\ 'left' : '',
+    "\ 'left_alt': '',
+    "\ 'right' : '',
+    "\ 'right_alt' : '',
+    "\ 'space' : ' '}
+
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'c'    : "#(uptime | awk -v OFS='\ ' '{print $2, $3, $4}' | sed 's/.$//')",
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'y'    : '%I:%M',
+      \'z'    : '%D'}
+
+let g:tmuxline_theme = 'vim_statusline_3'
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
