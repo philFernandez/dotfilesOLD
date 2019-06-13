@@ -44,7 +44,7 @@ set showtabline=2
 color solarized8_high
 
 let g:lightline = {
-      \ 'colorscheme': 'Tomorrow_Night',
+      \ 'colorscheme': 'nord',
       \
       \   'active': {
       \     'left': [ [ 'mode', 'paste', 'spell' ],
