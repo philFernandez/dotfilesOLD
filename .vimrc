@@ -91,25 +91,16 @@ let g:lightline#bufferline#shorten_path = 1
 let g:lightline#bufferline#unnamed      = '[No Name]'
 let g:lightline#bufferline#filename_modifier = ':t'
 
-
-
-"let g:tmuxline_separators = {
-    "\ 'left' : '',
-    "\ 'left_alt': '',
-    "\ 'right' : '',
-    "\ 'right_alt' : '',
-    "\ 'space' : ' '}
-
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'b'    : '#W',
-      \'c'    : "#(uptime | awk -v OFS='\ ' '{print $2, $3, $4}' | sed 's/.$//')",
+      \'c'    : "#(neofetch uptime --uptime_shorthand tiny)",
       \'win'  : '#I #W',
       \'cwin' : '#I #W',
-      \'y'    : '%I:%M',
+      \'y'    : '%I:%M:%S',
       \'z'    : '%D'}
 
-let g:tmuxline_theme = 'vim_statusline_3'
+let g:tmuxline_theme = 'iceberg'
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
