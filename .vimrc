@@ -33,6 +33,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'c9s/perlomni.vim'
 Plug 'sirver/UltiSnips'
 Plug 'justinmk/vim-syntax-extra'
+Plug 'ternjs/tern_for_vim'
 Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
