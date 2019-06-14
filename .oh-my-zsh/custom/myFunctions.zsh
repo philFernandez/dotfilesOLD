@@ -12,6 +12,10 @@
 
 ##### USER FUNCTIONS #######
 
+function allcoms {
+  print -l $commands | fzf --reverse
+}
+
 function diff {
   if [ "$1" = "-h" ] || [ "$1" = "--h" ]; then
     cat << EOF
