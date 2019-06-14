@@ -35,6 +35,7 @@ Plug 'sirver/UltiSnips'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'ternjs/tern_for_vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " need these for truecolor in tmux
