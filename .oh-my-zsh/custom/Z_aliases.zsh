@@ -1,3 +1,6 @@
+alias vim=''
+alias vi=''
+alias v='/usr/local/bin/vim'
 alias dos2unix="perl -pi -e 's/\r\n$/\n/g'"
 alias bat="bat --theme 'Monokai Extended Origin'"
 alias unix2dos="perl -pi -e 's/$/\r/'"
@@ -20,7 +23,6 @@ alias reload='exec zsh'
 alias tree='lsd --tree'
 alias bk='cd ..;cl'
 alias vi='vim'
-alias v='vim'
 alias rd='rm -frv'
 alias mv='mv -vi'
 alias cp='cp -vi'
@@ -54,15 +56,14 @@ alias man='LESS+="-N" man'
 alias pcat='pygmentize -f terminal256 -O style=monokai -g'
 
 # Edit config shortcuts
-alias ev='vi ~/.vimrc'
-alias ef='vi ~/.oh-my-zsh/custom/myFunctions.zsh'
-alias ep='vi ~/.oh-my-zsh/custom/Z_aliases.zsh'
-alias rc='vi ~/.zshrc'
-alias eg='vi ~/.oh-my-zsh/custom/global_aliases.zsh'
-alias ett='vi ~/.zsh_theme'
-alias evf='vi ~/.config/vifm/vifmrc'
-alias et='vi ~/.tmux.conf'
-alias es='vi ~/.oh-my-zsh/custom/spotify.zsh'
+alias ev='v ~/.vimrc'
+alias ef='v ~/.oh-my-zsh/custom/myFunctions.zsh'
+alias ep='v ~/.oh-my-zsh/custom/Z_aliases.zsh'
+alias rc='v ~/.zshrc'
+alias eg='v ~/.oh-my-zsh/custom/global_aliases.zsh'
+alias ett='v ~/.zsh_theme'
+alias et='v ~/.tmux.conf'
+alias es='v ~/.oh-my-zsh/custom/spotify.zsh'
 
 # Package Management
 alias update='brew -v update'
