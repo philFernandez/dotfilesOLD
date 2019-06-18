@@ -134,6 +134,17 @@ let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
 let g:UltiSnipsSnippetDirectories=["ultisnips"]
 let g:UltiSnipsExpandTrigger="<leader>n"
 
+" startify settings
+let g:startify_bookmarks = [
+      \ '~/.vimrc',
+      \ '~/.zshrc',
+      \ '~/.tmux.conf',
+      \ '~/.oh-my-zsh/custom/Z_aliases.zsh',
+      \ '~/.oh-my-zsh/custom/myFunctions.zsh']
+
+let g:startify_fortune_use_unicode = 0
+
+
 " Completion Settings =============================
 " c-x c-o forces completion
 set completeopt+=menuone
@@ -262,6 +273,7 @@ map <plug>DisableCalendarV <plug>CalendarV
 nnoremap <silent> <leader>ca :Calendar<cr>
 inoremap jj <Esc>
 nnoremap gm m
+nnoremap <silent> <c-s> :Startify<CR>
 nnoremap <silent> <leader>cd :cd %:p:h<cr>
 nnoremap <silent> <leader>nh :GitGutterNextHunk<cr>
 nnoremap <silent> <leader>ph :GitGutterPrevHunk<cr>

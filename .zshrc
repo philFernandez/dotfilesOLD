@@ -1,3 +1,4 @@
+stty -ixon
 [[ -a ~/Notes/software_to_try.txt ]] && \
   cat ~/Notes/software_to_try.txt
 
