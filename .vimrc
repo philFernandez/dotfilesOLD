@@ -1,5 +1,8 @@
-" Ranger for VIM
-" https://github.com/rafaqz/ranger.vim
+" Preview markdown files:
+" goto directory containing markdown:
+" run command 'grip'
+" see https://github.com/joeyespo/grip
+
 set nocompatible
 let mapleader=','
 
