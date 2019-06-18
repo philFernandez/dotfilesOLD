@@ -36,6 +36,7 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'ternjs/tern_for_vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'philFernandez/rangerFilePicker.vim'
 call plug#end()
 
 " need these for truecolor in tmux
@@ -43,7 +44,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set showtabline=2
-"set background=light
+set background=dark
 color solarized8_high
 
 let g:lightline = {
@@ -283,6 +284,10 @@ nnoremap <silent> <F6> :resize -2<cr>
 nnoremap <silent> <F7> :vertical resize +2<cr>
 nnoremap <silent> <F8> :vertical resize -2<cr>
 
+" RANGER
+let g:ranger_remap_key = 1
+nnoremap <leader>g :RangerChooser<CR>
+
 fun DoubleQuoteLine()
   exe 'normal! 0v$di""'
   exe 'normal! hp'
@@ -312,3 +317,34 @@ command! -bang -nargs=* Ag
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 
+"function! RangeChooser()
+  "let temp = tempname()
+  "" The option "--choosefiles" was added in ranger 1.5.1. Use the next line
+  "" with ranger 1.4.2 through 1.5.0 instead.
+  ""exec 'silent !ranger --choosefile=' . shellescape(temp)
+  "if has("gui_running")
+    "exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp)
+  "else
+    "exec 'silent !ranger --choosefiles=' . shellescape(temp)
+  "endif
+  "if !filereadable(temp)
+    "redraw!
+    "" Nothing to read.
+    "return
+  "endif
+  "let names = readfile(temp)
+  "if empty(names)
+    "redraw!
+    "" Nothing to open.
+    "return
+  "endif
+  "" Edit the first item.
+  "exec 'edit ' . fnameescape(names[0])
+  "" Add any remaning items to the arg list/buffer list.
+  "for name in names[1:]
+    "exec 'argadd ' . fnameescape(name)
+  "endfor
+  "redraw!
+"endfunction
+"command! -bar RangerChooser call RangeChooser()
+"nnoremap <leader>f :<C-U>RangerChooser<CR>
