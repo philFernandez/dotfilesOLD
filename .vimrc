@@ -101,7 +101,7 @@ let g:lightline#bufferline#filename_modifier = ':t'
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
-      \'b'    : '#W',
+      \'b'    : '#(curl wttr.in/Stockton?format=1)',
       \'c'    : "#(neofetch uptime --uptime_shorthand tiny | awk -v OFS='\ ' '{print $2, $3, $4}')",
       \'win'  : '#I #W',
       \'cwin' : '#I #W',
