@@ -1,4 +1,6 @@
+# Disable C-S so that it can be used elsewhere
 stty -ixon
+
 [[ -a ~/Notes/software_to_try.txt ]] && \
   cat ~/Notes/software_to_try.txt
 

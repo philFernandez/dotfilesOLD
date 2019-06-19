@@ -41,6 +41,7 @@ Plug 'ternjs/tern_for_vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'philFernandez/rangerFilePicker.vim'
+Plug 'vim-python/python-syntax'
 call plug#end()
 
 " need these for truecolor in tmux
@@ -144,6 +145,10 @@ let g:startify_bookmarks = [
 
 let g:startify_fortune_use_unicode = 0
 
+
+let g:python_highlight_all = 1
+let g:python_highlight_space_errors = 0
+let g:python_highlight_indent_errors = 0
 
 " Completion Settings =============================
 " c-x c-o forces completion
