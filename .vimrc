@@ -109,16 +109,16 @@ let g:tmuxline_preset = {
       \'z'    : '%D'}
 
 let g:tmuxline_theme = {
-    \   'a'    : [ 235, 41 ],
-    \   'b'    : [ 41, 239 ],
-    \   'c'    : [ 244, 236 ],
-    \   'x'    : [ 244, 236 ],
-    \   'y'    : [ 253, 239 ],
-    \   'z'    : [ 235, 41 ],
-    \   'win'  : [ 103, 236 ],
-    \   'cwin' : [ 235, 41 ],
-    \   'bg'   : [ 244, 236 ],
-    \ }
+      \   'a'    : [ 235, 41 ],
+      \   'b'    : [ 41, 239 ],
+      \   'c'    : [ 244, 236 ],
+      \   'x'    : [ 244, 236 ],
+      \   'y'    : [ 253, 239 ],
+      \   'z'    : [ 235, 41 ],
+      \   'win'  : [ 103, 236 ],
+      \   'cwin' : [ 235, 41 ],
+      \   'bg'   : [ 244, 236 ],
+      \ }
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
@@ -175,7 +175,13 @@ let g:EasyClipUseSubstituteDefaults = 1
 
 " Note settings ====================================
 let g:notes_directories = ['~/Notes/viNotes']
-"let g:notes_suffix = '.txt'
+
+let g:ale_fixers = {
+      \ 'javascript': ['prettier']
+      \ }
+let g:ale_fix_on_save = 1
+
+
 
 " VIM SETTINGS =========================
 set autoindent
@@ -243,10 +249,11 @@ autocmd InsertLeave * set nocul
 "autocmd InsertEnter,InsertLeave * set cul!
 autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 autocmd BufWrite * :RemoveTrailingSpaces
+autocmd BufWrite *.py :Autoformat
 " =======================================
 
- "custom syntax settings
- "syntax bolding
+"custom syntax settings
+"syntax bolding
 "hi Question cterm=bold
 "hi WarningMsg cterm=bold
 "hi Statement cterm=bold
@@ -329,7 +336,7 @@ nnoremap <leader>qw :call DoubleQuoteWord()<cr>
 "   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
 "   :Ag! - Start fzf in fullscreen and display the preview window above
 command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+      \ call fzf#vim#ag(<q-args>,
+      \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+      \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \                 <bang>0)
