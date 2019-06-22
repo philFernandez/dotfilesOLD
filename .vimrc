@@ -8,13 +8,13 @@ let mapleader=','
 
 call plug#begin('~/.vim/plugged')
 Plug 'vimwiki/vimwiki'
-Plug 'xavierd/clang_complete'
+Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
 Plug 'mengelbrecht/lightline-bufferline'
@@ -31,17 +31,18 @@ Plug 'xolox/vim-notes'
 Plug '/usr/local/opt/fzf/'
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
-Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'c9s/perlomni.vim'
+Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
 Plug 'sirver/UltiSnips'
-Plug 'justinmk/vim-syntax-extra'
-Plug 'ternjs/tern_for_vim'
+Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
+Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'edkolev/tmuxline.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'philFernandez/rangerFilePicker.vim'
-Plug 'vim-python/python-syntax'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+"Plug 'philFernandez/rangerFilePicker.vim'
+Plug '/Users/philthy/Source_Code/VIM/rangerFilePicker/'
+Plug 'vim-python/python-syntax', { 'for': 'python' }
 call plug#end()
 
 " need these for truecolor in tmux
