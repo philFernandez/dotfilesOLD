@@ -22,7 +22,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
-Plug 'Chiel92/vim-autoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
@@ -177,10 +176,18 @@ let g:EasyClipUseSubstituteDefaults = 1
 " Note settings ====================================
 let g:notes_directories = ['~/Notes/viNotes']
 
+
+" ALE settings =====================================
 let g:ale_fixers = {
-      \ 'javascript': ['prettier']
+      \ 'javascript': ['prettier'],
+      \ 'python': ['black']
       \ }
+
 let g:ale_fix_on_save = 1
+
+let g:ale_linters = {
+      \ 'python': ['pyflakes']
+      \ }
 
 
 
@@ -249,8 +256,6 @@ autocmd InsertLeave * set nocul
 " Toggle cursorline when entering/exiting insert mode
 "autocmd InsertEnter,InsertLeave * set cul!
 autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
-autocmd BufWrite * :RemoveTrailingSpaces
-autocmd BufWrite *.py :Autoformat
 " =======================================
 
 "custom syntax settings
