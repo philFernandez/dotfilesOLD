@@ -17,7 +17,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
-Plug 'mengelbrecht/lightline-bufferline'
+"Plug 'mengelbrecht/lightline-bufferline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
@@ -94,10 +94,10 @@ let g:lightline = {
       \
       \ }
 
-let g:lightline#bufferline#show_number  = 1
-let g:lightline#bufferline#shorten_path = 1
-let g:lightline#bufferline#unnamed      = '[No Name]'
-let g:lightline#bufferline#filename_modifier = ':t'
+"let g:lightline#bufferline#show_number  = 1
+"let g:lightline#bufferline#shorten_path = 1
+"let g:lightline#bufferline#unnamed      = '[No Name]'
+"let g:lightline#bufferline#filename_modifier = ':t'
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
@@ -180,7 +180,7 @@ let g:notes_directories = ['~/Notes/viNotes']
 " ALE settings =====================================
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
-      \ 'python': ['black']
+      \ 'python': ['autopep8']
       \ }
 
 let g:ale_fix_on_save = 1
