@@ -101,12 +101,13 @@ let g:lightline = {
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
-      \'b'    : '#(curl wttr.in/Stockton?format=1)',
+      \'b'    : "#(curl 'api.openweathermap.org/data/2.5/weather?q=Stockton&appid=a21483b3b7a6dd4ce2d7627d61aebb53&units=imperial' | jq '.main.temp')",
       \'c'    : "#(neofetch uptime --uptime_shorthand tiny | awk -v OFS='\ ' '{print $2, $3, $4}')",
       \'win'  : '#I #W',
       \'cwin' : '#I #W',
       \'y'    : '%I:%M:%S',
-      \'z'    : '%D'}
+      \'z'    : '%D',
+      \}
 
 let g:tmuxline_theme = {
       \   'a'    : [ 235, 41 ],
