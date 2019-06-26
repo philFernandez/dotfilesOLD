@@ -14,9 +14,8 @@
 
 # make it so 'rd' only works for directories
 function rd {
-  local file_output="$(file $1)"
-  local typeof=${file_output#*:}
-  if [ "$typeof" = " directory" ]; then
+  local typeof="$(file --brief $1)"
+  if [ "$typeof" = "directory" ]; then
     rm -vrf "$1"
   else
     echo "$1" 'is not a directory.'
