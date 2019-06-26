@@ -18,7 +18,7 @@ function rd {
   if [ "$typeof" = "directory" ]; then
     rm -vrf "$1"
   else
-    echo "$1" 'is not a directory.'
+    print -P $FG[001]'ERROR:' $reset_color"$1" 'is not a directory.'
   fi
 }
 
