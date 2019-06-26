@@ -12,6 +12,17 @@
 
 ##### USER FUNCTIONS #######
 
+# make it so 'rd' only works for directories
+function rd {
+  local file_output="$(file $1)"
+  local typeof=${file_output#*:}
+  if [ "$typeof" = " directory" ]; then
+    rm -vrf "$1"
+  else
+    echo "$1" 'is not a directory.'
+  fi
+}
+
 function allcoms {
   print -l $commands | fzf --reverse
 }
