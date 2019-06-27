@@ -6,6 +6,7 @@
 set nocompatible
 let mapleader=','
 
+" Vim Plug {{{
 call plug#begin('~/.vim/plugged')
 Plug 'vimwiki/vimwiki'
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
@@ -43,7 +44,9 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug '/Users/philthy/Source_Code/VIM/rangerFilePicker/'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 call plug#end()
+" }}}
 
+" UI Settings {{{
 " need these for truecolor in tmux
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -51,7 +54,27 @@ set termguicolors
 set showtabline=2
 set background=dark
 color solarized8_high
+set laststatus=2
+set noshowmode
+set ruler
+set number
+set cursorline
+set splitbelow
+set splitright
 
+" Cursor line insert/normal toggle
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+" }}}
+
+" Lightline {{{
 let g:lightline = {
       \ 'colorscheme': 'materia',
       \
@@ -93,12 +116,9 @@ let g:lightline = {
       \   }
       \
       \ }
+" }}}
 
-"let g:lightline#bufferline#show_number  = 1
-"let g:lightline#bufferline#shorten_path = 1
-"let g:lightline#bufferline#unnamed      = '[No Name]'
-"let g:lightline#bufferline#filename_modifier = ':t'
-
+" Tmuxline {{{
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'b'    : "#(curl 'api.openweathermap.org/data/2.5/weather?q=Stockton&appid=a21483b3b7a6dd4ce2d7627d61aebb53&units=imperial' | jq '.main.temp')",
@@ -121,10 +141,15 @@ let g:tmuxline_theme = {
       \   'bg'   : [ 244, 236 ],
       \ }
 
+" }}}
+
+" Ultisnips {{{
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
 let g:UltiSnipsSnippetDirectories=["ultisnips"]
 let g:UltiSnipsExpandTrigger="<leader>n"
+" }}}
 
+" Startify {{{
 " startify settings
 let g:startify_bookmarks = [
       \ '~/.vimrc',
@@ -134,13 +159,15 @@ let g:startify_bookmarks = [
       \ '~/.oh-my-zsh/custom/myFunctions.zsh']
 
 let g:startify_fortune_use_unicode = 0
+" }}}
 
-
+" Python Highlight {{{
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
 let g:python_highlight_indent_errors = 0
+" }}}
 
-" Completion Settings =============================
+" Completion {{{
 " c-x c-o forces completion
 set completeopt+=menuone
 set completeopt+=noselect
@@ -159,6 +186,9 @@ let g:AutoPairsMapCR = 0
 imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
 let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
+" }}}
+
+" Easy Clip and Note {{{
 " EASY CLIP  =========================================
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseSubstituteDefaults = 1
@@ -166,8 +196,9 @@ let g:EasyClipUseSubstituteDefaults = 1
 " Note settings ====================================
 let g:notes_directories = ['~/Notes/viNotes']
 
+" }}}
 
-" ALE settings =====================================
+" ALE {{{
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
       \ 'python': ['autopep8']
@@ -178,37 +209,35 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {
       \ 'python': ['pyflakes']
       \ }
+" }}}
 
+" Indent Settings {{{
 
-
-" VIM SETTINGS =========================
 set autoindent
 set expandtab
 set shiftround
 set shiftwidth=2
 set smarttab
 set tabstop=2
+" }}}
 
-"search settings
+" Search {{{
 set hlsearch
 set ignorecase
 set incsearch
 set smartcase
+" }}}
 
-" text rendering settings
+" Text Render (wrap) {{{
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
 set nowrap
 "set wrap
+" }}}
 
-set laststatus=2
-set noshowmode
-set ruler
-set number
-set cursorline
-set splitbelow
-set splitright
-
+" Fold {{{
+" za - toggle fold under cursor
+" zA - toggle fold under cursor recursively
 " zR - open all folds
 " zM - close all folds
 " zo - unfold area under cursor
@@ -219,8 +248,9 @@ set foldmethod=indent
 set foldnestmax=3
 " uncomment to disable fold on file open
 set nofoldenable
+" }}}
 
-" other settings
+" Other VIM {{{
 set mouse=a
 set lazyredraw
 set autoread
@@ -232,43 +262,11 @@ set noswapfile
 set autowrite
 set updatetime=100
 set scrolloff=3
-
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
-
-" Toggle cursorline when entering/exiting insert mode
-"autocmd InsertEnter,InsertLeave * set cul!
 autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
-" =======================================
+" }}}
 
-"custom syntax settings
-"syntax bolding
-"hi Question cterm=bold
-"hi WarningMsg cterm=bold
-"hi Statement cterm=bold
-"hi PreProc cterm=bold
-"hi Type cterm=bold
-"hi Conditional cterm=bold
-"hi Keyword cterm=bold
-"hi Exception cterm=bold
-"hi PreCondit cterm=bold
-"hi StorageClass cterm=bold
-"hi Structure cterm=bold
-"hi Typedef cterm=bold
-"hi cssClassName cterm=bold
-"hi jsFunction cterm=bold
-"hi Function cterm=bold
-"hi Repeat cterm=bold
-"hi jsReturn cterm=bold
+" Keymaps {{{
 
-" Keymappings ================================
 let g:AutoPairsShortcutToggle = '<F10>'
 "copy into sys clipboard
 vnoremap <silent> cp "+y
@@ -336,3 +334,29 @@ command! -bang -nargs=* Ag
       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
       \                 <bang>0)
+" }}}
+
+" Custom Syntax (Inactive) {{{
+
+"custom syntax settings
+"syntax bolding
+"hi Question cterm=bold
+"hi WarningMsg cterm=bold
+"hi Statement cterm=bold
+"hi PreProc cterm=bold
+"hi Type cterm=bold
+"hi Conditional cterm=bold
+"hi Keyword cterm=bold
+"hi Exception cterm=bold
+"hi PreCondit cterm=bold
+"hi StorageClass cterm=bold
+"hi Structure cterm=bold
+"hi Typedef cterm=bold
+"hi cssClassName cterm=bold
+"hi jsFunction cterm=bold
+"hi Function cterm=bold
+"hi Repeat cterm=bold
+"hi jsReturn cterm=bold
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0:foldenable
