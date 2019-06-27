@@ -150,7 +150,6 @@ let g:UltiSnipsExpandTrigger="<leader>n"
 " }}}
 
 " Startify {{{
-" startify settings
 let g:startify_bookmarks = [
       \ '~/.vimrc',
       \ '~/.zshrc',
@@ -212,7 +211,6 @@ let g:ale_linters = {
 " }}}
 
 " Indent Settings {{{
-
 set autoindent
 set expandtab
 set shiftround
