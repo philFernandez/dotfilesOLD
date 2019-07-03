@@ -51,8 +51,10 @@ setopt NONOMATCH \
 # }}}
 
 # Source Things {{{
-source $ZSH/oh-my-zsh.sh
+# set theme in another file that isn't under source control
 source ~/.zsh_theme
+
+source $ZSH/oh-my-zsh.sh
 
 # only load all of powerlevel9k settings if powerlevel9k is the set theme
 if [[ $ZSH_THEME == 'powerlevel9k/powerlevel9k' ]]; then
