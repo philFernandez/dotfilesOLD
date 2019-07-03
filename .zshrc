@@ -1,51 +1,35 @@
-# Disable C-S so that it can be used elsewhere
-stty -ixon
-
 [[ -a ~/Notes/software_to_try.txt ]] && \
   cat ~/Notes/software_to_try.txt
 
+# Variables {{{
 ZSH_TMUX_AUTOCONNECT=false
 ZSH_TMUX_AUTOSTART=true
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="mm/dd/yyyy"
+# Disable C-S so that it can be used elsewhere
+stty -ixon
+# }}}
 
+# Exports {{{
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/philthy/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
-# load theme from another file that isn't under source control
-# so that I can change the theme without having to re-commit
-# to the repo everytime
-
-source ~/.zsh_theme
-
 # set vscode as default editor
 #export EDITOR='code -w'
+
 # set vim as default editor
 export EDITOR=/usr/local/bin/vim
 
-# Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=7
-#export DISABLE_AUTO_UPDATE=true
-#export DISABLE_AUTO_TITLE=true
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+export SAVEHIST=HISTSIZE=500000
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-HIST_STAMPS="mm/dd/yyyy"
+export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+# }}}
+
+# Plugins {{{
 plugins=(
   tmux
   git
@@ -55,20 +39,29 @@ plugins=(
   colored-man-pages
   iterm2
 )
+# }}}
 
+# Shell Options {{{
 setopt NONOMATCH \
   HIST_IGNORE_ALL_DUPS \
   INC_APPEND_HISTORY \
   HIST_SAVE_NO_DUPS \
   APPEND_HISTORY \
   SHARE_HISTORY
+# }}}
 
-
-
+# Source Things {{{
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh_theme
 
-export SAVEHIST=HISTSIZE=500000
+# only load all of powerlevel9k settings if powerlevel9k is the set theme
+if [[ $ZSH_THEME == 'powerlevel9k/powerlevel9k' ]]; then
+  source ~/.powerlevel_settings
+fi
+source /usr/local/Cellar/fzf/0.18.0/shell/completion.zsh
+# }}}
 
+# Unset aliases {{{
 if [[ $VIMRUNTIME == "" && $VIFM == "" ]]; then
   # causes error if this is unaliased inside vim or vifm shell
   # so only unalias it if we're not in vim or vifm
@@ -77,22 +70,15 @@ fi
 unalias la
 unalias l
 unalias rd
-
-export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
-
-# only load all of powerlevel9k settings if powerlevel9k is the set theme
-if [[ $ZSH_THEME == 'powerlevel9k/powerlevel9k' ]]; then
-  source ~/.powerlevel_settings
-fi
-
-export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
-source /usr/local/Cellar/fzf/0.18.0/shell/completion.zsh
-
-
-# Auto Comp Defns
+# }}}
+ 
+# Auto Comp Defns {{{
 compdef _gnu_generic file
 compdef _gnu_generic password
 compdef _gnu_generic ctm
 compdef _git gdl=git-diff
 compdef _gnu_generic lsd
 compdef _gnu_generic fzf
+# }}}
+
+# vim:foldmethod=marker:foldlevel=0:foldenable
