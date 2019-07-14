@@ -1,5 +1,3 @@
-alias vim=''
-alias vi=''
 alias v='/usr/local/bin/vim'
 alias dos2unix="perl -pi -e 's/\r\n$/\n/g'"
 alias bat="bat --theme 'Monokai Extended Origin'"
