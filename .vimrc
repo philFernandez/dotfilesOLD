@@ -42,7 +42,6 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 "Plug 'philFernandez/rangerFilePicker.vim'
 Plug '/Users/philthy/Source_Code/VIM/rangerFilePicker/'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
-Plug 'maximbaz/lightline-ale'
 call plug#end()
 " }}}
 
@@ -74,19 +73,13 @@ autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 " }}}
 
-      "\ 'right': [ [ 'lineinfo' ],
-      "\            [ 'percent' ],
-      "\            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
-
 " Lightline {{{
 let g:lightline = {
       \ 'colorscheme': 'materia',
       \
       \   'active': {
       \     'left': [ [ 'mode', 'paste', 'spell' ],
-      \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-      \     'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-      \                [ 'percent', 'lineinfo' ], [ 'fileformat', 'fileencoding', 'filetype' ]]
+      \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \   },
       \
       \   'component_function': {
@@ -104,17 +97,11 @@ let g:lightline = {
       \   },
       \
       \   'component_expand': {
-      \     'linter_checking': 'lightline#ale#checking',
-      \     'linter_warnings': 'lightline#ale#warnings',
-      \     'linter_errors': 'lightline#ale#errors',
-      \     'linter_ok': 'lightline#ale#ok'
+      \     'buffers': 'lightline#bufferline#buffers'
       \   },
       \
       \   'component_type': {
-      \     'linter_checking': 'left',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'left'
+      \     'buffers': 'tabsel'
       \   },
       \
       \   'separator': {
