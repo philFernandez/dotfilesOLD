@@ -19,7 +19,7 @@ Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-fugitive'
+Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
@@ -83,7 +83,7 @@ let g:lightline = {
       \   },
       \
       \   'component_function': {
-      \     'gitbranch': 'fugitive#head'
+      \     'gitbranch': 'gitbranch#name'
       \   },
       \
       \   'tab': {
