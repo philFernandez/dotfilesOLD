@@ -259,6 +259,7 @@ set noswapfile
 set autowrite
 set updatetime=100
 set scrolloff=3
+set wildmenu
 autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 " }}}
 
