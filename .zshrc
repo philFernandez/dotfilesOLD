@@ -1,6 +1,8 @@
 [[ -a ~/Notes/software_to_try.txt ]] && \
   cat ~/Notes/software_to_try.txt
 
+[[ -a ~/.reminders ]] && \
+  bat ~/.reminders
 # Variables {{{
 ZSH_TMUX_AUTOCONNECT=false
 ZSH_TMUX_AUTOSTART=true
