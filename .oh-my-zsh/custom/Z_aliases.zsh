@@ -1,4 +1,6 @@
 alias v='/usr/local/bin/vim'
+alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
+alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'
 alias dos2unix="perl -pi -e 's/\r\n$/\n/g'"
 alias bat="bat --theme 'Monokai Extended Origin'"
 alias unix2dos="perl -pi -e 's/$/\r/'"
