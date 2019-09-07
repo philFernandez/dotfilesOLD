@@ -12,6 +12,14 @@
 
 ##### USER FUNCTIONS #######
 
+function remind {
+  if [ -e ~/.reminders/reminders.txt ]; then
+    vim ~/.reminders/reminders.txt
+  else
+    echo 'reminder is in off mode'
+  fi
+}
+
 # make it so 'rd' only works for directories
 function rd {
   local typeof="$(file --brief $1)"
