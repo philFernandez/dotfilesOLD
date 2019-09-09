@@ -16,7 +16,7 @@ function remind {
   if [ -e ~/.reminders/reminders.txt ]; then
     vim ~/.reminders/reminders.txt
   else
-    echo 'reminder is in off mode'
+    echo 'run "remon" command to turn on reminders'
   fi
 }
 
