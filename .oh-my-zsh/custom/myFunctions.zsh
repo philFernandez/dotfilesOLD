@@ -12,6 +12,10 @@
 
 ##### USER FUNCTIONS #######
 
+function remdate {
+  pcregrep "$1" ~/.reminders/reminders.txt
+}
+
 function remind {
   if [ -e ~/.reminders/reminders.txt ]; then
     vim ~/.reminders/reminders.txt
