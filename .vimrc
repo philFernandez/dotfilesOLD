@@ -229,6 +229,8 @@ set smartcase
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
 set nowrap
+" for latex, or paragraph type writing
+"set formatoptions+=a
 "set wrap
 " }}}
 
