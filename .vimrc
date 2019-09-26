@@ -267,6 +267,11 @@ autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 
 " Keymaps {{{
 
+" Turn off number inc/dec
+map <C-A> <Nop>
+map <C-X> <Nop>
+"=======================
+
 let g:AutoPairsShortcutToggle = '<F10>'
 "copy into sys clipboard
 vnoremap <silent> cp "+y
