@@ -24,6 +24,14 @@ function remind {
   fi
 }
 
+function sreminder {
+  if [ -e ~/.reminders/reminders.txt ]; then 
+    cat ~/.reminders/reminders.txt
+  else
+    echo 'run "remon" command to turn on reminders'
+  fi
+}
+
 # make it so 'rd' only works for directories
 function rd {
   local typeof="$(file --brief $1)"
