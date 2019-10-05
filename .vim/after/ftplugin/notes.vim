@@ -9,4 +9,4 @@ nmap <leader>q I<delete><space><esc>A
 set nonumber
 set spell
 autocmd BufEnter * setfiletype notes
-set tw=70
+set tw=100

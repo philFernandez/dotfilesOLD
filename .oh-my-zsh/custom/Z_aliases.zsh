@@ -1,5 +1,5 @@
 # TEMP Aliases
-alias cn1='java -cp dist/A1Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a1.Starter'
+alias cn1='java -cp dist/A2Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a2.Starter'
 ###
 
 alias v='/usr/local/bin/vim'
