@@ -19,6 +19,7 @@ alias dark='iterm2_profile Default'
 alias wdue='cat DUEDATE'
 alias which='which -a'
 alias cls=clear
+alias c=clear
 alias rm='rm -v'
 alias cll='clear;ls -a'
 alias clll='clear;ls -l'
