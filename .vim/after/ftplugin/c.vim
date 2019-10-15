@@ -13,3 +13,6 @@ nnoremap <c-b><c-b> :call BuildAndRunC()<cr>
 " Need this for clang_complete and AutoPairs to work together
 let g:AutoPairsMapCR = 0
 imap <silent><CR> <CR><Plug>AutoPairsReturn
+
+set shiftwidth=3
+set tabstop=3

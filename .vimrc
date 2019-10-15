@@ -18,6 +18,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
+Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
@@ -169,6 +170,7 @@ let g:python_highlight_indent_errors = 0
 " c-x c-o forces completion
 set completeopt+=menuone
 set completeopt+=noselect
+set completeopt-=preview
 set shortmess+=c
 " automatic completion at startup (w/o this have to press tab)
 let g:mucomplete#enable_auto_at_startup = 1
@@ -262,7 +264,19 @@ set autowrite
 set updatetime=100
 set scrolloff=3
 set wildmenu
-autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
+if !isdirectory("/tmp/.vim-undo-dir")
+  call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+au BufWrite *.c,*.py,*.java :Autoformat
+
+" keep window position static when switching between buffers
+au BufLeave * let b:winview = winsaveview()
+au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+" --------------------------------------------------------------------------
+"
+"autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 " }}}
 
 " Keymaps {{{
