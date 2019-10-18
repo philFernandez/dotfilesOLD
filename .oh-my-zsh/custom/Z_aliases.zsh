@@ -12,7 +12,6 @@ alias wtf='wtf -o'
 alias vscode='code -n .'
 alias cpd='pwd|pbcopy'
 alias regex='man pcresyntax'
-alias player="pygmentize -l zsh -f terminal256 -O style=vim ~/.oh-my-zsh/custom/spotify.zsh"
 alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias light='iterm2_profile Light'
 alias dark='iterm2_profile Default'
@@ -37,7 +36,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias wiki='v -c VimwikiIndex'
 alias wiki2='v ~/Nextcloud/CSUS/Fall_2019/wiki/index.wiki'
-alias f='ranger'
 alias chkbu='watch -n 0.1 ls -all /Volumes'
 alias selbook='open $(mdfind -onlyin $HOME/Spring_2019 -interpret "pdf" | sk -m)'
 
@@ -50,13 +48,11 @@ alias cpush='config push -u origin master'
 alias clcp='config log --stat -p'
 alias clog='config log --oneline --decorate --graph'
 alias configls='config ls-tree -r master --name-only $HOME'
-alias cdl='config diff | bat --style=grid,numbers -l diff'
+alias cdl='config diff | bat --style=numbers -l diff'
 
 # make man pages display line numbers
 alias man='LESS+="-N" man'
 
-# run <pygmentize -L styles> to see all styles
-alias pcat='pygmentize -f terminal256 -O style=monokai -g'
 
 # Edit config shortcuts
 alias ev='v ~/.vimrc'

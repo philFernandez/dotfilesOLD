@@ -138,9 +138,9 @@ function ccamp {
 
 function gdl {
   if [ $# -ge  1 ]; then
-    git diff "$@" | bat --style=grid,numbers
+    git diff "$@" | bat --style=numbers
   else
-    git diff | bat --style=grid,numbers
+    git diff | bat --style=numbers
   fi
 }
 
@@ -173,10 +173,6 @@ function cl {
   # must use this no matter which of the 2 above are used
   echo $reset_color; # must reset or other output (/bin/ls) will get messed up
   lsd --group-dirs first
-}
-
-function scat {
-  pygmentize -f terminal256 -O style=vim -g $1 | nl -ba
 }
 
 # preform rm on all files of specified file extension
@@ -253,12 +249,13 @@ function rmn {
   /bin/ls -A | grep -v "$*" | xargs rm -rf
 }
 
-function gitalias {
-  alias | grep git | grep "$*"
-}
-
 function aliases {
-  alias | pygmentize -l shell | grep --color=none "$*"
+  if [ $# -ge 1 ]; then
+    alias | ag --nocolor "$*" | bat --style=numbers -l sh
+  else
+    alias | bat --style=numbers -l sh
+  fi
+
 }
 
 bindkey -s '^R' 'exec zsh\n'
