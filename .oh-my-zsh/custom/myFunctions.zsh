@@ -69,7 +69,7 @@ function vwtf {
 
 function fcd {
   if [ $# = "1" ]; then
-    cd "$(find $1 -type d 2> /dev/null | fzf)"
+    cd "$(fd . $1 -t d | fzf)"
   else
     print 'give a directory'
   fi
