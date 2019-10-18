@@ -138,9 +138,9 @@ function ccamp {
 
 function gdl {
   if [ $# -ge  1 ]; then
-    git diff "$@" | pygmentize -f terminal256 -O style=vim -g -l diff | less -N
+    git diff "$@" | bat --style=grid,numbers
   else
-    git diff | pygmentize -f terminal256 -O style=vim -g -l diff | less -N
+    git diff | bat --style=grid,numbers
   fi
 }
 
