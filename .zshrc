@@ -28,7 +28,8 @@ export SAVEHIST=HISTSIZE=500000
 
 export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 
-export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+#export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || ag --hidden -g "")'
 # }}}
 
 # Plugins {{{

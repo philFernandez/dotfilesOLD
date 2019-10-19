@@ -38,6 +38,8 @@ alias wiki='v -c VimwikiIndex'
 alias wiki2='v ~/Nextcloud/CSUS/Fall_2019/wiki/index.wiki'
 alias chkbu='watch -n 0.1 ls -all /Volumes'
 alias selbook='open $(mdfind -onlyin $HOME/Spring_2019 -interpret "pdf" | sk -m)'
+alias glo='LESS+="N" git log --oneline --decorate --reverse'
+alias fzfbat='fzf --preview "bat --theme=Monokai\ Extended\ Bright --style=numbers,changes --color always {}" --preview-window="down:95%"'
 
 # dotfile/config bar repo aliases
 alias config='git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME'
