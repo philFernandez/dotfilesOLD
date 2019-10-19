@@ -13,11 +13,11 @@
 ##### USER FUNCTIONS #######
 
 # Open history in fzf and put selected command on the command line for edit and/or execute
-function fuzh() {
+function fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | awk '!($1="")')
 }
 # Open history in fzf and immediately execute the selected entry
-function fuzhx() {
+function fhx() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | awk '!($1="")')
 }
 
@@ -76,7 +76,7 @@ function vwtf {
   say -v Dan "$(wtf $1)"
 }
 
-function fuzcd {
+function fcd {
   if [ $# = "1" ]; then
     cd "$(fd . $1 -I -t d | fzf)"
   else
