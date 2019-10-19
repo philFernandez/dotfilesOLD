@@ -12,31 +12,6 @@
 
 ##### USER FUNCTIONS #######
 
-# Open history in fzf and put selected command on the command line for edit and/or execute
-function fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | awk '!($1="")')
-}
-
-# Open history in fzf and immediately execute the selected entry
-function fhx() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | awk '!($1="")')
-}
-
-# fkill - kill processes - list only the ones you can kill. Modified the earlier script.
-fkill() {
-    local pid 
-    if [ "$UID" != "0" ]; then
-        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
-    else
-        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-    fi  
-
-    if [ "x$pid" != "x" ]
-    then
-        echo $pid | xargs kill -${1:-9}
-    fi  
-}
-
 function remdate {
   pcregrep "$1" ~/.reminders/reminders.txt
 }
@@ -284,3 +259,30 @@ function aliases {
 }
 
 bindkey -s '^R' 'exec zsh\n'
+
+# FZF functions ===============================================
+# Open history in fzf and put selected command on the command line for edit and/or execute
+  function fh() {
+    print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | awk '!($1="")')
+  }
+
+# Open history in fzf and immediately execute the selected entry
+function fhx() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | awk '!($1="")')
+}
+
+# fkill - kill processes - list only the ones you can kill. Modified the earlier script.
+function fkill() {
+  local pid 
+  if [ "$UID" != "0" ]; then
+    pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+  else
+    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+  fi  
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi  
+}
+# =============================================================
