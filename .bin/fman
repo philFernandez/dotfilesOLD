@@ -98,7 +98,7 @@ if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-
   fi
 # load up bookmark file if "-s" option is given
 elif [ "$1" = '-s' ]; then
-  cat ~/.saved_manpages | fzf -i --reverse --header="$HEADER {Bookmarks}" \
+    fzf -i --reverse --header="$HEADER {Bookmarks}" < ~/.saved_manpages\
     --preview="man {}" --preview-window="down:90%" \
     --prompt="man-> " --bind "enter:execute($CMD_TO_EXECUTE {})" \
     --bind \
