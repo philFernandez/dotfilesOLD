@@ -3,6 +3,7 @@ alias cn1='(cd ~/eclipse-workspace/A2Prj && java -cp dist/A2Prj.jar:JavaSE.jar c
 ###
 
 alias v='/usr/local/bin/vim'
+alias cds='fcd ~/Fall_2019'
 alias remoff='/bin/mv -f ~/.reminders/reminders.txt ~/.reminders/reminders.silent'
 alias remon='/bin/mv -f ~/.reminders/reminders.silent ~/.reminders/reminders.txt'
 alias dos2unix="perl -pi -e 's/\r\n$/\n/g'"
