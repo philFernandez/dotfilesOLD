@@ -210,6 +210,35 @@ let g:ale_linters = {
       \ }
 " }}}
 
+" Other VIM {{{
+set mouse=a
+set lazyredraw
+set autoread
+set backspace=indent,eol,start
+set confirm
+set hidden
+set history=1000
+set noswapfile
+set autowrite
+set updatetime=100
+set scrolloff=3
+set wildmenu
+
+if !isdirectory("/tmp/.vim-undo-dir")
+  call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+au BufWrite *.c,*.py,*.java :Autoformat
+
+" keep window position static when switching between buffers
+au BufLeave * let b:winview = winsaveview()
+au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+" --------------------------------------------------------------------------
+"
+"autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
+" }}}
+
 " Indent Settings {{{
 set autoindent
 set expandtab
@@ -235,6 +264,19 @@ set nowrap
 "set wrap
 " }}}
 
+" Netrw {{{
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 1
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+let g:netrw_list_hide = netrw_gitignore#Hide()
+
+nnoremap <leader>f :Lex<CR>
+
+" }}}
+
 " Fold {{{
 " za - toggle fold under cursor
 " zA - toggle fold under cursor recursively
@@ -248,41 +290,6 @@ set foldmethod=indent
 set foldnestmax=3
 " uncomment to disable fold on file open
 set nofoldenable
-" }}}
-
-" Other VIM {{{
-set mouse=a
-set lazyredraw
-set autoread
-set backspace=indent,eol,start
-set confirm
-set hidden
-set history=1000
-set noswapfile
-set autowrite
-set updatetime=100
-set scrolloff=3
-set wildmenu
-
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-
-if !isdirectory("/tmp/.vim-undo-dir")
-  call mkdir("/tmp/.vim-undo-dir", "", 0700)
-endif
-set undodir=/tmp/.vim-undo-dir
-set undofile
-au BufWrite *.c,*.py,*.java :Autoformat
-
-" keep window position static when switching between buffers
-au BufLeave * let b:winview = winsaveview()
-au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
-" --------------------------------------------------------------------------
-"
-"autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 " }}}
 
 " Keymaps {{{
