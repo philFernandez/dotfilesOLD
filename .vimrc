@@ -39,6 +39,7 @@ Plug 'sirver/UltiSnips'
 Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'edkolev/tmuxline.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 call plug#end()
@@ -264,19 +265,6 @@ set nowrap
 "set wrap
 " }}}
 
-" Netrw {{{
-
-let g:netrw_banner = 0
-let g:netrw_liststyle = 1
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-let g:netrw_list_hide = netrw_gitignore#Hide()
-
-nnoremap <leader>f :Lex<CR>
-
-" }}}
-
 " Fold {{{
 " za - toggle fold under cursor
 " zA - toggle fold under cursor recursively
@@ -293,6 +281,8 @@ set nofoldenable
 " }}}
 
 " Keymaps {{{
+
+nnoremap <leader>f :NERDTreeToggle<CR>
 
 " Turn off number inc/dec
 map <C-A> <Nop>
