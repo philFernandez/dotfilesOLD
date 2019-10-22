@@ -40,8 +40,6 @@ Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-"Plug 'philFernandez/rangerFilePicker.vim'
-Plug '/Users/philthy/Source_Code/VIM/rangerFilePicker/'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 call plug#end()
 " }}}
@@ -182,6 +180,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:jedi#documentation_command = 'D'
 
 " C Completion =======================================
+let g:clang_make_default_keymappings=0
 let g:AutoPairsMapCR = 0
 imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
 let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
@@ -264,6 +263,13 @@ set autowrite
 set updatetime=100
 set scrolloff=3
 set wildmenu
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
 if !isdirectory("/tmp/.vim-undo-dir")
   call mkdir("/tmp/.vim-undo-dir", "", 0700)
 endif
