@@ -69,7 +69,7 @@ function vwtf {
 
 function fcd {
   if [ $# = "1" ]; then
-    cd "$(fd . $1 -I -t d | fzf)"
+    cd "$(fd . $1 -I -t d | fzy)"
   else
     print 'give a directory'
   fi
@@ -321,3 +321,29 @@ function ec () {
 	fi
 }
 # =============================================================
+
+# Open conf files
+function ev {
+  ${=EDITOR} ~/.vimrc
+}
+function ef {
+  ${=EDITOR} ~/.oh-my-zsh/custom/myFunctions.zsh
+}
+function ep {
+  ${=EDITOR} ~/.oh-my-zsh/custom/Z_aliases.zsh
+}
+function rc {
+  ${=EDITOR} ~/.zshrc
+}
+function eg {
+  ${=EDITOR} ~/.oh-my-zsh/custom/global_aliases.zsh
+}
+function ett {
+  ${=EDITOR} ~/.zsh_theme
+}
+function et {
+  ${=EDITOR} ~/.tmux.conf
+}
+function es {
+  ${=EDITOR} ~/.oh-my-zsh/custom/spotify.zsh
+}

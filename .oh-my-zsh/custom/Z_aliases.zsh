@@ -56,17 +56,6 @@ alias cdl='config diff | bat --style=numbers -l diff'
 # make man pages display line numbers
 alias man='LESS+="-N" man'
 
-
-# Edit config shortcuts
-alias ev='v ~/.vimrc'
-alias ef='v ~/.oh-my-zsh/custom/myFunctions.zsh'
-alias ep='v ~/.oh-my-zsh/custom/Z_aliases.zsh'
-alias rc='v ~/.zshrc'
-alias eg='v ~/.oh-my-zsh/custom/global_aliases.zsh'
-alias ett='v ~/.zsh_theme'
-alias et='v ~/.tmux.conf'
-alias es='v ~/.oh-my-zsh/custom/spotify.zsh'
-
 # Package Management
 alias update='brew -v update'
 alias upgrade='brew upgrade && brew cask upgrade'
