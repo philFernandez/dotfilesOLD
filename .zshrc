@@ -30,6 +30,9 @@ export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 
 #export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 #export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || ag --hidden -g "")'
+
+#export FZF_DEFAULT_OPTS='--color gutter:2 --ansi'
+export FZF_DEFAULT_OPTS='--color hl:118 --color gutter:35 --color pointer:118 --ansi'
 export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -H)'
 # }}}
 
