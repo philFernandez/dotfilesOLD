@@ -79,7 +79,7 @@ fcd() {
 
 fvim() {
   local files
-  files="$(fd . ${1:-.} -I -tf | \
+  files="$(fd . ${1:-.} -H -I -tf | \
     fzf -m --preview="bat --color=always {}" \
     --preview-window="down:90%" --prompt='vim ' \
     --reverse)"
