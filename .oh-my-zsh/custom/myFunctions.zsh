@@ -69,7 +69,11 @@ function vwtf {
 
 fcd() {
   local dir 
-  dir="$(fd . ${1:-.} -I -td | fzf)" && 
+  dir="$(fd . ${1:-.} -I -td | fzf --sort \
+    --preview=" lsd --color=always \
+    --icon=always --group-dirs first {}" \
+    --preview-window="down:50%" \
+    --reverse)" && 
     cd "$dir"
 }
 
