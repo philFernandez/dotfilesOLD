@@ -67,21 +67,20 @@ function vwtf {
   say -v Dan "$(wtf $1)"
 }
 
-function fcd {
-  if [ $# = "1" ]; then
-    cd "$(fd . $1 -I -t d | fzy)"
-  else
-    print 'give a directory'
-  fi
+fcd() {
+  local dir 
+  dir="$(fd . ${1:-.} -I -td | fzf)" && 
+    cd "$dir"
 }
 
-function fls {
-  if [ $# = "1" ]; then
-    find "$1" -type f 2> /dev/null | fzf
-  else
-    print "give a directory"
-  fi
+fvim() {
+  local files
+  files="$(fd . ${1:-.} -I -tf | fzf -m)"
+  [ -n "$files" ] && ${=EDITOR} $(echo "$files")
+
 }
+ 
+
 
 # Have to use function, because need filename before
 # --group-dirs first

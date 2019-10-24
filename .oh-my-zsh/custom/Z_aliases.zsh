@@ -2,6 +2,7 @@
 alias cn1='(cd ~/eclipse-workspace/A2Prj && java -cp dist/A2Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a2.Starter)'
 ###
 
+alias fzf='fzf --color gutter:2'
 alias v='/usr/local/bin/vim'
 alias cds='fcd ~/Fall_2019'
 alias remoff='/bin/mv -f ~/.reminders/reminders.txt ~/.reminders/reminders.silent'
