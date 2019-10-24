@@ -43,7 +43,7 @@ function rd {
 }
 
 function allcoms {
-  print -l $commands | fzf --reverse
+  print -l $commands | fzf
 }
 
 function diff {
@@ -70,10 +70,10 @@ function vwtf {
 fcd() {
   local dir 
   dir="$(fd . ${1:-.} -I -H -td | fzf --sort \
-    --preview=" lsd --color=always \
+    --preview=" lsd -A --color=always \
     --icon=always --group-dirs first {}" \
     --preview-window="down:50%" --prompt='cd '\
-    --reverse)" && 
+    )" && 
     cd "$dir"
 }
 
@@ -83,7 +83,7 @@ fcdf() {
   file="$(fd . ${1:-.} -H -I -tf | \
     fzf -m --preview="bat --color=always --style=numbers {}" \
     --preview-window="down:90%" --prompt='cd-to-dir-of ' \
-    --reverse)"
+    )"
       [ -n "$file" ] && dir=$(dirname "$file") && cd "$dir"
 
 }
@@ -93,7 +93,7 @@ fvim() {
   files="$(fd . ${1:-.} -H -I -tf | \
     fzf -m --preview="bat --color=always --style=numbers {}" \
     --preview-window="down:90%" --prompt='vim ' \
-    --reverse)"
+    )"
   [ -n "$files" ] && ${=EDITOR} $(echo "$files")
 
 }
