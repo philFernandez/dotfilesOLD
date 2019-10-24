@@ -69,18 +69,29 @@ function vwtf {
 
 fcd() {
   local dir 
-  dir="$(fd . ${1:-.} -I -td | fzf --sort \
+  dir="$(fd . ${1:-.} -I -H -td | fzf --sort \
     --preview=" lsd --color=always \
     --icon=always --group-dirs first {}" \
-    --preview-window="down:50%" \
+    --preview-window="down:50%" --prompt='cd '\
     --reverse)" && 
     cd "$dir"
+}
+
+fcdf() {
+  local file
+  local dir
+  file="$(fd . ${1:-.} -H -I -tf | \
+    fzf -m --preview="bat --color=always --style=numbers {}" \
+    --preview-window="down:90%" --prompt='cd-to-dir-of ' \
+    --reverse)"
+      [ -n "$file" ] && dir=$(dirname "$file") && cd "$dir"
+
 }
 
 fvim() {
   local files
   files="$(fd . ${1:-.} -H -I -tf | \
-    fzf -m --preview="bat --color=always {}" \
+    fzf -m --preview="bat --color=always --style=numbers {}" \
     --preview-window="down:90%" --prompt='vim ' \
     --reverse)"
   [ -n "$files" ] && ${=EDITOR} $(echo "$files")
