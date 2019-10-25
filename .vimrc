@@ -39,7 +39,7 @@ Plug 'sirver/UltiSnips'
 Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'edkolev/tmuxline.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 call plug#end()
