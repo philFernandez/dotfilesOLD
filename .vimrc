@@ -52,7 +52,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set showtabline=2
 set background=dark
-color solarized8_high
+color onehalfdark
 set laststatus=2
 set noshowmode
 set ruler
@@ -242,6 +242,7 @@ set autowrite
 set updatetime=100
 set scrolloff=3
 set wildmenu
+set tags=./.git/tags;
 
 if !isdirectory("/tmp/.vim-undo-dir")
   call mkdir("/tmp/.vim-undo-dir", "", 0700)
