@@ -1,8 +1,4 @@
-[[ -a ~/Notes/software_to_try.txt ]] && \
-  cat ~/Notes/software_to_try.txt
 
-[[ -a ~/.reminders/reminders.txt ]] && \
-  cat ~/.reminders/reminders.txt
 # Variables {{{
 ZSH_TMUX_AUTOCONNECT=false
 ZSH_TMUX_AUTOSTART=true
@@ -86,10 +82,19 @@ unalias rd
 # Auto Comp Defns {{{
 compdef _gnu_generic file
 compdef _gnu_generic password
-compdef _gnu_generic ctm
 compdef _git gdl=git-diff
 compdef _gnu_generic lsd
 compdef _gnu_generic fzf
+# }}}
+
+# Files to Source {{{
+
+[[ -a ~/Notes/software_to_try.txt ]] && \
+  cat ~/Notes/software_to_try.txt
+
+[[ -a ~/.reminders/reminders.txt ]] && \
+  cat ~/.reminders/reminders.txt
+
 # }}}
 
 # vim:foldmethod=marker:foldlevel=0:foldenable

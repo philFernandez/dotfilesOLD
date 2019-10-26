@@ -1,10 +1,10 @@
-" Preview markdown files:
-" goto directory containing markdown:
-" run command 'grip'
-" see https://github.com/joeyespo/grip
+
+" need to be first {{{
 
 set nocompatible
 let mapleader=','
+
+" }}}
 
 " Vim Plug {{{
 call plug#begin('~/.vim/plugged')
@@ -171,7 +171,7 @@ set completeopt+=menuone
 set completeopt+=noselect
 set completeopt-=preview
 set shortmess+=c
-" automatic completion at startup (w/o this have to press tab)
+" utomatic completion at startup (w/o this have to press tab)
 let g:mucomplete#enable_auto_at_startup = 1
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -185,24 +185,6 @@ let g:clang_make_default_keymappings=0
 let g:AutoPairsMapCR = 0
 imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
 let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
-
-" }}}
-
-" FZY {{{
-
-function! FzyCommand(choice_command, vim_command)
-  try
-    let output = system(a:choice_command . " | fzy ")
-  catch /Vim:Interrupt/
-    " Swallow errors from ^C, allow redraw! below
-  endtry
-  redraw!
-  if v:shell_error == 0 && !empty(output)
-    exec a:vim_command . ' ' . output
-  endif
-endfunction
-nnoremap <leader>e :call FzyCommand("ag . --silent -l -g ''", ":e")<cr>
-
 
 " }}}
 
@@ -256,7 +238,8 @@ au BufLeave * let b:winview = winsaveview()
 au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 " --------------------------------------------------------------------------
 "
-"autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
+" No automatic comments on next line
+autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 " }}}
 
 " Indent Settings {{{
@@ -398,6 +381,15 @@ command! -bang -nargs=* Ag
 "hi Function cterm=bold
 "hi Repeat cterm=bold
 "hi jsReturn cterm=bold
+" }}}
+
+" NOTES {{{
+
+" Preview markdown files:
+" goto directory containing markdown:
+" run command 'grip'
+" see https://github.com/joeyespo/grip
+
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0:foldenable
