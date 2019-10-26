@@ -39,13 +39,30 @@ function sreminder {
 
 # make it so 'rd' only works for directories
 function rd {
-  local typeof="$(file --brief $1)"
-  if [ "$typeof" = "directory" ]; then
-    rm -vrf "$1"
+  if [ $# -ge 1 ]; then
+    local typeof
+    if [ $# -gt 1 ]; then
+      for i in {1..$#}; do
+        typeof="$(file --brief $@[i])"
+        if [ "$typeof" = "directory" ]; then
+          rm -vrf "$@[i]"
+        else
+          print -P $FG[192]'warning:' $reset_color"$@[i]" 'is not a directory.' >&2
+        fi
+      done
+    else
+      typeof="$(file --brief $1)"
+      if [ "$typeof" = "directory" ]; then
+        rm -vrf "$1"
+      else
+        print -P $FG[192]'warning:' $reset_color"$1" 'is not a directory.' >&2
+      fi
+    fi
   else
-    print -P $FG[001]'ERROR:' $reset_color"$1" 'is not a directory.'
+    print -P $FG[192]'usage:'$reset_color 'rd <dir_1> [dir_n]' >&2
   fi
 }
+
 
 function allcoms {
   print -l $commands | fzf
