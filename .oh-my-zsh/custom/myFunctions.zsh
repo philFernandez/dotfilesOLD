@@ -9,6 +9,11 @@
 # This file does not have access to Z_aliases.zsh aliases
 # because this is sourced first. (Alphabetic By Filename)
 
+# TEMP FUNCTIONS
+cn1() {
+  (cd ~/eclipse-workspace/A2Prj && java -cp dist/A2Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a2.Starter)
+}
+
 
 ##### USER FUNCTIONS #######
 
