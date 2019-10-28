@@ -23,6 +23,7 @@ function remdate {
 
 function sreminder {
   if [ -d ~/.reminders ]; then 
+    clear
     (cd ~/.reminders && bat *)
   else
     echo 'run command: <remon> to turn on reminders'

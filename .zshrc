@@ -90,7 +90,7 @@ compdef _gnu_generic fzf
 # Files to Source {{{
 
 [[ -d ~/.reminders ]] && \
-  sreminder
+  (cd ~/.reminders && bat *)
 
 # }}}
 
