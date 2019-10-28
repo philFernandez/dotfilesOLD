@@ -15,8 +15,17 @@ recordAssig() {
   printf  "%s - Due: %s\n" "$theAssignment" "$theDueDate" >> "$theCourseWriteFile"
 }
 
+removeAssig() {
+  local theCourse=$1
+  local theLineNumber=$2
+  gsed -i -e "${theLineNumber}d" "$theCourse"
+}
+
 usage() {
+  echo "ADD:"
   echo "usage: $(basename "$0") <[stats][music][csc133][csc139]> <assignment> <due date>"
+  echo "DELETE:"
+  echo "usage: $(basename "$0") <[stats][music][csc133][csc139]> -d <line number>"
 }
 
 
@@ -24,22 +33,30 @@ if [ -d ~/.reminders ]; then
   if [ $# == 3 ]; then
     case $COURSE in
       "stats")
-        if [ -e $STATS ]; then
+        if [ "$2" == '-d' ]; then # TODO: check if $3 is a number
+          removeAssig "$STATS" "$3"
+        else
           recordAssig "$STATS" "$ASSIG" "$DUEDATE"
         fi
         ;;
       "music")
-        if [ -e $MUSIC ]; then
+        if [ "$2" == '-d' ]; then
+          removeAssig "$MUSIC" "$3"
+        else
           recordAssig "$MUSIC" "$ASSIG" "$DUEDATE"
         fi
         ;;
       "csc133")
-        if [ -e $CSC133 ]; then
+        if [ "$2" == '-d' ]; then
+          removeAssig "$CSC133" "$3"
+        else
           recordAssig "$CSC133" "$ASSIG" "$DUEDATE"
         fi
         ;;
       "csc139")
-        if [ -e $CSC139 ]; then
+        if [ "$2" == '-d' ]; then
+          removeAssig "$CSC139" "$3"
+        else
           recordAssig "$CSC139" "$ASSIG" "$DUEDATE"
         fi
         ;;
