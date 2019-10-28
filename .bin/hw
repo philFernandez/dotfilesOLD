@@ -1,0 +1,58 @@
+#!/bin/bash
+
+COURSE="$1"
+ASSIG="$2"
+DUEDATE="$3"
+STATS=~/.reminders/STAT50
+MUSIC=~/.reminders/MUSC129
+CSC133=~/.reminders/CSC133
+CSC139=~/.reminders/CSC139
+
+recordAssig() {
+  local theCourseWriteFile=$1
+  local theAssignment=$2
+  local theDueDate=$3
+  printf  "%s - Due: %s\n" "$theAssignment" "$theDueDate" >> "$theCourseWriteFile"
+}
+
+usage() {
+  echo "usage: $(basename "$0") <[stats][music][csc133][csc139]> <assignment> <due date>"
+}
+
+
+if [ -d ~/.reminders ]; then
+  if [ $# == 3 ]; then
+    case $COURSE in
+      "stats")
+        if [ -e $STATS ]; then
+          recordAssig "$STATS" "$ASSIG" "$DUEDATE"
+        fi
+        ;;
+      "music")
+        if [ -e $MUSIC ]; then
+          recordAssig "$MUSIC" "$ASSIG" "$DUEDATE"
+        fi
+        ;;
+      "csc133")
+        if [ -e $CSC133 ]; then
+          recordAssig "$CSC133" "$ASSIG" "$DUEDATE"
+        fi
+        ;;
+      "csc139")
+        if [ -e $CSC139 ]; then
+          recordAssig "$CSC139" "$ASSIG" "$DUEDATE"
+        fi
+        ;;
+      *)
+        echo 'invalid input'
+        usage
+        ;;
+    esac
+  else
+    usage
+  fi
+else
+  echo 'run command: <remon> before adding reminder'
+fi
+
+

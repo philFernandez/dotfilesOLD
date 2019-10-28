@@ -3,10 +3,6 @@
 ###
 
 alias v='/usr/local/bin/vim'
-alias stats='cls;(cd ~/.reminders && bat STAT50)'
-alias music='cls;(cd ~/.reminders && bat MUSC129)'
-alias csc133='cls;(cd ~/.reminders && bat CSC133)'
-alias csc139='cls;(cd ~/.reminders && bat CSC139)'
 alias cds='fcd ~/Fall_2019'
 alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
 alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders && sreminder'
