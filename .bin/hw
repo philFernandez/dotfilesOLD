@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# Script for adding and removing assignment reminders to files in a 
+# directory that are automatically catted out to my terminal whenever
+# it is opened. 
+
+# For having the reminders always cat out when opening, have to add
+
+#    [[ -d ~/.reminders ]] && \
+#      (cd ~/.reminders && bat *)
+
+# to ~/.zshrc or ~/.bashrc
+
+# NOTE: the above uses bat instead of cat, but either will work
+
 COURSE="$1"
 ASSIG="$2"
 DUEDATE="$3"
