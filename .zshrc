@@ -89,11 +89,8 @@ compdef _gnu_generic fzf
 
 # Files to Source {{{
 
-[[ -a ~/Notes/software_to_try.txt ]] && \
-  cat ~/Notes/software_to_try.txt
-
-[[ -a ~/.reminders/reminders.txt ]] && \
-  cat ~/.reminders/reminders.txt
+[[ -d ~/.reminders ]] && \
+  sreminder
 
 # }}}
 

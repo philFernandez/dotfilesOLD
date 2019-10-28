@@ -182,7 +182,7 @@ let g:jedi#documentation_command = 'D'
 
 " C Completion =======================================
 let g:clang_make_default_keymappings=0
-let g:AutoPairsMapCR = 0
+"let g:AutoPairsMapCR = 0
 imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
 let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
@@ -225,6 +225,8 @@ set updatetime=100
 set scrolloff=3
 set wildmenu
 set tags=./.git/tags;
+set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
+set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers
 
 if !isdirectory("/tmp/.vim-undo-dir")
   call mkdir("/tmp/.vim-undo-dir", "", 0700)

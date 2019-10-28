@@ -21,19 +21,11 @@ function remdate {
   pcregrep "$1" ~/.reminders/reminders.txt
 }
 
-function remind {
-  if [ -e ~/.reminders/reminders.txt ]; then
-    vim ~/.reminders/reminders.txt
-  else
-    echo 'run "remon" command to turn on reminders'
-  fi
-}
-
 function sreminder {
-  if [ -e ~/.reminders/reminders.txt ]; then 
-    cat ~/.reminders/reminders.txt
+  if [ -d ~/.reminders ]; then 
+    (cd ~/.reminders && bat *)
   else
-    echo 'run "remon" command to turn on reminders'
+    echo 'run command: <remon> to turn on reminders'
   fi
 }
 
@@ -47,7 +39,7 @@ function rd {
         if [ "$typeof" = "directory" ]; then
           rm -vrf "$@[i]"
         else
-          print -P $FG[192]'warning:' $reset_color"$@[i]" 'is not a directory.' >&2
+          print -P $FG[192]'warning:' $reset_color"$@[i]" 'not removed.' >&2
         fi
       done
     else
@@ -55,7 +47,7 @@ function rd {
       if [ "$typeof" = "directory" ]; then
         rm -vrf "$1"
       else
-        print -P $FG[192]'warning:' $reset_color"$1" 'is not a directory.' >&2
+        print -P $FG[192]'warning:' $reset_color"$1" 'not removed.' >&2
       fi
     fi
   else

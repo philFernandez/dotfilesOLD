@@ -4,8 +4,8 @@
 
 alias v='/usr/local/bin/vim'
 alias cds='fcd ~/Fall_2019'
-alias remoff='/bin/mv -f ~/.reminders/reminders.txt ~/.reminders/reminders.silent'
-alias remon='/bin/mv -f ~/.reminders/reminders.silent ~/.reminders/reminders.txt'
+alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
+alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders && sreminder'
 alias dos2unix="perl -pi -e 's/\r\n$/\n/g'"
 alias bat="bat --theme 'Monokai Extended Origin'"
 alias unix2dos="perl -pi -e 's/$/\r/'"
