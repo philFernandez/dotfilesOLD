@@ -21,7 +21,7 @@ function remdate {
   pcregrep "$1" ~/.reminders/reminders.txt
 }
 
-function sreminder {
+function shw {
   if [ -d ~/.reminders ]; then 
     clear
     (cd ~/.reminders && bat *)
