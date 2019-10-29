@@ -213,10 +213,14 @@ function gdl {
 
 # show whole year when envoking cal
 function cal {
-  if [ $1 == 1 ]; then
+  print -P $FG[192]''
+  if [ $# == 1 ]; then
     /usr/bin/cal
   else
     /usr/bin/cal $(date +%G)
+    print -P $FG[154]'Issue Command' \
+      $reset_color$FG[226]'cal 1'$reset_color$FG[154] \
+      'to show one month.'$reset_color
   fi
 }
 
