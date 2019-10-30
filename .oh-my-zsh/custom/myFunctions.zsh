@@ -16,9 +16,29 @@ cn1() {
 
 
 ##### USER FUNCTIONS #######
-
-function remdate {
-  pcregrep "$1" ~/.reminders/reminders.txt
+function vnote {
+  if [ $# != 1 ] || [ "$1" == '-h' ] || [ "$1" == '--h' ]; then 
+    echo "\nShow all notes:"
+    echo "\tUsage: $0 -s\n"
+    echo "View a note:"
+    echo "\tUsage: $0 <Note_Name>\n"
+  elif [ "$1" == '-s' ]; then
+    lsd -1 ~/Notes/viNotes/
+  else 
+    local NOTEFILE
+    local NOTE_EXISTS=0
+    for NOTEFILE in $(/bin/ls ~/Notes/viNotes); do
+      if [ "$NOTEFILE" == "$1" ]; then 
+        NOTE_EXISTS=1
+        break
+      fi
+    done
+    if [ $NOTE_EXISTS == 1 ]; then 
+      /usr/local/bin/vim -c "Note ${1}"
+    else 
+      echo "$1 is not a valid note name"
+    fi
+  fi
 }
 
 function shw {
