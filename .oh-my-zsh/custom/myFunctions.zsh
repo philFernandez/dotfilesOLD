@@ -14,30 +14,15 @@ cn1() {
   (cd ~/eclipse-workspace/A2Prj && java -cp dist/A2Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a2.Starter)
 }
 
+function tester {
 
-##### USER FUNCTIONS #######
-function vnote {
-  if [ $# != 1 ] || [ "$1" == '-h' ] || [ "$1" == '--h' ]; then 
-    echo "\nShow all notes:"
-    echo "\tUsage: $0 -s\n"
-    echo "View a note:"
-    echo "\tUsage: $0 <Note_Name>\n"
-  elif [ "$1" == '-s' ]; then
-    lsd -1 ~/Notes/viNotes/
+  if [ "$1" =~ '^[0-9]+$' ]; then 
+    local NOTE=$(/bin/ls -1 ~/Notes/viNotes/ | sed -n ${1}p)
+  fi
+  if [ -z "$NOTE" ]; then
+    echo 'no sir'
   else 
-    local NOTEFILE
-    local NOTE_EXISTS=0
-    for NOTEFILE in $(/bin/ls ~/Notes/viNotes); do
-      if [ "$NOTEFILE" == "$1" ]; then 
-        NOTE_EXISTS=1
-        break
-      fi
-    done
-    if [ $NOTE_EXISTS == 1 ]; then 
-      /usr/local/bin/vim -c "Note ${1}"
-    else 
-      echo "$1 is not a valid note name"
-    fi
+    echo "$NOTE"
   fi
 }
 
