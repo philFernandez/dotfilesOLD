@@ -150,7 +150,10 @@ fvim() {
     --preview-window="down:90%" --prompt='vim ' \
     )"
   [ -n "$files" ] && ${=EDITOR} $(echo "$files")
+}
 
+fnote() {
+  vnote $(/bin/ls -1 ~/Notes/viNotes | fzf)
 }
  
 
