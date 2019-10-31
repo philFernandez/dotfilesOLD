@@ -1,4 +1,5 @@
 alias -g L=' | less'
+alias -g SCH='~/Fall_2019'
 alias -g DOW='~/Downloads'
 alias -g DOC='~/Documents'
 alias -g DES='~/Desktop'

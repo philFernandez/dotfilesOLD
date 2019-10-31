@@ -1,24 +1,36 @@
 #!/bin/zsh
 
 usage() {
-  printf "Show all available notes:\n"
-  printf "\tUsage: %s -s \n" "$(basename "$0")"
-  printf "\nView a note by name:\n"
-  printf "\tUsage: %s <Note_Name>\n" "$(basename "$0")"
-  printf "\nView a note by number:\n"
-  printf "\tUsage: %s <n>\n" "$(basename "$0")"
+cat << HELP
+$(basename $0): vnote [-s] [-n] [number] [filename]
+
+-h or --h      shows this help message
+
+-s             shows all current notes 
+
+-n             prompts for a note name and opens a new note by
+               that name
+
+               vnote without any flags takes either a line number
+               corresponding to those shown by -s, or a filname 
+               for opening the existing note
+HELP
 }
 
 openNote() {
   /usr/local/bin/vim -c "Note ${1}"
 }
 
-
+# TODO: make it so vnote -n <filename> works by taking a paramter file name
 NOTE_DIR=~/Notes/viNotes
 if [[ ((!$# -eq 1)  || ("$1" == '-h') || ( "$1" == '--h' )) ]]; then 
   usage
 elif [[ ("$1" == '-s') ]]; then 
   /bin/ls -1 "$NOTE_DIR" | nl
+elif [[ ("$1" == '-n') ]]; then 
+  echo -ne "Enter new note name: "
+  read NEW_NOTE
+  openNote "$NEW_NOTE"
 elif [[ "$1" =~ ^[0-9]+$ ]]; then 
   NOTE_AT_LINE_NUM=$(/bin/ls -1 "$NOTE_DIR" | sed -n "${1}"p)
   if [[ -z "$NOTE_AT_LINE_NUM" ]]; then 
