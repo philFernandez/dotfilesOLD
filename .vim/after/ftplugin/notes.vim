@@ -7,6 +7,6 @@ nmap <leader>w I<esc><space><space>*<space>
 nmap <leader>q I<delete><space><esc>A
 
 set nonumber
-set spell
 autocmd BufEnter * setfiletype notes
 set tw=100
+set foldenable
