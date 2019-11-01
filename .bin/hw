@@ -21,11 +21,16 @@ MUSIC=~/.reminders/MUSC129
 CSC133=~/.reminders/CSC133
 CSC139=~/.reminders/CSC139
 
+# commented code is for writing to a central file for more detailed searches and filters
+# this may be used in future implimentations
 recordAssig() {
   local theCourseWriteFile=$1
   local theAssignment=$2
   local theDueDate=$3
+  #local centralFile=~/.reminders/.all
   printf  "%s - Due: %s\n" "$theAssignment" "$theDueDate" >> "$theCourseWriteFile"
+  #printf  "%s - Due: %s\n" "$(basename "$theCourseWriteFile"): \
+ #$theAssignment" "$theDueDate" >> "$centralFile"
 }
 
 removeAssig() {

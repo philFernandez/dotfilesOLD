@@ -8,4 +8,4 @@ email = norcal618@gmail.com
   diff = false
   branch = false
 [init]
-	templatedir = ~/.git_templatecl
+	templatedir = ~/.git_template

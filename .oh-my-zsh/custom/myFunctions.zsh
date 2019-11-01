@@ -14,15 +14,11 @@ cn1() {
   (cd ~/eclipse-workspace/A2Prj && java -cp dist/A2Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a2.Starter)
 }
 
-function tester {
-
-  if [ "$1" =~ '^[0-9]+$' ]; then 
-    local NOTE=$(/bin/ls -1 ~/Notes/viNotes/ | sed -n ${1}p)
-  fi
-  if [ -z "$NOTE" ]; then
-    echo 'no sir'
-  else 
-    echo "$NOTE"
+function schw {
+  if [ -d ~/.reminders ]; then
+    local ST="$1"
+    clear 
+    (cd ~/.reminders && ag --nonumbers --nocolor "$1" | bat --style=grid,numbers)
   fi
 }
 

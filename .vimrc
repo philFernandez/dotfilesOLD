@@ -209,6 +209,9 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {
       \ 'python': ['pyflakes']
       \ }
+let g:ale_pattern_options = {
+      \ '.*\.java$': {'ale_enabled': 0},
+      \ }
 " }}}
 
 " Other VIM {{{
@@ -322,7 +325,7 @@ nnoremap K {
 nnoremap q :q<cr>
 nnoremap <silent> cc :clo<cr>
 nnoremap <space> A
-nnoremap <silent> <leader>l :Buffers<CR>
+"nnoremap <silent> <leader>l :Buffers<CR>
 nnoremap <silent> <leader>m :pclose<cr>
 nnoremap <c-p> :Files<cr>
 
@@ -360,6 +363,25 @@ command! -bang -nargs=* Ag
       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
       \                 <bang>0)
+
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <leader>l :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
+
 " }}}
 
 " Custom Syntax (Inactive) {{{
