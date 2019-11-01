@@ -16,9 +16,11 @@ cn1() {
 
 function schw {
   if [ -d ~/.reminders ]; then
-    local ST="$1"
+    local SEARCH_T="$1"
     clear 
-    (cd ~/.reminders && ag --nonumbers --nocolor "$1" | bat --style=grid,numbers)
+    (cd ~/.reminders && ag --nonumbers --nocolor "$SEARCH_T" | bat --style=grid,numbers)
+  else
+    echo 'run command: <remon> to turn on reminders'
   fi
 }
 
