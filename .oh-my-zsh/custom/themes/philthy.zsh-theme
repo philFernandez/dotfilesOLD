@@ -14,7 +14,7 @@ function display_git {
 local cwd_color=214
 local git_branch_color=001
 local arrow_color=082
-local arrow=''
+local arrow=' '
 
 # add indicator for when inside vim spawned shell
 if [ $VIMRUNTIME ]; then
