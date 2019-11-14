@@ -390,7 +390,15 @@ nnoremap <silent> <leader>l :Buffers<CR>
 " }}}
 
 " Custom Syntax (Inactive) {{{
+let java_highlight_functions = 1
+let java_highlight_all = 1
+" If you are trying this at runtime, you need to reload the syntax file
+set filetype=java
 
+" Some more highlights, in addition to those suggested by cmcginty
+highlight link javaScopeDecl Statement
+highlight link javaType Type
+highlight link javaDocTags PreProc
 "custom syntax settings
 "syntax bolding
 "hi Question cterm=bold
