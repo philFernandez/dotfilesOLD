@@ -8,3 +8,4 @@ nnoremap J }
 nnoremap K {
 nnoremap <space> A
 nnoremap <bs> I
+nnoremap <leader><space> :noh<CR>

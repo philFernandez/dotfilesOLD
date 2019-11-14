@@ -11,7 +11,7 @@
 
 # TEMP FUNCTIONS
 cn1() {
-  (cd ~/eclipse-workspace/A2Prj && java -cp dist/A2Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a2.Starter)
+  (cd ~/eclipse-workspace/A3Prj && java -cp dist/A3Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a3.Starter)
 }
 
 function schw {
@@ -205,8 +205,8 @@ function gcamp {
 }
 
 function ccamp {
-  git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME commit -a -m "$@" \
-    && git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME push -u origin master
+  git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -a -m "$@" \
+    && git --git-dir=$HOME/.cfg/ --work-tree=$HOME push -u origin master
 }
 
 function gdl {
