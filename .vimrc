@@ -8,14 +8,12 @@ let mapleader=','
 
 " Vim Plug {{{
 call plug#begin('~/.vim/plugged')
-Plug 'vimwiki/vimwiki'
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
-Plug 'lifepillar/vim-solarized8'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'mattn/emmet-vim', { 'for': 'html' }
+"Plug 'tmux-plugins/vim-tmux-focus-events'
+"Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
 Plug 'chiel92/vim-autoformat'
@@ -23,7 +21,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
-Plug 'christoomey/vim-tmux-navigator'
+"Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-misc'
@@ -31,17 +29,17 @@ Plug 'xolox/vim-notes'
 Plug '/usr/local/opt/fzf/'
 Plug 'dense-analysis/ale'
 Plug 'mhinz/vim-startify'
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+"Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
-Plug 'sirver/UltiSnips'
+"Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
+"Plug 'sirver/UltiSnips'
 Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
-Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
-Plug 'edkolev/tmuxline.vim'
+"Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
+"Plug 'edkolev/tmuxline.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'vim-python/python-syntax', { 'for': 'python' }
+"Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+"Plug 'vim-python/python-syntax', { 'for': 'python' }
 call plug#end()
 " }}}
 
@@ -155,7 +153,6 @@ let g:startify_bookmarks = [
       \ '~/.tmux.conf',
       \ '~/.oh-my-zsh/custom/Z_aliases.zsh',
       \ '~/.oh-my-zsh/custom/myFunctions.zsh']
-
 let g:startify_fortune_use_unicode = 0
 " }}}
 
@@ -166,7 +163,7 @@ let g:python_highlight_indent_errors = 0
 " }}}
 
 " Completion {{{
-" c-x c-o forces completion
+ "c-x c-o forces completion
 set completeopt+=menuone
 set completeopt+=noselect
 set completeopt-=preview
@@ -178,11 +175,11 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Python Completion ==================================
 " bring up documentation for text under cursor
-let g:jedi#documentation_command = 'D'
+"let g:jedi#documentation_command = 'D'
 
 " C Completion =======================================
 let g:clang_make_default_keymappings=0
-"let g:AutoPairsMapCR = 0
+let g:AutoPairsMapCR = 0
 imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
 let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
@@ -206,9 +203,9 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
-let g:ale_linters = {
-      \ 'python': ['pyflakes']
-      \ }
+"let g:ale_linters = {
+      "\ 'python': ['pyflakes']
+      "\ }
 let g:ale_pattern_options = {
       \ '.*\.java$': {'ale_enabled': 0},
       \ }
@@ -364,23 +361,25 @@ command! -bang -nargs=* Ag
       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
       \                 <bang>0)
 
-function! s:buflist()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
+"function! s:buflist()
+  "redir => ls
+  "silent ls
+  "redir END
+  "return split(ls, '\n')
+"endfunction
 
-function! s:bufopen(e)
-  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-endfunction
+"function! s:bufopen(e)
+  "execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+"endfunction
 
-nnoremap <silent> <leader>l :call fzf#run({
-\   'source':  reverse(<sid>buflist()),
-\   'sink':    function('<sid>bufopen'),
-\   'options': '+m',
-\   'down':    len(<sid>buflist()) + 2
-\ })<CR>
+"nnoremap <silent> <leader>l :call fzf#run({
+      "\   'source':  reverse(<sid>buflist()),
+      "\   'sink':    function('<sid>bufopen'),
+      "\   'options': '+m',
+      "\   'down':    len(<sid>buflist()) + 2
+      "\ })<CR>
+
+nnoremap <silent> <leader>l :Buffers<CR>
 
 " }}}
 

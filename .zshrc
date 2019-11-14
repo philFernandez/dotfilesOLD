@@ -1,7 +1,7 @@
 
 # Variables {{{
-ZSH_TMUX_AUTOCONNECT=false
-ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOCONNECT=false
+#ZSH_TMUX_AUTOSTART=true
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
 # Disable C-S so that it can be used elsewhere
@@ -24,8 +24,8 @@ export SAVEHIST=HISTSIZE=500000
 
 export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 
-#export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
-#export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || ag --hidden -g "")'
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || ag --hidden -g "")'
 
 export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
   --color pointer:220 --color hl+:118 --color fg:251 
@@ -36,9 +36,7 @@ export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -H)'
 
 # Plugins {{{
 plugins=(
-  tmux
   git
-  z
   zsh-syntax-highlighting
   zsh-autosuggestions
   colored-man-pages
@@ -81,7 +79,6 @@ unalias rd
  
 # Auto Comp Defns {{{
 compdef _gnu_generic file
-compdef _gnu_generic password
 compdef _git gdl=git-diff
 compdef _gnu_generic lsd
 compdef _gnu_generic fzf

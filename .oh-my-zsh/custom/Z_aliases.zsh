@@ -45,7 +45,7 @@ alias glo='LESS+="N" git log --oneline --decorate --reverse'
 alias fzfbat='fd -tf | fzf --preview "bat --theme=Monokai\ Extended\ Bright --style=numbers,changes --color always {}" --preview-window="down:95%"'
 
 # dotfile/config bar repo aliases
-alias config='git --git-dir=$HOME/.config_file_src_control/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cst='config status'
 alias ca='config add'
 alias ccam='config commit -a -m'
