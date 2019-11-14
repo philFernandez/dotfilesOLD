@@ -60,7 +60,7 @@ source ~/.zsh_theme
 source $ZSH/oh-my-zsh.sh
 
 # only load all of powerlevel9k settings if powerlevel9k is the set theme
-if [[ $ZSH_THEME == 'powerlevel9k/powerlevel9k' ]]; then
+if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then
   source ~/.powerlevel_settings
 fi
 source /usr/local/Cellar/fzf/0.18.0/shell/completion.zsh
