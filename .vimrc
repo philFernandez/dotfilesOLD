@@ -12,8 +12,6 @@ Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
-"Plug 'tmux-plugins/vim-tmux-focus-events'
-"Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
 Plug 'chiel92/vim-autoformat'
@@ -21,7 +19,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
-"Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-misc'
@@ -29,17 +26,25 @@ Plug 'xolox/vim-notes'
 Plug '/usr/local/opt/fzf/'
 Plug 'dense-analysis/ale'
 Plug 'mhinz/vim-startify'
-"Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
-"Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
-"Plug 'sirver/UltiSnips'
 Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-surround'
+" }}}
+
+" Un-used plugins {{{
+
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
+"Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+"Plug 'sirver/UltiSnips'
 "Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 "Plug 'edkolev/tmuxline.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 "Plug 'vim-python/python-syntax', { 'for': 'python' }
+"Plug 'tmux-plugins/vim-tmux-focus-events'
+"Plug 'mattn/emmet-vim', { 'for': 'html' }
 call plug#end()
 " }}}
 
