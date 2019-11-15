@@ -233,7 +233,7 @@ if !isdirectory("/tmp/.vim-undo-dir")
 endif
 set undodir=/tmp/.vim-undo-dir
 set undofile
-au BufWrite *.c,*.py,*.java :Autoformat
+"au BufWrite *.c,*.py,*.java :Autoformat
 
 " keep window position static when switching between buffers
 au BufLeave * let b:winview = winsaveview()
@@ -246,7 +246,7 @@ autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 
 " Indent Settings {{{
 set autoindent
-set expandtab
+set expandtab " use spaces instead of tabs
 set shiftround
 set shiftwidth=2
 set smarttab
