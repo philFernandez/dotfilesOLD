@@ -3,4 +3,5 @@
 // option and not ignoring .gitignore files
 
 *\.class
+*\.jar
 .DS_Store

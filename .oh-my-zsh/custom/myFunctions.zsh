@@ -133,7 +133,7 @@ fcd() {
 fcdf() {
   local file
   local dir
-  file="$(fd . ${1:-.} -H -I -tf | \
+  file="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore| \
     fzf -m --preview="bat --color=always --style=numbers {}" \
     --preview-window="down:90%" --prompt='cd-to-dir-of ' \
     )"
