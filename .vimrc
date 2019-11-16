@@ -299,9 +299,12 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <leader>f :NERDTreeToggle<CR>
 
+" Delete contents of line w/o removing the line itself
+nnoremap dl I<Esc>d$
+
 " Turn off number inc/dec
-map <C-A> <Nop>
-map <C-X> <Nop>
+"map <C-A> <Nop>
+"map <C-X> <Nop>
 "=======================
 
 let g:AutoPairsShortcutToggle = '<F10>'
