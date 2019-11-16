@@ -247,6 +247,7 @@ au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 "
 " No automatic comments on next line
 autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
+au BufWrite * :RemoveTrailingSpaces
 " }}}
 
 " Indent Settings {{{

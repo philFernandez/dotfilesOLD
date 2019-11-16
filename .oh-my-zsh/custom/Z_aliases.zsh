@@ -1,7 +1,3 @@
-# TEMP Aliases
-#alias cn1='(cd ~/eclipse-workspace/A2Prj && java -cp dist/A2Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a2.Starter)'
-###
-
 alias nl='nl -b a'
 alias fhw='shw | fzf'
 alias v='/usr/local/bin/vim'
@@ -18,7 +14,6 @@ alias regex='man pcresyntax'
 alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias light='iterm2_profile Light'
 alias dark='iterm2_profile Default'
-alias wdue='cat DUEDATE'
 alias which='which -a'
 alias cls=clear
 alias c=clear
@@ -41,7 +36,6 @@ alias wiki='v -c VimwikiIndex'
 alias wiki2='v ~/Nextcloud/CSUS/Fall_2019/wiki/index.wiki'
 alias chkbu='watch -n 0.1 ls -all /Volumes'
 alias selbook='open $(mdfind -onlyin $HOME/Spring_2019 -interpret "pdf" | sk -m)'
-alias glo='LESS+="N" git log --oneline --decorate --reverse'
 alias fzfbat='fd -tf | fzf --preview "bat --theme=Monokai\ Extended\ Bright --style=numbers,changes --color always {}" --preview-window="down:95%"'
 
 # dotfile/config bar repo aliases
