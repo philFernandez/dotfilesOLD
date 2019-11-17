@@ -28,7 +28,7 @@ export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || ag --hidden -g "
 #export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -H)'
 
 export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
-  --color pointer:220 --color hl+:118 --color fg:251 
+  --color pointer:220 --color hl+:118 --color fg:251
   --color marker:196 --color border:214 --color prompt:214\
   --color header:208 --color bg+:240 --ansi --reverse --border"
 # }}}
@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then
   source ~/.powerlevel_settings
 fi
-source /usr/local/Cellar/fzf/0.18.0/shell/completion.zsh
+#source /usr/local/Cellar/fzf/0.18.0/shell/completion.zsh
 # }}}
 
 # Unset aliases {{{
@@ -75,7 +75,7 @@ unalias la
 unalias l
 unalias rd
 # }}}
- 
+
 # Auto Comp Defns {{{
 compdef _gnu_generic file
 compdef _git gdl=git-diff

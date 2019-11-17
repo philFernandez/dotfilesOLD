@@ -5,4 +5,8 @@
 *\.class
 *\.jar
 *\.wav
+*\.zip
+*\.png
+*\.res
+*\.pdf
 .DS_Store
