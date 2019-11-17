@@ -292,12 +292,6 @@ set nofoldenable
 
 " Keymaps {{{
 
-" pane navigation
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 nnoremap <leader>f :NERDTreeToggle<CR>
 
 " Delete contents of line w/o removing the line itself
