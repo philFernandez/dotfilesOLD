@@ -1,3 +1,4 @@
+alias b='(cd ~/eclipse-workspace/A3Prj && ant jar)'
 alias nl='nl -b a'
 alias fhw='shw | fzf'
 alias v='/usr/local/bin/vim'
