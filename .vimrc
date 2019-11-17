@@ -308,6 +308,8 @@ nnoremap dl I<Esc>d$
 "map <C-X> <Nop>
 "=======================
 
+tnoremap <c-n> <c-\><c-n>
+
 let g:AutoPairsShortcutToggle = '<F10>'
 "copy into sys clipboard
 vnoremap <silent> cp "+y
