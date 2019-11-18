@@ -14,10 +14,22 @@ cn1() {
   (clear;cd ~/eclipse-workspace/A3Prj && java -cp dist/A3Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a3.Starter)
 }
 
+# takes any number of file name arguments, reads
+# the file names into all_files, cats all
+# the contents through nl -ba for line numbers,
+# then through fzf for fuzzy search
+function fv {
+	local all_files
+	for i in {1..$#}; do
+		 all_files="$all_files ""$@[i]"
+	done
+	cat $(echo $all_files) | nl -ba | fzf
+}
+
 function schw {
   if [ -d ~/.reminders ]; then
     local SEARCH_T="$1"
-    clear 
+    clear
     (cd ~/.reminders && ag --nonumbers --nocolor "$SEARCH_T" | bat --style=grid,numbers)
   else
     echo 'run command: <remon> to turn on reminders'
@@ -25,7 +37,7 @@ function schw {
 }
 
 function shw {
-  if [ -d ~/.reminders ]; then 
+  if [ -d ~/.reminders ]; then
     clear
     (cd ~/.reminders && bat *)
   else
@@ -121,12 +133,12 @@ function vwtf {
 }
 
 fcd() {
-  local dir 
+  local dir
   dir="$(fd . ${1:-.} -I -H -td | fzf --sort \
     --preview=" lsd -A --color=always \
     --icon=always --group-dirs first {}" \
     --preview-window="down:50%" --prompt='cd '\
-    )" && 
+    )" &&
     cd "$dir"
 }
 
@@ -153,7 +165,7 @@ fvim() {
 fnote() {
   vnote $(/bin/ls -1 ~/Notes/viNotes | fzf)
 }
- 
+
 
 
 # Have to use function, because need filename before
@@ -350,17 +362,17 @@ function fhx() {
 
 # fkill - kill processes - list only the ones you can kill. Modified the earlier script.
 function fkill() {
-  local pid 
+  local pid
   if [ "$UID" != "0" ]; then
     pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
   else
     pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-  fi  
+  fi
 
   if [ "x$pid" != "x" ]
   then
     echo $pid | xargs kill -${1:-9}
-  fi  
+  fi
 }
 
 # =============================================================
