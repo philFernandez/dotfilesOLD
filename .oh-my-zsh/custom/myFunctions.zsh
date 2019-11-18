@@ -20,10 +20,20 @@ cn1() {
 # then through fzf for fuzzy search
 function fv {
 	local all_files
-	for i in {1..$#}; do
-		 all_files="$all_files ""$@[i]"
-	done
-	cat $(echo $all_files) | nl -ba | fzf
+	# if first arg is -l then use line numbers
+	if [ "$1" == '-l' ]; then
+		for i in {2..$#}; do
+			echo "$@[i]"
+			all_files="$all_files ""$@[i]"
+		done
+		cat $(echo $all_files) | nl -ba | fzf
+	else # dont use line numbers
+		for i in {1..$#}; do
+			echo "$@[i]"
+			all_files="$all_files ""$@[i]"
+		done
+		cat $(echo $all_files) | fzf
+	fi
 }
 
 function schw {
