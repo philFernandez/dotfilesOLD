@@ -252,11 +252,6 @@ function cal {
   fi
 }
 
-# grep things without highlighting results
-function ncgrep {
-  grep --color=never "$@"
-}
-
 # PWD when going back a directory.
 function cl {
   clear;
@@ -267,12 +262,21 @@ function cl {
   local backColor=041
   local textColor=235
 
-  print -P $FG[$backColor]$BG[$textColor]' PWD '$reset_color$FG[$textColor]$BG[$backColor]'\ue0b0'$FG[000]' '$(pwd)' '$reset_color$FG[$backColor]'\ue0b0'
+  pwdc
+  #print -P $FG[$backColor]$BG[$textColor]' PWD '$reset_color$FG[$textColor]$BG[$backColor]'\ue0b0'$FG[000]' '$(pwd)' '$reset_color$FG[$backColor]'\ue0b0'
 
-  # must use this no matter which of the 2 above are used
-  echo $reset_color; # must reset or other output (/bin/ls) will get messed up
+  ## must use this no matter which of the 2 above are used
+  #echo $reset_color; # must reset or other output (/bin/ls) will get messed up
   lsd --group-dirs first
 }
+
+function pwdc {
+	local backColor=041
+	local textColor=235
+	print -P $FG[$backColor]$BG[$textColor]' PWD '$reset_color$FG[$textColor]$BG[$backColor]'\ue0b4'$FG[000]' '$(pwd)' '$reset_color$FG[$backColor]'\ue0b4'
+	echo $reset_color; # must reset or other output (/bin/ls) will get messed up
+}
+
 
 # preform rm on all files of specified file extension
 # ex. rmft txt removes all txt files in pwd
