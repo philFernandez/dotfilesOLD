@@ -1,2 +1,2 @@
 set nonumber
-set tw=100
+set tw=90
