@@ -1,4 +1,3 @@
-
 " need to be first {{{
 
 set nocompatible
@@ -202,9 +201,6 @@ let g:notes_directories = ['~/Notes/viNotes']
 " }}}
 
 " ALE {{{
-let g:ale_completion_enabled = 1
-let g:ale_completion_delay = 10
-let g:ale_lint_delay = 10
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
       \ 'python': ['autopep8']
@@ -250,7 +246,7 @@ au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 " --------------------------------------------------------------------------
 "
 " No automatic comments on next line
-autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
+"autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 au BufWrite * :RemoveTrailingSpaces
 " }}}
 
