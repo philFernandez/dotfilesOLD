@@ -31,6 +31,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
+Plug 'airblade/vim-rooter'
 " }}}
 
 " Un-used plugins {{{
@@ -201,6 +202,9 @@ let g:notes_directories = ['~/Notes/viNotes']
 " }}}
 
 " ALE {{{
+let g:ale_completion_enabled = 1
+let g:ale_completion_delay = 10
+let g:ale_lint_delay = 10
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
       \ 'python': ['autopep8']
@@ -211,9 +215,9 @@ let g:ale_fix_on_save = 1
 "let g:ale_linters = {
       "\ 'python': ['pyflakes']
       "\ }
-let g:ale_pattern_options = {
-      \ '.*\.java$': {'ale_enabled': 0},
-      \ }
+"let g:ale_pattern_options = {
+      "\ '.*\.java$': {'ale_enabled': 0},
+      "\ }
 " }}}
 
 " Other VIM {{{
