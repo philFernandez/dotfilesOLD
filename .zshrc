@@ -1,6 +1,6 @@
-export CLASSPATH="/Users/philthy/eclipse-workspace/A3Prj/dist/A3Prj.jar:\
-/Users/philthy/eclipse-workspace/A3Prj/lib/CLDC11.jar:\
-/Users/philthy/eclipse-workspace/A3Prj/lib/CodenameOne.jar"
+#export CLASSPATH="/Users/philthy/eclipse-workspace/A3Prj/dist/A3Prj.jar:\
+#/Users/philthy/eclipse-workspace/A3Prj/lib/CLDC11.jar:\
+#/Users/philthy/eclipse-workspace/A3Prj/lib/CodenameOne.jar"
 
 
 # Variables {{{
