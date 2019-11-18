@@ -108,13 +108,13 @@ let g:lightline = {
       \   },
       \
       \   'separator': {
-      \     'left': '',
-      \     'right': ''
+      \     'left': '',
+      \     'right': ''
       \   },
       \
       \   'subseparator': {
-      \     'left': '',
-      \     'right': ''
+      \     'left': '',
+      \     'right': ''
       \   }
       \
       \ }
