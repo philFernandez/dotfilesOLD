@@ -31,6 +31,7 @@ Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-rooter'
+Plug 'PProvost/vim-ps1'
 " }}}
 
 " Un-used plugins {{{
