@@ -48,48 +48,54 @@ function schw {
 
 function shw {
   if [ -d ~/.reminders ]; then
-    clear
-    (cd ~/.reminders && bat *)
+	(
+	cd ~/.reminders && \
+		if [ -s CSC133 ]; then
+			bat CSC133
+		fi
+		if [ -s CSC139 ]; then
+			bat CSC139
+		fi
+		if [ -s STAT50 ]; then
+			bat STAT50
+		fi
+		if [ -s MUSC129 ]; then
+			bat MUSC129
+		fi
+	)
   else
     echo 'run command: <remon> to turn on reminders'
   fi
 }
-
 function stats() {
-  if [ -d ~/.reminders ]; then
-    clear
-    (cd ~/.reminders && bat STAT50)
-  else
-    echo 'run command: <remon> to turn on reminders'
-  fi
+	if [ -d ~/.reminders ]; then
+		(cd ~/.reminders && if [ -s STAT50 ]; then bat STAT50; fi)
+	else
+		echo 'run command: <remon> to turn on reminders'
+	fi
 }
-
 function music() {
-  if [ -d ~/.reminders ]; then
-    clear
-    (cd ~/.reminders && bat MUSC129)
-  else
-    echo 'run command: <remon> to turn on reminders'
-  fi
+	if [ -d ~/.reminders ]; then
+		(cd ~/.reminders && if [ -s MUSC129 ]; then bat MUSC129; fi)
+	else
+		echo 'run command: <remon> to turn on reminders'
+	fi
 }
-
 function csc133() {
-  if [ -d ~/.reminders ]; then
-    clear
-    (cd ~/.reminders && bat CSC133)
-  else
-    echo 'run command: <remon> to turn on reminders'
-  fi
+	if [ -d ~/.reminders ]; then
+		(cd ~/.reminders && if [ -s CSC133 ]; then bat CSC133; fi)
+	else
+		echo 'run command: <remon> to turn on reminders'
+	fi
+}
+function csc139() {
+	if [ -d ~/.reminders ]; then
+		(cd ~/.reminders && if [ -s CSC139 ]; then bat CSC139; fi)
+	else
+		echo 'run command: <remon> to turn on reminders'
+	fi
 }
 
-function csc139() {
-  if [ -d ~/.reminders ]; then
-    clear
-    (cd ~/.reminders && bat CSC139)
-  else
-    echo 'run command: <remon> to turn on reminders'
-  fi
-}
 # make it so 'rd' only works for directories
 function rd {
   if [ $# -ge 1 ]; then

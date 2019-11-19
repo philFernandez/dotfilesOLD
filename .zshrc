@@ -90,7 +90,12 @@ compdef _gnu_generic fzf
 # Files to Source {{{
 
 [[ -d ~/.reminders ]] && \
-  (cd ~/.reminders && bat *)
+  (
+  cd ~/.reminders && if [ -s STAT50 ]; then bat STAT50; fi \
+	  && if [ -s CSC133 ]; then bat CSC133; fi \
+	  && if [ -s CSC139 ]; then bat CSC139; fi \
+	  && if [ -s MUSC129 ]; then bat MUSC129; fi
+  )
 
 # }}}
 
