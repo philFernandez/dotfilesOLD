@@ -50,7 +50,7 @@ alias ca='config add'
 alias ccam='config commit -a -m'
 alias cpush='config push -u origin master'
 alias clcp='config log --stat -p'
-alias clog='config log --oneline --decorate --graph'
+alias clog='config log --oneline --decorate --graph --all'
 alias configls='config ls-tree -r master --name-only $HOME'
 alias cdl='config diff | bat --style=numbers -l diff'
 
