@@ -1,6 +1,7 @@
 // custom ignore file for fd | fzf functions like fvim and fcdf
 // The purpose it to igore certain files, while still running the '-I'
 // option and not ignoring .gitignore files
+// symlinked to ~/.agignore so fd and ag can share same rules
 
 *\.class
 *\.jar

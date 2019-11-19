@@ -1,5 +1,1 @@
-*\.class
-*\.jar
-*\.wav
-.DS_Store
-
+.cust_ignore
