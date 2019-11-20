@@ -66,6 +66,7 @@ function shw {
 }
 function stats() {
 	if [ -d ~/.reminders ]; then
+		clear;
 		(cd ~/.reminders && if [ -s STAT50 ]; then bat STAT50; fi)
 	else
 		__turn_on_rem_warning
@@ -73,6 +74,7 @@ function stats() {
 }
 function music() {
 	if [ -d ~/.reminders ]; then
+		clear;
 		(cd ~/.reminders && if [ -s MUSC129 ]; then bat MUSC129; fi)
 	else
 		__turn_on_rem_warning
@@ -80,6 +82,7 @@ function music() {
 }
 function csc133() {
 	if [ -d ~/.reminders ]; then
+		clear;
 		(cd ~/.reminders && if [ -s CSC133 ]; then bat CSC133; fi)
 	else
 		__turn_on_rem_warning
@@ -87,6 +90,7 @@ function csc133() {
 }
 function csc139() {
 	if [ -d ~/.reminders ]; then
+		clear;
 		(cd ~/.reminders && if [ -s CSC139 ]; then bat CSC139; fi)
 	else
 		__turn_on_rem_warning
