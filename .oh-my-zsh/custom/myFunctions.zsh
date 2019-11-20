@@ -9,6 +9,7 @@
 # This file does not have access to Z_aliases.zsh aliases
 # because this is sourced first. (Alphabetic By Filename)
 
+# \u001b[38;5;XXXm<String> , where XXX is asci code
 # TEMP FUNCTIONS
 cn1() {
   (clear;cd ~/eclipse-workspace/A3Prj && java -cp dist/A3Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a3.Starter)
@@ -36,63 +37,59 @@ function fv {
 	fi
 }
 
+function __turn_on_rem_warning() {
+	echo '\u001b[38;5;226mrun command: \u001b[38;5;069m<remon>' \
+		'\u001b[38;5;226mto turn on reminders'
+}
 function schw {
   if [ -d ~/.reminders ]; then
     local SEARCH_T="$1"
     clear
     (cd ~/.reminders && ag --nonumbers --nocolor "$SEARCH_T" | bat --style=grid,numbers)
   else
-    echo 'run command: <remon> to turn on reminders'
+	  __turn_on_rem_warning
   fi
 }
-
 function shw {
-  if [ -d ~/.reminders ]; then
-	(
-	cd ~/.reminders && \
-		if [ -s CSC133 ]; then
-			bat CSC133
-		fi
-		if [ -s CSC139 ]; then
-			bat CSC139
-		fi
-		if [ -s STAT50 ]; then
-			bat STAT50
-		fi
-		if [ -s MUSC129 ]; then
-			bat MUSC129
-		fi
-	)
-  else
-    echo 'run command: <remon> to turn on reminders'
-  fi
+	if [ -d ~/.reminders ]; then
+
+		(clear;
+		cd ~/.reminders;
+		for entry in $(/bin/ls); do
+			if [ -s $entry ]; then
+				bat $entry
+			fi
+		done)
+	else
+		__turn_on_rem_warning
+	fi
 }
 function stats() {
 	if [ -d ~/.reminders ]; then
 		(cd ~/.reminders && if [ -s STAT50 ]; then bat STAT50; fi)
 	else
-		echo 'run command: <remon> to turn on reminders'
+		__turn_on_rem_warning
 	fi
 }
 function music() {
 	if [ -d ~/.reminders ]; then
 		(cd ~/.reminders && if [ -s MUSC129 ]; then bat MUSC129; fi)
 	else
-		echo 'run command: <remon> to turn on reminders'
+		__turn_on_rem_warning
 	fi
 }
 function csc133() {
 	if [ -d ~/.reminders ]; then
 		(cd ~/.reminders && if [ -s CSC133 ]; then bat CSC133; fi)
 	else
-		echo 'run command: <remon> to turn on reminders'
+		__turn_on_rem_warning
 	fi
 }
 function csc139() {
 	if [ -d ~/.reminders ]; then
 		(cd ~/.reminders && if [ -s CSC139 ]; then bat CSC139; fi)
 	else
-		echo 'run command: <remon> to turn on reminders'
+		__turn_on_rem_warning
 	fi
 }
 
