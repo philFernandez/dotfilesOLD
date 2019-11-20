@@ -32,6 +32,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-rooter'
 Plug 'PProvost/vim-ps1'
+Plug 'vim-scripts/taglist.vim'
 " }}}
 
 " Un-used plugins {{{
