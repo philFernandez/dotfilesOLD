@@ -1,14 +1,19 @@
 #!/bin/bash
 
-# Script for adding and removing assignment reminders to files in a 
+# Script for adding and removing assignment reminders to files in a
 # directory that are automatically catted out to my terminal whenever
-# it is opened. 
-
-# For having the reminders always cat out when opening, have to add
-
-#    [[ -d ~/.reminders ]] && \
-#      (cd ~/.reminders && bat *)
-
+# it is opened.
+#########################################################################
+# For having the reminders always cat out when opening, have to add:
+#------------------------------------------------------------------------
+# [[ -d ~/.reminders ]] && \
+#  (
+#  cd ~/.reminders && if [ -s STAT50 ]; then bat STAT50; fi \
+#	  && if [ -s CSC133 ]; then bat CSC133; fi \
+#	  && if [ -s CSC139 ]; then bat CSC139; fi \
+#	  && if [ -s MUSC129 ]; then bat MUSC129; fi
+#  )
+#------------------------------------------------------------------------
 # to ~/.zshrc or ~/.bashrc
 
 # NOTE: the above uses bat instead of cat, but either will work
@@ -34,8 +39,16 @@ recordAssig() {
 }
 
 removeAssig() {
+  # One of the paths from above passed in
   local theCourse=$1
+  # The line number to remove and archive
   local theLineNumber=$2
+  local archiveFile # create the path for an archive file to move the
+                    # delted line into.
+  archiveFile="$(dirname "$theCourse")/.$(basename "$theCourse")_archive"
+  # Move line into archive file
+  gsed -n -e "${theLineNumber}p" "$theCourse" >> "$archiveFile"
+  # Delete line
   gsed -i -e "${theLineNumber}d" "$theCourse"
 }
 
