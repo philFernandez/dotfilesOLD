@@ -41,6 +41,7 @@ function __turn_on_rem_warning() {
 	echo '\u001b[38;5;226mrun command: \u001b[38;5;069m<remon>' \
 		'\u001b[38;5;226mto turn on reminders'
 }
+
 function schw {
   if [ -d ~/.reminders ]; then
     local SEARCH_T="$1"
@@ -51,23 +52,48 @@ function schw {
   fi
 }
 
-function shw() {
+
+# Collects names of non-empty files in ~/.reminders
+# and puts those names into a list. The list is passed
+# as parameters to bat to display the contents of the
+# files.
+# If shw is called with an '-a' flag it will show the
+# hidden non-empty archive files
+function shw() { # SEE '~/.bin/hw' script for managing files
+	# make sure renders dir exists
 	if [ -d ~/.reminders ]; then
-		# hold on non-empty filenames in list so bat
-		# can take them as parameters
-		local list_of_files=()
-		( # cd to ~/.reminders in sub-shell
 		clear;
-		cd ~/.reminders;
-		for entry in $(/bin/ls); do
-			if [ -s $entry ]; then
-				list_of_files+=("$entry")
-			fi
-		done
-		# pass all non-empty file names to bat
-		# as parameters
-		bat $list_of_files
-	    )
+		local list_of_files=()
+		if [ "$1" = '-a' ]; then # get non-empty archives
+
+			( # cd to ~/.reminders in sub-shell
+			cd ~/.reminders;
+			for entry in $(fd '^\.' -H); do
+				if [ -s $entry ]; then
+					list_of_files+=("$entry")
+				fi
+			done
+			# bat has to be called inside subshell
+			# also, cannot use "$list_of_files"
+			# with quotes because it will pass
+			# all file names as 1 parameter
+			bat $list_of_files
+		    ) # end subshell command
+
+		else # get non-empty regular files
+
+			( # cd to ~/.reminders in sub-shell
+			cd ~/.reminders;
+			for entry in $(/bin/ls); do
+				if [ -s $entry ]; then
+					list_of_files+=("$entry")
+				fi
+			done
+			# bat has to be called inside subshell
+			bat $list_of_files
+		    ) # end subshell command
+
+		fi
 	else
 		__turn_on_rem_warning
 	fi
