@@ -1,8 +1,9 @@
 # gitconfig setup for using gitlab and github concurrently
 
-* Create symlink with
- `ln -sf ~/.gitconfigs/.gitconfig.git<one to use> ~/.gitconfig`
-
-* Use aliases to switch
+* Use aliases
 `github` or `gitlab`
+
+### Above aliases will create symlink to needed gitconfig
+
+
 
