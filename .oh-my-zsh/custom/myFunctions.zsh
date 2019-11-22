@@ -315,23 +315,14 @@ function cal {
 # PWD when going back a directory.
 function cl {
 	clear;
-
   # spectrum_ls; show all FG color codes
   # spectrum_bls; show all BG color codes
   # Must use print -P to work with $ZSH/lib/spectrum.zsh
-
   pwdc
-  #print -P $FG[$backColor]$BG[$textColor]' PWD '$reset_color$FG[$textColor]$BG[$backColor]'\ue0b0'$FG[000]' '$(pwd)' '$reset_color$FG[$backColor]'\ue0b0'
-
-  ## must use this no matter which of the 2 above are used
-  #echo $reset_color; # must reset or other output (/bin/ls) will get messed up
   lsd --group-dirs first
 }
 
 function pwdc {
-	#local backColor=041
-	#local textColor=235
-
 	# Defined in ~/.zshrc
 	local backColor=$MY_SHELL_THEME_FG
 	local textColor=$MY_SHELL_THEME_BG
