@@ -120,8 +120,8 @@ function stats() {
 	fi
 }
 function music() {
+	clear
 	if [ -d ~/.reminders ]; then
-		clear;
 		(cd ~/.reminders && if [ -s MUSC129 ]; then bat MUSC129; fi)
 	else
 		echo '\u001b[38;5;226mrun command: \u001b[38;5;069m<remon>' \
@@ -130,8 +130,8 @@ function music() {
 	fi
 }
 function csc133() {
+	clear
 	if [ -d ~/.reminders ]; then
-		clear;
 		(cd ~/.reminders && if [ -s CSC133 ]; then bat CSC133; fi)
 	else
 		echo '\u001b[38;5;226mrun command: \u001b[38;5;069m<remon>' \
@@ -140,8 +140,8 @@ function csc133() {
 	fi
 }
 function csc139() {
+	clear
 	if [ -d ~/.reminders ]; then
-		clear;
 		(cd ~/.reminders && if [ -s CSC139 ]; then bat CSC139; fi)
 	else
 		echo '\u001b[38;5;226mrun command: \u001b[38;5;069m<remon>' \
