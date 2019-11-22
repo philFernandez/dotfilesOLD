@@ -85,10 +85,12 @@ unalias rd
 # }}}
 
 # Auto Comp Defns {{{
+fpath=(~/.oh-my-zsh/custom/completions $fpath)
 compdef _gnu_generic file
 compdef _git gdl=git-diff
 compdef _gnu_generic lsd
 compdef _gnu_generic fzf
+compdef _pdfgrep pdfgrep
 # }}}
 
 # Files to Source {{{
@@ -109,5 +111,6 @@ compdef _gnu_generic fzf
     )
 
 # }}}
+
 
 # vim:foldmethod=marker:foldlevel=0:foldenable
