@@ -1,40 +1,17 @@
+
+# Temp Things {{{
+
 #export CLASSPATH="/Users/philthy/eclipse-workspace/A3Prj/dist/A3Prj.jar:\
 #/Users/philthy/eclipse-workspace/A3Prj/lib/CLDC11.jar:\
 #/Users/philthy/eclipse-workspace/A3Prj/lib/CodenameOne.jar"
 
+# }}}
 
 # Variables {{{
-#ZSH_TMUX_AUTOCONNECT=false
-#ZSH_TMUX_AUTOSTART=true
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
 # Disable C-S so that it can be used elsewhere
 stty -ixon
-# }}}
-
-# Exports {{{
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/philthy/.oh-my-zsh"
-
-# set vscode as default editor
-#export EDITOR='code -w'
-
-# set vim as default editor
-export EDITOR=/usr/local/bin/vim
-
-export UPDATE_ZSH_DAYS=7
-
-export SAVEHIST=HISTSIZE=500000
-
-export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
-
-export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || ag --hidden -g "")'
-#export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -H)'
-
-export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
-  --color pointer:220 --color hl+:118 --color fg:251
-  --color marker:196 --color border:214 --color prompt:214\
-  --color header:208 --color bg+:240 --reverse --border"
 # }}}
 
 # Plugins {{{
@@ -60,13 +37,40 @@ setopt NONOMATCH \
 # set theme in another file that isn't under source control
 source ~/.zsh_theme
 
-source $ZSH/oh-my-zsh.sh
+#--Do-Not-Separate-These-Two-------------
+export ZSH="/Users/philthy/.oh-my-zsh" #|
+source $ZSH/oh-my-zsh.sh               #|
+#--Keep-Them-In-Same-Order---------------
 
 # only load all of powerlevel9k settings if powerlevel9k is the set theme
 if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then
   source ~/.powerlevel_settings
 fi
-#source /usr/local/Cellar/fzf/0.18.0/shell/completion.zsh
+# }}}
+
+# Exports {{{ have to be below source $ZSH/oh-my-zsh.sh
+# Path to your oh-my-zsh installation.
+
+# set vscode as default editor
+#export EDITOR='code -w'
+
+# set vim as default editor
+export EDITOR=/usr/local/bin/vim
+
+export UPDATE_ZSH_DAYS=7
+
+export SAVEHIST=500000
+export HISTSIZE=500000
+
+export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
+
+export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || ag --hidden -g "")'
+#export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -H)'
+
+export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
+	--color pointer:220 --color hl+:118 --color fg:251
+	--color marker:196 --color border:214 --color prompt:214\
+		--color header:208 --color bg+:240 --reverse --border"
 # }}}
 
 # Unset aliases {{{
