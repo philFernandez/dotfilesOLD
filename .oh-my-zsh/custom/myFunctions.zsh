@@ -50,20 +50,29 @@ function schw {
 	  __turn_on_rem_warning
   fi
 }
-function shw {
-	if [ -d ~/.reminders ]; then
 
-		(clear;
+function shw() {
+	if [ -d ~/.reminders ]; then
+		# hold on non-empty filenames in list so bat
+		# can take them as parameters
+		local list_of_files=()
+		( # cd to ~/.reminders in sub-shell
+		clear;
 		cd ~/.reminders;
 		for entry in $(/bin/ls); do
 			if [ -s $entry ]; then
-				bat $entry
+				list_of_files+=("$entry")
 			fi
-		done)
+		done
+		# pass all non-empty file names to bat
+		# as parameters
+		bat $list_of_files
+	    )
 	else
 		__turn_on_rem_warning
 	fi
 }
+
 function stats() {
 	if [ -d ~/.reminders ]; then
 		clear;
