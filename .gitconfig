@@ -1,11 +1,1 @@
-# This is Git's per-user configuration file.
-[user]
-# Please adapt and uncomment the following lines:
-name = philFernandez
-email = norcal618@gmail.com
-
-[pager]
-  diff = false
-  branch = false
-[init]
-	templatedir = ~/.git_template
+/Users/philthy/.gitconfigs/.gitconfig.gitlab

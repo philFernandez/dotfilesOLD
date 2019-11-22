@@ -107,6 +107,7 @@ compdef _gnu_generic file
 compdef _git gdl=git-diff
 compdef _gnu_generic lsd
 compdef _gnu_generic fzf
+compdef _gnu_generic bat
 compdef _pdfgrep pdfgrep
 # }}}
 
