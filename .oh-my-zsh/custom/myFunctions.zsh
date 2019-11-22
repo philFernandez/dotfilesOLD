@@ -96,6 +96,17 @@ function shw() { # SEE '~/.bin/hw' script for managing files
 		fi
 	else
 		__turn_on_rem_warning
+		( # cd to ~/.reminders in sub-shell
+		cd ~/.reminders.silent;
+		for entry in $(/bin/ls); do
+			if [ -s $entry ]; then
+				list_of_files+=("$entry")
+			fi
+		done
+		# bat has to be called inside subshell
+		bat $list_of_files
+		) # end subshell command
+
 	fi
 }
 

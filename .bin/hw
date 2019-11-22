@@ -100,7 +100,10 @@ if [ -d ~/.reminders ]; then
     usage
   fi
 else
-  echo 'run command: <remon> before adding reminder'
+	zsh << END
+	echo '\u001b[38;5;226mrun command: \u001b[38;5;069m<remon>' \
+		'\u001b[38;5;226mto turn on reminders'
+END
 fi
 
 
