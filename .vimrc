@@ -33,6 +33,8 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-rooter'
 Plug 'PProvost/vim-ps1'
 Plug 'vim-scripts/taglist.vim'
+Plug 'frazrepo/vim-rainbow'
+Plug 'rafi/awesome-vim-colorschemes'
 " }}}
 
 " Un-used plugins {{{
@@ -57,7 +59,10 @@ call plug#end()
 set termguicolors
 set showtabline=2
 set background=dark
-color onehalfdark
+"color onehalfdark
+color OceanicNext
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 set laststatus=2
 set noshowmode
 set ruler
@@ -65,6 +70,7 @@ set number
 set cursorline
 set splitbelow
 set splitright
+let g:rainbow_active = 1
 
 " Cursor line insert/normal toggle
 if exists('$TMUX')
