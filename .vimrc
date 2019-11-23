@@ -308,6 +308,12 @@ nnoremap dl I<Esc>d$
 "map <C-X> <Nop>
 "=======================
 
+" pane navigation
+nnoremap <c-j> <c-w><c-j>
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-h> <c-w><c-h>
+nnoremap <c-l> <c-w><c-l>
+
 tnoremap <c-n> <c-\><c-n>
 
 let g:AutoPairsShortcutToggle = '<F10>'
@@ -339,7 +345,6 @@ nnoremap K {
 nnoremap q :q<cr>
 nnoremap <silent> cc :clo<cr>
 nnoremap <space> A
-"nnoremap <silent> <leader>l :Buffers<CR>
 nnoremap <silent> <leader>m :pclose<cr>
 nnoremap <c-p> :Files<cr>
 
@@ -396,6 +401,10 @@ command! -bang -nargs=* Ag
       "\   'down':    len(<sid>buflist()) + 2
       "\ })<CR>
 
+" How to open buffers
+" ctrl-v = vertical split
+" ctrl-x = split
+" ctrl-t = tab
 nnoremap <silent> <leader>l :Buffers<CR>
 
 " }}}
