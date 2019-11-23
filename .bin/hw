@@ -99,10 +99,11 @@ if [ -d ~/.reminders ]; then
   else
     usage
   fi
-else
-	zsh << END
-	echo '\u001b[38;5;226mrun command: \u001b[38;5;069m<remon>' \
-		'\u001b[38;5;226mto turn on reminders'
+else # embedded python3 for color output
+	  # (bash doesnt support this)
+	python3 << END
+print('\u001b[38;5;226mrun command: \u001b[38;5;069m<remon> \
+\u001b[38;5;226mto turn on reminders')
 END
 fi
 

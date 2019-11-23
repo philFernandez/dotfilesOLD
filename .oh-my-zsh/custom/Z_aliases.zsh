@@ -62,7 +62,7 @@ alias cdl='config diff | bat --style=numbers -l diff'
 alias man='LESS+="-N" man'
 
 # Package Management
-alias update='brew -v update'
+alias update='brew -v update && brew outdated && brew cask outdated'
 alias upgrade='brew upgrade && brew cask upgrade'
 alias outdated='brew -v outdated && brew cask outdated'
 alias dryclean='brew cleanup --dry-run'

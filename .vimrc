@@ -157,10 +157,13 @@ let g:UltiSnipsExpandTrigger="<leader>n"
 let g:startify_bookmarks = [
       \ '~/.vimrc',
       \ '~/.zshrc',
-      \ '~/.tmux.conf',
       \ '~/.oh-my-zsh/custom/Z_aliases.zsh',
       \ '~/.oh-my-zsh/custom/myFunctions.zsh']
 let g:startify_fortune_use_unicode = 0
+" When adding/removing files from session
+" automatically make saved session reflect
+" changes
+let g:startify_session_persistence = 1
 " }}}
 
 " Python Highlight {{{
@@ -249,6 +252,7 @@ au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 "
 " No automatic comments on next line
 "autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
+autocmd FileType vim,zsh,bash,sh,python setlocal formatoptions-=ro
 au BufWrite * :RemoveTrailingSpaces
 " }}}
 
