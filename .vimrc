@@ -1,11 +1,8 @@
-" need to be first {{{
-
+" need to be first {{{1
 set nocompatible
 let mapleader=','
 
-" }}}
-
-" Vim Plug {{{
+" Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
 Plug 'sheerun/vim-polyglot'
@@ -35,10 +32,8 @@ Plug 'airblade/vim-rooter'
 Plug 'PProvost/vim-ps1'
 Plug 'vim-scripts/taglist.vim'
 Plug 'rafi/awesome-vim-colorschemes'
-" }}}
 
-" Un-used plugins {{{
-
+" Un-used plugins {{{1
 "Plug 'christoomey/vim-tmux-navigator'
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
 "Plug 'davidhalter/jedi-vim', { 'for': 'python' }
@@ -50,9 +45,8 @@ Plug 'rafi/awesome-vim-colorschemes'
 "Plug 'tmux-plugins/vim-tmux-focus-events'
 "Plug 'mattn/emmet-vim', { 'for': 'html' }
 call plug#end()
-" }}}
 
-" UI Settings {{{
+" UI Settings {{{1
 " need these for truecolor in tmux
 "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -70,7 +64,6 @@ set number
 set cursorline
 set splitbelow
 set splitright
-"let g:rainbow_active = 1
 
 " Cursor line insert/normal toggle
 if exists('$TMUX')
@@ -82,9 +75,8 @@ else
 endif
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
-" }}}
 
-" Lightline {{{
+" Lightline {{{1
 let g:lightline = {
       \ 'colorscheme': 'materia',
       \
@@ -126,9 +118,8 @@ let g:lightline = {
       \   }
       \
       \ }
-" }}}
 
-" Tmuxline {{{
+" Tmuxline {{{1
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'b'    : "#(curl 'api.openweathermap.org/data/2.5/weather?q=Stockton&appid=a21483b3b7a6dd4ce2d7627d61aebb53&units=imperial' | jq '.main.temp')",
@@ -151,15 +142,12 @@ let g:tmuxline_theme = {
       \   'bg'   : [ 244, 236 ],
       \ }
 
-" }}}
-
-" Ultisnips {{{
+" Ultisnips {{{1
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
 let g:UltiSnipsSnippetDirectories=["ultisnips"]
 let g:UltiSnipsExpandTrigger="<leader>n"
-" }}}
 
-" Startify {{{
+" Startify {{{1
 let g:startify_bookmarks = [
       \ '~/.vimrc',
       \ '~/.zshrc',
@@ -170,15 +158,13 @@ let g:startify_fortune_use_unicode = 0
 " automatically make saved session reflect
 " changes
 let g:startify_session_persistence = 1
-" }}}
 
-" Python Highlight {{{
+" Python Highlight {{{1
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
 let g:python_highlight_indent_errors = 0
-" }}}
 
-" Completion {{{
+" Completion {{{1
  "c-x c-o forces completion
 set completeopt+=menuone
 set completeopt+=noselect
@@ -199,9 +185,8 @@ let g:AutoPairsMapCR = 0
 imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
 let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
-" }}}
 
-" Easy Clip and Note {{{
+" Easy Clip and Note {{{1
 " EASY CLIP  =========================================
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseSubstituteDefaults = 1
@@ -209,9 +194,7 @@ let g:EasyClipUseSubstituteDefaults = 1
 " Note settings ====================================
 let g:notes_directories = ['~/Notes/viNotes']
 
-" }}}
-
-" ALE {{{
+" ALE {{{1
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
       \ 'python': ['autopep8']
@@ -225,9 +208,8 @@ let g:ale_fix_on_save = 1
 "let g:ale_pattern_options = {
       "\ '.*\.java$': {'ale_enabled': 0},
       "\ }
-" }}}
 
-" Other VIM {{{
+" Other VIM {{{1
 set mouse=a
 set lazyredraw
 set autoread
@@ -260,34 +242,30 @@ au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 "autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 autocmd FileType vim,zsh,bash,sh,python setlocal formatoptions-=ro
 au BufWrite * :RemoveTrailingSpaces
-" }}}
 
-" Indent Settings {{{
+" Indent Settings {{{1
 set autoindent
 set expandtab " use spaces instead of tabs
 set shiftround
 set shiftwidth=2
 set smarttab
 set tabstop=2
-" }}}
 
-" Search {{{
+" Search {{{1
 set hlsearch
 set ignorecase
 set incsearch
 set smartcase
-" }}}
 
-" Text Render (wrap) {{{
+" Text Render (wrap) {{{1
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
 set nowrap
 " for latex, or paragraph type writing
 "set formatoptions+=a
 "set wrap
-" }}}
 
-" Fold {{{
+" Fold {{{1
 " za - toggle fold under cursor
 " zA - toggle fold under cursor recursively
 " zR - open all folds
@@ -296,13 +274,14 @@ set nowrap
 " zc - fold area under cursor
 " zO - unfold recursively under cursor
 " zC - fold recursively under cursor
+" zj - jump down to next fold
+" zk - jump up to previous fold
 set foldmethod=indent
 set foldnestmax=3
 " uncomment to disable fold on file open
 set nofoldenable
-" }}}
 
-" Keymaps {{{
+" Keymaps {{{1
 
 nnoremap <leader>f :NERDTreeToggle<CR>
 
@@ -413,9 +392,7 @@ command! -bang -nargs=* Ag
 " ctrl-t = tab
 nnoremap <silent> <leader>l :Buffers<CR>
 
-" }}}
-
-" Custom Syntax (Inactive) {{{
+" Custom Syntax (Inactive) {{{1
 let java_highlight_functions = 1
 let java_highlight_all = 1
 " If you are trying this at runtime, you need to reload the syntax file
@@ -444,15 +421,12 @@ highlight link javaDocTags PreProc
 "hi Function cterm=bold
 "hi Repeat cterm=bold
 "hi jsReturn cterm=bold
-" }}}
 
-" NOTES {{{
+" NOTES {{{1
 
 " Preview markdown files:
 " goto directory containing markdown:
 " run command 'grip'
 " see https://github.com/joeyespo/grip
 
-" }}}
-
-" vim:foldmethod=marker:foldlevel=0:foldenable
+" vim:foldenable foldmethod=marker foldcolumn=1
