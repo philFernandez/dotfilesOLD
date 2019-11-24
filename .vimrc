@@ -63,6 +63,7 @@ set number
 set cursorline
 set splitbelow
 set splitright
+set colorcolumn=80
 
 " Cursor line insert/normal toggle
 if exists('$TMUX')
