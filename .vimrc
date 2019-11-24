@@ -32,6 +32,7 @@ Plug 'airblade/vim-rooter'
 Plug 'PProvost/vim-ps1'
 Plug 'vim-scripts/taglist.vim'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'majutsushi/tagbar'
 
 " Un-used plugins {{{1
 "Plug 'christoomey/vim-tmux-navigator'
@@ -283,6 +284,7 @@ set nofoldenable
 
 " Keymaps {{{1
 
+map <silent><c-t> :TagbarToggle<CR>
 nnoremap <leader>f :NERDTreeToggle<CR>
 
 " Delete contents of line w/o removing the line itself
