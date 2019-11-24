@@ -300,10 +300,10 @@ nnoremap dl I<Esc>d$
 "=======================
 
 " pane navigation
-nnoremap <c-j> <c-w><c-j>
-nnoremap <c-k> <c-w><c-k>
-nnoremap <c-h> <c-w><c-h>
-nnoremap <c-l> <c-w><c-l>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 tnoremap <c-n> <c-\><c-n>
 
