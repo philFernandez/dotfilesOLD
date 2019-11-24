@@ -54,10 +54,8 @@ call plug#end()
 set termguicolors
 set showtabline=2
 set background=dark
-color onehalfdark
-color OceanicNext
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+"color onehalfdark
+color materialbox
 set laststatus=2
 set noshowmode
 set ruler
