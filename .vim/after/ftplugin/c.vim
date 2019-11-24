@@ -16,3 +16,4 @@ imap <silent><CR> <CR><Plug>AutoPairsReturn
 
 set shiftwidth=3
 set tabstop=3
+set colorcolumn=80

@@ -12,6 +12,7 @@ alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias regex='man pcresyntax'
 alias which='which -a'
 alias tree='lsd --tree --group-dirs first'
+alias bk='cd ..;cl'
 alias cls=clear
 alias c=clear
 alias rm='rm -v'

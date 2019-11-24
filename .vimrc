@@ -1,3 +1,4 @@
+
 " need to be first {{{1
 set nocompatible
 let mapleader=','
@@ -65,7 +66,6 @@ set ruler
 set number
 set splitbelow
 set splitright
-set colorcolumn=80
 set termguicolors
 
 hi ALEWarning guibg=NONE guifg=NONE
@@ -402,7 +402,6 @@ nnoremap <silent> <leader>l :Buffers<CR>
 let java_highlight_functions = 1
 let java_highlight_all = 1
 " If you are trying this at runtime, you need to reload the syntax file
-set filetype=java
 
 " Some more highlights, in addition to those suggested by cmcginty
 highlight link javaScopeDecl Statement
