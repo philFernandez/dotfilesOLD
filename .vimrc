@@ -8,6 +8,7 @@ let mapleader=','
 " Vim Plug {{{
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
+Plug 'sheerun/vim-polyglot'
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
