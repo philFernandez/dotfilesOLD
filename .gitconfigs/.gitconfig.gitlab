@@ -7,6 +7,5 @@
 [pager]
 	diff = false
 	branch = false
-	log = false
 [init]
 	templatedir = ~/.git_template

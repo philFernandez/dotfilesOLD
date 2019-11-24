@@ -3,6 +3,7 @@ alias b='(cd ~/eclipse-workspace/A3Prj && ant jar)'
 # ---------------------------------------------------
 alias github='ln -sf ~/.gitconfigs/.gitconfig.github ~/.gitconfig'
 alias gitlab='ln -sf ~/.gitconfigs/.gitconfig.gitlab ~/.gitconfig'
+alias glo='LESS+=-N git log --oneline --decorate --reverse'
 alias nl='nl -b a'
 alias fhw='shw | fzf'
 alias v='/usr/local/bin/vim'
