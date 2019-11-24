@@ -1,3 +1,20 @@
+# Shell Theme {{{
+
+# loads prompt and pwd banner color
+
+# Dark Orange
+#export MY_SHELL_THEME_FG=166
+#export MY_SHELL_THEME_BG=237
+
+# Light Orange
+export MY_SHELL_THEME_FG=178
+export MY_SHELL_THEME_BG=237
+
+# Light Green
+#export MY_SHELL_THEME_FG=148
+#export MY_SHELL_THEME_BG=237
+
+# }}}
 
 #DEFAULT_FOREGROUND=38
 #DEFAULT_BACKGROUND=232

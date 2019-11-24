@@ -7,12 +7,12 @@
 #export MY_SHELL_THEME_BG=237
 
 # Light Orange
-#export MY_SHELL_THEME_FG=178
-#export MY_SHELL_THEME_BG=237
+export MY_SHELL_THEME_FG=178
+export MY_SHELL_THEME_BG=237
 
 # Light Green
-export MY_SHELL_THEME_FG=148
-export MY_SHELL_THEME_BG=237
+#export MY_SHELL_THEME_FG=148
+#export MY_SHELL_THEME_BG=237
 
 # }}}
 
