@@ -14,6 +14,9 @@
 cn1() {
 	(clear;cd ~/eclipse-workspace/A3Prj && java -cp dist/A3Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a3.Starter)
 }
+# ------------------------------------------------------
+
+
 
 # takes any number of file name arguments, reads
 # the file names into all_files, cats all

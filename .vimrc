@@ -333,7 +333,8 @@ nnoremap <silent> bc :bdelete!<cr>
 nnoremap <silent> <leader><space> :nohl<cr>
 nnoremap J }
 nnoremap K {
-nnoremap q :q<cr>
+map q :q<cr>
+vnoremap q :q<cr>
 nnoremap <silent> cc :clo<cr>
 nnoremap <space> A
 nnoremap <silent> <leader>m :pclose<cr>

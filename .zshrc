@@ -1,20 +1,3 @@
-# Shell Theme {{{1
-
-# loads prompt and pwd banner color
-
-# Dark Orange
-#export MY_SHELL_THEME_FG=166
-#export MY_SHELL_THEME_BG=237
-
-# Light Orange
-export MY_SHELL_THEME_FG=178
-export MY_SHELL_THEME_BG=237
-
-# Light Green
-#export MY_SHELL_THEME_FG=148
-#export MY_SHELL_THEME_BG=237
-
-
 # Temp Things {{{1
 
 #export CLASSPATH="/Users/philthy/eclipse-workspace/A3Prj/dist/A3Prj.jar:\
