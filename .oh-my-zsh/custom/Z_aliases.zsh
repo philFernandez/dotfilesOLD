@@ -30,6 +30,7 @@ alias ds='du -sh'
 alias nl='nl -b a'
 alias v='/usr/local/bin/vim'
 alias cla='cls;ls -A'
+alias ea='vim -S ~/.vim/session/Conf_Files'
 
 
 # Bat & Fzf {{{1
