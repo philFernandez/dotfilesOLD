@@ -68,6 +68,7 @@ alias dryclean='brew cleanup --dry-run'
 alias clean='brew cleanup -s'
 alias brews='brew list -1'
 alias show='brew info'
+alias search='brew search'
 
 # {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
