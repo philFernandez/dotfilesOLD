@@ -48,6 +48,8 @@ fi
 # set vscode as default editor
 #export EDITOR='code -w'
 
+export RANGER_LOAD_DEFAULT_RC=false
+
 # set vim as default editor
 export EDITOR=/usr/local/bin/vim
 

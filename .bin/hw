@@ -58,8 +58,12 @@ removeAssig() {
 usage() {
   echo "ADD:"
   echo "usage: $(basename "$0") <[stats][music][csc133][csc139]> <assignment> <due date>"
+  echo
   echo "ARCHIVE:"
   echo "usage: $(basename "$0") <[stats][music][csc133][csc139]> -d <line number>"
+  echo
+  echo "DELETE:"
+  echo "usage: $(basename "$0") <[stats][music][csc133][csc139]> -D <line number>"
 }
 
 

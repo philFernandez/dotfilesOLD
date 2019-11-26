@@ -4,6 +4,7 @@ alias b='(cd ~/eclipse-workspace/A3Prj && ant jar)'
 # Commands and Shortcuts {{{1
 alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
 alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'
+alias cwd='echo;echo;echo;pwdc;echo'
 alias light='iterm2_profile Light'
 alias dark='iterm2_profile Default'
 alias ppath='print -l $path'

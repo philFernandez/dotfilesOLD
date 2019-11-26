@@ -361,7 +361,8 @@ function shist {
 	# and rearranges the original 4 columns after the
 	# new first column, which is the command name itself
 	#history 0 | awk '{ print $4, $0 }' | ack "^$1" --nocolor
-	history 0 | awk '{ print $4, $0 }' | egrep "^$1"
+	#history 0 | awk '{ print $4, $0 }' | egrep "^$1"
+  history 0 | awk '{ print $4, $0 }' | ag "^$1"
 }
 
 # shows terminal color codes with text example
