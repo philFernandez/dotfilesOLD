@@ -46,8 +46,11 @@ removeAssig() {
   local archiveFile # create the path for an archive file to move the
                     # delted line into.
   archiveFile="$(dirname "$theCourse")/.$(basename "$theCourse")_archive"
-  # Move line into archive file
-  gsed -n -e "${theLineNumber}p" "$theCourse" >> "$archiveFile"
+  if [ "$3" == 1 ]; then
+    # Move line into archive file
+    gsed -n -e "${theLineNumber}p" "$theCourse" >> "$archiveFile"
+  fi
+
   # Delete line
   gsed -i -e "${theLineNumber}d" "$theCourse"
 }
@@ -65,28 +68,36 @@ if [ -d ~/.reminders ]; then
     case $COURSE in
       "stats")
         if [ "$2" == '-d' ]; then # TODO: check if $3 is a number
-          removeAssig "$STATS" "$3"
+          removeAssig "$STATS" "$3" 1
+        elif [ "$2" == '-D' ]; then
+          removeAssig "$STATS" "$3" 0
         else
           recordAssig "$STATS" "$ASSIG" "$DUEDATE"
         fi
         ;;
       "music")
         if [ "$2" == '-d' ]; then
-          removeAssig "$MUSIC" "$3"
+          removeAssig "$MUSIC" "$3" 1
+        elif [ "$2" == '-D' ]; then
+          removeAssig "$MUSIC" "$3" 0
         else
           recordAssig "$MUSIC" "$ASSIG" "$DUEDATE"
         fi
         ;;
       "csc133")
         if [ "$2" == '-d' ]; then
-          removeAssig "$CSC133" "$3"
+          removeAssig "$CSC133" "$3" 1
+        elif [ "$2" == '-D' ]; then
+          removeAssig "$CSC133" "$3" 0
         else
           recordAssig "$CSC133" "$ASSIG" "$DUEDATE"
         fi
         ;;
       "csc139")
         if [ "$2" == '-d' ]; then
-          removeAssig "$CSC139" "$3"
+          removeAssig "$CSC139" "$3" 1
+        elif [ "$2" == '-D' ]; then
+          removeAssig "$CSC139" "$3" 0
         else
           recordAssig "$CSC139" "$ASSIG" "$DUEDATE"
         fi
