@@ -63,6 +63,8 @@ function schw {
 function shw() { # SEE '~/.bin/hw' script for managing files
 	# make sure renders dir exists
 	clear
+  print -P $FG[192]''
+   /usr/bin/cal -3
 	if [ -d ~/.reminders ]; then
 		local list_of_files=()
 		if [ "$1" = '-a' ]; then # get non-empty archives
@@ -110,6 +112,7 @@ function shw() { # SEE '~/.bin/hw' script for managing files
 					) # end subshell command
 
 	fi
+  print -P $reset_color
 }
 
 function stats() {
