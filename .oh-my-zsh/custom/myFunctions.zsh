@@ -62,9 +62,21 @@ function schw {
 # hidden non-empty archive files
 function shw() { # SEE '~/.bin/hw' script for managing files
 	# make sure renders dir exists
-	clear
-  print -P $FG[192]''
-   /usr/bin/cal -3
+  if [ "$1" = '-c' ] || [ "$2" = '-c' ]; then
+    print -P $FG[192]''
+    /usr/bin/cal -3
+    print -P $reset_color
+  elif [ "$1" = '-h' ] || [ "$1" = '--h' ]; then
+    cat << EOF
+usage $0 [-c] [-a]
+$0 with no paramters shows all classes with assignments due
+$0 with -c shows three month calendar in addition
+$0 with -a shows archived assignments (see 'hw --h')
+EOF
+    return
+  fi
+
+  #clear
 	if [ -d ~/.reminders ]; then
 		local list_of_files=()
 		if [ "$1" = '-a' ]; then # get non-empty archives
@@ -84,7 +96,6 @@ function shw() { # SEE '~/.bin/hw' script for managing files
 			) # end subshell command
 
 		else # get non-empty regular files
-
 			( # cd to ~/.reminders in sub-shell
 			cd ~/.reminders;
 			for entry in $(/bin/ls); do
@@ -112,7 +123,6 @@ function shw() { # SEE '~/.bin/hw' script for managing files
 					) # end subshell command
 
 	fi
-  print -P $reset_color
 }
 
 function stats() {
