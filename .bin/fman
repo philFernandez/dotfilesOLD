@@ -30,7 +30,7 @@ function help_msg() {
 usage: fman [-p] or [-s] [-u] {only zero or one options at a time}
 -p <start in preview mode>            {optional}
 -s <only show bookmarked manpages>    {optional}
--u <update package cache and exit>    {optional}
+-u <update manpage cache and exit>    {optional}
 
 press ctrl-s on a selected file to bookmark
 EOF
@@ -49,7 +49,7 @@ fi
 if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-s" ]; then
   # There are some duplicates between the directories so sort and filter
   if [ "$1" = '-u' ]; then
-    print "UPDATING..."
+    print "updating manpage cache..."
     ALL_MANPAGES=$(sort -u <<< "$(get_manpages)")
     if [ -d "$HOME/.config/fman" ]; then
       echo $ALL_MANPAGES > ~/.config/fman/cache
