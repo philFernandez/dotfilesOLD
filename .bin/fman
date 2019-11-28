@@ -1,70 +1,36 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 ####################################
 # fuzzy finder for manpages
 # usage: fman <take no parameters> OR fman -p for preview mode
 # depends on $HOME/.bin/cman for color output man pages
 ####################################
 
-# Use embedded python3 script to walk through the manpath and extract
-# all of the filenames
 function get_manpages() {
-all_programs=$(python3 << END
-
-from os import walk
-import re
-
-def get_program_names(path_to_walk):
-    files = []
-    for (_, _, filenames) in walk(path_to_walk):
-        files.extend(filenames)
-    return files
-
-def strip_file_extension(file_names):
-    for index_of_file, file_name in enumerate(file_names):
-        index_of_extension = file_name.rfind('.')
-        file_names[index_of_file] = file_name[:index_of_extension]
-
-def special_strip_file_extension(file_names):
-    matchobj = re.compile(r'[a-z]\.\d$')
-    for index, file_name in enumerate(file_names):
-        if re.search(matchobj, file_name):
-            index_of_extension = file_name.rfind('.')
-            file_names[index] = file_name[:index_of_extension]
-
-MAN_PATHS = [
-        '/usr/share/man',
-        '/usr/local/share/man',
-        '/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/share/man',
-        '/Library/Developer/CommandLineTools/usr/share/man'
-        ]
-
-PROGRAM_NAMES = []
-
-for path in MAN_PATHS:
-    PROGRAM_NAMES.extend(get_program_names(path))
-
-
-strip_file_extension(PROGRAM_NAMES)
-
-special_strip_file_extension(PROGRAM_NAMES)
-
-
-PROGRAM_NAMES = set(PROGRAM_NAMES)
-PROGRAM_NAMES = sorted(PROGRAM_NAMES)
-
-for program in PROGRAM_NAMES:
-    print(program)
-
-END
-)
-echo "$all_programs"
+  # Get all directories where man pages are stored
+  local mandirs=("${(@s/:/)$(manpath)}")
+  local allPackages
+  # recurse down into manpath dirs and get individual package names
+  for mandir in $mandirs; do
+    allPackages+=($mandir/*/*)
+  done
+  # get rid of empty line (first entry)
+  allPackages=($allPackages)
+  # Strip full path, and file extensions
+  for ((i = 1; i < $#allPackages; i++)); do
+    # packages ending in gz have to be striped twice
+    if [[ $allPackages[i] =~ gz$ ]]; then
+      allPackages[i]=$allPackages[i]:r
+    fi
+    print $allPackages[i]:t:r
+  done
 }
 
 function help_msg() {
   cat << EOF
-usage: fman [-p] or [-s] {only one or zero options at a time}
+usage: fman [-p] or [-s] [-u] {only zero or one options at a time}
 -p <start in preview mode>            {optional}
 -s <only show bookmarked manpages>    {optional}
+-u <update package cache and exit>    {optional}
 
 press ctrl-s on a selected file to bookmark
 EOF
@@ -82,7 +48,19 @@ fi
 # that because it is not needed and is resource intensive.
 if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-s" ]; then
   # There are some duplicates between the directories so sort and filter
-  ALL_MANPAGES=$(sort -u <<< "$(get_manpages)")
+  if [ "$1" = '-u' ]; then
+    print "UPDATING..."
+    ALL_MANPAGES=$(sort -u <<< "$(get_manpages)")
+    if [ -d "$HOME/.config/fman" ]; then
+      echo $ALL_MANPAGES > ~/.config/fman/cache
+    else
+      mkdir -p $HOME/.config/fman
+      echo $ALL_MANPAGES > ~/.config/fman/cache
+    fi
+    exit
+  else
+    ALL_MANPAGES=$(cat ~/.config/fman/cache)
+  fi
   # call man with all manpages piped to fzf
   if [ "$1" = "-p" ]; then # start in preview mode
     echo "$ALL_MANPAGES" | \
