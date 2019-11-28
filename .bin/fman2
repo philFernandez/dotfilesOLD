@@ -6,12 +6,18 @@
 ####################################
 
 function get_manpages() {
+  # Get all directories where man pages are stored
   local mandirs=("${(@s/:/)$(manpath)}")
   local allPackages
+  # recurse down into manpath dirs and get individual package names
   for mandir in $mandirs; do
     allPackages+=($mandir/*/*)
   done
+  # get rid of empty line (first entry)
+  allPackages=($allPackages)
+  # Strip full path, and file extensions
   for ((i = 1; i < $#allPackages; i++)); do
+    # packages ending in gz have to be striped twice
     if [[ $allPackages[i] =~ gz$ ]]; then
       allPackages[i]=$allPackages[i]:r
     fi
@@ -21,9 +27,10 @@ function get_manpages() {
 
 function help_msg() {
   cat << EOF
-usage: fman [-p] or [-s] {only one or zero options at a time}
+usage: fman [-p] or [-s] [-u] {only zero or one options at a time}
 -p <start in preview mode>            {optional}
 -s <only show bookmarked manpages>    {optional}
+-u <update package cache and exit>    {optional}
 
 press ctrl-s on a selected file to bookmark
 EOF
@@ -42,8 +49,10 @@ fi
 if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-s" ]; then
   # There are some duplicates between the directories so sort and filter
   if [ "$1" = '-u' ]; then
+    print "UPDATING..."
     ALL_MANPAGES=$(sort -u <<< "$(get_manpages)")
     echo $ALL_MANPAGES > ~/.config/fman/cache
+    exit
   else
     ALL_MANPAGES=$(cat ~/.config/fman/cache)
   fi
