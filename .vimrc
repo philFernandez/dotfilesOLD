@@ -18,7 +18,7 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
 Plug 'machakann/vim-highlightedyank'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug '/usr/local/opt/fzf/'
@@ -35,6 +35,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'majutsushi/tagbar'
 
 " Un-used plugins {{{1
+"Plug 'airblade/vim-gitgutter'
 "Plug 'christoomey/vim-tmux-navigator'
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
 "Plug 'davidhalter/jedi-vim', { 'for': 'python' }
