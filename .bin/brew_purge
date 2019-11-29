@@ -1,0 +1,64 @@
+#!/bin/zsh
+
+
+# Removes brew package and all of its dependencies that
+# aren't relied on by other brew packages
+
+# If you pass it a package name that is itself a dependency of
+# another package(s), it will remove it. Must be sure that
+# whatever package you are removing is itself not a dependency
+# of anything else.
+
+if [ $# -ne "1" ]; then
+  printf "%s\n" "usage : $(basename "$0") <package_to_remove>" >&2
+  exit 1
+fi
+
+TO_REMOVE=()
+
+# Get dependencies for all packages except for the package being removed
+for package in $(brew leaves); do
+  if [ $package != $1 ]; then
+    DEPS_OF_OTHERS+=($(brew deps $package))
+  fi
+done
+
+# Make sure the passed in package is not itself a dependency of some package(s)
+# If it is bail
+for dep in $DEPS_OF_OTHERS; do
+  if [ $1 = $dep ]; then
+    printf "\n%s\n" "Cannot remove $1. Other packages depend on it." >&2
+    exit 1
+  fi
+done
+
+# Get dependencies for the package being removed
+DEPS_OF_REMOVED=$(brew deps $1)
+
+# Get the dependencies that are only dependencies of the package being removed
+# and not dependencies of any other package
+TO_REMOVE=$(comm -23 <(print -l $DEPS_OF_REMOVED | sort -u) \
+  <(print -l $DEPS_OF_OTHERS) | sort -u)
+
+# Append the parent package to the array of its uniq dependencies
+# Now we have an array with the passed in package, as well as its
+# dependencies that are not dependencies of anything else
+TO_REMOVE+=($1)
+
+# Present the results and get confirmation
+printf "The following will be removed:\n\n"
+print -l $TO_REMOVE
+echo; echo
+print -n 'Proceed [yn] : '; read -q yes_or_no; echo; echo
+
+# If 'y' then proceed to remove the package and its uniq dependencies
+if [ $yes_or_no = 'y' ]; then
+  for package in $TO_REMOVE; do
+    #brew rm --force --ignore-dependencies $package
+    echo $package # comment this out and uncomment the above line
+  done
+else
+  # else bail
+  print "exiting without removal of $1 and dependencies"
+fi
+
