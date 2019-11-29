@@ -26,21 +26,22 @@ for package in $(brew leaves); do
   fi
 done
 
-# Get dependencies for all non-leaf packages (the dependencies of the dependencies)
-for dep in $DEPS_OF_OTHERS; do
-  DEPS_OF_DEPS+=($(brew deps $dep))
-done
 
-DEPS_OF_OTHERS+=($(echo $DEPS_OF_DEPS))
+# Get dependencies for all non-leaf packages (the dependencies of the dependencies)
+#for dep in $DEPS_OF_OTHERS; do
+  #DEPS_OF_DEPS+=($(brew deps $dep))
+#done
+
+#DEPS_OF_OTHERS+=($(echo $DEPS_OF_DEPS))
 
 # Make sure the passed in package is not itself a dependency of some package(s)
 # If it is bail
-for dep in $DEPS_OF_OTHERS; do
-  if [ $1 = $dep ]; then
-    printf "\n%s\n" "Cannot remove $1. Other packages depend on it." >&2
-    exit 1
-  fi
-done
+#for dep in $DEPS_OF_OTHERS; do
+  #if [ $1 = $dep ]; then
+    #printf "\n%s\n" "Cannot remove $1. Other packages depend on it." >&2
+    #exit 1
+  #fi
+#done
 
 # Get dependencies for the package being removed
 DEPS_OF_REMOVED=$(brew deps $1)
