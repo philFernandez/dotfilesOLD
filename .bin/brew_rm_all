@@ -2,26 +2,48 @@
 
 # uninstalls brew package and all of its dependencies that
 # aren't relied on by other brew packages
-DEPS_OF_OTHERS_TEMP=()
+TO_REMOVE=()
 
 if [ $# -ne 1 ]; then
   printf "%s\n" "usage : $(basename "$0") <package_to_remove>"
 else
   for package in $(brew leaves); do
     if [ $package != $1 ]; then
-      DEPS_OF_OTHERS_TEMP+=($(brew deps $package))
+      DEPS_OF_OTHERS+=($(brew deps $package))
     fi
   done
-  DEPS_OF_REMOVED=$(sort -u <<< $(brew deps $1))
-  DEPS_OF_OTHERS=$(print -l $DEPS_OF_OTHERS_TEMP | sort -u)
+  DEPS_OF_REMOVED=$(brew deps $1)
 
-  for dep in $DEPS_OF_REMOVED; do
-    print $dep
-  done
-  echo
-  echo
-  for dep in $DEPS_OF_OTHERS; do
-    print $dep
-  done
+  #print -l $DEPS_OF_OTHERS | sort -u > ${PWD}/others
+  #print -l $DEPS_OF_REMOVED | sort -u > ${PWD}/remove
+
+  TO_REMOVE=$(comm -23 <(print -l $DEPS_OF_REMOVED | sort -u) \
+    <(print -l $DEPS_OF_OTHERS) | sort -u)
+
+  #TO_REMOVE=$(comm -23 ${PWD}/remove ${PWD}/others)
+
+  TO_REMOVE+=($1)
+
+  printf "The following will be removed:\n\n"
+  print -l $TO_REMOVE
+  echo; echo
+  print -n 'Proceed [yn] : '; read -q yes_or_no; echo; echo
+
+  # un comment the brew rm line, and comment the echo $package line
+  if [ $yes_or_no = 'y' ]; then
+    for package in $TO_REMOVE; do
+      #brew rm --force --ignore-dependencies $package
+      echo $package
+    done
+  else
+    print "exiting without removal of $1 and dependencies"
+  fi
+
+
+
+
+  #rm ${PWD}/others ${PWD}/remove
+
+
 fi
 
