@@ -18,6 +18,7 @@ plugins=(
   zsh-autosuggestions
   colored-man-pages
   iterm2
+  vi-mode
 )
 
 # Shell Options {{{1
@@ -103,5 +104,11 @@ compdef _pdfgrep pdfgrep
 	 }
  	shw_rc
     )
+# vi mode {{{1
+bindkey  '^e' edit-command-line
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 
 # vim:foldenable foldmethod=marker foldcolumn=1

@@ -1,0 +1,27 @@
+#!/bin/zsh
+
+# uninstalls brew package and all of its dependencies that
+# aren't relied on by other brew packages
+DEPS_OF_OTHERS_TEMP=()
+
+if [ $# -ne 1 ]; then
+  printf "%s\n" "usage : $(basename "$0") <package_to_remove>"
+else
+  for package in $(brew leaves); do
+    if [ $package != $1 ]; then
+      DEPS_OF_OTHERS_TEMP+=($(brew deps $package))
+    fi
+  done
+  DEPS_OF_REMOVED=$(sort -u <<< $(brew deps $1))
+  DEPS_OF_OTHERS=$(print -l $DEPS_OF_OTHERS_TEMP | sort -u)
+
+  for dep in $DEPS_OF_REMOVED; do
+    print $dep
+  done
+  echo
+  echo
+  for dep in $DEPS_OF_OTHERS; do
+    print $dep
+  done
+fi
+
