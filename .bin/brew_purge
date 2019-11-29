@@ -1,13 +1,15 @@
 #!/bin/zsh
 
-
 # Removes brew package and all of its dependencies that
 # aren't relied on by other brew packages
 
-# If you pass it a package name that is itself a dependency of
-# another package(s), it will remove it. Must be sure that
-# whatever package you are removing is itself not a dependency
-# of anything else.
+# If a package is passed in that is itself a dependency
+# of some other package(s), an error will be given and
+# nothing will be removed.
+
+# Depending on how many packages are installed this could take
+# up to a few minutes to run. It cross checks every package
+# and dependency to make sure nothing that is needed is removed.
 
 if [ $# -ne "1" ]; then
   printf "%s\n" "usage : $(basename "$0") <package_to_remove>" >&2
@@ -15,13 +17,21 @@ if [ $# -ne "1" ]; then
 fi
 
 TO_REMOVE=()
+DEPS_OF_DEPS=()
 
-# Get dependencies for all packages except for the package being removed
+# Get dependencies for all leaf packages except for the package being removed
 for package in $(brew leaves); do
   if [ $package != $1 ]; then
     DEPS_OF_OTHERS+=($(brew deps $package))
   fi
 done
+
+# Get dependencies for all non-leaf packages (the dependencies of the dependencies)
+for dep in $DEPS_OF_OTHERS; do
+  DEPS_OF_DEPS+=($(brew deps $dep))
+done
+
+DEPS_OF_OTHERS+=($(echo $DEPS_OF_DEPS))
 
 # Make sure the passed in package is not itself a dependency of some package(s)
 # If it is bail
@@ -37,8 +47,7 @@ DEPS_OF_REMOVED=$(brew deps $1)
 
 # Get the dependencies that are only dependencies of the package being removed
 # and not dependencies of any other package
-TO_REMOVE=$(comm -23 <(print -l $DEPS_OF_REMOVED | sort -u) \
-  <(print -l $DEPS_OF_OTHERS) | sort -u)
+TO_REMOVE+=($(comm -23 <(print -lo $DEPS_OF_REMOVED | uniq) <(print -lo $DEPS_OF_OTHERS) | uniq))
 
 # Append the parent package to the array of its uniq dependencies
 # Now we have an array with the passed in package, as well as its
