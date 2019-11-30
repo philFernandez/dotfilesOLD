@@ -74,6 +74,7 @@ alias clean='brew cleanup -s'
 alias brews='brew list -1'
 alias show='brew info'
 alias search='brew search'
+alias show_all_cask='brew search --casks' # <package> (optional)
 
 # {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
