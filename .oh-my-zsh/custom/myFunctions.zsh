@@ -432,7 +432,8 @@ function aliases {
 
 }
 
-bindkey -s '^R' 'exec zsh\n'
+# while zsh is in vim-mode, this must be in ~/.zshrc
+#bindkey -s '^R' 'exec zsh\n'
 
 # FZF functions ===============================================
 # Open history in fzf and put selected command on the command line for edit and/or execute

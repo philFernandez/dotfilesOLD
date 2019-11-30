@@ -35,6 +35,7 @@ alias ds='du -sh 2> /dev/null'
 alias nl='nl -b a'
 alias v='/usr/local/bin/vim'
 alias cla='cls;ls -A'
+alias bash='/usr/local/bin/bash'
 
 
 # Bat & Fzf {{{1
