@@ -321,8 +321,6 @@ inoremap jj <Esc>
 nnoremap gm m
 nnoremap <silent> <c-s> :Startify<CR>
 nnoremap <silent> <leader>cd :cd %:p:h<cr>
-nnoremap <silent> <leader>nh :GitGutterNextHunk<cr>
-nnoremap <silent> <leader>ph :GitGutterPrevHunk<cr>
 nnoremap <silent> <leader>rn :set relativenumber!<cr>
 nnoremap <silent> <leader>n :set number!<cr>
 nnoremap <silent> <leader>s :set spell!<cr>
