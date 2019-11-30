@@ -5,6 +5,9 @@
 # depends on $HOME/.bin/cman for color output man pages
 ####################################
 
+GREEN='\033[0;32m'
+NC='\033[0m'
+
 function get_manpages() {
   # Get all directories where man pages are stored
   local mandirs=("${(@s/:/)$(manpath)}")
@@ -49,7 +52,7 @@ fi
 if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-s" ]; then
   # There are some duplicates between the directories so sort and filter
   if [ "$1" = '-u' ]; then
-    print "updating manpage cache..."
+    print "${GREEN}Updating manpage cache...${NC}"
     ALL_MANPAGES=$(sort -u <<< "$(get_manpages)")
     if [ -d "$HOME/.config/fman" ]; then
       echo $ALL_MANPAGES > ~/.config/fman/cache
