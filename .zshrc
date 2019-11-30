@@ -103,10 +103,8 @@ compdef _pdfgrep pdfgrep
 	 }
  	shw_rc
     )
-# vi mode {{{1
+# Bindkey {{{1
 bindkey -v
-bindkey -r "^["
-bindkey -M viins 'jj' vi-cmd-mode
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
@@ -118,6 +116,7 @@ bindkey '^X^E' edit-command-line # open vim for writing command
 bindkey '^F' vi-end-of-line # accept autocomplete
 bindkey '^A' vi-beginning-of-line
 bindkey '^G' vi-delete # press twice; acts sort of like '^U'
+bindkey -M viins 'jj' vi-cmd-mode
 bindkey -s '^R' 'exec zsh\n'
 # ^i brings up completion
 # ^j accepts completions
