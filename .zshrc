@@ -115,7 +115,10 @@ bindkey '^[u' run-help
 bindkey '^X^E' edit-command-line # open vim for writing command
 bindkey '^F' vi-end-of-line # accept autocomplete
 bindkey '^A' vi-beginning-of-line
-bindkey '^G' vi-delete # press twice, sort of like '^U'
+bindkey '^G' vi-delete # press twice; acts sort of like '^U'
+bindkey -M viins 'jj' vi-cmd-mode
 bindkey -s '^R' 'exec zsh\n'
+# ^i brings up completion
+# ^j accepts completions
 
 # vim:foldenable foldmethod=marker foldcolumn=1
