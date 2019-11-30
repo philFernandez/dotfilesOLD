@@ -111,7 +111,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
-bindkey '^X^H' run-help
+bindkey '^[u' run-help
 bindkey '^X^E' edit-command-line # open vim for writing command
 bindkey '^F' vi-end-of-line # accept autocomplete
 bindkey '^A' vi-beginning-of-line
