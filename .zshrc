@@ -109,7 +109,19 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey "^[[A" history-beginning-search-backward
+
+#bindkey "^[[A" history-beginning-search-backward
+#bindkey "^[[B" history-beginning-search-forward
+
+bindkey -M vicmd "^[[A" history-beginning-search-backward
+bindkey -M vicmd "^[[B" history-beginning-search-forward
+bindkey -M viins "^[[A" history-beginning-search-backward
+bindkey -M viins "^[[B" history-beginning-search-forward
+bindkey -M viopp "^[[A" history-beginning-search-backward
+bindkey -M viopp "^[[B" history-beginning-search-forward
+bindkey -M visual "^[[A" history-beginning-search-backward
+bindkey -M visual "^[[B" history-beginning-search-forward
+
 bindkey "^[[B" history-beginning-search-forward
 bindkey '^[h' run-help
 bindkey '^X^E' edit-command-line # open vim for writing command
