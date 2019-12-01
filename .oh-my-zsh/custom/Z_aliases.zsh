@@ -34,13 +34,13 @@ alias cp='cp -vip'
 alias ds='du -sh 2> /dev/null'
 alias nl='nl -b a'
 alias v='/usr/local/bin/vim'
-alias cla='cls;ls -A'
 alias bash='/usr/local/bin/bash'
 alias bashcond="man -P 'less +2096' bash"
 alias gcc='/usr/local/Cellar/gcc/9.2.0_2/bin/x86_64-apple-darwin19-gcc-9.2.0'
 
 
 # Bat & Fzf {{{1
+alias color='bat ~/.oh-my-zsh/custom/custom_colors.zsh'
 alias bat="bat --theme 'Monokai Extended Bright'"
 alias fhw='shw | fzf'
 alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
