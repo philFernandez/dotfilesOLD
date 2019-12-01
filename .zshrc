@@ -1,3 +1,29 @@
+# Files to Source {{{1
+
+[[ -d ~/.reminders ]] && [[ ! "$VIMRUNTIME" ]] && \
+  (
+  cd ~/.reminders;
+  shw_rc() {
+    local list_of_files
+    for entry in $(/bin/ls); do
+      if [ -s $entry ]; then
+        list_of_files+=("$entry")
+      fi
+    done
+    bat $list_of_files
+  }
+shw_rc
+)
+
+# p10k {{{1
+stty -ixon
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Temp Things {{{1
 
 #export CLASSPATH="/Users/philthy/eclipse-workspace/A3Prj/dist/A3Prj.jar:\
@@ -9,7 +35,6 @@
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
 # Disable C-S so that it can be used elsewhere
-stty -ixon
 
 # Plugins {{{1
 plugins=(
@@ -38,9 +63,9 @@ source $ZSH/oh-my-zsh.sh               #|
 #--Keep-Them-In-Same-Order---------------
 
 # only load all of powerlevel9k settings if powerlevel9k is the set theme
-if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then
-  source ~/.powerlevel_settings
-fi
+#if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then
+  #source ~/.powerlevel_settings
+#fi
 
 # Exports: {{{1 have to be below source $ZSH/oh-my-zsh.sh
 # Path to your oh-my-zsh installation.
@@ -87,22 +112,6 @@ compdef _gnu_generic fzf
 compdef _gnu_generic bat
 compdef _pdfgrep pdfgrep
 
-# Files to Source {{{1
-
-[[ -d ~/.reminders ]] && [[ ! "$VIMRUNTIME" ]] && \
-	(
-     cd ~/.reminders;
-	 shw_rc() {
-		 local list_of_files
-		 for entry in $(/bin/ls); do
-			 if [ -s $entry ]; then
-				 list_of_files+=("$entry")
-			 fi
-		 done
-		 bat $list_of_files
-	 }
- 	shw_rc
-    )
 # Bindkey {{{1
 bindkey -D emacs
 bindkey -v
@@ -125,3 +134,6 @@ bindkey -s '^R' 'exec zsh\n'
 # ^j accepts completions
 
 # vim:foldenable foldmethod=marker foldcolumn=1
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
