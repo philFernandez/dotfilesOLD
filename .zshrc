@@ -67,6 +67,9 @@ source $ZSH/oh-my-zsh.sh               #|
   #source ~/.powerlevel_settings
 #fi
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # Exports: {{{1 have to be below source $ZSH/oh-my-zsh.sh
 # Path to your oh-my-zsh installation.
 
@@ -135,5 +138,3 @@ bindkey -s '^R' 'exec zsh\n'
 
 # vim:foldenable foldmethod=marker foldcolumn=1
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -317,7 +317,6 @@ map <plug>DisableNERDCommenterAltDelims <plug>NERDCommenterAltDelims
 map <plug>DisableCalendarH <plug>CalendarH
 map <plug>DisableCalendarV <plug>CalendarV
 nnoremap <silent> <leader>ca :Calendar<cr>
-inoremap jj <Esc>
 nnoremap gm m
 nnoremap <silent> <c-s> :Startify<CR>
 nnoremap <silent> <leader>cd :cd %:p:h<cr>
