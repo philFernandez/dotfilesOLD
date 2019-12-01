@@ -444,23 +444,27 @@ function aliases {
 
 # execute selected
 function fhx() { # just show the command w/o the number
-  eval $( fc -l 1 | awk '{print substr($0, index($0,$2))}' | fzf +s --tac --prompt='exe-> ' )
+  eval $( fc -l 1 | awk '{print substr($0, index($0,$2))}' \
+    | fzf +s --tac --prompt='execute-> ' )
 }
 
 # put selected into edit buffer
 function fh() { # just show the command w/o the number
-  print -z $( fc -l 1 | awk '{print substr($0, index($0,$2))}' | fzf +s --tac --prompt='edit-> ')
+  print -z $( fc -l 1 | awk '{print substr($0, index($0,$2))}' \
+    | fzf +s --tac --prompt='edit-> ')
 }
 
 # Open history in fzf and put selected command on the command line for edit and/or execute
 function fhn() { # shows history number
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --prompt='edit-> ' | awk '!($1="")')
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | \
+    fzf +s --tac --prompt='edit-> ' | awk '!($1="")')
 }
 
 
 # Open history in fzf and immediately execute the selected entry
 function fhnx() { # shows history number
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --prompt='exe-> ' | awk '!($1="")')
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | \
+    fzf +s --tac --prompt='execute-> ' | awk '!($1="")')
 }
 
 # fkill - kill processes - list only the ones you can kill. Modified the earlier script.
