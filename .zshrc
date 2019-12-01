@@ -89,7 +89,7 @@ compdef _pdfgrep pdfgrep
 
 # Files to Source {{{1
 
-[[ -d ~/.reminders ]] && \
+[[ -d ~/.reminders ]] && [[ ! "$VIMRUNTIME" ]] && \
 	(
      cd ~/.reminders;
 	 shw_rc() {
