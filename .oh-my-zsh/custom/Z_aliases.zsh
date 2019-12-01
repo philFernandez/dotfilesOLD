@@ -61,8 +61,9 @@ alias ccam='config commit -a -m'
 alias cpush='config push -u origin master'
 alias clcp='config log --stat -p'
 alias clog='config log --oneline --decorate --graph --all'
-alias configls='config ls-tree -r master --name-only $HOME'
+alias confls='config ls-tree -r master --name-only $HOME'
 alias cdl='config diff | bat --style=numbers -l diff'
+alias confzap='(cd && config checkout .)'
 
 # make man pages display line numbers {{{1
 alias man='LESS+="-N" man'
