@@ -36,6 +36,7 @@ alias nl='nl -b a'
 alias v='/usr/local/bin/vim'
 alias bash='/usr/local/bin/bash'
 alias bashcond="man -P 'less +2096' bash"
+alias zshcond="man -P 'less +1884' zshall"
 alias gcc='/usr/local/Cellar/gcc/9.2.0_2/bin/x86_64-apple-darwin19-gcc-9.2.0'
 
 
