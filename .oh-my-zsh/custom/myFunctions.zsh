@@ -333,26 +333,6 @@ function cal {
   fi
 }
 
-# PWD when going back a directory.
-function cl {
-  clear;
-  # spectrum_ls; show all FG color codes
-  # spectrum_bls; show all BG color codes
-  # Must use print -P to work with $ZSH/lib/spectrum.zsh
-  pwdc
-  lsd --group-dirs first
-}
-
-function pwdc {
-  # Defined in ~/.zshrc
-  local backColor=$MY_SHELL_THEME_FG
-  local textColor=$MY_SHELL_THEME_BG
-
-  print -P $FG[$backColor]$BG[$textColor]' PWD '$reset_color$FG[$textColor]$BG[$backColor]'\ue0b4'$FG[000]' '$(pwd)' '$reset_color$FG[$backColor]'\ue0b4'
-  echo $reset_color; # must reset or other output (/bin/ls) will get messed up
-}
-
-
 # preform rm on all files of specified file extension
 # ex. rmft txt removes all txt files in pwd
 function rmft {
