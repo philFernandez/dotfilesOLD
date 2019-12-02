@@ -12,7 +12,7 @@
 # and dependency to make sure nothing that is needed is removed.
 
 if [ $# -ne "1" ]; then
-  printf "%s\n" "usage : $(basename "$0") <package_to_remove>" >&2
+  printf "%s\n" "usage : $0:t <package_to_remove>" >&2
   exit 1
 fi
 
