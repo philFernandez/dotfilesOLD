@@ -73,6 +73,7 @@
       nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
       ranger                  # ranger shell (https://github.com/ranger/ranger)
       vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
+      vim_shell
       # vpn_ip                # virtual private network indicator
       # ram                   # free RAM
       # load                  # CPU load
@@ -912,6 +913,12 @@
     # and regular prompts.
     prompt_example
   }
+
+# Show vim icond in right prompt when inside vim shell (Phil Ferandez)
+function prompt_vim_shell() {
+  [[ -n $VIMRUNTIME  ]] || return
+  _p9k_prompt_segment $0 $_p9k_color1 red '' 0 '' $'\ue7c5'
+}
 
   # User-defined prompt segments can be customized the same way as built-in segments.
   # typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=3
