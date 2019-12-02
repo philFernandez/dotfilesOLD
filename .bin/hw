@@ -16,7 +16,10 @@
 #------------------------------------------------------------------------
 # to ~/.zshrc or ~/.bashrc
 
-# NOTE: the above uses bat instead of cat, but either will work
+# NOTE: the above uses bat instead of cat, but either will work.
+#
+#       This script depends on an external script which globally
+#       defines ansi color codes
 
 COURSE="$1"
 ASSIG="$2"
@@ -33,19 +36,19 @@ recordAssig() {
   local theAssignment=$2
   local theDueDate=$3
   if [[ $theCourseWriteFile == "$STATS" ]]; then
-    printf  "${GREY}● ${GREEN}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】${RESET}" \
+    printf  "${GREY}● ${GREEN}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
   elif [[ $theCourseWriteFile == "$MUSIC" ]]; then
-    printf  "●【 ${CYAN}%s${RESET} 】 - ${RED}Due: %s${RESET}" \
+    printf  "${GREY}● ${CYAN}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
   elif [[ $theCourseWriteFile == "$CSC133" ]]; then
-    printf  "●【 ${PURPLE}%s${RESET} 】 - ${RED}Due: %s${RESET}" \
+    printf  "${GREY}● ${PURPLE}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
-  elif [[ $theCourseWriteFile == "$CSC133" ]]; then
-    printf  "●【 ${YELLOW}%s${RESET} 】 - ${RED}Due: %s${RESET}" \
+  elif [[ $theCourseWriteFile == "$CSC139" ]]; then
+    printf  "${GREY}● ${YELLOW}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
   else
-    printf  "●【 ${BLUE}%s${RESET} 】 - ${RED}Due: %s${RESET}" \
+    printf  "${GREY}● ${BLUE}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
   fi
 }
