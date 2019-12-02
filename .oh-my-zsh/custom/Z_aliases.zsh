@@ -37,6 +37,7 @@ alias v='/usr/local/bin/vim'
 alias bash='/usr/local/bin/bash'
 alias bashcond="man -P 'less +2096' bash"
 alias zshcond="man -P 'less +1884' zshall"
+alias zshexpn="man -P 'less +2538' zshall"
 
 
 # Bat & Fzf {{{1
