@@ -73,7 +73,7 @@
       nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
       ranger                  # ranger shell (https://github.com/ranger/ranger)
       vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
-      vim_shell
+      vim_shell               # show vim icon when inside vim shell
       # vpn_ip                # virtual private network indicator
       # ram                   # free RAM
       # load                  # CPU load
