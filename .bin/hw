@@ -32,10 +32,22 @@ recordAssig() {
   local theCourseWriteFile=$1
   local theAssignment=$2
   local theDueDate=$3
-  #local centralFile=~/.reminders/.all
-  printf  "●【 %s 】 - Due: %s\n" "$theAssignment" "$theDueDate" >> "$theCourseWriteFile"
-  #printf  "%s - Due: %s\n" "$(basename "$theCourseWriteFile"): \
- #$theAssignment" "$theDueDate" >> "$centralFile"
+  if [[ $theCourseWriteFile == "$STATS" ]]; then
+    printf  "${GREY}● ${GREEN}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】${RESET}" \
+      "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
+  elif [[ $theCourseWriteFile == "$MUSIC" ]]; then
+    printf  "●【 ${CYAN}%s${RESET} 】 - ${RED}Due: %s${RESET}" \
+      "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
+  elif [[ $theCourseWriteFile == "$CSC133" ]]; then
+    printf  "●【 ${PURPLE}%s${RESET} 】 - ${RED}Due: %s${RESET}" \
+      "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
+  elif [[ $theCourseWriteFile == "$CSC133" ]]; then
+    printf  "●【 ${YELLOW}%s${RESET} 】 - ${RED}Due: %s${RESET}" \
+      "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
+  else
+    printf  "●【 ${BLUE}%s${RESET} 】 - ${RED}Due: %s${RESET}" \
+      "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
+  fi
 }
 
 removeAssig() {
@@ -123,3 +135,4 @@ END
 fi
 
 
+# vi: ft=bash
