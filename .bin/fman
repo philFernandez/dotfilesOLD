@@ -39,6 +39,7 @@ press ctrl-s on a selected file to bookmark
 EOF
 }
 
+CACHE="$HOME/.cache/fman/cache"
 HEADER="Fuzzy Man"
 # Command that fzf will execute when enter is pressed on selected file
 if [ -e "$HOME/.bin/cman" ] || [ -e "$HOME/bin/cman" ]; then
@@ -53,16 +54,20 @@ if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-
   # There are some duplicates between the directories so sort and filter
   if [ "$1" = '-u' ]; then
     print "${GREEN}Updating manpage cache...${NC}"
+    # Call get_manpages to traverse the man page directories
     ALL_MANPAGES=$(sort -u <<< "$(get_manpages)")
-    if [ -d "$HOME/.config/fman" ]; then
-      echo $ALL_MANPAGES > ~/.config/fman/cache
-    else
-      mkdir -p $HOME/.config/fman
-      echo $ALL_MANPAGES > ~/.config/fman/cache
+    # if the cache dir doesn't exist make it
+    [[ ! -d $CACHE:h ]] && mkdir -p $CACHE:h
+    # Write package names to a cache file
+    echo $ALL_MANPAGES > $CACHE
+    exit 0
+  else # if called w/o -u
+    if [[ ! -d $CACHE:h ]]; then  # error if cache file doesn't exist
+      print "${RED}Error       : ${NC}${YELLOW}Need Package Cache"
+      print "${RED}Run Command : ${GREEN}fman -u"
+      exit 1
     fi
-    exit
-  else
-    ALL_MANPAGES=$(cat ~/.config/fman/cache)
+    ALL_MANPAGES=$(<$CACHE)
   fi
   # call man with all manpages piped to fzf
   if [ "$1" = "-p" ]; then # start in preview mode
