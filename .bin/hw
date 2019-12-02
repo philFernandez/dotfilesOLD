@@ -33,7 +33,7 @@ recordAssig() {
   local theAssignment=$2
   local theDueDate=$3
   #local centralFile=~/.reminders/.all
-  printf  "%s - Due: %s\n" "$theAssignment" "$theDueDate" >> "$theCourseWriteFile"
+  printf  "●【 %s 】 - Due: %s\n" "$theAssignment" "$theDueDate" >> "$theCourseWriteFile"
   #printf  "%s - Due: %s\n" "$(basename "$theCourseWriteFile"): \
  #$theAssignment" "$theDueDate" >> "$centralFile"
 }
