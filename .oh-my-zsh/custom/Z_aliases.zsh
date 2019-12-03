@@ -39,6 +39,7 @@ alias watch='watch -n 0.1'
 alias bashcond="man -P 'less +2096' bash"
 alias zshcond="man -P 'less +1884' zshall"
 alias zshexpn="man -P 'less +2538' zshall"
+alias zshprompt="man -P 'less +2099' zshall"
 # Bat & Fzf {{{1
 alias color='bat ~/.oh-my-zsh/custom/custom_colors.zsh'
 alias bat="bat --theme 'Monokai Extended Bright'"
