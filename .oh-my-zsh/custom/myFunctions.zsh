@@ -60,7 +60,7 @@ function schw {
 # files.
 # If shw is called with an '-a' flag it will show the
 # hidden non-empty archive files
-function shw() { # SEE '~/.bin/hw' script for managing files
+function shwf() { # SEE '~/.bin/hw' script for managing files
   # make sure renders dir exists
   if [ "$1" = '-c' ] || [ "$2" = '-c' ]; then
     print -P $FG[192]''
