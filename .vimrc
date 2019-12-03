@@ -33,6 +33,7 @@ Plug 'PProvost/vim-ps1'
 Plug 'vim-scripts/taglist.vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'majutsushi/tagbar'
+Plug '~/.vim/plugged-manual/AnsiEsc'
 
 " Un-used plugins {{{1
 "Plug 'airblade/vim-gitgutter'
