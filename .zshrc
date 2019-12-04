@@ -1,6 +1,6 @@
 # Files to Source {{{1
 
-[[ -d ~/.reminders ]] && [[ ! "$VIMRUNTIME" ]] && \
+[[ -d ~/.reminders ]] && [[ ! "$VIMRUNTIME" ]] && [[ ! "$RANGER_LEVEL" ]] && \
   (
   cd ~/.reminders;
   shw_rc() {

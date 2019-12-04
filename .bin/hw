@@ -36,19 +36,19 @@ recordAssig() {
   local theAssignment=$2
   local theDueDate=$3
   if [[ $theCourseWriteFile == "$STATS" ]]; then
-    printf  "${GREY}● ${GREEN}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
+    printf  "${GREY}● ${GREEN}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】${RESET}\n" \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
   elif [[ $theCourseWriteFile == "$MUSIC" ]]; then
-    printf  "${GREY}● ${CYAN}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
+    printf  "${GREY}● ${CYAN}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】${RESET}\n" \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
   elif [[ $theCourseWriteFile == "$CSC133" ]]; then
-    printf  "${GREY}● ${PURPLE}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
+    printf  "${GREY}● ${PURPLE}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】${RESET}\n" \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
   elif [[ $theCourseWriteFile == "$CSC139" ]]; then
-    printf  "${GREY}● ${YELLOW}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
+    printf  "${GREY}● ${YELLOW}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】${RESET}\n" \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
   else
-    printf  "${GREY}● ${BLUE}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】\n" \
+    printf  "${GREY}● ${BLUE}%s${RESET} -${GREY}【${RED}Due: %s${GREY}】${RESET}\n"  \
       "$theAssignment" "$theDueDate" >> "$theCourseWriteFile";
   fi
 }

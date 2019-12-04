@@ -76,5 +76,6 @@ alias brews='brew list -1'
 alias show='brew info'
 alias search='brew search'
 alias show_all_cask='brew search --casks' # <package> (optional)
+alias install='brew -v install'
 # {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
