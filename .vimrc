@@ -289,6 +289,15 @@ let g:notes_directories = ['~/Notes/viNotes']
 
 " Keymaps {{{1
 
+" AutoClose w/o any plugin
+"inoremap " ""<left>
+"inoremap ' ''<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
+"inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
+
 map <silent><c-t> :TagbarToggle<CR>
 nnoremap <leader>f :NERDTreeToggle<CR>
 
