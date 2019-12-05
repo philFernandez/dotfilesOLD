@@ -88,7 +88,8 @@ export HISTSIZE=500000
 
 export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 
-export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || ag --hidden -g "")'
+export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || \
+  rg --hidden --no-ignore --files)'
 #export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -H)'
 
 export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
@@ -113,7 +114,8 @@ compdef _git gdl=git-diff
 compdef _gnu_generic lsd
 compdef _gnu_generic fzf
 compdef _gnu_generic bat
-compdef _pdfgrep pdfgrep
+compdef _gnu_generic rg
+#compdef _pdfgrep pdfgrep
 
 # Bindkey {{{1
 bindkey -D emacs
