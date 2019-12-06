@@ -96,6 +96,7 @@ set updatetime=100
 set scrolloff=3
 set wildmenu
 set tags=./.git/tags;
+set tags+=./tags;
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers
 
