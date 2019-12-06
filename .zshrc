@@ -118,6 +118,7 @@ compdef _gnu_generic rg
 #compdef _pdfgrep pdfgrep
 
 # Bindkey {{{1
+KEYTIMEOUT=5
 bindkey -D emacs
 bindkey -v
 bindkey -M menuselect 'h' vi-backward-char
