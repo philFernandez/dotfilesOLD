@@ -76,8 +76,9 @@ if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"  " vert bar  : insert
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"  " block     : normal
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"  " underline : replace
 endif
 autocmd InsertEnter * set cursorline
 autocmd InsertLeave * set nocursorline
@@ -444,3 +445,4 @@ highlight link javaDocTags PreProc
 " see https://github.com/joeyespo/grip
 
 " vim:foldenable foldmethod=marker foldcolumn=1
+
