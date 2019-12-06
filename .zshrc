@@ -121,13 +121,14 @@ compdef _gnu_generic rg
 KEYTIMEOUT=5
 bindkey -D emacs
 bindkey -v
+
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-bindkey "^[OA" history-beginning-search-backward
-bindkey "^[OB" history-beginning-search-forward
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 bindkey "^?" backward-delete-char
 bindkey '^[u' run-help
@@ -142,12 +143,12 @@ bindkey -s '^R' 'exec zsh\n'
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] \
-    || [[ $KEYMAP = '' ]] || [[ $1 = 'underline' ]]; then
-    echo -ne '\e[3 q'
-  fi
+if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
+  echo -ne '\e[1 q'
+elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] \
+  || [[ $KEYMAP = '' ]] || [[ $1 = 'underline' ]]; then
+  echo -ne '\e[3 q'
+fi
 }
 zle -N zle-keymap-select
 
