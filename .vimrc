@@ -69,6 +69,10 @@ set splitbelow
 set splitright
 set termguicolors
 
+" Get rid of delay when entering normal mode
+set timeoutlen=1000
+set ttimeoutlen=0
+"---------------------
 hi ALEWarning guibg=NONE guifg=NONE
 
 " Cursor line insert/normal toggle
