@@ -140,5 +140,19 @@ bindkey -s '^R' 'exec zsh\n'
 # ^i brings up completion
 # ^j accepts completions
 
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] \
+    || [[ $KEYMAP = '' ]] || [[ $1 = 'underline' ]]; then
+    echo -ne '\e[3 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Start with beam shape cursor on zsh startup and after every command.
+zle-line-init() { zle-keymap-select 'underline'}
+
 # vim:foldenable foldmethod=marker foldcolumn=1
 
