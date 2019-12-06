@@ -131,7 +131,6 @@ bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
 bindkey "^?" backward-delete-char
-bindkey '^[u' run-help
 bindkey '^X^E' edit-command-line # open vim for writing command
 bindkey '^F' vi-end-of-line # accept autocomplete
 bindkey '^A' vi-beginning-of-line
