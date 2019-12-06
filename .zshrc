@@ -118,7 +118,7 @@ compdef _gnu_generic rg
 #compdef _pdfgrep pdfgrep
 
 # Bindkey {{{1
-KEYTIMEOUT=5
+KEYTIMEOUT=1
 bindkey -D emacs
 bindkey -v
 
