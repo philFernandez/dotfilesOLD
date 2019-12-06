@@ -86,6 +86,8 @@ else
 endif
 autocmd InsertEnter * set cursorline
 autocmd InsertLeave * set nocursorline
+" make cursor shape block on enter
+autocmd VimEnter * silent exec "! echo -ne '\e[1 q';\<Esc>"
 
 " Other VIM {{{1
 set mouse=a
