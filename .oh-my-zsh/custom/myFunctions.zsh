@@ -218,39 +218,9 @@ function vwtf {
   say -v Dan "$(wtf $1)"
 }
 
-fcd() {
-  local dir
-  dir="$(fd . ${1:-.} -I -H -td | fzf --sort \
-    --preview=" lsd -A --color=always \
-    --icon=always --group-dirs first {}" \
-    --preview-window="down:50%" --prompt='cd '\
-    )" &&
-    cd "$dir"
-  }
 
-fcdf() {
-  local file
-  local dir
-  file="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore| \
-    fzf -m --preview="bat --color=always --style=numbers {}" \
-    --preview-window="down:90%" --prompt='cd-to-dir-of ' \
-    )"
-      [ -n "$file" ] && dir=$(dirname "$file") && cd "$dir"
 
-    }
 
-  fvim() {
-    local files
-    files="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore | \
-      fzf -m --preview="bat --color=always --style=numbers {}" \
-      --preview-window="down:90%" --prompt='vim ' \
-      )"
-          [ -n "$files" ] && ${=EDITOR} $(echo "$files")
-        }
-
-      fnote() {
-        vnote $(/bin/ls -1 ~/Notes/viNotes | fzf)
-      }
 
 
 
@@ -420,7 +390,7 @@ function aliases {
 # while zsh is in vim-mode, this must be in ~/.zshrc
 #bindkey -s '^R' 'exec zsh\n'
 
-# FZF functions ===============================================
+# FZF functions borrowed from github ==========================
 
 # execute selected
 function fhx() { # just show the command w/o the number
@@ -462,6 +432,37 @@ function fkill() {
   fi
 }
 
+# fzf functions that I wrote ===============================
+function fcd {
+  local dir
+  dir="$(fd . ${1:-.} -I -H -td | fzf --sort \
+    --preview=" lsd -A --color=always \
+    --icon=always --group-dirs first {}" \
+    --preview-window="down:50%" --prompt='cd '\ )" &&
+    cd "$dir"
+}
+
+function fcdf {
+  local file
+  local dir
+  file="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore| \
+    fzf -m --preview="bat --color=always --style=numbers {}" \
+    --preview-window="down:90%" --prompt='cd-to-dir-of ' \ )"
+      [ -n "$file" ] && dir=$(dirname "$file") && cd "$dir"
+
+}
+
+function fvim {
+  local files
+  files="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore | \
+    fzf -m --preview="bat --color=always --style=numbers {}" \
+    --preview-window="down:90%" --prompt='vim ' \ )"
+      [ -n "$files" ] && ${=EDITOR} $(echo "$files")
+}
+
+function fnote {
+  vnote $(/bin/ls -1 ~/Notes/viNotes | fzf)
+}
 # =============================================================
 
 # Open conf files
