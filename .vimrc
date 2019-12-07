@@ -160,7 +160,7 @@ set nowrap
 set foldmethod=indent
 set foldnestmax=3
 " uncomment to disable fold on file open
-set nofoldenable
+"set nofoldenable
 
 " Lightline {{{1
 let g:lightline = {
