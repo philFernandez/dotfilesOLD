@@ -1,4 +1,3 @@
-
 " need to be first {{{1
 set nocompatible
 let mapleader=','
@@ -6,7 +5,7 @@ let mapleader=','
 " Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
@@ -58,9 +57,13 @@ set showtabline=2
 set background=dark
 "color onehalfdark
 "color materialbox
-color OceanicNext
-let g:oceanic_next_terminal_bold=1
-let g:oceanic_next_terminal_italic=1
+"color onedark
+"color tender
+color lightning
+"color yellow-moon
+"color OceanicNext
+"let g:oceanic_next_terminal_bold=1
+"let g:oceanic_next_terminal_italic=1
 set laststatus=2
 set noshowmode
 set ruler
@@ -451,4 +454,3 @@ highlight link javaDocTags PreProc
 " see https://github.com/joeyespo/grip
 
 " vim:foldenable foldmethod=marker foldcolumn=1
-
