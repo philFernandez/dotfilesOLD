@@ -161,7 +161,7 @@ set nowrap
 " zj - jump down to next fold
 " zk - jump up to previous fold
 set foldmethod=indent
-set foldnestmax=3
+set foldnestmax=5
 " uncomment to disable fold on file open
 "set nofoldenable
 

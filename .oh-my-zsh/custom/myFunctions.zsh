@@ -12,7 +12,7 @@
 # \u001b[38;5;XXXm<String> , where XXX is asci code
 # TEMP FUNCTIONS
 cn1() {
-  (clear;cd ~/eclipse-workspace/A3Prj && java -cp dist/A3Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a3.Starter)
+  (clear;cd ~/eclipse-workspace/A4Prj && java -cp dist/A4Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a4.Starter)
 }
 # ------------------------------------------------------
 
