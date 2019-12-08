@@ -5,7 +5,6 @@ let mapleader=','
 " Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
-"Plug 'sheerun/vim-polyglot'
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
@@ -17,7 +16,7 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
 Plug 'machakann/vim-highlightedyank'
-Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug '/usr/local/opt/fzf/'
