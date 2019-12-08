@@ -1,5 +1,6 @@
 # Temp Aliases {{{1
-alias b='(cd ~/eclipse-workspace/A3Prj && ant jar)'
+alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
+alias r='cn1'
 # Commands and Shortcuts {{{1
 alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
 alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'
