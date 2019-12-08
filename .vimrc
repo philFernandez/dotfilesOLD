@@ -58,8 +58,8 @@ set background=dark
 "color onehalfdark
 "color materialbox
 "color onedark
-"color tender
-color lightning
+color tender
+"color lightning
 "color yellow-moon
 "color OceanicNext
 "let g:oceanic_next_terminal_bold=1
