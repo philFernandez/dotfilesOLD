@@ -48,16 +48,17 @@ Plug '~/.vim/plugged-manual/AnsiEsc'
 call plug#end()
 
 " UI Settings {{{1
+set termguicolors " keep this before color theme setting
 " need these for truecolor in tmux
 "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"set termguicolors
 set showtabline=2
-set background=dark
+"set background=dark
+color solarized8_high
 "color onehalfdark
 "color materialbox
 "color onedark
-color tender
+"color tender
 "color lightning
 "color yellow-moon
 "color OceanicNext
@@ -69,7 +70,6 @@ set ruler
 set number
 set splitbelow
 set splitright
-set termguicolors
 
 " Get rid of delay when entering normal mode
 set timeoutlen=1000
@@ -159,8 +159,8 @@ set nowrap
 " zC - fold recursively under cursor
 " zj - jump down to next fold
 " zk - jump up to previous fold
-set foldmethod=indent
-set foldnestmax=5
+set foldmethod=syntax
+set foldnestmax=4
 " uncomment to disable fold on file open
 "set nofoldenable
 
@@ -362,19 +362,6 @@ nnoremap <silent> <F5> :resize +2<cr>
 nnoremap <silent> <F6> :resize -2<cr>
 nnoremap <silent> <F7> :vertical resize +2<cr>
 nnoremap <silent> <F8> :vertical resize -2<cr>
-
-fun DoubleQuoteLine()
-  exe 'normal! 0v$di""'
-  exe 'normal! hp'
-endfun
-nnoremap <leader>ql :call DoubleQuoteLine()<cr>
-
-fun DoubleQuoteWord()
-  "exe 'normal! viwdi""'
-  exe 'normal! BvEdi""'
-  exe 'normal! hp'
-endfun
-nnoremap <leader>qw :call DoubleQuoteWord()<cr>
 
 " Augmenting Ag command using fzf#vim#with_preview function
 "   * fzf#vim#with_preview([[options], [preview window], [toggle keys...]])
