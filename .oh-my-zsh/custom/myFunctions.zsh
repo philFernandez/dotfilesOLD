@@ -485,7 +485,7 @@ function ett {
   ${=EDITOR} ~/.zsh_theme
 }
 function et {
-  ${=EDITOR} ~/.tmux.conf
+  ${=EDITOR} ~/.p10k.zsh
 }
 function es {
   ${=EDITOR} ~/.oh-my-zsh/custom/spotify.zsh
