@@ -15,8 +15,20 @@ cn1() {
   (clear;cd ~/eclipse-workspace/A4Prj && java -cp dist/A4Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a4.Starter)
 }
 # ------------------------------------------------------
-
-
+function zsh_stats {
+  if [ $# -eq 1 ]; then
+    if [[ $1 =~ '^[0-9]+$' ]]; then
+      local numToShow="$1"
+      fc -l 1 | awk \
+        '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' \
+        | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n${numToShow}
+    fi
+  else
+    fc -l 1 | awk \
+      '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' \
+      | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n20
+  fi
+}
 
 # takes any number of file name arguments, reads
 # the file names into all_files, cats all

@@ -53,12 +53,12 @@ set termguicolors " keep this before color theme setting
 "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set showtabline=2
-"set background=dark
-color solarized8_high
+set background=dark
+"color solarized8_high
 "color onehalfdark
 "color materialbox
 "color onedark
-"color tender
+color tender
 "color lightning
 "color yellow-moon
 "color OceanicNext
