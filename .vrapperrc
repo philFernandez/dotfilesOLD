@@ -2,7 +2,6 @@
 
 let mapleader = ','
 
-imap jj <esc>
 set incsearch
 set hlsearch
 
