@@ -438,7 +438,7 @@ function fcd {
   dir="$(fd . ${1:-.} -I -H -td | fzf --sort \
     --preview=" lsd -A --color=always \
     --icon=always --group-dirs first {}" \
-    --preview-window="down:50%" --prompt='cd '\ )" &&
+    --preview-window="down:50%" --prompt='cd ')" &&
     cd "$dir"
 }
 
