@@ -502,3 +502,6 @@ function et {
 function es {
   ${=EDITOR} ~/.oh-my-zsh/custom/spotify.zsh
 }
+function evt {
+  ${=EDITOR} ~/.vim/after/plugin/color_settings.vim
+}
