@@ -5,6 +5,7 @@ let mapleader=','
 " Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
+Plug 'artur-shaik/vim-javacomplete2'
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
@@ -48,22 +49,11 @@ Plug '~/.vim/plugged-manual/AnsiEsc'
 call plug#end()
 
 " UI Settings {{{1
-set termguicolors " keep this before color theme setting
 " need these for truecolor in tmux
 "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set showtabline=2
 set background=dark
-"color solarized8_high
-"color onehalfdark
-"color materialbox
-"color onedark
-color tender
-"color lightning
-"color yellow-moon
-"color OceanicNext
-"let g:oceanic_next_terminal_bold=1
-"let g:oceanic_next_terminal_italic=1
 set laststatus=2
 set noshowmode
 set ruler
@@ -260,6 +250,8 @@ set completeopt-=preview
 set shortmess+=c
 " utomatic completion at startup (w/o this have to press tab)
 let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#chains = {}
+let g:mucomplete#chains.java = [ 'user', 'tags', 'file', 'c-p']
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
@@ -272,6 +264,10 @@ let g:clang_make_default_keymappings=0
 let g:AutoPairsMapCR = 0
 imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
 let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+"inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <c-x><c-o>
 
 
 " Easy Clip and Note {{{1
