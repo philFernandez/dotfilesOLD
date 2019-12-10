@@ -42,7 +42,7 @@ function fv {
       echo "$@[i]"
       all_files="$all_files ""$@[i]"
     done
-    cat $(echo $all_files) | nl -ba | fzf
+    cat $(echo $all_files) | nl -ba | sed -e 's/  //g' -e 's/^ //g' | fzf
   else # dont use line numbers
     for i in {1..$#}; do
       echo "$@[i]"

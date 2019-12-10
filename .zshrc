@@ -78,6 +78,7 @@ source $ZSH/oh-my-zsh.sh               #|
 #export EDITOR='code -w'
 
 export RANGER_LOAD_DEFAULT_RC=false
+#export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # set vim as default editor
 export EDITOR=/usr/local/bin/vim

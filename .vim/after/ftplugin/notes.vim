@@ -1,5 +1,9 @@
 exe "MUcompleteAutoOff"
 
+" allows editing and line wrapping
+set formatoptions+=a
+set wrap
+
 " insert bullet point
 imap <leader>w <esc><space><space>*<space>
 "nmap <leader>w I<esc><space><space>*<space>
@@ -13,8 +17,3 @@ set foldenable
 
 nnoremap <leader>w :call vimnotes#doMyMarkDown#DoMarkDownThingNow()<CR>
 nnoremap <leader>v :call vimnotes#doMyMarkDown#DoMarkDownHw()<CR>
-
-
-"autocmd BufWrite * :NoteToMarkdown | :w! ~/Fall_2019/CSC139/Final/Notes.md | :bdelete!
-
-

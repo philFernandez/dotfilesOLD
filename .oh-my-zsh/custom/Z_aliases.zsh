@@ -37,6 +37,7 @@ alias nl='nl -b a'
 alias v='/usr/local/bin/vim'
 alias bash='/usr/local/bin/bash'
 alias watch='watch -n 0.1'
+alias rg='rg --colors match:bg:blue --colors match:fg:yellow --colors line:style:bold --colors line:fg:yellow --colors path:fg:200,100,50 --colors path:style:bold -S'
 # Manpage Shortcuts {{{1
 alias bashcond="man -P 'less +2096' bash"
 alias zshcond="man -P 'less +1884' zshall"

@@ -134,9 +134,6 @@ set smartcase
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
 set nowrap
-" for latex, or paragraph type writing
-"set formatoptions+=a
-"set wrap
 
 " Fold {{{1
 " za - toggle fold under cursor
@@ -401,14 +398,6 @@ command! -bang -nargs=* Ag
 nnoremap <silent> <leader>l :Buffers<CR>
 
 " Custom Syntax (Inactive) {{{1
-"let java_highlight_functions = 1
-"let java_highlight_all = 1
-"" If you are trying this at runtime, you need to reload the syntax file
-
-"" Some more highlights, in addition to those suggested by cmcginty
-"highlight link javaScopeDecl Statement
-"highlight link javaType Type
-"highlight link javaDocTags PreProc
 "custom syntax settings
 "syntax bolding
 "hi Question cterm=bold
