@@ -51,7 +51,8 @@ setopt NONOMATCH \
   INC_APPEND_HISTORY \
   HIST_SAVE_NO_DUPS \
   APPEND_HISTORY \
-  SHARE_HISTORY
+  SHARE_HISTORY \
+  NO_CLOBBER
 
 # Source Things {{{1
 # set theme in another file that isn't under source control
