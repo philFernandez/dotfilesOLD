@@ -468,7 +468,7 @@ function fvim {
   local files
   files="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore | \
     fzf -m --preview="bat --color=always --style=numbers {}" \
-    --preview-window="down:90%" --prompt='vim ' \ )"
+    --preview-window="down:90%" --prompt='vim ')"
       [ -n "$files" ] && ${=EDITOR} $(echo "$files")
 }
 

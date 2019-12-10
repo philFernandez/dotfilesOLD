@@ -3,6 +3,7 @@ set tabstop=4
 " Use tab instead of spaces, because this is what eclipse uses by default
 set noexpandtab
 set colorcolumn=80
+"set foldmethod=indent
 
 " Build java
 nnoremap <c-b><c-p> :!clear;javac %<cr>

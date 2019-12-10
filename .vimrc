@@ -5,7 +5,7 @@ let mapleader=','
 " Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
-Plug 'artur-shaik/vim-javacomplete2'
+Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
@@ -17,7 +17,7 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
 Plug 'machakann/vim-highlightedyank'
-Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug '/usr/local/opt/fzf/'
@@ -150,7 +150,8 @@ set nowrap
 " zj - jump down to next fold
 " zk - jump up to previous fold
 set foldmethod=syntax
-set foldnestmax=4
+"set foldnestmax=1
+set foldlevel=0
 " uncomment to disable fold on file open
 "set nofoldenable
 
@@ -400,14 +401,14 @@ command! -bang -nargs=* Ag
 nnoremap <silent> <leader>l :Buffers<CR>
 
 " Custom Syntax (Inactive) {{{1
-let java_highlight_functions = 1
-let java_highlight_all = 1
-" If you are trying this at runtime, you need to reload the syntax file
+"let java_highlight_functions = 1
+"let java_highlight_all = 1
+"" If you are trying this at runtime, you need to reload the syntax file
 
-" Some more highlights, in addition to those suggested by cmcginty
-highlight link javaScopeDecl Statement
-highlight link javaType Type
-highlight link javaDocTags PreProc
+"" Some more highlights, in addition to those suggested by cmcginty
+"highlight link javaScopeDecl Statement
+"highlight link javaType Type
+"highlight link javaDocTags PreProc
 "custom syntax settings
 "syntax bolding
 "hi Question cterm=bold
