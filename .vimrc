@@ -150,7 +150,7 @@ set foldmethod=syntax
 "set foldnestmax=1
 set foldlevel=0
 " uncomment to disable fold on file open
-"set nofoldenable
+set nofoldenable
 
 " Lightline {{{1
 let g:lightline = {

@@ -525,7 +525,7 @@
    typeset -g POWERLEVEL9K_RANGER_BACKGROUND=130
    typeset -g POWERLEVEL9K_RANGER_FOREGROUND=016
   # Custom icon.
-   typeset -g POWERLEVEL9K_RANGER_VISUAL_IDENTIFIER_EXPANSION=''
+   typeset -g POWERLEVEL9K_RANGER_VISUAL_IDENTIFIER_EXPANSION=''
 
   ###########################[ vim_shell: vim shell indicator (:sh) ]###########################
   # Vim shell indicator color.
