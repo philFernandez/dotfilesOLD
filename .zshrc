@@ -88,7 +88,9 @@ export UPDATE_ZSH_DAYS=7
 export SAVEHIST=500000
 export HISTSIZE=500000
 
-export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
+#export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
+export LSCOLORS=ExGxbadxCxbxbxCxCxbxbx
+export CLICOLOR=true
 
 export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || \
   rg --hidden --no-ignore --files)'

@@ -4,7 +4,7 @@ alias r='cn1'
 # Commands and Shortcuts {{{1
 alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
 alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'
-alias lls='/bin/ls -G'
+alias lls='/bin/ls'
 alias shwc='c;shwf -c'
 alias shwa='c;shwf -a'
 alias shw='c;shwf'
