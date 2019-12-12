@@ -132,7 +132,7 @@ set tabstop=2
 " Search {{{1
 set hlsearch
 set ignorecase
-set incsearch
+set noincsearch
 set smartcase
 
 " Text Render (wrap) {{{1

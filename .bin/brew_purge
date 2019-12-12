@@ -64,8 +64,8 @@ print -n 'Proceed [yn] : '; read -q yes_or_no; echo; echo
 # If 'y' then proceed to remove the package and its uniq dependencies
 if [ $yes_or_no = 'y' ]; then
   for package in $TO_REMOVE; do
-    #brew rm --force --ignore-dependencies $package
-    echo $package # comment this out and uncomment the above line
+    brew rm --force --ignore-dependencies $package
+    #echo $package # comment this out and uncomment the above line
   done
 else
   # else bail
