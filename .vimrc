@@ -99,10 +99,15 @@ set tags+=./tags;
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers
 
-if !isdirectory("/tmp/.vim-undo-dir")
-	call mkdir("/tmp/.vim-undo-dir", "", 0700)
+"if !isdirectory("/tmp/.vim-undo-dir")
+	"call mkdir("/tmp/.vim-undo-dir", "", 0700)
+"endif
+
+if !isdirectory("/Users/philthy/.vim/.vim-undo-dir")
+  call mkdir("/Users/philthy/.vim/.vim-undo-dir", "", 0700)
 endif
-set undodir=/tmp/.vim-undo-dir
+"set undodir=/tmp/.vim-undo-dir
+set undodir=/Users/philthy/.vim/.vim-undo-dir
 set undofile
 "au BufWrite *.c,*.py,*.java :Autoformat
 
