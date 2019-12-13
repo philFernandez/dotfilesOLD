@@ -98,6 +98,7 @@ set tags=./.git/tags;
 set tags+=./tags;
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers
+let g:tex_flavor = "latex"
 
 "if !isdirectory("/tmp/.vim-undo-dir")
 	"call mkdir("/tmp/.vim-undo-dir", "", 0700)
