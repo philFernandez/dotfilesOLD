@@ -8,13 +8,26 @@
 
 # This file does not have access to Z_aliases.zsh aliases
 # because this is sourced first. (Alphabetic By Filename)
-
 # \u001b[38;5;XXXm<String> , where XXX is asci code
 # TEMP FUNCTIONS
 cn1() {
   (clear;cd ~/eclipse-workspace/A4Prj && java -cp dist/A4Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a4.Starter)
 }
 # ------------------------------------------------------
+
+function zap {
+  if [[ $1 == '-y' ]]; then
+    fd -HI -d1 -0 | xargs -0 rm -vfr
+  else
+    print -n 'Are you sure you want to zap everything?!?! [yn] '
+    read -q yes_zap
+    echo; echo
+    if [[ $yes_zap == 'y' ]]; then
+      fd -HI -d1 -0 | xargs -0 rm -vfr
+    fi
+  fi
+}
+
 function zsh_stats {
   if [ $# -eq 1 ]; then
     if [[ $1 =~ '^[0-9]+$' ]]; then
@@ -531,3 +544,5 @@ function es {
 function evt {
   ${=EDITOR} ~/.vim/after/plugin/color_settings.vim
 }
+
+# vi: foldenable foldmethod=syntax
