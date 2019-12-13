@@ -271,9 +271,9 @@ function laa {
 # Had to unalias l
 function l() {
   if [ $# -ge 1 ]; then
-    lsd -l $@ --date relative --group-dirs first
+    lsd -l $@ --date --group-dirs first
   else
-    lsd -l $pwd --date relative --group-dirs first
+    lsd -l $pwd --date --group-dirs first
   fi
 }
 
