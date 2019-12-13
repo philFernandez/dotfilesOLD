@@ -5,7 +5,6 @@
 #  /_______ \/_______  /\___|_  /   \___  / |____/|___|  /\___  >__| |__|\____/|___|  /____  >
 #          \/        \/       \/        \/             \/     \/                    \/     \/
 
-
 # This file does not have access to Z_aliases.zsh aliases
 # because this is sourced first. (Alphabetic By Filename)
 # \u001b[38;5;XXXm<String> , where XXX is asci code
@@ -65,7 +64,6 @@ function fv {
   fi
 }
 
-
 function schw {
   local SEARCH_T="$1"
   clear
@@ -77,7 +75,6 @@ function schw {
           (cd ~/.reminders.silent && ag --nonumbers --nocolor "$SEARCH_T" | bat --style=grid,numbers)
   fi
 }
-
 
 # Collects names of non-empty files in ~/.reminders
 # and puts those names into a list. The list is passed
@@ -217,7 +214,6 @@ function rd {
   fi
 }
 
-
 function allcoms {
   print -l $commands | fzf
 }
@@ -242,12 +238,6 @@ function vwtf {
   wtf "$1"
   say -v Dan "$(wtf $1)"
 }
-
-
-
-
-
-
 
 # Have to use function, because need filename before
 # --group-dirs first
@@ -347,7 +337,6 @@ function mke {
   chmod +x "$*"
 }
 
-
 # search history by keyword
 function shist {
   # awk makes the command become the first column
@@ -436,7 +425,6 @@ function fhn() { # shows history number
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | \
     fzf +s --tac --prompt='edit-> ' | awk '!($1="")')
 }
-
 
 # Open history in fzf and immediately execute the selected entry
 function fhnx() { # shows history number
