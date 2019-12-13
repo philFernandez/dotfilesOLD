@@ -12,7 +12,7 @@ set spell
 set nonumber
 autocmd BufEnter * setfiletype notes
 set tw=85
-"set foldenable
+set foldenable
 
 nnoremap <leader>w :call vimnotes#doMyMarkDown#DoMarkDownThingNow()<CR>
 nnoremap <leader>v :call vimnotes#doMyMarkDown#DoMarkDownHw()<CR>
