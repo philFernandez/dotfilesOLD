@@ -38,6 +38,7 @@ alias v='/usr/local/bin/vim'
 alias bash='/usr/local/bin/bash'
 alias watch='watch -n 0.1'
 alias rg='rg --colors --colors match:fg:yellow --colors match:style:bold --colors line:style:bold --colors line:fg:yellow --colors path:fg:200,100,50 --colors path:style:bold -S'
+alias py='python3'
 # Manpage Shortcuts {{{1
 alias bashcond="man -P 'less +2096' bash"
 alias zshcond="man -P 'less +1884' zshall"
