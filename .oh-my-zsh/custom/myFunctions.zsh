@@ -483,6 +483,12 @@ function frm {
   removals=$(fd -tf -d${1:-1} | fzf --multi --prompt='rm ')
   [ -n "$removals" ] && print -z rm ${=removals}
 }
+
+function frd {
+  local removals
+  removals=$(fd -td -d${1:-1} | fzf --multi --prompt='rd ')
+  [ -n "$removals" ] && print -z rd ${=removals}
+}
 # =============================================================
 
 # Open conf files
