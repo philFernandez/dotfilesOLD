@@ -478,16 +478,28 @@ function fnote {
   vnote $(/bin/ls -1 ~/Notes/viNotes | fzf)
 }
 
+# fuzzy remove files
+# takes optional numeric parameter for indicating
+# how deep to traverse relative to pwd
+# Does not immediately remove files, instead enters selections
+# into command buffer
 function frm {
-  local removals
-  removals=$(fd -tf -d${1:-1} | fzf --multi --prompt='rm ')
-  [ -n "$removals" ] && print -z rm ${=removals}
+  local files_to_remove
+  files_to_remove=$(fd -tf -d${1:-1} | fzf --multi --prompt='rm ')
+  [ -n "$files_to_remove" ] && \
+    print -z rm ${=files_to_remove}
 }
 
+# fuzzy remove directories
+# takes optional numeric parameter for indicating
+# how deep to traverse relative to pwd
+# Does not immediately remove directories, instead enters selections
+# into command buffer
 function frd {
-  local removals
-  removals=$(fd -td -d${1:-1} | fzf --multi --prompt='rd ')
-  [ -n "$removals" ] && print -z rd ${=removals}
+  local directories_to_remove
+  directories_to_remove=$(fd -td -d${1:-1} | fzf --multi --prompt='rd ')
+  [ -n "$directories_to_remove" ] && \
+    print -z rd ${=directories_to_remove}
 }
 # =============================================================
 
