@@ -477,6 +477,12 @@ function fvim {
 function fnote {
   vnote $(/bin/ls -1 ~/Notes/viNotes | fzf)
 }
+
+function frm {
+  local removals
+  removals=$(fd -tf -d${1:-1} | fzf --multi --prompt='rm ')
+  [ -n "$removals" ] && print -z rm ${=removals}
+}
 # =============================================================
 
 # Open conf files
