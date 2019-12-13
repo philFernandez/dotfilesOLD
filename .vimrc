@@ -151,7 +151,7 @@ set nowrap
 " zC - fold recursively under cursor
 " zj - jump down to next fold
 " zk - jump up to previous fold
-set foldmethod=syntax
+set foldmethod=indent
 "set foldnestmax=1
 set foldlevel=0
 " uncomment to disable fold on file open
