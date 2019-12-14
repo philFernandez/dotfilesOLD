@@ -394,6 +394,11 @@ function rmn {
   /bin/ls -A | grep -v "$*" | xargs rm -rf
 }
 
+# remove executables in pwd
+function rmx {
+  fd -HI -tx -d1 | xargs rm
+}
+
 function aliases {
   if [ $# -ge 1 ]; then
     alias | ag --nocolor "$*" | bat --style=numbers -l sh
