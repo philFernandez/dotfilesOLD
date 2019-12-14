@@ -337,6 +337,14 @@ function mke {
   chmod +x "$*"
 }
 
+# compile all c files in pwd w/
+# their root name as executable
+function mkall {
+  for src in $(fd -d1 c$); do
+    clang -o $src:r $src
+  done
+}
+
 # search history by keyword
 function shist {
   # awk makes the command become the first column

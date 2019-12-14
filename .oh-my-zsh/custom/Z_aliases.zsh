@@ -34,7 +34,6 @@ alias vi='vim'
 alias mv='mv -vi'
 alias cp='cp -vip'
 alias ds='du -sh 2> /dev/null'
-alias nl='nl -b a'
 alias v='/usr/local/bin/vim'
 alias bash='/usr/local/bin/bash'
 alias watch='watch -n 0.1'
@@ -83,4 +82,3 @@ alias show_all_cask='brew search --casks' # <package> (optional)
 alias install='brew -v install'
 # {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
-alias finals='cls;bat ~/.reminders/ZLIST\[General_Notes\]'
