@@ -5,7 +5,7 @@ let mapleader=','
 " Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
-Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
+"Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'mattn/calendar-vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
@@ -28,6 +28,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
+Plug 'davidhalter/jedi-vim'
 Plug 'PProvost/vim-ps1'
 Plug 'vim-scripts/taglist.vim'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -271,7 +272,7 @@ let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "inoremap <C-Space> <C-x><C-o>
-inoremap <C-@> <c-x><c-o>
+"inoremap <C-@> <c-x><c-o>
 
 
 " Easy Clip and Note {{{1
