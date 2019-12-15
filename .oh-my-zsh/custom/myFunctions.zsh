@@ -215,7 +215,7 @@ function rd {
 }
 
 function allcoms {
-  print -l $commands | fzf
+  print -l $commands | fzf --height 40%
 }
 
 function diff {
@@ -424,13 +424,13 @@ function aliases {
 # execute selected
 function fhx() { # just show the command w/o the number
   eval $( fc -l 1 | awk '{print substr($0, index($0,$2))}' \
-    | fzf +s --tac --prompt='execute-> ' )
+    | fzf +s --height 40% --tac --prompt='execute-> ' )
 }
 
 # put selected into edit buffer
 function fh() { # just show the command w/o the number
   print -z $( fc -l 1 | awk '{print substr($0, index($0,$2))}' \
-    | fzf +s --tac --prompt='edit-> ')
+    | fzf +s --tac --height 40% --prompt='edit-> ')
 }
 
 # Open history in fzf and put selected command on the command line for edit and/or execute
@@ -499,7 +499,7 @@ function fnote {
 # into command buffer
 function frm {
   local files_to_remove
-  files_to_remove=$(fd -tf -d${1:-1} | fzf --multi --prompt='rm ')
+  files_to_remove=$(fd -HI -tf -d${1:-1} | fzf --multi --height 40% --prompt='rm ')
   [ -n "$files_to_remove" ] && \
     print -z rm ${=files_to_remove}
 }
@@ -511,7 +511,7 @@ function frm {
 # into command buffer
 function frd {
   local directories_to_remove
-  directories_to_remove=$(fd -td -d${1:-1} | fzf --multi --prompt='rd ')
+  directories_to_remove=$(fd -HI -td -d${1:-1} | fzf --height 40% --multi --prompt='rd ')
   [ -n "$directories_to_remove" ] && \
     print -z rd ${=directories_to_remove}
 }
