@@ -449,9 +449,9 @@ function fhnx() { # shows history number
 function fkill() {
   local pid
   if [ "$UID" != "0" ]; then
-    pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+    pid=$(ps -f -u $UID | sed 1d | fzf -m --height 40% | awk '{print $2}')
   else
-    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    pid=$(ps -ef | sed 1d | fzf -m --height 40% | awk '{print $2}')
   fi
 
   if [ "x$pid" != "x" ]
