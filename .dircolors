@@ -65,8 +65,6 @@ LS_COLORS="rs=0:di=34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:fi=00: \
 #105 = light purple background
 #106 = turquoise background
 # }}}
-
-# }}}
 # CODES {{{1
 
 #   /* lc: Left of color sequence */
