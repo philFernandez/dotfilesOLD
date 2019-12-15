@@ -504,6 +504,22 @@ function frm {
     print -z rm ${=files_to_remove}
 }
 
+# fuzzy move files
+function fmv {
+  local files_to_move
+  files_to_move=$(fd -HI -d${1:-1} | fzf -m --height 40% --prompt='mv ')
+  [ -n "$files_to_move" ] && \
+    print -z mv ${=files_to_move}
+}
+
+# fuzzy copy files
+function fcp {
+  local files_to_move
+  files_to_move=$(fd -HI -d${1:-1} | fzf -m --height 40% --prompt='cp ')
+  [ -n "$files_to_move" ] && \
+    print -z cp ${=files_to_move}
+}
+
 # fuzzy remove directories
 # takes optional numeric parameter for indicating
 # how deep to traverse relative to pwd
