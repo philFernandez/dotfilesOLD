@@ -5,9 +5,8 @@ let mapleader=','
 " Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
-"Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
+Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'mattn/calendar-vim'
-Plug 'svermeulen/vim-easyclip'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
@@ -37,6 +36,7 @@ Plug 'junegunn/vim-easy-align'
 Plug '~/.vim/plugged-manual/AnsiEsc' " manually installed
 
 " Un-used plugins {{{1
+"Plug 'svermeulen/vim-easyclip'
 "Plug 'christoomey/vim-tmux-navigator'
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
 "Plug 'davidhalter/jedi-vim', { 'for': 'python' }
@@ -280,9 +280,6 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 
 " Easy Clip and Note {{{1
-" EASY CLIP  =========================================
-let g:EasyClipAutoFormat = 1
-let g:EasyClipUseSubstituteDefaults = 1
 
 " Note settings ====================================
 let g:notes_directories = ['~/Notes/viNotes']
@@ -312,6 +309,16 @@ let g:notes_directories = ['~/Notes/viNotes']
 "inoremap { {}<left>
 "inoremap {<CR> {<CR>}<ESC>O
 "inoremap {;<CR> {<CR>};<ESC>O
+
+" ==== mimick easyclip ====
+" remap m -> d
+noremap m d
+" redirect d to black hole
+nnoremap d "_d
+" make pasting match indent level
+nnoremap p p=`]
+nnoremap P P=`]
+" =========================
 
 map <silent><c-t> :TagbarToggle<CR>
 nnoremap <leader>f :NERDTreeToggle<CR>
