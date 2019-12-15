@@ -23,7 +23,7 @@ LS_COLORS="rs=0:di=34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:fi=00: \
   :*.opus=00;36:*.spx=00;36:*.xspf=00;36:*.txt=01;37:*.py=01;37:*.c=01;37: \
   :*.vimrc=01;03;33:*.zshrc=01;03;33:*.zlogin=01;03;33:*.zshenv=01;03;33: \
   :*.p10k.zsh=01;03;33:*.js=01;37:*.css=01;37:*.html=01;37:*.md=01;37: \
-  :*.json=01;37"
+  :*.json=01;37:*.bak=03;01;31:*.old=03;31:"
   export LS_COLORS
 # }}}
 # Export From Reddit {{{1
@@ -33,12 +33,13 @@ LS_COLORS="rs=0:di=34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:fi=00: \
 # COLORS CODES {{{1
 #0   = default colour
 #1   = bold
+#3   = italic
 #4   = underlined
 #5   = flashing text
 #7   = reverse field
 #31  = red
 #32  = green
-#33  = orange
+#33  = yellow
 #34  = blue
 #35  = purple
 #36  = cyan
