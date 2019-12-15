@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'mattn/calendar-vim'
+Plug 'junegunn/goyo.vim'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'scrooloose/nerdcommenter'
 Plug 'philFernandez/onehalf'
