@@ -33,10 +33,10 @@ Plug 'PProvost/vim-ps1'
 Plug 'vim-scripts/taglist.vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'majutsushi/tagbar'
-Plug '~/.vim/plugged-manual/AnsiEsc'
+Plug 'junegunn/vim-easy-align'
+Plug '~/.vim/plugged-manual/AnsiEsc' " manually installed
 
 " Un-used plugins {{{1
-"Plug 'airblade/vim-gitgutter'
 "Plug 'christoomey/vim-tmux-navigator'
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
 "Plug 'davidhalter/jedi-vim', { 'for': 'python' }
@@ -159,6 +159,10 @@ set foldlevel=0
 " uncomment to disable fold on file open
 set nofoldenable
 
+" vim-easy-align {{{1
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+" }}}
 " Lightline {{{1
 let g:lightline = {
       \ 'colorscheme': 'materia',
