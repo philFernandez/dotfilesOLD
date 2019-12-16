@@ -268,6 +268,8 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " Python Completion ==================================
 " bring up documentation for text under cursor
 "let g:jedi#documentation_command = 'D'
+" Make function signatures show up in command area
+let g:jedi#show_call_signatures = "2"
 
 " C Completion =======================================
 let g:clang_make_default_keymappings=0
