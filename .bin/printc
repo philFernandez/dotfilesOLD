@@ -10,6 +10,7 @@ usage() {
 UL=
 BD=
 IT=
+RS="\033[0m"
 
 # getopts takes care of -u -i -b parameters
 # in any order together or seperate.
@@ -49,4 +50,4 @@ else
 fi
 
 
-print -n "${UL}${BD}${IT}\033[38;2;${R};${G};${B}m${MSG}"
+print -n "${UL}${BD}${IT}\033[38;2;${R};${G};${B}m${MSG}${RS}"
