@@ -1,0 +1,43 @@
+#!/bin/zsh
+
+UL=
+BD=
+IT=
+
+while getopts ":ubi" o; do
+  case "$o" in
+    u ) # process option -u
+      UL="\033[4m"
+      ;;
+    b )
+      BD="\033[1m"
+      ;;
+    i )
+      IT="\033[3m"
+      ;;
+    ? )
+      print "Usage: printc [-u] [-i] [-b] r g b 'message'" 1>&2
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+print $#
+
+if [[ $# == 4 ]]; then
+  R=$1
+  G=$2
+  B=$3
+  MSG=$4
+else
+  R=255
+  G=255
+  B=255
+  MSG=$1
+fi
+
+
+
+
+print -n "${UL}${BD}${IT}\033[38;2;${R};${G};${B}m${MSG}"
