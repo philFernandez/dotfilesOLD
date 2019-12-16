@@ -1,43 +1,52 @@
 #!/bin/zsh
 
+usage() {
+  print "Usage: printc [-u] [-i] [-b] r g b 'message'" 1>&2
+  print "\nDefaults to white if r g b are ommited"
+  print "but if any of r g b are included, they must all be present"
+  print "\n-u -i -b are optionally for underline italic and bold"
+}
+
 UL=
 BD=
 IT=
 
-while getopts ":ubi" o; do
-  case "$o" in
+# getopts takes care of -u -i -b parameters
+# in any order together or seperate.
+# -uib = -u -i -b
+while getopts ":ubi" opt; do
+  case "$opt" in
     u ) # process option -u
-      UL="\033[4m"
+      UL="\033[4m" # underline
       ;;
-    b )
-      BD="\033[1m"
+    b ) # process option -b
+      BD="\033[1m" # bold
       ;;
-    i )
-      IT="\033[3m"
+    i ) # process option -i
+      IT="\033[3m" # italic
       ;;
     ? )
-      print "Usage: printc [-u] [-i] [-b] r g b 'message'" 1>&2
+      usage
       exit 1
       ;;
   esac
 done
-shift $((OPTIND-1))
 
-print $#
+shift $((OPTIND-1)) # make positional parameters start back at $1
 
 if [[ $# == 4 ]]; then
   R=$1
   G=$2
   B=$3
   MSG=$4
-else
+elif [[ $# == 1 ]]; then
   R=255
   G=255
   B=255
   MSG=$1
+else
+  usage
 fi
-
-
 
 
 print -n "${UL}${BD}${IT}\033[38;2;${R};${G};${B}m${MSG}"
