@@ -14,14 +14,6 @@ cn1() {
 }
 # ------------------------------------------------------
 
-function printc {
-  local R=$1
-  local G=$2
-  local B=$3
-  local MSG=$4
-  print "\033[38;2;${R};${G};${B}m${MSG}"
-}
-
 function zap {
   if [[ $1 == '-y' ]]; then
     fd -HI -d1 -0 | xargs -0 rm -vfr
