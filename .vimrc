@@ -1,6 +1,7 @@
 " need to be first {{{1
 set nocompatible
 let mapleader=','
+let maplocalleader='\'
 
 " Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
