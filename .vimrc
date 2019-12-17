@@ -325,7 +325,7 @@ nnoremap P P=`]
 " =========================
 
 map <silent><c-t> :TagbarToggle<CR>
-nnoremap <leader>f :NERDTreeToggle<CR>
+nnoremap <silent><leader>f :NERDTreeToggle<CR>
 
 " Delete contents of line w/o removing the line itself
 nnoremap dl I<Esc>d$
