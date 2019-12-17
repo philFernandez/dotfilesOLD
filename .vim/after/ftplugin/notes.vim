@@ -8,11 +8,11 @@ imap <leader>w <esc><space><space>*<space>
 " Remove bullet point
 nmap <leader>q I<delete><space><esc>A
 
-set spell
-set nonumber
-autocmd BufEnter * setfiletype notes
-set tw=85
-set foldenable
+setlocal spell
+setlocal nonumber
+autocmd BufEnter * setfiletype <buffer> notes
+setlocal tw=85
+setlocal foldenable
 
 nnoremap <leader>w :call vimnotes#doMyMarkDown#DoMarkDownThingNow()<CR>
 nnoremap <leader>v :call vimnotes#doMyMarkDown#DoMarkDownHw()<CR>
