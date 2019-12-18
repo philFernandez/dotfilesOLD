@@ -102,7 +102,6 @@ ${yellow}\033[1mInvalid Color${RS}
 Run \`printc -l\` to see all valid colors.
   """ 1>&2
   exit 1
-
 }
 
 test_input() {
