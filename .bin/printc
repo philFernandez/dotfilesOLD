@@ -36,12 +36,11 @@ ${yellow}Examples:${RS}
 }
 
 showall() {
-  local all_colors=($@)
-  (
-  for color_v in $all_colors; do
-    printc -b -C $color_v "$color_v"
+  local all_colors=()
+  for color_v in $@; do
+    all_colors+=($(printc -b -C $color_v $color_v))
   done
-  )
+  print -C 2 $all_colors
 }
 
 USED_BUILTIN=0
