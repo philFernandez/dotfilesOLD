@@ -22,16 +22,15 @@ ${yellow}OPTIONS:${RS}
 ${yellow}ARGS:${RS}
     ${green}<R G B>${RS}    Red Green Blue values from 0 - 255 for each
 
-Note:
+${yellow}Note:${RS}
     Either the -C <build in color> OPTION or <R G B> ARGS can be used,
     but not both. The flags -b -i -u can be used in any combination/order
     or omitted completely. -C and/or <R G B> can be omitted and the color
     will default to white, still observering the flags -b -i -u.
 
-Example 1:
+${yellow}Examples:${RS}
     printc -bu -C maroon 'Some Cool String'
 
-Example 2:
     printc -i 120 200 50 'Some Cool String'
   """
 }
@@ -67,6 +66,11 @@ built_in_colors=(
   plum '148 033 147'
   maroon '148 023 081'
   maraschino '255 038 000'
+  tangerine '255 147 000'
+  lemon '255 251 000'
+  lime '142 250 000'
+  spring '000 249 000'
+  seafoam '000 250 146'
 )
 
 # getopts takes care of -u -i -b parameters
