@@ -7,6 +7,16 @@ usage() {
   print "\n-u -i -b are optionally for underline italic and bold"
 }
 
+
+showall() {
+  local all_colors=($@)
+  (
+  for color_v in $all_colors; do
+    printc -b -C $color_v "$color_v"
+  done
+  )
+}
+
 USED_BUILTIN=0
 UL=
 BD=
@@ -18,6 +28,9 @@ built_in_colors=(
   cayenne '148 017 000'
   mocha '148 082 000'
   asparagus '146 144 000'
+  fern '079 143 000'
+  clover '000 143 000'
+  moss '000 144 081'
 )
 
 # getopts takes care of -u -i -b parameters
@@ -39,7 +52,8 @@ while getopts ":C:ubil" opt; do
       IT="\033[3m" # italic
       ;;
     l )
-      print -l ${(k)built_in_colors}
+      all_colors=( ${(k)built_in_colors} )
+      showall $all_colors
       exit 0
       ;;
     ? )
