@@ -76,6 +76,9 @@ built_in_colors=(
   grape '148 055 255'
   magenta '255 064 255'
   strawberry '255 047 146'
+  salmon '255 126 121'
+  cantaloupe '255 212 121'
+  banana '255 252 121'
 )
 
 # getopts takes care of -u -i -b parameters
