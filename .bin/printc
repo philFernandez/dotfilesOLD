@@ -26,7 +26,9 @@ ${yellow}Note:${RS}
     Either the -C <build in color> OPTION or <R G B> ARGS can be used,
     but not both. The flags -b -i -u can be used in any combination/order
     or omitted completely. -C and/or <R G B> can be omitted and the color
-    will default to white, still observering the flags -b -i -u.
+    will default to white, still observering the flags -b -i -u. Text to
+    be printed should be quoted. Use double quotes if you want to expand
+    variables inside your string, single quotes otherwise.
 
 ${yellow}Examples:${RS}
     printc -bu -C maroon 'Some Cool String'
@@ -40,15 +42,15 @@ showall() {
   for color_v in $@; do
     all_colors+=($(printc -b -C $color_v $color_v))
   done
-  print -C 2 $all_colors
+  print -C 3 $all_colors
 }
 
-USED_BUILTIN=0
 UL=
 BD=
 IT=
 RS="\033[0m"
 BUILT_IN_COLOR=
+USED_BUILTIN=0
 
 typeset -A built_in_colors
 built_in_colors=(
@@ -79,11 +81,17 @@ built_in_colors=(
   salmon '255 126 121'
   cantaloupe '255 212 121'
   banana '255 252 121'
+  honeydew '212 251 121'
+  flora '115 250 121'
+  spindrift '115 252 214'
+  ice '115 253 255'
+  sky '118 214 255'
+  orchid '122 129 255'
+  lavender '215 131 255'
+  bubblegum '255 133 255'
+  carnation '255 138 216'
 )
 
-# getopts takes care of -u -i -b parameters
-# in any order together or seperate.
-# -uib = -u -i -b
 while getopts ":C:ubilh" opt; do
   case "$opt" in
     C )
@@ -137,6 +145,5 @@ else
     usage
   fi
 fi
-
 
 print "${UL}${BD}${IT}\033[38;2;${R};${G};${B}m${MSG}${RS}"
