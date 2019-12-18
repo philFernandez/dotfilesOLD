@@ -32,6 +32,13 @@ built_in_colors=(
   fern '079 143 000'
   clover '000 143 000'
   moss '000 144 081'
+  teal '000 145 147'
+  ocean '000 084 147'
+  midnight '001 025 147'
+  eggplant '083 027 147'
+  plum '148 033 147'
+  maroon '148 023 081'
+  maraschino '255 038 000'
 )
 
 # getopts takes care of -u -i -b parameters
