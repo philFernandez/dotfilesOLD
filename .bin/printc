@@ -4,7 +4,7 @@ usage() {
   local yellow="\033[38;5;003m"
   local green="\033[38;5;002m"
 
-  print """${green}printc ${RS} 0.1
+  print """${green}printc ${RS} v0.1
 
 ${yellow}USAGE:${RS}
      printc [FLAGS/OPTIONS] [<R G B>] ['string to print']
@@ -71,6 +71,12 @@ built_in_colors=(
   lime '142 250 000'
   spring '000 249 000'
   seafoam '000 250 146'
+  turquois '000 253 255'
+  aqua '000 150 255'
+  blueberry '004 051 255'
+  grape '148 055 255'
+  magenta '255 064 255'
+  strawberry '255 047 146'
 )
 
 # getopts takes care of -u -i -b parameters
