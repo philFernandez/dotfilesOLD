@@ -1,12 +1,40 @@
 #!/bin/zsh
 
 usage() {
-  print "Usage: printc [-u] [-i] [-b] r g b 'message'" 1>&2
-  print "\nDefaults to white if r g b are ommited"
-  print "but if any of r g b are included, they must all be present"
-  print "\n-u -i -b are optionally for underline italic and bold"
-}
+  local yellow="\033[38;5;003m"
+  local green="\033[38;5;002m"
 
+  print """${green}printc ${RS} 0.1
+
+${yellow}USAGE:${RS}
+     printc [FLAGS/OPTIONS] [<R G B>] ['string to print']
+
+${yellow}FLAGS:${RS}
+    ${green}-b${RS}     \033[1mbold${RS}
+    ${green}-i${RS}     \033[3mitalic${RS}
+    ${green}-u${RS}     \033[4munderline${RS}
+    ${green}-l${RS}     list built in colors${RS}
+    ${green}-h${RS}     show this help message${RS}
+
+${yellow}OPTIONS:${RS}
+    ${green}-C <built in color>${RS}
+
+${yellow}ARGS:${RS}
+    ${green}<R G B>${RS}    Red Green Blue values from 0 - 255 for each
+
+Note:
+    Either the -C <build in color> OPTION or <R G B> ARGS can be used,
+    but not both. The flags -b -i -u can be used in any combination/order
+    or omitted completely. -C and/or <R G B> can be omitted and the color
+    will default to white, still observering the flags -b -i -u.
+
+Example 1:
+    printc -bu -C maroon 'Some Cool String'
+
+Example 2:
+    printc -i 120 200 50 'Some Cool String'
+  """
+}
 
 showall() {
   local all_colors=($@)
@@ -44,7 +72,7 @@ built_in_colors=(
 # getopts takes care of -u -i -b parameters
 # in any order together or seperate.
 # -uib = -u -i -b
-while getopts ":C:ubil" opt; do
+while getopts ":C:ubilh" opt; do
   case "$opt" in
     C )
       USED_BUILTIN=1
@@ -62,6 +90,10 @@ while getopts ":C:ubil" opt; do
     l )
       all_colors=( ${(k)built_in_colors} )
       showall $all_colors
+      exit 0
+      ;;
+    h )
+      usage
       exit 0
       ;;
     ? )
