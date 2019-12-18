@@ -23,7 +23,8 @@ BD=
 IT=
 RS="\033[0m"
 BUILT_IN_COLOR=
-declare -A built_in_colors
+
+typeset -A built_in_colors
 built_in_colors=(
   cayenne '148 017 000'
   mocha '148 082 000'
