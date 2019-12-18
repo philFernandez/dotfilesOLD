@@ -92,9 +92,29 @@ built_in_colors=(
   carnation '255 138 216'
 )
 
+bad_color_input() {
+  local yellow="\033[38;5;003m"
+  print """
+${yellow}\033[1mInvalid Color${RS}
+
+\"$1\" is not a recognized color.
+
+Run \`printc -l\` to see all valid colors.
+  """ 1>&2
+  exit 1
+
+}
+
+test_input() {
+  [[ ! -n ${built_in_colors[(ie)$1]} ]] && \
+    bad_color_input $1
+}
+
+
 while getopts ":C:ubilh" opt; do
   case "$opt" in
     C )
+      test_input $OPTARG
       USED_BUILTIN=1
       BUILT_IN_COLOR=$built_in_colors[$OPTARG]
       ;;
