@@ -534,14 +534,14 @@ function frd {
 
 function d {
   local destination
-  destination=$(print -l $dirstack | fzf)
+  destination=$(print -l $dirstack | fzf --height 20%)
   [[ "$destination" ]] && \
     cd $destination
 }
 
 function di {
   local destination
-  destination=$(print -l $dirstack | fzf)
+  destination=$(print -l $dirstack | fzf --height 20%)
   [[ "$destination" ]] && \
     print -z cd $destination
 

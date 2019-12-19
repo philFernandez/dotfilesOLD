@@ -45,7 +45,7 @@ alias zshexpn="man -P 'less +2538' zshall"
 alias zshprompt="man -P 'less +2099' zshall"
 # Bat & Fzf {{{1
 alias color='bat ~/.oh-my-zsh/custom/custom_colors.zsh'
-alias bat="bat --theme 'Monokai Extended Bright'"
+alias bat="LESS+=-S bat --theme 'Monokai Extended Bright'"
 alias fhw='shw | fzf'
 alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 	"bat --theme=Monokai\ Extended\ Bright \
@@ -67,7 +67,7 @@ alias confls='config ls-tree -r master --name-only $HOME'
 alias cdl='config diff | bat --style=numbers -l diff'
 alias confzap='(cd && config checkout .)'
 # make man pages display line numbers {{{1
-alias man='LESS+="-N" man'
+#alias man='LESS+="-N" man'
 # Package Management {{{1
 alias update='brew -v update && brew outdated && brew cask outdated'
 alias upgrade='brew upgrade && brew cask upgrade'
