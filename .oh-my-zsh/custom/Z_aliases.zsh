@@ -45,7 +45,7 @@ alias zshexpn="man -P 'less +2538' zshall"
 alias zshprompt="man -P 'less +2099' zshall"
 # Bat & Fzf {{{1
 alias color='bat ~/.oh-my-zsh/custom/custom_colors.zsh'
-alias bat="bat --theme 'Monokai Extended Origin'"
+alias bat="bat --theme 'Monokai Extended Bright'"
 alias fhw='shw | fzf'
 alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 	"bat --theme=Monokai\ Extended\ Bright \
