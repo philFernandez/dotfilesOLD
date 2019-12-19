@@ -1,6 +1,5 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
-alias r='cn1'
 # Commands and Shortcuts {{{1
 alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
 alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'
@@ -46,7 +45,7 @@ alias zshexpn="man -P 'less +2538' zshall"
 alias zshprompt="man -P 'less +2099' zshall"
 # Bat & Fzf {{{1
 alias color='bat ~/.oh-my-zsh/custom/custom_colors.zsh'
-alias bat="bat --theme 'Monokai Extended Bright'"
+alias bat="bat --theme 'Monokai Extended Origin'"
 alias fhw='shw | fzf'
 alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 	"bat --theme=Monokai\ Extended\ Bright \

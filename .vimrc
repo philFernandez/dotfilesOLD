@@ -289,16 +289,16 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 let g:notes_directories = ['~/Notes/viNotes']
 
 " ALE {{{1
-"let g:ale_fixers = {
-      "\ 'javascript': ['prettier'],
-      "\ 'python': ['autopep8']
-      "\ }
+let g:ale_fixers = {
+      \ 'javascript': ['prettier'],
+      \ 'python': ['autopep8']
+      \ }
 
-"let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
 
-"let g:ale_linters = {
-      "\ 'python': ['pyflakes']
-      "\ }
+let g:ale_linters = {
+      \ 'python': ['pyflakes']
+      \ }
 "let g:ale_pattern_options = {
       "\ '.*\.java$': {'ale_enabled': 0},
       "\ }

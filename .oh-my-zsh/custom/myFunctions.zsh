@@ -531,6 +531,21 @@ function frd {
   [ -n "$directories_to_remove" ] && \
     print -z rd ${=directories_to_remove}
 }
+
+function d {
+  local destination
+  destination=$(print -l $dirstack | fzf)
+  [[ "$destination" ]] && \
+    cd $destination
+}
+
+function di {
+  local destination
+  destination=$(print -l $dirstack | fzf)
+  [[ "$destination" ]] && \
+    print -z cd $destination
+
+}
 # =============================================================
 
 # Open conf files

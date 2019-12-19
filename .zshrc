@@ -43,6 +43,8 @@ plugins=(
   zsh-autosuggestions
   colored-man-pages
   iterm2
+  fd
+  printc
 )
 
 # Shell Options {{{1
@@ -121,13 +123,16 @@ unalias l
 unalias rd
 
 # Auto Comp Defns {{{1
-fpath=(~/.oh-my-zsh/custom/completions $fpath)
+fpath=($fpath ~/.oh-my-zsh/custom/completions)
+#autoload -U compinit
+#compinit
+#zstyle ':completion:*' menu select=2
 compdef _gnu_generic file
 compdef _git gdl=git-diff
 compdef _gnu_generic lsd
 compdef _gnu_generic fzf
 compdef _gnu_generic bat
-compdef _gnu_generic rg
+#compdef _gnu_generic rg
 #compdef _pdfgrep pdfgrep
 
 # Bindkey {{{1
