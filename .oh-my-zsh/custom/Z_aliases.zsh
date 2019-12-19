@@ -67,7 +67,7 @@ alias confls='config ls-tree -r master --name-only $HOME'
 alias cdl='config diff | bat --style=numbers -l diff'
 alias confzap='(cd && config checkout .)'
 # make man pages display line numbers {{{1
-#alias man='LESS+="-N" man'
+alias nman='LESS+="-N" man'
 # Package Management {{{1
 alias update='brew -v update && brew outdated && brew cask outdated'
 alias upgrade='brew upgrade && brew cask upgrade'

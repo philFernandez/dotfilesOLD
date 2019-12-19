@@ -124,8 +124,8 @@ unalias rd
 
 # Auto Comp Defns {{{1
 fpath=($fpath ~/.oh-my-zsh/custom/completions)
-autoload -U compinit
-compinit -d $ZSH_COMPDUMP
+#autoload -U compinit
+#compinit -d $ZSH_COMPDUMP
 #zstyle ':completion:*' menu select=2
 compdef _gnu_generic file
 compdef _git gdl=git-diff
