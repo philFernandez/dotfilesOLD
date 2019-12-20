@@ -63,7 +63,6 @@ set ruler
 set number
 set splitbelow
 set splitright
-
 " Get rid of delay when entering normal mode
 set timeoutlen=1000
 set ttimeoutlen=0
@@ -79,10 +78,13 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"  " block     : normal
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"  " underline : replace
 endif
-autocmd InsertEnter * set cursorline
-autocmd InsertLeave * set nocursorline
+"autocmd InsertEnter * set cursorline
+"autocmd InsertLeave * set nocursorline
+autocmd InsertEnter * hi CursorLine guibg=#3f3f3f
+autocmd BufEnter,InsertLeave * hi CursorLine guibg=#1a1a1a
+set cursorline
 " make cursor shape block on enter
-autocmd VimEnter * silent exec "! echo -ne '\e[1 q';\<Esc>"
+autocmd BufEnter * silent exec "! echo -ne '\e[1 q';\<Esc>"
 
 " Other VIM {{{1
 set mouse=a
