@@ -5,8 +5,11 @@
 # depends on $HOME/.bin/cman for color output man pages
 ####################################
 
-GREEN='\033[0;32m'
+RED='\033[38;5;001m'
+GREEN='\033[38;5;002m'
+YELLOW='\033[38;5;003m'
 NC='\033[0m'
+BD='\033[1m'
 
 function get_manpages() {
   # Get all directories where man pages are stored
@@ -53,7 +56,7 @@ fi
 if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-s" ]; then
   # There are some duplicates between the directories so sort and filter
   if [ "$1" = '-u' ]; then
-    printc -b 200 200 100 'Updating fuzzy man cache...'
+    print "${YELLOW}Updating fuzzy man cache...${NC}"
     # Call get_manpages to traverse the man page directories
     ALL_MANPAGES=$(sort -u <<< "$(get_manpages)")
     # if the cache dir doesn't exist make it
@@ -63,8 +66,8 @@ if [ "$1" != "-h" ] && [ "$1" != "--h" ] && [ "$1" != "--help" ] && [ "$1" != "-
     exit 0
   else # if called w/o -u
     if [[ ! -d $CACHE:h ]]; then  # error if cache file doesn't exist
-      print "${RED}Error       : ${NC}${YELLOW}Need Package Cache"
-      print "${RED}Run Command : ${GREEN}fman -u"
+      print "${RED}Error       : ${NC}${YELLOW}Need Package Cache${NC}"
+      print "${RED}Run Command : ${GREEN}fman -u${NC}"
       exit 1
     fi
     ALL_MANPAGES=$(<$CACHE)
