@@ -70,21 +70,24 @@ set ttimeoutlen=0
 hi ALEWarning guibg=NONE guifg=NONE
 
 " Cursor line insert/normal toggle
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"  " vert bar  : insert
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"  " block     : normal
-  let &t_SR = "\<Esc>]50;CursorShape=2\x7"  " underline : replace
-endif
+"if exists('$TMUX')
+  "let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  "let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+"else
+  "let &t_SI = "\<Esc>]50;CursorShape=1\x7"  " vert bar  : insert
+  "let &t_EI = "\<Esc>]50;CursorShape=0\x7"  " block     : normal
+  "let &t_SR = "\<Esc>]50;CursorShape=2\x7"  " underline : replace
+"endif
+"let &t_SI = "\<Esc>]50;CursorShape=1\x7"  " vert bar  : insert
+"let &t_EI = "\<Esc>]50;CursorShape=1\x7"  " block     : normal
+"let &t_SR = "\<Esc>]50;CursorShape=2\x7"  " underline : replace
 "autocmd InsertEnter * set cursorline
 "autocmd InsertLeave * set nocursorline
 autocmd InsertEnter * hi CursorLine guibg=#3f3f3f
 autocmd BufEnter,InsertLeave * hi CursorLine guibg=#1a1a1a
 set cursorline
 " make cursor shape block on enter
-autocmd BufEnter * silent exec "! echo -ne '\e[1 q';\<Esc>"
+"autocmd BufEnter * silent exec "! echo -ne '\e[5 q';\<Esc>"
 
 " Other VIM {{{1
 set mouse=a
