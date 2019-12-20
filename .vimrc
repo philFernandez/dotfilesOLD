@@ -83,9 +83,12 @@ hi ALEWarning guibg=NONE guifg=NONE
 "let &t_SR = "\<Esc>]50;CursorShape=2\x7"  " underline : replace
 "autocmd InsertEnter * set cursorline
 "autocmd InsertLeave * set nocursorline
-autocmd InsertEnter * hi CursorLine guibg=#3f3f3f
-autocmd BufEnter,InsertLeave * hi CursorLine guibg=#1a1a1a
+"autocmd InsertEnter * hi CursorLine guibg=#3f3f3f
+"autocmd BufEnter,InsertLeave * hi CursorLine guibg=#1a1a1a
 set cursorline
+set cursorlineopt=screenline
+autocmd InsertEnter * set nocursorline
+autocmd InsertLeave * set cursorline
 " make cursor shape block on enter
 "autocmd BufEnter * silent exec "! echo -ne '\e[5 q';\<Esc>"
 
