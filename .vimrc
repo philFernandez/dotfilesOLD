@@ -39,22 +39,16 @@ Plug '~/.vim/plugged-manual/AnsiEsc' " manually installed
 
 " Un-used plugins {{{1
 "Plug 'svermeulen/vim-easyclip'
-"Plug 'christoomey/vim-tmux-navigator'
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
 "Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 "Plug 'sirver/UltiSnips'
 "Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
-"Plug 'edkolev/tmuxline.vim'
 "Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 "Plug 'vim-python/python-syntax', { 'for': 'python' }
-"Plug 'tmux-plugins/vim-tmux-focus-events'
 "Plug 'mattn/emmet-vim', { 'for': 'html' }
 call plug#end()
 
 " UI Settings {{{1
-" need these for truecolor in tmux
-"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set showtabline=2
 set background=dark
 set laststatus=2
@@ -69,28 +63,10 @@ set ttimeoutlen=0
 "---------------------
 hi ALEWarning guibg=NONE guifg=NONE
 
-" Cursor line insert/normal toggle
-"if exists('$TMUX')
-  "let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  "let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-"else
-  "let &t_SI = "\<Esc>]50;CursorShape=1\x7"  " vert bar  : insert
-  "let &t_EI = "\<Esc>]50;CursorShape=0\x7"  " block     : normal
-  "let &t_SR = "\<Esc>]50;CursorShape=2\x7"  " underline : replace
-"endif
-"let &t_SI = "\<Esc>]50;CursorShape=1\x7"  " vert bar  : insert
-"let &t_EI = "\<Esc>]50;CursorShape=1\x7"  " block     : normal
-"let &t_SR = "\<Esc>]50;CursorShape=2\x7"  " underline : replace
-"autocmd InsertEnter * set cursorline
-"autocmd InsertLeave * set nocursorline
-"autocmd InsertEnter * hi CursorLine guibg=#3f3f3f
-"autocmd BufEnter,InsertLeave * hi CursorLine guibg=#1a1a1a
 set cursorline
 set cursorlineopt=screenline
 autocmd InsertEnter * set nocursorline
 autocmd InsertLeave * set cursorline
-" make cursor shape block on enter
-"autocmd BufEnter * silent exec "! echo -ne '\e[5 q';\<Esc>"
 
 " Other VIM {{{1
 set mouse=a
@@ -111,13 +87,10 @@ set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers
 let g:tex_flavor = "latex"
 
-"if !isdirectory("/tmp/.vim-undo-dir")
-	"call mkdir("/tmp/.vim-undo-dir", "", 0700)
-"endif
-
 if !isdirectory("/Users/philthy/.vim/.vim-undo-dir")
   call mkdir("/Users/philthy/.vim/.vim-undo-dir", "", 0700)
 endif
+
 "set undodir=/tmp/.vim-undo-dir
 set undodir=/Users/philthy/.vim/.vim-undo-dir
 set undofile
@@ -215,29 +188,6 @@ let g:lightline = {
       \   }
       \
       \ }
-
-" Tmuxline {{{1
-"let g:tmuxline_preset = {
-      "\'a'    : '#S',
-      "\'b'    : "#(curl 'api.openweathermap.org/data/2.5/weather?q=Stockton&appid=a21483b3b7a6dd4ce2d7627d61aebb53&units=imperial' | jq '.main.temp')",
-      "\'c'    : "#(neofetch uptime --uptime_shorthand tiny | awk -v OFS='\ ' '{print $2, $3, $4}')",
-      "\'win'  : '#I #W',
-      "\'cwin' : '#I #W',
-      "\'y'    : '%I:%M:%S',
-      "\'z'    : '%D',
-      "\}
-
-"let g:tmuxline_theme = {
-      "\   'a'    : [ 235, 41 ],
-      "\   'b'    : [ 41, 239 ],
-      "\   'c'    : [ 244, 236 ],
-      "\   'x'    : [ 244, 236 ],
-      "\   'y'    : [ 253, 239 ],
-      "\   'z'    : [ 235, 41 ],
-      "\   'win'  : [ 103, 236 ],
-      "\   'cwin' : [ 235, 41 ],
-      "\   'bg'   : [ 244, 236 ],
-      "\ }
 
 " Ultisnips {{{1
 "let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
@@ -415,26 +365,6 @@ command! -bang -nargs=? -complete=dir Files
 " ctrl-t = tab
 nnoremap <silent> <leader>l :Buffers<CR>
 
-" Custom Syntax (Inactive) {{{1
-"custom syntax settings
-"syntax bolding
-"hi Question cterm=bold
-"hi WarningMsg cterm=bold
-"hi Statement cterm=bold
-"hi PreProc cterm=bold
-"hi Type cterm=bold
-"hi Conditional cterm=bold
-"hi Keyword cterm=bold
-"hi Exception cterm=bold
-"hi PreCondit cterm=bold
-"hi StorageClass cterm=bold
-"hi Structure cterm=bold
-"hi Typedef cterm=bold
-"hi cssClassName cterm=bold
-"hi jsFunction cterm=bold
-"hi Function cterm=bold
-"hi Repeat cterm=bold
-"hi jsReturn cterm=bold
 
 " NOTES {{{1
 
