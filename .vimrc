@@ -148,7 +148,7 @@ nmap ga <Plug>(EasyAlign)
 " }}}
 " Lightline {{{1
 let g:lightline = {
-      \ 'colorscheme': 'materia',
+      \ 'colorscheme': 'wombat',
       \
       \   'active': {
       \     'left': [ [ 'mode', 'paste', 'spell' ],
@@ -374,3 +374,4 @@ nnoremap <silent> <leader>l :Buffers<CR>
 " see https://github.com/joeyespo/grip
 
 " vim:foldenable foldmethod=marker foldcolumn=1
+
