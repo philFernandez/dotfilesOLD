@@ -463,7 +463,15 @@ function fkill() {
 # fzf functions that I wrote ===============================
 function fcd {
   local dir
-  dir="$(fd . ${1:-.} -I -H -td | fzf --sort \
+  local query=
+  while getopts ":q:" opt; do
+    case "$opt" in
+      q ) query=$OPTARG;;
+      ? ) print '-q is the only valid option'
+    esac
+  done
+  shift $((OPTIND-1))
+  dir="$(fd . ${1:-.} -I -H -td | fzf -q "$query" --sort \
     --preview=" lsd -A --color=always \
     --icon=always --group-dirs first {}" \
     --preview-window="down:50%" --prompt='cd ')" &&
