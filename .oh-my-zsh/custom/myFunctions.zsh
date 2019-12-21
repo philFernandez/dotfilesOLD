@@ -481,8 +481,16 @@ function fcd {
 function fcdf {
   local file
   local dir
+  local query=
+  while getopts ":q:" opt; do
+    case "$opt" in
+      q ) query=$OPTARG;;
+      ? ) print '-q is the only valid option'
+    esac
+  done
+  shift $((OPTIND-1))
   file="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore| \
-    fzf -m --preview="bat --color=always --style=numbers {}" \
+    fzf -m -q "$query" --preview="bat --color=always --style=numbers {}" \
     --preview-window="down:90%" --prompt='cd-to-dir-of ')"
       [ -n "$file" ] && dir=$(dirname "$file") && cd "$dir"
 
@@ -501,8 +509,8 @@ function fvim {
 
   files="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore | \
     fzf -m --preview="bat --color=always --style=numbers {}" \
-    -q "$query" --preview-window="down:90%" --prompt='vim ')"
-  [[ "$files" ]] && vim "$files"
+    -q "$query" --preview-window="down:90%" --prompt='vim ')" && \
+    vim "$files"
 }
 
 function fnote {
