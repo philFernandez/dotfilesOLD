@@ -523,11 +523,28 @@ function fnote {
 # Does not immediately remove files, instead enters selections
 # into command buffer
 function frm {
-  local files_to_remove
+  local files_to_remove=()
+  local processed_files=()
+
   files_to_remove=$(fd -HI -tf -d${1:-1} | fzf --multi --height 40% --prompt='rm ')
-  [ -n "$files_to_remove" ] && \
+
+  # only move forward if files were actually selected in fzf
+  if [[ "$files_to_remove" ]]; then
+    # $files_to_remove will be one single varible, so split it on '\n'
+    # and assign each line as element to array $processed_files
+    processed_files=(${(ps:\n:)${files_to_remove}})
+    # empty $files_to_remove array so processed lines can be put back in it
+    files_to_remove=()
+    # wrap each line (selected file) with single quotes
+    for procd_file in $processed_files; do
+      # put processes lines back into $files_to_remove
+      files_to_remove+=(\'$procd_file\')
+    done
+    # and remove them
     print -z rm ${=files_to_remove}
+  fi
 }
+
 
 # fuzzy move files
 function fmv {
