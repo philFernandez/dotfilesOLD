@@ -274,9 +274,9 @@ function laa {
 # Had to unalias l
 function l() {
   if [ $# -ge 1 ]; then
-    lsd -l $@ --date --group-dirs first
+    lsd -l $@ --almost-all -l --blocks name
   else
-    lsd -l $pwd --date --group-dirs first
+    lsd -l $pwd --almost-all -l --blocks name
   fi
 }
 
