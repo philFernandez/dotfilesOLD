@@ -261,6 +261,9 @@ let g:ale_linters = {
       "\ '.*\.java$': {'ale_enabled': 0},
       "\ }
 
+" Temp Keymaps {{{1
+nnoremap <localleader>r :w<cr> \| :source %<cr>
+
 " Keymaps {{{1
 
 " AutoClose w/o any plugin
@@ -376,4 +379,3 @@ nnoremap <silent> <leader>l :Buffers<CR>
 
 " vim:foldenable foldmethod=marker foldcolumn=1
 
-nnoremap <localleader>r :w<cr> \| :source %<cr>
