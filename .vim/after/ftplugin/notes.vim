@@ -10,7 +10,7 @@ nmap <leader>q I<delete><space><esc>A
 
 setlocal spell
 setlocal nonumber
-autocmd BufEnter * setfiletype <buffer> notes
+autocmd BufEnter * ++once setfiletype notes
 setlocal tw=85
 setlocal foldenable
 

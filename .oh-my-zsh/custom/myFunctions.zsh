@@ -482,10 +482,19 @@ function fcdf {
 
 function fvim {
   local files
+  local query=
+  while getopts ":q:" opt; do
+    case "$opt" in
+      q ) query=$OPTARG;;
+      ? ) print '-q is the only valid option'
+    esac
+  done
+  shift $((OPTIND-1))
+
   files="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore | \
     fzf -m --preview="bat --color=always --style=numbers {}" \
-    --preview-window="down:90%" --prompt='vim ')"
-      [ -n "$files" ] && ${=EDITOR} $(echo "$files")
+    -q "$query" --preview-window="down:90%" --prompt='vim ')"
+  [[ "$files" ]] && vim "$files"
 }
 
 function fnote {
@@ -577,4 +586,4 @@ function evt {
   ${=EDITOR} ~/.vim/after/plugin/color_settings.vim
 }
 
-# vi: foldenable foldmethod=syntax
+# vi: foldenable foldmethod=indent

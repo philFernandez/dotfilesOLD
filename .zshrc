@@ -10,7 +10,7 @@
         list_of_files+=("$entry")
       fi
     done
-    bat $list_of_files
+    bat -p $list_of_files
   }
 shw_rc
 )

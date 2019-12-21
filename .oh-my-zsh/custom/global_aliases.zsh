@@ -15,6 +15,6 @@ alias -g BIN='~/.bin'
 alias -g LINES=' | wc -l'
 alias -g G='| rg --color never'
 alias -g GC='| rg'
-alias -g FUZ='|fzf'
+alias -g F='|fzf'
 alias -g COLSOU='| sort | fzf --reverse --preview "bat --theme=Monokai\ Extended\ Bright \
   --style=numbers,changes --color always {}" --preview-window="down:95%"'
