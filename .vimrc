@@ -2,7 +2,6 @@
 set nocompatible
 let mapleader=','
 let maplocalleader='\'
-
 " Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
@@ -36,7 +35,6 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
 Plug '~/.vim/plugged-manual/AnsiEsc' " manually installed
-
 " Un-used plugins {{{1
 "Plug 'svermeulen/vim-easyclip'
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
@@ -47,7 +45,6 @@ Plug '~/.vim/plugged-manual/AnsiEsc' " manually installed
 "Plug 'vim-python/python-syntax', { 'for': 'python' }
 "Plug 'mattn/emmet-vim', { 'for': 'html' }
 call plug#end()
-
 " UI Settings {{{1
 set showtabline=2
 set background=dark
@@ -67,7 +64,6 @@ set cursorline
 set cursorlineopt=screenline
 autocmd InsertEnter * set nocursorline
 autocmd InsertLeave * set cursorline
-
 " Other VIM {{{1
 set mouse=a
 set lazyredraw
@@ -105,7 +101,6 @@ au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 "autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 autocmd FileType vim,zsh,bash,sh,python setlocal formatoptions-=ro
 au BufWrite * :RemoveTrailingSpaces
-
 " Indent Settings {{{1
 set autoindent
 set expandtab " use spaces instead of tabs
@@ -113,18 +108,15 @@ set shiftround
 set shiftwidth=2
 set smarttab
 set tabstop=2
-
 " Search {{{1
 set hlsearch
 set ignorecase
 set noincsearch
 set smartcase
-
 " Text Render (wrap) {{{1
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
 set nowrap
-
 " Fold {{{1
 " za - toggle fold under cursor
 " zA - toggle fold under cursor recursively
@@ -141,7 +133,6 @@ set foldmethod=indent
 set foldlevel=0
 " uncomment to disable fold on file open
 set nofoldenable
-
 " vim-easy-align {{{1
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -188,12 +179,10 @@ let g:lightline = {
       \   }
       \
       \ }
-
 " Ultisnips {{{1
 "let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
 "let g:UltiSnipsSnippetDirectories=["ultisnips"]
 "let g:UltiSnipsExpandTrigger="<leader>n"
-
 " Startify {{{1
 let g:startify_bookmarks = [
       \ '~/.vimrc',
@@ -205,12 +194,10 @@ let g:startify_fortune_use_unicode = 0
 " automatically make saved session reflect
 " changes
 let g:startify_session_persistence = 1
-
 " Python Highlight {{{1
 "let g:python_highlight_all = 1
 "let g:python_highlight_space_errors = 0
 "let g:python_highlight_indent_errors = 0
-
 " Completion {{{1
  "c-x c-o forces completion
 set completeopt+=menuone
@@ -239,13 +226,8 @@ let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "inoremap <C-Space> <C-x><C-o>
 "inoremap <C-@> <c-x><c-o>
-
-
-" Easy Clip and Note {{{1
-
-" Note settings ====================================
+" Vim-Notes {{{1
 let g:notes_directories = ['~/Notes/viNotes']
-
 " ALE {{{1
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
@@ -260,12 +242,9 @@ let g:ale_linters = {
 "let g:ale_pattern_options = {
       "\ '.*\.java$': {'ale_enabled': 0},
       "\ }
-
 " Temp Keymaps {{{1
 nnoremap <localleader>r :w<cr> \| :source %<cr>
-
 " Keymaps {{{1
-
 " AutoClose w/o any plugin
 "inoremap " ""<left>
 "inoremap ' ''<left>
@@ -344,7 +323,6 @@ nnoremap <silent> <F8> :vertical resize -2<cr>
 command! -bang -nargs=? -complete=dir Files
       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
-
 "function! s:buflist()
   "redir => ls
   "silent ls
@@ -368,14 +346,10 @@ command! -bang -nargs=? -complete=dir Files
 " ctrl-x = split
 " ctrl-t = tab
 nnoremap <silent> <leader>l :Buffers<CR>
-
-
 " NOTES {{{1
-
 " Preview markdown files:
 " goto directory containing markdown:
 " run command 'grip'
 " see https://github.com/joeyespo/grip
-
+" modeline{{{1
 " vim:foldenable foldmethod=marker foldcolumn=1
-
