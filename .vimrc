@@ -271,7 +271,7 @@ let g:ale_linters = {
 "inoremap { {}<left>
 "inoremap {<CR> {<CR>}<ESC>O
 "inoremap {;<CR> {<CR>};<ESC>O
-autocmd BufEnter * :echo strftime('%m/%d/%Y @ %I:%M %p')
+autocmd BufEnter * ++once :echo strftime('%m/%d/%Y @ %I:%M %p')
 nnoremap <leader>t :echo strftime('%m/%d/%Y @ %I:%M %p')<CR>
 " ==== mimick easyclip ====
 " remap m -> d
