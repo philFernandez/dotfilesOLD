@@ -558,7 +558,16 @@ function frm {
 function fmv {
   local files_to_move=()
   local processed_files=()
-  files_to_move=$(fd -HI -d${1:-1} | fzf -m --height 40% --prompt='mv ')
+  local query=
+  while getopts ":q:" opt; do
+    case "$opt" in
+      q ) query=$OPTARG;;
+      ? ) print '-q is the only valid option'
+    esac
+  done
+  shift $((OPTIND-1))
+  files_to_move=$(fd -HI -d${1:-1} | fzf -q "$query" \
+    -m --height 40% --prompt='mv ')
   if [[ "$files_to_move" ]]; then
     processed_files=(${(ps:\n:)${files_to_move}})
     files_to_move=()
