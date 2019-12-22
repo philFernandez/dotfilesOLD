@@ -113,6 +113,7 @@ set hlsearch
 set ignorecase
 set noincsearch
 set smartcase
+set incsearch
 " Text Render (wrap) {{{1
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
@@ -137,6 +138,8 @@ set nofoldenable
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " }}}
+" highlightedyank {{{1
+let g:highlightedyank_highlight_duration = -1
 " Lightline {{{1
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -245,6 +248,7 @@ let g:ale_linters = {
 " Temp Keymaps {{{1
 nnoremap <localleader>r :w<cr> \| :source %<cr>
 " Keymaps {{{1
+nnoremap <silent><localleader>a :ALEToggle<cr>
 " AutoClose w/o any plugin
 "inoremap " ""<left>
 "inoremap ' ''<left>

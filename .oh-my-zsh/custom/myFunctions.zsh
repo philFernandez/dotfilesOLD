@@ -464,18 +464,34 @@ function fkill() {
 function fcd {
   local dir
   local query=
-  while getopts ":q:" opt; do
+  local depth=
+  # parse optional arguments for fzf -q and/or fd -d
+  while getopts ":q:d:" opt; do
     case "$opt" in
       q ) query=$OPTARG;;
-      ? ) print '-q is the only valid option'
+      d ) depth=$OPTARG;;
+      ? )
+        print '\-q and/or \-d are the only valid options'
+        return 1
+        ;;
     esac
   done
   shift $((OPTIND-1))
-  dir="$(fd . ${1:-.} -I -H -td | fzf -q "$query" --sort \
-    --preview=" lsd -A --color=always \
-    --icon=always --group-dirs first {}" \
-    --preview-window="down:50%" --prompt='cd ')" &&
+  if [[ "$depth" ]]; then
+    dir="$(fd . ${1:-.} -I -H -td -d$depth | fzf -q "$query" --sort \
+      --preview=" lsd -A --color=always \
+      --icon=always --group-dirs first {}" \
+      --preview-window="down:50%" --prompt='cd ')"
+  else
+    dir="$(fd . ${1:-.} -I -H -td | fzf -q "$query" --sort \
+      --preview=" lsd -A --color=always \
+      --icon=always --group-dirs first {}" \
+      --preview-window="down:50%" --prompt='cd ')"
+  fi
+
+  if [[ "$dir" ]]; then
     cd "$dir"
+  fi
 }
 
 function fcdf {

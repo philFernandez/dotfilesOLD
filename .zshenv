@@ -5,7 +5,7 @@
 # as well as vifm's :!<command>
 if [[ $VIMRUNTIME || $VIFM ]]; then
   # get 256color for vim's :terminal command
-  TERM=xterm-256color
+  TERM=xterm-256color-italic
   # source zsh aliases
   source $HOME/.oh-my-zsh/custom/Z_aliases.zsh
 
