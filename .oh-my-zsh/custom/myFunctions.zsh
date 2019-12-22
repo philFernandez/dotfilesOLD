@@ -525,8 +525,17 @@ function fnote {
 function frm {
   local files_to_remove=()
   local processed_files=()
+  local query=
+  while getopts ":q:" opt; do
+    case "$opt" in
+      q ) query=$OPTARG;;
+      ? ) print '-q is the only valid option'
+    esac
+  done
+  shift $((OPTIND-1))
 
-  files_to_remove=$(fd -HI -tf -d${1:-1} | fzf --multi --height 40% --prompt='rm ')
+  files_to_remove=$(fd -HI -tf -d${1:-1} | fzf -q "$query" \
+    --multi --height 40% --prompt='rm ')
 
   # only move forward if files were actually selected in fzf
   if [[ "$files_to_remove" ]]; then
