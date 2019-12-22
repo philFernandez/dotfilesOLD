@@ -597,7 +597,6 @@ function fcp {
   if [[ "$files_to_copy" ]]; then
     # (f) is same as (ps:\n:)
     processed_files=(${(f)${files_to_copy}})
-    print $processed_files
     files_to_copy=()
     for procd_file in $processed_files; do
       files_to_copy+=(\'$procd_file\')
@@ -612,10 +611,17 @@ function fcp {
 # Does not immediately remove directories, instead enters selections
 # into command buffer
 function frd {
-  local directories_to_remove
+  local directories_to_remove=()
+  local processed_files=()
   directories_to_remove=$(fd -HI -td -d${1:-1} | fzf --height 40% --multi --prompt='rd ')
-  [ -n "$directories_to_remove" ] && \
+  if [[ "$directories_to_remove" ]]; then
+    processed_files=(${(f)${directories_to_remove}})
+    directories_to_remove=()
+    for procd_file in $processed_files; do
+      directories_to_remove+=(\'$procd_file\')
+    done
     print -z rd ${=directories_to_remove}
+  fi
 }
 
 function d {
