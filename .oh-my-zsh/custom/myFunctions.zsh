@@ -409,7 +409,7 @@ function rmx {
 
 function aliases {
   if [ $# -ge 1 ]; then
-    alias | ag --nocolor "$*" | bat --style=numbers -l sh
+    alias | rg --color never "$*" | bat --style=numbers -l sh
   else
     alias | bat --style=numbers -l sh
   fi
