@@ -613,7 +613,16 @@ function fcp {
 function frd {
   local directories_to_remove=()
   local processed_files=()
-  directories_to_remove=$(fd -HI -td -d${1:-1} | fzf --height 40% --multi --prompt='rd ')
+  local query=
+  while getopts ":q:" opt; do
+    case "$opt" in
+      q ) query=$OPTARG;;
+      ? ) print '-q is the only valid option'
+    esac
+  done
+  shift $((OPTIND-1))
+  directories_to_remove=$(fd -HI -td -d${1:-1} | \
+    fzf -q "$query" --height 40% --multi --prompt='rd ')
   if [[ "$directories_to_remove" ]]; then
     processed_files=(${(f)${directories_to_remove}})
     directories_to_remove=()
