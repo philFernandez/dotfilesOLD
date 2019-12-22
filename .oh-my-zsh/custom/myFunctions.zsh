@@ -541,7 +541,8 @@ function frm {
   if [[ "$files_to_remove" ]]; then
     # $files_to_remove will be one single varible, so split it on '\n'
     # and assign each line as element to array $processed_files
-    processed_files=(${(ps:\n:)${files_to_remove}})
+    # (f) is same as (ps:\n:)
+    processed_files=(${(f)${files_to_remove}})
     # empty $files_to_remove array so processed lines can be put back in it
     files_to_remove=()
     # wrap each line (selected file) with single quotes
@@ -569,7 +570,8 @@ function fmv {
   files_to_move=$(fd -HI -d${1:-1} | fzf -q "$query" \
     -m --height 40% --prompt='mv ')
   if [[ "$files_to_move" ]]; then
-    processed_files=(${(ps:\n:)${files_to_move}})
+    # (f) is same as (ps:\n:)
+    processed_files=(${(f)${files_to_move}})
     files_to_move=()
     for procd_file in $processed_files; do
       files_to_move+=(\'$procd_file\')
@@ -593,7 +595,9 @@ function fcp {
   files_to_copy=$(fd -HI -d${1:-1} | fzf -q "$query" -m --height 40% \
     --prompt='cp ')
   if [[ "$files_to_copy" ]]; then
-    processed_files=(${(ps:\n:)${files_to_copy}})
+    # (f) is same as (ps:\n:)
+    processed_files=(${(f)${files_to_copy}})
+    print $processed_files
     files_to_copy=()
     for procd_file in $processed_files; do
       files_to_copy+=(\'$procd_file\')
