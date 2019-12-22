@@ -545,13 +545,19 @@ function frm {
   fi
 }
 
-
-# fuzzy move files
+# fuzzy move files (see frm comments for how this works)
 function fmv {
-  local files_to_move
+  local files_to_move=()
+  local processed_files=()
   files_to_move=$(fd -HI -d${1:-1} | fzf -m --height 40% --prompt='mv ')
-  [ -n "$files_to_move" ] && \
+  if [[ "$files_to_move" ]]; then
+    processed_files=(${(ps:\n:)${files_to_move}})
+    files_to_move=()
+    for procd_file in $processed_files; do
+      files_to_move+=(\'$procd_file\')
+    done
     print -z mv ${=files_to_move}
+  fi
 }
 
 # fuzzy copy files
