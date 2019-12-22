@@ -582,7 +582,16 @@ function fmv {
 function fcp {
   local files_to_copy=()
   local processed_files=()
-  files_to_copy=$(fd -HI -d${1:-1} | fzf -m --height 40% --prompt='cp ')
+  local query=
+  while getopts ":q:" opt; do
+    case "$opt" in
+      q ) query=$OPTARG;;
+      ? ) print '-q is the only valid option'
+    esac
+  done
+  shift $((OPTIND-1))
+  files_to_copy=$(fd -HI -d${1:-1} | fzf -q "$query" -m --height 40% \
+    --prompt='cp ')
   if [[ "$files_to_copy" ]]; then
     processed_files=(${(ps:\n:)${files_to_copy}})
     files_to_copy=()
