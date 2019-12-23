@@ -567,7 +567,7 @@ function frm {
   done
   shift $((OPTIND-1))
 
-  files_to_remove=$(fd -HI -tf -d${1:-1} | fzf -q "$query" \
+  files_to_remove=$(fd -HI -tf -tl -d${1:-1} | fzf -q "$query" \
     --multi --height 40% --prompt='rm ')
 
   # only move forward if files were actually selected in fzf
