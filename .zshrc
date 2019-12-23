@@ -123,7 +123,7 @@ unalias l
 unalias rd
 
 # Auto Comp Defns {{{1
-fpath=($fpath ~/.oh-my-zsh/custom/completions)
+fpath=(~/.oh-my-zsh/custom/completions $fpath)
 #autoload -U compinit
 #compinit -d $ZSH_COMPDUMP
 #zstyle ':completion:*' menu select=2
@@ -171,6 +171,8 @@ zle -N zle-keymap-select
 
 # Start with beam shape cursor on zsh startup and after every command.
 zle-line-init() { zle-keymap-select 'underline'}
+
+bindkey '^h' _complete_help
 
 # vim:foldenable foldmethod=marker foldcolumn=1
 
