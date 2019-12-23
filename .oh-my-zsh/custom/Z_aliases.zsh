@@ -79,5 +79,14 @@ alias show='brew info'
 alias search='brew search'
 alias show_all_cask='brew search --casks' # <package> (optional)
 alias install='brew -v install'
+
+# fcd {{{1
+alias fcd1='fcd -d 1'
+alias fcd2='fcd -d 2'
+alias fcd3='fcd -d 3'
+alias fcd4='fcd -d 4'
+alias fcd5='fcd -d 5'
+alias fcd6='fcd -d 6'
+
 # {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
