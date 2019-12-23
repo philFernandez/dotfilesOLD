@@ -545,11 +545,11 @@ function fvim {
   done
   shift $((OPTIND-1))
   if [[ $depth ]]; then
-    files="$(fd . ${1:-.} -H -I -tf -d$depth --ignore-file $HOME/.cust_ignore | \
+    files="$(fd . ${1:-.} -H -I -tf -tl -d$depth --ignore-file $HOME/.cust_ignore | \
       fzf -m --preview="bat --color=always --style=numbers {}" \
       -q "$query" --preview-window="down:90%" --prompt='vim ')"
   else
-    files="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore | \
+    files="$(fd . ${1:-.} -H -I -tf -tl --ignore-file $HOME/.cust_ignore | \
       fzf -m --preview="bat --color=always --style=numbers {}" \
       -q "$query" --preview-window="down:90%" --prompt='vim ')"
   fi
