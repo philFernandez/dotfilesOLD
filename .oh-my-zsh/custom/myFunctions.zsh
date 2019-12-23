@@ -532,18 +532,31 @@ function fcdf {
 function fvim {
   local files
   local query=
-  while getopts ":q:" opt; do
+  local depth=
+  while getopts ":q:d:" opt; do
     case "$opt" in
       q ) query=$OPTARG;;
-      ? ) print '-q is the only valid option'
+      d ) depth=$OPTARG;;
+      ? )
+        print '\-q and/or \-d are the only valid options'
+        return 1
+        ;;
     esac
   done
   shift $((OPTIND-1))
+  if [[ $depth ]]; then
+    files="$(fd . ${1:-.} -H -I -tf -d$depth --ignore-file $HOME/.cust_ignore | \
+      fzf -m --preview="bat --color=always --style=numbers {}" \
+      -q "$query" --preview-window="down:90%" --prompt='vim ')"
+  else
+    files="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore | \
+      fzf -m --preview="bat --color=always --style=numbers {}" \
+      -q "$query" --preview-window="down:90%" --prompt='vim ')"
+  fi
+  if [[ $files ]]; then
+    vim $files
+  fi
 
-  files="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore | \
-    fzf -m --preview="bat --color=always --style=numbers {}" \
-    -q "$query" --preview-window="down:90%" --prompt='vim ')" && \
-    vim "$files"
 }
 
 function fnote {
