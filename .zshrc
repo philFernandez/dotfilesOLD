@@ -40,7 +40,7 @@ HIST_STAMPS="mm/dd/yyyy"
 plugins=(
   git
   zsh-syntax-highlighting
-  zsh-autosuggestions
+  #zsh-autosuggestions
   colored-man-pages
   iterm2
   fd

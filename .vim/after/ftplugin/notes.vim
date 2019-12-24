@@ -8,7 +8,6 @@ imap <leader>w <esc><space><space>*<space>
 " Remove bullet point
 nmap <leader>q I<delete><space><esc>A
 
-setlocal spell
 setlocal nonumber
 autocmd BufEnter * ++once setfiletype notes
 setlocal tw=85
