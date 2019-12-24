@@ -515,17 +515,29 @@ function fcdf {
   local file
   local dir
   local query=
-  while getopts ":q:" opt; do
+  local depth=
+  while getopts ":q:d:" opt; do
     case "$opt" in
       q ) query=$OPTARG;;
+      d ) depth=$OPTARG;;
       ? ) print '-q is the only valid option'
     esac
   done
   shift $((OPTIND-1))
-  file="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore| \
-    fzf -m -q "$query" --preview="bat --color=always --style=numbers {}" \
-    --preview-window="down:90%" --prompt='cd-to-dir-of ')"
-      [ -n "$file" ] && dir=$(dirname "$file") && cd "$dir"
+  if [[ $depth ]]; then
+    file="$(fd . ${1:-.} -H -I -tf -d$depth --ignore-file $HOME/.cust_ignore| \
+      fzf -m -q "$query" --preview="bat --color=always --style=numbers {}" \
+      --preview-window="down:90%" --prompt='cd-to-dir-of ')"
+        [ -n "$file" ] && dir=$(dirname "$file")
+  else
+    file="$(fd . ${1:-.} -H -I -tf --ignore-file $HOME/.cust_ignore| \
+      fzf -m -q "$query" --preview="bat --color=always --style=numbers {}" \
+      --preview-window="down:90%" --prompt='cd-to-dir-of ')"
+          [ -n "$file" ] && dir=$(dirname "$file")
+  fi
+  if [[ "$dir" ]]; then
+    cd "$dir"
+  fi
 
 }
 
