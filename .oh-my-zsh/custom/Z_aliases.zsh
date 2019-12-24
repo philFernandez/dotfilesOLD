@@ -54,6 +54,7 @@ alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 alias github='ln -sf ~/.gitconfigs/.gitconfig.github ~/.gitconfig'
 alias gitlab='ln -sf ~/.gitconfigs/.gitconfig.gitlab ~/.gitconfig'
 alias glor='LESS+=-N git log --oneline --decorate --reverse'
+alias glgp='git log --stat -p B -l diff'
 # Version Controled Dotfiles {{{1
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cst='config status'
