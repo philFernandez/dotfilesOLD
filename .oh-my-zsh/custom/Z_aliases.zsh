@@ -80,13 +80,20 @@ alias search='brew search'
 alias show_all_cask='brew search --casks' # <package> (optional)
 alias install='brew -v install'
 
-# fcd and fvim {{{1
+# fuzzy function aliases {{{1
 alias fcd1='fcd -d 1'
 alias fcd2='fcd -d 2'
 alias fcd3='fcd -d 3'
 alias fcd4='fcd -d 4'
 alias fcd5='fcd -d 5'
 alias fcd6='fcd -d 6'
+
+alias fcdf1='fcdf -d 1'
+alias fcdf2='fcdf -d 2'
+alias fcdf3='fcdf -d 3'
+alias fcdf4='fcdf -d 4'
+alias fcdf5='fcdf -d 5'
+alias fcdf6='fcdf -d 6'
 
 alias fvim1='fvim -d 1'
 alias fvim2='fvim -d 2'
