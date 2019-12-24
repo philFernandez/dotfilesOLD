@@ -349,7 +349,8 @@ command! -bang -nargs=? -complete=dir Files
 " ctrl-v = vertical split
 " ctrl-x = split
 " ctrl-t = tab
-nnoremap <silent> <leader>l :Buffers<CR>
+nnoremap <silent> <leader>l :Buf<CR>
+nnoremap <silent> <leader>k :Win<CR>
 " NOTES {{{1
 " Preview markdown files:
 " goto directory containing markdown:

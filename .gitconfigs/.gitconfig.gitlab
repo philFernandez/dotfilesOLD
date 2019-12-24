@@ -8,5 +8,6 @@
 	diff = false
 	branch = false
   log = false
+  shortlog = false
 [init]
 	templatedir = ~/.git_template
