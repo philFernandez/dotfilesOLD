@@ -480,14 +480,15 @@ function fkill() {
 # fzf functions that I wrote ===============================
 function fcd {
   local dir
-  #local query=
-  #local depth=
+
   # parse optional arguments for fzf -q and/or fd -d
   zparseopts -D -A opts - d: q: Q:
 
   if [[ ${opts[-q]} ]]; then
+    # prepend query w/ `'` so fzf does exact match
     query="'${opts[-q]}"
   else
+    # do regular fuzzy match
     local query=${opts[-Q]}
   fi
 
