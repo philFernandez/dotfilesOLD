@@ -483,9 +483,16 @@ function fcd {
   #local query=
   #local depth=
   # parse optional arguments for fzf -q and/or fd -d
-  zparseopts -D -A opts - d: q:
+  zparseopts -D -A opts - d: q: Q:
+
+  if [[ ${opts[-q]} ]]; then
+    query="'${opts[-q]}"
+  else
+    local query=${opts[-Q]}
+  fi
+
   local depth=${opts[-d]}
-  local query=${opts[-q]}
+
 
   if [[ "$depth" ]]; then
     dir="$(fd . ${1:-.} -I -H -td -d$depth | fzf -q "$query" --sort \
