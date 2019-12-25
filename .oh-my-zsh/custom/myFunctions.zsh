@@ -480,20 +480,13 @@ function fkill() {
 # fzf functions that I wrote ===============================
 function fcd {
   local dir
-  local query=
-  local depth=
+  #local query=
+  #local depth=
   # parse optional arguments for fzf -q and/or fd -d
-  while getopts ":q:d:" opt; do
-    case "$opt" in
-      q ) query=$OPTARG;;
-      d ) depth=$OPTARG;;
-      ? )
-        print '\-q and/or \-d are the only valid options'
-        return 1
-        ;;
-    esac
-  done
-  shift $((OPTIND-1))
+  zparseopts -D -A opts - d: q:
+  local depth=${opts[-d]}
+  local query=${opts[-q]}
+
   if [[ "$depth" ]]; then
     dir="$(fd . ${1:-.} -I -H -td -d$depth | fzf -q "$query" --sort \
       --preview=" lsd -A --color=always \
