@@ -307,6 +307,7 @@ function gcamp {
 function ccamp {
   git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -a -m "$@" \
     && git --git-dir=$HOME/.cfg/ --work-tree=$HOME push -u origin master
+  unsetopt completealiases
   }
 
 function gdl {
