@@ -4,5 +4,5 @@
 # It is called deprofessor because the only files that
 # i ever deal with that have spaces in their names, are
 # those that I download from professors.
-find $PWD -d 1 -type f -name "* *" -exec bash -c 'mv "$0" "${0// /_}"' {} \;
+find $PWD -d 1 -name "* *" -exec bash -c 'mv "$0" "${0// /_}"' {} \; 2> /dev/null
 
