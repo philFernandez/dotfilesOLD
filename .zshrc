@@ -20,9 +20,9 @@ stty -ixon
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # Temp Things {{{1
 
@@ -46,15 +46,6 @@ plugins=(
   fd
   printc
 )
-
-# Shell Options {{{1
-setopt NONOMATCH \
-  HIST_IGNORE_ALL_DUPS \
-  INC_APPEND_HISTORY \
-  HIST_SAVE_NO_DUPS \
-  APPEND_HISTORY \
-  SHARE_HISTORY \
-  NO_CLOBBER
 
 # Source Things {{{1
 # set theme in another file that isn't under source control
@@ -173,6 +164,16 @@ zle -N zle-keymap-select
 zle-line-init() { zle-keymap-select 'underline'}
 
 bindkey '^h' _complete_help
+
+# Shell Options {{{1
+setopt NONOMATCH \
+  HIST_IGNORE_ALL_DUPS \
+  INC_APPEND_HISTORY \
+  HIST_SAVE_NO_DUPS \
+  APPEND_HISTORY \
+  SHARE_HISTORY \
+  NO_CLOBBER \
+  MENU_COMPLETE
 
 # vim:foldenable foldmethod=marker foldcolumn=1
 

@@ -28,7 +28,8 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
-Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'PProvost/vim-ps1'
 Plug 'vim-scripts/taglist.vim'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -38,11 +39,9 @@ Plug 'terryma/vim-multiple-cursors' " https://github.com/terryma/vim-multiple-cu
 " Un-used plugins {{{1
 "Plug 'svermeulen/vim-easyclip'
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
-"Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 "Plug 'sirver/UltiSnips'
 "Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 "Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-"Plug 'vim-python/python-syntax', { 'for': 'python' }
 "Plug 'mattn/emmet-vim', { 'for': 'html' }
 call plug#end()
 " UI Settings {{{1
@@ -173,7 +172,7 @@ let g:lightline = {
       \
       \   'separator': {
       \     'left': '',
-      \     'right': ' '
+      \     'right': ''
       \   },
       \
       \   'subseparator': {
@@ -198,9 +197,9 @@ let g:startify_fortune_use_unicode = 0
 " changes
 let g:startify_session_persistence = 1
 " Python Highlight {{{1
-"let g:python_highlight_all = 1
-"let g:python_highlight_space_errors = 0
-"let g:python_highlight_indent_errors = 0
+let g:python_highlight_all = 1
+let g:python_highlight_space_errors = 0
+let g:python_highlight_indent_errors = 0
 " Completion {{{1
  "c-x c-o forces completion
 set completeopt+=menuone
