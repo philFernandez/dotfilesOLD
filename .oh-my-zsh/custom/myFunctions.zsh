@@ -33,13 +33,13 @@ function bk {
 
 function zap {
   if [[ $1 == '-y' ]]; then
-    fd -HI -d1 -0 | xargs -0 rm -vfr
+    fd -HI -d1 --exclude .DS_Store -0 | xargs -0 rm -vfr
   else
     print -n 'Are you sure you want to zap everything?!?! [yn] '
     read -q yes_zap
     echo; echo
     if [[ $yes_zap == 'y' ]]; then
-      fd -HI -d1 -0 | xargs -0 rm -vfr
+      fd -HI -d1 --exclude .DS_Store -0 | xargs -0 rm -vfr
     fi
   fi
 }
