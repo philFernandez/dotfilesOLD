@@ -56,6 +56,8 @@ alias gitlab='ln -sf ~/.gitconfigs/.gitconfig.gitlab ~/.gitconfig'
 alias glor='LESS+=-N git log --oneline --decorate --reverse'
 alias glgp='git log --stat -p B -l diff'
 # Version Controled Dotfiles {{{1
+alias preconf='setopt completealiases'
+alias postconf='unsetopt completealiases'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cst='config status'
 alias ca='config add'
@@ -102,64 +104,6 @@ alias fvim4='fvim -d 4'
 alias fvim5='fvim -d 5'
 alias fvim6='fvim -d 6'
 
-# ConfZap {{{1
-
-alias agignore_zap='config checkout /Users/philthy/.agignore'
-alias brew_purge_zap='config checkout /Users/philthy/.bin/brew_purge'
-alias cman_zap='config checkout /Users/philthy/.bin/cman'
-alias deprofessor_zap='config checkout /Users/philthy/.bin/deprofessor'
-
-#.bin/deprofessor
-#.bin/fman
-#.bin/hw
-#.bin/lines
-#.bin/reload-browser
-#.bin/true-color
-#.bin/vnote
-#.config/ranger/commands.py
-#.config/ranger/commands_full.py
-#.config/ranger/rc.conf
-#.config/ranger/rifle.conf
-#.config/ranger/scope.sh
-#.cust_ignore
-#.dircolors
-#.eslintrc
-#.gitconfig
-#.gitconfigs/.gitconfig.github
-#.gitconfigs/.gitconfig.gitlab
-#.gitconfigs/README.md
-#.gvimrc
-#.oh-my-zsh/custom/Z_aliases.zsh
-#.oh-my-zsh/custom/completions/_git
-#.oh-my-zsh/custom/completions/git-completion.bash
-#.oh-my-zsh/custom/completions/git-completion.zsh
-#.oh-my-zsh/custom/global_aliases.zsh
-#.oh-my-zsh/custom/myFunctions.zsh
-#.oh-my-zsh/custom/themes/philthy.zsh-theme
-#.p10k.zsh
-#.powerlevel_settings
-#.prettierrc.json
-#.tern-config
-#.vim/after/ftplugin/c.vim
-#.vim/after/ftplugin/gitcommit.vim
-#.vim/after/ftplugin/java.vim
-#.vim/after/ftplugin/javascript.vim
-#.vim/after/ftplugin/notes.vim
-#.vim/after/ftplugin/perl6.vim
-#.vim/after/ftplugin/plaintex.vim
-#.vim/after/ftplugin/python.vim
-#.vim/after/ftplugin/tex.vim
-#.vim/after/ftplugin/text.vim
-#.vim/after/ftplugin/vimwiki.vim
-#.vim/after/syntax/java.vim
-#.vim/ultisnips/c.snippets
-#.vim/ultisnips/javascript.snippets
-#.vim/ultisnips/python.snippets
-#.vimrc
-#.vrapperrc
-#.zlogin
-#.zshenv
-alias zshrc_zap='config checkout /Users/philthy/.zshrc'
 # {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
 
