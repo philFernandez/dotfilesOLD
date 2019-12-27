@@ -245,7 +245,6 @@ let g:ale_linters = {
       "\ '.*\.java$': {'ale_enabled': 0},
       "\ }
 " Temp Keymaps {{{1
-nnoremap <localleader>r :w<cr> \| :source %<cr>
 " Keymaps {{{1
 nnoremap <silent><localleader>a :ALEToggle<cr>
 " AutoClose w/o any plugin
