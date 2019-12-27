@@ -11,6 +11,7 @@ alias f=ranger
 alias light='iterm2_profile Light'
 alias dark='iterm2_profile Default'
 alias ppath='print -l $path'
+alias pfpath='print -l $fpath'
 alias server='TERM=xterm-256color ssh philthy@192.168.0.36'
 alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias regex='man pcresyntax'
