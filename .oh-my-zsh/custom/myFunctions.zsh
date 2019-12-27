@@ -374,25 +374,25 @@ function cpdir {
 }
 
 # allows for filtering list output to desired search keys
-function fl {
-  #if two args, first arg is directory to /bin/ls
-  #second arg is search key
-  if [ $# == 2 ]; then
-    #/bin/ls -AF $1 | ack -i --nocolor $2
-    #/bin/ls -AF $1 | grep -Pi --color=never $2
-    #/bin/ls -AFH $1 | egrep -i $2
-    #/bin/ls -AFH $1 | ag --nocolor $2
-    /bin/ls -AFH $1 | rg --color never $2
-    # if one arg /bin/ls is done in pwd one single
-    # arg is search key
-  else
-    #/bin/ls -AF | ack -i --nocolor $*
-    #/bin/ls -AF | grep -Pi --color=never $*
-    #/bin/ls -AF | egrep -i $*
-    #/bin/ls -AF | ag --nocolor $*
-    /bin/ls -AF | rg --color never $*
-  fi
-}
+#function fl {
+  ##if two args, first arg is directory to /bin/ls
+  ##second arg is search key
+  #if [ $# == 2 ]; then
+    ##/bin/ls -AF $1 | ack -i --nocolor $2
+    ##/bin/ls -AF $1 | grep -Pi --color=never $2
+    ##/bin/ls -AFH $1 | egrep -i $2
+    ##/bin/ls -AFH $1 | ag --nocolor $2
+    #/bin/ls -AFH $1 | rg --color never $2
+    ## if one arg /bin/ls is done in pwd one single
+    ## arg is search key
+  #else
+    ##/bin/ls -AF | ack -i --nocolor $*
+    ##/bin/ls -AF | grep -Pi --color=never $*
+    ##/bin/ls -AF | egrep -i $*
+    ##/bin/ls -AF | ag --nocolor $*
+    #/bin/ls -AF | rg --color never $*
+  #fi
+#}
 
 # remove all exept for $*
 function rmn {
