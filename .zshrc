@@ -41,6 +41,7 @@ plugins=(
   git
   zsh-syntax-highlighting
   #zsh-autosuggestions
+  fzf-utils
   colored-man-pages
   iterm2
   fd
