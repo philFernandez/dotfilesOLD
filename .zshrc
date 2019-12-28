@@ -1,3 +1,60 @@
+# Autoload {{{1
+zmodload zsh/complist
+autoload -U compinit
+compinit
+zstyle ':completion:*' menu select=2
+
+autoload -Uz printc
+autoload -Uz fcd
+autoload -Uz lib
+lib
+
+for config_file ($ZSH_CUSTOM/*.zsh(N)); do
+  source $config_file
+done
+unset config_file
+
+# Bindkey {{{1
+KEYTIMEOUT=1
+bindkey -D emacs
+bindkey -v
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+bindkey "^?" backward-delete-char
+bindkey '^X^E' edit-command-line # open vim for writing command
+zle -N edit-command-line
+bindkey '^F' vi-end-of-line # accept autocomplete
+bindkey '^A' vi-beginning-of-line
+bindkey '^G' vi-delete # press twice; acts sort of like '^U'
+#bindkey -M viins 'jj' vi-cmd-mode
+bindkey -s '^R' 'exec zsh\n'
+# ^i brings up completion
+# ^j accepts completions
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
+  echo -ne '\e[1 q'
+elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] \
+  || [[ $KEYMAP = '' ]] || [[ $1 = 'underline' ]]; then
+  echo -ne '\e[3 q'
+fi
+}
+
+zle -N zle-keymap-select
+
+# Start with beam shape cursor on zsh startup and after every command.
+zle-line-init() { zle-keymap-select 'underline'}
+
+bindkey '^h' _complete_help
+
 # Files to Source {{{1
 
 [[ -d ~/.reminders ]] && [[ ! "$VIMRUNTIME" ]] && [[ ! "$RANGER_LEVEL" ]] && \
@@ -37,25 +94,20 @@ HIST_STAMPS="mm/dd/yyyy"
 # Disable C-S so that it can be used elsewhere
 
 # Plugins {{{1
-plugins=(
-  git
-  zsh-syntax-highlighting
-  #zsh-autosuggestions
-  fzf-utils
-  colored-man-pages
-  iterm2
-  fd
-  printc
-)
+#plugins=(
+  #git
+  #zsh-syntax-highlighting
+  ##zsh-autosuggestions
+  #fzf-utils
+  #colored-man-pages
+  #iterm2
+  #fd
+  #printc
+#)
 
 # Source Things {{{1
 # set theme in another file that isn't under source control
 source ~/.zsh_theme
-
-#--Do-Not-Separate-These-Two-------------
-export ZSH="/Users/philthy/.oh-my-zsh" #|
-source $ZSH/oh-my-zsh.sh               #|
-#--Keep-Them-In-Same-Order---------------
 
 # only load all of powerlevel9k settings if powerlevel9k is the set theme
 #if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then
@@ -104,67 +156,10 @@ if [[ -s ~/.dircolors ]]; then
   source ~/.dircolors
 fi
 
-# Unset aliases {{{1
-if [[ $VIMRUNTIME == "" && $VIFM == "" ]]; then
-  # causes error if this is unaliased inside vim or vifm shell
-  # so only unalias it if we're not in vim or vifm
-  unalias ls
-fi
-unalias la
-unalias l
-unalias rd
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
-# Auto Comp Defns {{{1
-fpath=(~/.oh-my-zsh/custom/completions $fpath)
-#autoload -U compinit
-#compinit -d $ZSH_COMPDUMP
-#zstyle ':completion:*' menu select=2
-compdef _gnu_generic file
-compdef _git gdl=git-diff
-compdef _gnu_generic lsd
-compdef _gnu_generic fzf
-compdef _gnu_generic bat
-#compdef _gnu_generic rg
-#compdef _pdfgrep pdfgrep
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Bindkey {{{1
-KEYTIMEOUT=1
-bindkey -D emacs
-bindkey -v
-
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
-
-bindkey "^?" backward-delete-char
-bindkey '^X^E' edit-command-line # open vim for writing command
-bindkey '^F' vi-end-of-line # accept autocomplete
-bindkey '^A' vi-beginning-of-line
-bindkey '^G' vi-delete # press twice; acts sort of like '^U'
-#bindkey -M viins 'jj' vi-cmd-mode
-bindkey -s '^R' 'exec zsh\n'
-# ^i brings up completion
-# ^j accepts completions
-
-# Change cursor shape for different vi modes.
-function zle-keymap-select {
-if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
-  echo -ne '\e[1 q'
-elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] \
-  || [[ $KEYMAP = '' ]] || [[ $1 = 'underline' ]]; then
-  echo -ne '\e[3 q'
-fi
-}
-zle -N zle-keymap-select
-
-# Start with beam shape cursor on zsh startup and after every command.
-zle-line-init() { zle-keymap-select 'underline'}
-
-bindkey '^h' _complete_help
 
 # Shell Options {{{1
 setopt NONOMATCH \
@@ -174,7 +169,18 @@ setopt NONOMATCH \
   APPEND_HISTORY \
   SHARE_HISTORY \
   NO_CLOBBER \
-  MENU_COMPLETE
+  MENU_COMPLETE \
+  AUTO_CD
+  # Auto Comp Defns {{{1
+  #fpath=(~/.oh-my-zsh/custom/completions $fpath)
+  compdef _gnu_generic file
+  compdef _git gdl=git-diff
+  compdef _gnu_generic lsd
+  compdef _gnu_generic fzf
+  compdef _gnu_generic bat
+  #compdef _gnu_generic rg
+  #compdef _pdfgrep pdfgrep
+
+
 
 # vim:foldenable foldmethod=marker foldcolumn=1
-
