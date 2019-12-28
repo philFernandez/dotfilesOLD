@@ -73,7 +73,9 @@ alias confzap='(cd && config checkout .)'
 # make man pages display line numbers {{{1
 alias nman='LESS+="-N" man'
 # Package Management {{{1
-alias update='brew -v update && brew outdated && brew cask outdated'
+alias update="brew -v update && \
+  printc -nC spring '==>'; printc -b ' Outdated' \
+  && brew outdated && brew cask outdated"
 alias upgrade='brew upgrade && brew cask upgrade'
 alias outdated='brew -v outdated && brew cask outdated'
 alias dryclean='brew cleanup --dry-run'
