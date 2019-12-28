@@ -38,22 +38,8 @@ bindkey -s '^R' 'exec zsh\n'
 # ^i brings up completion
 # ^j accepts completions
 
-# Change cursor shape for different vi modes.
-function zle-keymap-select {
-if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
-  echo -ne '\e[1 q'
-elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] \
-  || [[ $KEYMAP = '' ]] || [[ $1 = 'underline' ]]; then
-  echo -ne '\e[3 q'
-fi
-}
-
-zle -N zle-keymap-select
-
-# Start with beam shape cursor on zsh startup and after every command.
-zle-line-init() { zle-keymap-select 'underline'}
-
 bindkey '^h' _complete_help
+
 
 # Files to Source {{{1
 
@@ -72,53 +58,43 @@ bindkey '^h' _complete_help
 shw_rc
 )
 
+# set theme in another file that isn't under source control
+source ~/.zsh_theme
+
+# only load all of powerlevel9k settings if powerlevel9k is the set theme
+#if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then
+#source ~/.powerlevel_settings
+#fi
+
+if [[ -s ~/.dircolors ]]; then
+  source ~/.dircolors
+fi
+
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # p10k {{{1
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 stty -ixon
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
-
-# Temp Things {{{1
-
-export CLASSPATH="/Users/philthy/eclipse-workspace/A4Prj/dist/A4Prj.jar:\
-/Users/philthy/eclipse-workspace/A4Prj/lib/CLDC11.jar:\
-/Users/philthy/eclipse-workspace/A4Prj/lib/CodenameOne.jar"
-
 
 # Variables {{{1
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
 # Disable C-S so that it can be used elsewhere
 
-# Plugins {{{1
-#plugins=(
-  #git
-  #zsh-syntax-highlighting
-  ##zsh-autosuggestions
-  #fzf-utils
-  #colored-man-pages
-  #iterm2
-  #fd
-  #printc
-#)
 
-# Source Things {{{1
-# set theme in another file that isn't under source control
-source ~/.zsh_theme
-
-# only load all of powerlevel9k settings if powerlevel9k is the set theme
-#if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then
-  #source ~/.powerlevel_settings
-#fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Exports: {{{1 have to be below source $ZSH/oh-my-zsh.sh
-# Path to your oh-my-zsh installation.
 
 # set vscode as default editor
 #export EDITOR='code -w'
@@ -151,16 +127,6 @@ export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
 	--color marker:196 --color border:214 --color prompt:214\
 		--color header:208 --color bg+:240 --reverse --border"
 
-
-if [[ -s ~/.dircolors ]]; then
-  source ~/.dircolors
-fi
-
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
-
-source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
 # Shell Options {{{1
 setopt NONOMATCH \
   HIST_IGNORE_ALL_DUPS \
@@ -180,7 +146,6 @@ setopt NONOMATCH \
   compdef _gnu_generic bat
   #compdef _gnu_generic rg
   #compdef _pdfgrep pdfgrep
-
 
 
 # vim:foldenable foldmethod=marker foldcolumn=1
