@@ -136,7 +136,11 @@ setopt NONOMATCH \
   SHARE_HISTORY \
   NO_CLOBBER \
   MENU_COMPLETE \
-  AUTO_CD
+  AUTO_CD \
+  AUTO_PUSHD \
+  PUSHD_IGNORE_DUPS \
+  PUSHD_MINUS
+
   # Auto Comp Defns {{{1
   #fpath=(~/.oh-my-zsh/custom/completions $fpath)
   compdef _gnu_generic file
