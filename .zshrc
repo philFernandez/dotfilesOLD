@@ -70,7 +70,7 @@ if [[ -s ~/.dircolors ]]; then
   source ~/.dircolors
 fi
 
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh/themes/.powerlevel10k/powerlevel10k.zsh-theme
 
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
