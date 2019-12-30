@@ -723,7 +723,7 @@ function rc {
   ${=EDITOR} ~/.zshrc
 }
 function eg {
-  #${=EDITOR} ~/.oh-my-zsh/custom/global_aliases.zsh
+  ${=EDITOR} ~/.zsh/global_aliases.zsh
 }
 function ett {
   ${=EDITOR} ~/.zsh_theme

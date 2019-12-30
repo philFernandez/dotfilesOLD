@@ -28,3 +28,5 @@ ZSH_CUSTOM=$HOME/.zsh
 fpath=($ZSH_CUSTOM/plugins/printc $fpath)
 fpath=($ZSH_CUSTOM/plugins/fzf-utils $fpath)
 fpath=($ZSH_CUSTOM/lib $fpath)
+fpath=($ZSH_CUSTOM/plugins/k $fpath)
+fpath=($ZSH_CUSTOM/completions $fpath)
