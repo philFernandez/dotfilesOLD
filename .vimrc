@@ -196,6 +196,30 @@ let g:startify_fortune_use_unicode = 0
 " automatically make saved session reflect
 " changes
 let g:startify_session_persistence = 1
+"let g:startify_custom_header = [
+      "\ '   /  |      /                          /              /  | /     ',
+      "\ '  (   | ___ (  ___  ___  _ _  ___      (___  ___      (   |   _ _ ',
+      "\ '  | / )|___)| |    |   )| | )|___)     |    |   )      \  )| | | )',
+      "\ '  |/|/ |__  | |__  |__/ |  / |__       |__  |__/        \/ | |  / ',
+      "\]
+
+let g:startify_custom_header = [
+      \ "         _______ __      __     ___ ___                     ",
+      \ "        |   _   |__.----|  |--.|   Y   .-----.--.--.----.   ",
+      \ "        |.  1   |  |  __|    < |   1   |  _  |  |  |   _|   ",
+      \ "        |.  ____|__|____|__|__| \_   _ /|_____|_____|__|     ",
+      \ "        |:  |                    |:  |                      ",
+      \ "        |::.|                    |::.|                      ",
+      \ "        `---'                    `---'                      ",
+      \ "                 _______       __                           ",
+      \ "                |   _   .-----|__.-----.-----.-----.        ",
+      \ "                |.  1   |  _  |  |__ --|  _  |     |        ",
+      \ "                |.  ____|_____|__|_____|_____|__|__|        ",
+      \ "                |:  |                                       ",
+      \ "                |::.|                                       ",
+      \ "                `---'                                       ",
+      \ ]
+
 " Python Highlight {{{1
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
