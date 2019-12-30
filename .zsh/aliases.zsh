@@ -101,6 +101,7 @@ alias gsps='git show --pretty=short --show-signature'
 alias gsr='git svn rebase'
 alias gss='git status -s'
 alias gst='git status'
+alias gcl='git clone'
 # Version Controled Dotfiles {{{1
 alias preconf='setopt completealiases'
 alias postconf='unsetopt completealiases'
