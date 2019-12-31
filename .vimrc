@@ -31,7 +31,6 @@ Plug 'tpope/vim-surround'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'PProvost/vim-ps1'
-Plug 'vim-scripts/taglist.vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
@@ -270,14 +269,6 @@ let g:ale_linters = {
       "\ }
 " Keymaps {{{1
 nnoremap <silent><localleader>a :ALEToggle<cr>
-" AutoClose w/o any plugin
-"inoremap " ""<left>
-"inoremap ' ''<left>
-"inoremap ( ()<left>
-"inoremap [ []<left>
-"inoremap { {}<left>
-"inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O
 autocmd BufEnter * ++once :echo strftime('%m/%d/%Y @ %I:%M %p')
 nnoremap <leader>t :echo strftime('%m/%d/%Y @ %I:%M %p')<CR>
 " ==== mimick easyclip ====
@@ -290,7 +281,7 @@ nnoremap p p=`]
 nnoremap P P=`]
 " =========================
 
-map <silent><c-t> :TagbarToggle<CR>
+map <silent><c-t> :TagbarOpenAutoClose<CR>
 nnoremap <silent><leader>f :NERDTreeToggle<CR>
 
 " Delete contents of line w/o removing the line itself
@@ -348,34 +339,12 @@ nnoremap <silent> <F8> :vertical resize -2<cr>
 command! -bang -nargs=? -complete=dir Files
       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
-"function! s:buflist()
-  "redir => ls
-  "silent ls
-  "redir END
-  "return split(ls, '\n')
-"endfunction
-
-"function! s:bufopen(e)
-  "execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-"endfunction
-
-"nnoremap <silent> <leader>l :call fzf#run({
-      "\   'source':  reverse(<sid>buflist()),
-      "\   'sink':    function('<sid>bufopen'),
-      "\   'options': '+m',
-      "\   'down':    len(<sid>buflist()) + 2
-      "\ })<CR>
-
 " How to open buffers
 " ctrl-v = vertical split
 " ctrl-x = split
 " ctrl-t = tab
 nnoremap <silent> <leader>l :Buf<CR>
 nnoremap <silent> <leader>k :Win<CR>
-" NOTES {{{1
-" Preview markdown files:
-" goto directory containing markdown:
-" run command 'grip'
-" see https://github.com/joeyespo/grip
+
 " modeline{{{1
 " vim:foldenable foldmethod=marker foldcolumn=1
