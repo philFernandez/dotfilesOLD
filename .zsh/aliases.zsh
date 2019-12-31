@@ -1,5 +1,6 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
+alias recomp='zrecompile -p -U -z ~/.zsh/plugins/k/k.zwc ~/.zsh/plugins/.src_for_zcomp/k'
 # Commands and Shortcuts {{{1
 alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
 alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'

@@ -28,6 +28,8 @@ for config_file ($ZSH_CUSTOM/*.zsh(N)); do
 done
 unset config_file
 
+autoload zrecompile
+
 # Bindkey {{{1
 KEYTIMEOUT=1
 bindkey -D emacs
@@ -49,6 +51,7 @@ bindkey '^A' vi-beginning-of-line
 bindkey '^G' vi-delete # press twice; acts sort of like '^U'
 #bindkey -M viins 'jj' vi-cmd-mode
 bindkey -s '^R' 'exec zsh\n'
+bindkey -s '^K' 'k\n'
 # ^i brings up completion
 # ^j accepts completions
 
@@ -120,15 +123,16 @@ export LSCOLORS=ExGxbadxCxbxbxCxCxbxbx
 
 export CLICOLOR=true
 
-export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || \
-  rg --hidden --no-ignore --files)'
+#export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || rg --hidden --no-ignore --files)'
+export FZF_DEFAULT_COMMAND='(rg --hidden --no-ignore --files 2> /dev/null)'
+
 #export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -H)'
 
 export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
-	--color pointer:220 --color hl+:118 --color fg:251
-	--color marker:196 --color border:214 --color prompt:214 \
-		--color header:208 --color bg+:240 --reverse \
-    --no-unicode --bind=ctrl-t:top"
+--color pointer:220 --color hl+:118 --color fg:251
+--color marker:196 --color border:214 --color prompt:214 \
+--color header:208 --color bg+:240 --reverse \
+--no-unicode --bind=ctrl-t:top --border"
 
 # Shell Options {{{1
 setopt NONOMATCH \

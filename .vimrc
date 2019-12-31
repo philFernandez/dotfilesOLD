@@ -26,7 +26,8 @@ Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'philFernandez/rangerFilePicker.vim'
 Plug 'tpope/vim-surround'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
