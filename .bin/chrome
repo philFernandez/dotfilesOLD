@@ -1,0 +1,44 @@
+#!/bin/zsh
+autoload -Uz printc
+
+usage() {
+  if [[ $2 == 'err' ]]; then
+    printc -bC maraschino 'error: '
+  fi
+  printc -nC lime "${1:t} usage: "
+  printc -nC lemon "chrome -o <url> "
+  printc -nbC maraschino 'OR '
+  printc -C lemon "chrome -s <search> "
+}
+
+google() {
+  osascript << EOF
+tell application "Google Chrome"
+  open location "$1"
+end tell
+EOF
+}
+
+zparseopts -D 2> /dev/null - o:=open_args s:=search_args h=help
+
+if [[ $help ]]; then
+  usage $0
+  exit 0
+fi
+
+if [[ $open_args ]] && [[ ! $search_args ]]; then
+  local url="https://${open_args[2]}"
+  printc -bnC lime "opening: "
+  printc -iC aqua "${url}"
+  google $url
+elif [[ $search_args ]] && [[ ! $open_args ]]; then
+  local search_term=https://www.google.com/search?q=${search_args[2]}
+  printc -bnC lime "searching: "
+  printc -iC aqua "${search_args[2]}"
+  google $search_term
+else
+  usage $0 'err'
+  exit 1
+fi
+
+
