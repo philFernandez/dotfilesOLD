@@ -276,6 +276,8 @@ nnoremap <leader>t :echo strftime('%m/%d/%Y @ %I:%M %p')<CR>
 noremap m d
 " redirect d to black hole
 nnoremap d "_d
+" replace selected line without yanking
+vnoremap p "_dP
 " make pasting match indent level
 nnoremap p p=`]
 nnoremap P P=`]

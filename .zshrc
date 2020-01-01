@@ -35,10 +35,14 @@ KEYTIMEOUT=1
 bindkey -D emacs
 bindkey -v
 
+# Rebindings ( bindkey -M <keymap> <your binding> <command>  )
+# keymap is the group that the command lives in eg.
+# the keymap <menuselect> contains the command <vi-backward-char>
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M vicmd ' ' vi-add-eol # space goes to eol in insert mode
 
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
@@ -50,8 +54,14 @@ bindkey '^F' vi-end-of-line # accept autocomplete
 bindkey '^A' vi-beginning-of-line
 bindkey '^G' vi-delete # press twice; acts sort of like '^U'
 #bindkey -M viins 'jj' vi-cmd-mode
+
+# makes binding for autoloaded 'k'
+# but it wont close unless i press enter twice
+#zle -N k
+#bindkey -s '^K' k
+
 bindkey -s '^R' 'exec zsh\n'
-bindkey -s '^K' 'k\n'
+#bindkey -s '^K' 'k\n'
 # ^i brings up completion
 # ^j accepts completions
 
@@ -76,7 +86,6 @@ shw_rc
 )
 
 # set theme in another file that isn't under source control
-source ~/.zsh_theme
 
 # only load all of powerlevel9k settings if powerlevel9k is the set theme
 #if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then

@@ -103,6 +103,8 @@ alias gsr='git svn rebase'
 alias gss='git status -s'
 alias gst='git status'
 alias gcl='git clone'
+alias gsl='git shortlog'
+alias gslc='git shortlog -s'
 # Version Controled Dotfiles {{{1
 alias preconf='setopt completealiases'
 alias postconf='unsetopt completealiases'
