@@ -141,7 +141,7 @@ export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
 --color pointer:220 --color hl+:118 --color fg:251
 --color marker:196 --color border:214 --color prompt:214 \
 --color header:208 --color bg+:240 --reverse \
---no-unicode --bind=ctrl-t:top --border"
+--bind=ctrl-t:top --border"
 
 # Shell Options {{{1
 setopt NONOMATCH \
