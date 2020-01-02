@@ -16,6 +16,7 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+_comp_options+=(globdots)
 
 autoload -Uz edit-command-line
 autoload -Uz printc
