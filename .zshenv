@@ -1,5 +1,7 @@
-# This is loaded by the shell that is spawned by vim's command line
-# as well as the shell that is spawned by vifm's command line
+
+#ZDOTDIR="${${(%):-%x}:P:h}"
+ZSH_CUSTOM=$HOME/.zsh
+ZDOTDIR="$ZSH_CUSTOM/.zwc_dotfiles"
 
 # source functionality for use in vim's :!<command>
 # as well as vifm's :!<command>
@@ -22,9 +24,9 @@ fi
 #fpath=($HOME/.oh-my-zsh/custom/plugins/printc $fpath)
 #ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 # -------------------------------------
-ZSH_CUSTOM=$HOME/.zsh
 fpath=($ZSH_CUSTOM/plugins/printc $fpath)
 fpath=($ZSH_CUSTOM/plugins/fzf-utils $fpath)
 fpath=($ZSH_CUSTOM/lib $fpath)
 fpath=($ZSH_CUSTOM/plugins/k $fpath)
 fpath=($ZSH_CUSTOM/completions $fpath)
+fpath=($ZSH_CUSTOM/.zwc_dotfiles $fpath)

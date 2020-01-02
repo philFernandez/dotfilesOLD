@@ -1,6 +1,5 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
-alias recomp='zrecompile -p -U -z ~/.zsh/plugins/k/k.zwc ~/.zsh/plugins/.src_for_zcomp/k'
 # Commands and Shortcuts {{{1
 alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
 alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'
@@ -41,6 +40,7 @@ alias watch='watch -n 0.1'
 alias rg='rg --colors --colors match:fg:yellow --colors match:style:bold --colors line:style:bold --colors line:fg:yellow --colors path:fg:200,100,50 --colors path:style:bold -S'
 alias py='python3'
 alias fl='fd -HI -d1'
+alias zrl='zrecompile && exec zsh'
 # Directory Things {{{1
 alias -- -='cd -'
 alias 1='cd -'

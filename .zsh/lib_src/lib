@@ -14,6 +14,15 @@ cn1() {
 }
 # ------------------------------------------------------
 
+# fuzzy move fuzzy choose destination (INCOMPLETE)
+function fmvd {
+  local dir_to_move=$1
+  local destination=$2
+  local final_destination=$(fd . -td $destination | fzf)
+  mv $dir_to_move $final_destination
+}
+
+
 function take {
   mkdir -p $@ && cd $@
 }
@@ -569,16 +578,16 @@ function fmv {
   shift $((OPTIND-1))
   files_to_move=$(fd -HI -d${1:-1} | fzf -q "$query" \
     -m --height 40% --prompt='mv ')
-      if [[ "$files_to_move" ]]; then
-        # (f) is same as (ps:\n:)
-        processed_files=(${(f)${files_to_move}})
-        files_to_move=()
-        for procd_file in $processed_files; do
-          files_to_move+=(${(q-)procd_file})
-        done
-        print -z mv ${=files_to_move}
-      fi
-    }
+  if [[ "$files_to_move" ]]; then
+    # (f) is same as (ps:\n:)
+    processed_files=(${(f)${files_to_move}})
+    files_to_move=()
+    for procd_file in $processed_files; do
+      files_to_move+=(${(q-)procd_file})
+    done
+    print -z mv ${=files_to_move}
+  fi
+}
 
 # fuzzy copy files (see frm comments for how this works)
 function fcp {
