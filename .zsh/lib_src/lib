@@ -730,7 +730,7 @@ function ep {
   ${=EDITOR} ~/.zsh/aliases.zsh
 }
 function rc {
-  ${=EDITOR} ~/.zshrc
+  ${=EDITOR} ~/.zsh/.zsh_dotfiles/.zshrc
 }
 function eg {
   ${=EDITOR} ~/.zsh/global_aliases.zsh
