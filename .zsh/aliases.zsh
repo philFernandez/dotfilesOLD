@@ -105,7 +105,7 @@ alias gss='git status -s'
 alias gst='git status'
 alias gcl='git clone'
 alias gsl='git shortlog'
-alias gslc='git shortlog -s'
+alias gslc='git shortlog -s | xargs'
 # Version Controled Dotfiles {{{1
 alias preconf='setopt completealiases'
 alias postconf='unsetopt completealiases'

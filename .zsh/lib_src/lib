@@ -741,11 +741,11 @@ function ett {
 function et {
   ${=EDITOR} ~/.p10k.zsh
 }
-function es {
-  #${=EDITOR} ~/.oh-my-zsh/custom/suffix_aliases.zsh
+function en {
+  ${=EDITOR} ~/.zshenv
 }
 function evt {
-  #${=EDITOR} ~/.vim/after/plugin/color_settings.vim
+  ${=EDITOR} ~/.vim/after/plugin/color_settings.vim
 }
 
 # vi: foldenable foldmethod=indent ft=zsh
