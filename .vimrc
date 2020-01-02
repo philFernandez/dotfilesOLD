@@ -34,6 +34,7 @@ Plug 'PProvost/vim-ps1'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
+Plug 'vim-scripts/dbext.vim'
 Plug 'terryma/vim-multiple-cursors' " https://github.com/terryma/vim-multiple-cursors
 " Un-used plugins {{{1
 "Plug 'svermeulen/vim-easyclip'

@@ -16,8 +16,8 @@ cn1() {
 
 # fuzzy move fuzzy choose destination (INCOMPLETE)
 function fmvd {
-  local dir_to_move=$1
-  local destination=$2
+  local destination=$1
+  local dir_to_move=$(fd . -td | fzf)
   local final_destination=$(fd . -td $destination | fzf)
   mv $dir_to_move $final_destination
 }
