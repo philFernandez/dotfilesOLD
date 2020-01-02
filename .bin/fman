@@ -46,9 +46,11 @@ CACHE="$HOME/.cache/fman/cache"
 HEADER="Fuzzy Man"
 # Command that fzf will execute when enter is pressed on selected file
 if [ -e "$HOME/.bin/cman" ] || [ -e "$HOME/bin/cman" ]; then
-  CMD_TO_EXECUTE="LESS+='N' MANWIDTH=$(tput cols)% cman"
+  #CMD_TO_EXECUTE="LESS+='N' MANWIDTH=$(tput cols)% cman"
+  CMD_TO_EXECUTE="MANWIDTH=$(tput cols)% cman"
 else
-  CMD_TO_EXECUTE="LESS+='N' MANWIDTH=$(tput cols)% man"
+  #CMD_TO_EXECUTE="LESS+='N' MANWIDTH=$(tput cols)% man"
+  CMD_TO_EXECUTE="man"
 fi
 
 # if "-h" or "-p" is given we don't want to run get_manpages so we bypass
