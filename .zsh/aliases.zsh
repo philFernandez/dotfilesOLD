@@ -2,6 +2,8 @@
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 # Commands and Shortcuts {{{1
 alias z=k
+alias sqlite3='/usr/local/Cellar/sqlite/3.30.1/bin/sqlite3'
+alias sql='/usr/local/Cellar/sqlite/3.30.1/bin/sqlite3'
 alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
 alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'
 alias lls='/bin/ls'
@@ -119,7 +121,7 @@ alias clcp='config log --stat -p | bat -l diff'
 alias clog='config log --oneline --decorate --graph --all'
 alias confls='config ls-tree -r master --name-only $HOME'
 alias cdl='setopt completealiases; config diff | bat --style=numbers -l diff'
-alias confzap='(cd && config checkout .)'
+alias confzap='unsetopt completealiases; (cd && config checkout .)'
 # make man pages display line numbers {{{1
 alias nman='LESS+="-N" man'
 # Package Management {{{1
