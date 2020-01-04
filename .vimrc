@@ -35,6 +35,7 @@ Plug 'vim-scripts/dbext.vim', { 'for': 'sql' }
 Plug 'terryma/vim-multiple-cursors' " https://github.com/terryma/vim-multiple-cursors
 Plug 'metakirby5/codi.vim' " execute repl code in scratch pad
 Plug 'hauleth/vim-backscratch' " re-route commands output to scratch pad, or take notes
+Plug 'Clavelito/indent-awk.vim'
 Plug 'ryanoasis/vim-devicons'
 " Un-used plugins {{{1
 "Plug 'svermeulen/vim-easyclip'
