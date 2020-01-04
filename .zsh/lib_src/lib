@@ -303,9 +303,9 @@ function ccamp {
 
 function gdl {
   if [ $# -ge  1 ]; then
-    git diff "$@" | bat --style=numbers
+    git diff "$@"
   else
-    git diff | bat --style=numbers
+    git diff
   fi
 }
 

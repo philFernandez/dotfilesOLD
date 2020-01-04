@@ -123,6 +123,7 @@ alias clcp='config log --stat -p'
 alias clog='config log --oneline --decorate --graph --all'
 alias confls='config ls-tree -r master --name-only $HOME'
 alias cdl='setopt completealiases; config diff'
+alias cdiff='config diff'
 alias confzap='unsetopt completealiases; (cd && config checkout .)'
 # make man pages display line numbers {{{1
 alias nman='LESS+="-N" man'
