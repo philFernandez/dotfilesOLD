@@ -230,11 +230,11 @@ function rd {
       if [ "$typeof" = "directory" ]; then
         rm -vrf "$1"
       else
-        print -P $FG[192]'warning:' $reset_color"$1" 'not removed.' >&2
+        print -P "%F{192} warning:%f $1 not removed." >&2
       fi
     fi
   else
-    print -P $FG[192]'usage:'$reset_color 'rd <dir_1> [dir_n]' >&2
+    print -P "%F{192} usage:%f rd <dir_1> [dir_n]" >&2
   fi
 }
 
