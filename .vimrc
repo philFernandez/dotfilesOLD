@@ -7,10 +7,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'mattn/calendar-vim'
-Plug 'junegunn/goyo.vim'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'scrooloose/nerdcommenter'
-Plug 'philFernandez/onehalf'
 Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/vim-gitbranch'
@@ -24,7 +22,6 @@ Plug '/usr/local/opt/fzf/'
 Plug 'dense-analysis/ale'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf.vim'
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
 Plug 'philFernandez/rangerFilePicker.vim'
 Plug 'tpope/vim-surround'
@@ -34,8 +31,11 @@ Plug 'PProvost/vim-ps1'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
-Plug 'vim-scripts/dbext.vim'
+Plug 'vim-scripts/dbext.vim', { 'for': 'sql' }
 Plug 'terryma/vim-multiple-cursors' " https://github.com/terryma/vim-multiple-cursors
+Plug 'metakirby5/codi.vim' " execute repl code in scratch pad
+Plug 'hauleth/vim-backscratch' " re-route commands output to scratch pad, or take notes
+Plug 'ryanoasis/vim-devicons'
 " Un-used plugins {{{1
 "Plug 'svermeulen/vim-easyclip'
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
@@ -186,40 +186,35 @@ let g:lightline = {
 "let g:UltiSnipsSnippetDirectories=["ultisnips"]
 "let g:UltiSnipsExpandTrigger="<leader>n"
 " Startify {{{1
+
+" Show devicons
+function! StartifyEntryFormat()
+  return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
+
 let g:startify_bookmarks = [
       \ '~/.vimrc',
-      \ '~/.zshrc',
-      \ '~/.oh-my-zsh/custom/Z_aliases.zsh',
-      \ '~/.oh-my-zsh/custom/myFunctions.zsh']
-let g:startify_fortune_use_unicode = 0
+      \ '~/.zsh/.zsh_dotfiles/.zshrc',
+      \ '~/.zshenv',
+      \ '~/.zsh/aliases.zsh',
+      \ '~/.zsh/lib_src/lib']
+let g:startify_fortune_use_unicode = 1
 " When adding/removing files from session
 " automatically make saved session reflect
 " changes
 let g:startify_session_persistence = 1
-"let g:startify_custom_header = [
-      "\ '   /  |      /                          /              /  | /     ',
-      "\ '  (   | ___ (  ___  ___  _ _  ___      (___  ___      (   |   _ _ ',
-      "\ '  | / )|___)| |    |   )| | )|___)     |    |   )      \  )| | | )',
-      "\ '  |/|/ |__  | |__  |__/ |  / |__       |__  |__/        \/ | |  / ',
-      "\]
 
-let g:startify_custom_header = [
-      \ "         _______ __      __     ___ ___                     ",
-      \ "        |   _   |__.----|  |--.|   Y   .-----.--.--.----.   ",
-      \ "        |.  1   |  |  __|    < |   1   |  _  |  |  |   _|   ",
-      \ "        |.  ____|__|____|__|__| \_   _ /|_____|_____|__|     ",
-      \ "        |:  |                    |:  |                      ",
-      \ "        |::.|                    |::.|                      ",
-      \ "        `---'                    `---'                      ",
-      \ "                 _______       __                           ",
-      \ "                |   _   .-----|__.-----.-----.-----.        ",
-      \ "                |.  1   |  _  |  |__ --|  _  |     |        ",
-      \ "                |.  ____|_____|__|_____|_____|__|__|        ",
-      \ "                |:  |                                       ",
-      \ "                |::.|                                       ",
-      \ "                `---'                                       ",
-      \ ]
+"let g:startify_custom_header =
+      "\ startify#pad(split(system('fortune | cowsay'), '\n'))
 
+"let g:startify_custom_header =
+      "\ startify#pad(split(system('figlet -c -f speed', 'Welcome to Vim'), '\n'))
+
+"let g:startify_custom_header =
+      "\ startify#pad(split(system('figlet -c -f cricket', 'Pick Your Poison'), '\n'))
+
+let g:startify_custom_header =
+      \ startify#pad(split(system('figlet -c -k -f cricket' ,'Welcome to Vim'), '\n'))
 " Python Highlight {{{1
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
@@ -252,6 +247,7 @@ let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "inoremap <C-Space> <C-x><C-o>
 "inoremap <C-@> <c-x><c-o>
+
 " Vim-Notes {{{1
 let g:notes_directories = ['~/Notes/viNotes']
 " ALE {{{1
