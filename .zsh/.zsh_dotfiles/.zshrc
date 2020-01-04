@@ -120,6 +120,24 @@ source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# histdb ----------------
+source ~/.zsh/zsh-histdb/sqlite-history.zsh
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd histdb-update-outcome
+# -----------------------
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+_zsh_autosuggest_strategy_histdb_top() {
+    local query="select commands.argv from
+history left join commands on history.command_id = commands.rowid
+left join places on history.place_id = places.rowid
+where commands.argv LIKE '$(sql_escape $1)%'
+group by commands.argv
+order by places.dir != '$(sql_escape $PWD)', count(*) desc limit 1"
+    suggestion=$(_histdb_query "$query")
+}
+
+ZSH_AUTOSUGGEST_STRATEGY=histdb_top
+
 
 # Variables {{{1
 DISABLE_UNTRACKED_FILES_DIRTY="true"
@@ -136,6 +154,11 @@ HIST_STAMPS="mm/dd/yyyy"
 export RANGER_LOAD_DEFAULT_RC=false
 #export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 #export K_TOGGLE_PREV="ctrl-p"
+#export K_HEADER_BGCOLOR=202
+#export K_HEADER_FGCOLOR=016
+#export K_GUTTER_COLOR=$K_HEADER_BGCOLOR
+#export K_LINE_BG_COLOR=$K_HEADER_BGCOLOR
+#export K_LINE_FG_COLOR=$K_HEADER_FGCOLOR
 
 # set vim as default editor
 export EDITOR=/usr/local/bin/vim
