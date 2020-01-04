@@ -10,14 +10,33 @@ stty -ixon
   #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-# Autoload {{{1
+# Completion {{{1
 zmodload zsh/complist
-autoload -U compinit
-compinit
-zstyle ':completion:*' menu select=2
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
-_comp_options+=(globdots)
+# The following lines were added by compinstall
 
+zstyle ':completion:*' completer _expand _complete _ignored _match _approximate _prefix
+zstyle ':completion:*' completions 1
+#zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*'         group-name ''
+zstyle ':completion:*' list-dirs-first true
+zstyle ':completion:*' glob 1
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' match-original both
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'l:|=* r:|=*' 'r:|[._-]=** r:|=**'
+zstyle ':completion:*' max-errors 2
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' prompt '%e'
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' substitute 1
+zstyle :compinstall filename '/Users/philthy/.zsh/.zsh_dotfiles/.zshrc'
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+_comp_options+=(globdots)
+# Autoload {{{1
 autoload -Uz edit-command-line
 autoload -Uz printc
 autoload -Uz k
