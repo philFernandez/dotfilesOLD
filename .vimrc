@@ -278,8 +278,8 @@ nnoremap d "_d
 " replace selected line without yanking
 vnoremap p "_dP
 " make pasting match indent level
-nnoremap p p=`]
-nnoremap P P=`]
+"nnoremap p p=`]
+"nnoremap P P=`]
 " =========================
 
 map <silent><c-t> :TagbarOpenAutoClose<CR>

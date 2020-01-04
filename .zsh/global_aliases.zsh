@@ -16,5 +16,6 @@ alias -g C=" | awk END'{print NR}'"
 alias -g G='| rg --color never'
 alias -g GC='| rg'
 alias -g F='|fzf'
+alias -g DSF='| diff-so-fancy | less --tabs=4 -RFX'
 alias -g COLSOU='| sort | fzf --reverse --preview "bat --theme=Monokai\ Extended\ Bright \
   --style=numbers,changes --color always {}" --preview-window="down:95%"'
