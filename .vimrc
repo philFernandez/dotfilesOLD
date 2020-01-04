@@ -107,6 +107,8 @@ set shiftround
 set shiftwidth=2
 set smarttab
 set tabstop=2
+" Autocmds {{{1
+autocmd BufUnload lib,.zshrc silent! :Zrecompile
 " Search {{{1
 set hlsearch
 set ignorecase
@@ -344,6 +346,7 @@ command! -bang -nargs=? -complete=dir Files
 " ctrl-t = tab
 nnoremap <silent> <leader>l :Buf<CR>
 nnoremap <silent> <leader>k :Win<CR>
-
+" commands {{{1
+command! Zrecompile :!zrecompile
 " modeline{{{1
 " vim:foldenable foldmethod=marker foldcolumn=1

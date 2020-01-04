@@ -17,6 +17,7 @@ if [[ $VIMRUNTIME ]]; then
   # source only the aliases from OMZSH's git plugin
   # this breaks things now
   #source <(grep alias $HOME/.oh-my-zsh/plugins/git/git.plugin.zsh)
+  autoload -Uz zrecompile
 
 fi
 
