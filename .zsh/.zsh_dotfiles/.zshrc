@@ -90,20 +90,20 @@ bindkey '^h' _complete_help
 
 # Files to Source {{{1
 
-[[ -d ~/.reminders ]] && [[ ! "$VIMRUNTIME" ]] && [[ ! "$RANGER_LEVEL" ]] && \
-  (
-  cd ~/.reminders;
-  shw_rc() {
-    local list_of_files
-    for entry in $(/bin/ls); do
-      if [ -s $entry ]; then
-        list_of_files+=("$entry")
-      fi
-    done
-    bat -p $list_of_files
-  }
-shw_rc
-)
+#[[ -d ~/.reminders ]] && [[ ! "$VIMRUNTIME" ]] && [[ ! "$RANGER_LEVEL" ]] && \
+  #(
+  #cd ~/.reminders;
+  #shw_rc() {
+    #local list_of_files
+    #for entry in $(/bin/ls); do
+      #if [ -s $entry ]; then
+        #list_of_files+=("$entry")
+      #fi
+    #done
+    #bat -p $list_of_files
+  #}
+#shw_rc
+#)
 
 # set theme in another file that isn't under source control
 
