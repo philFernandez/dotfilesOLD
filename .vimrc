@@ -197,10 +197,9 @@ endfunction
 
 let g:startify_bookmarks = [
       \ '~/.vimrc',
-      \ '~/.zsh/.zsh_dotfiles/.zshrc',
+      \ '~/.zsh/.zwc_dotfiles/.zshrc',
       \ '~/.zshenv',
-      \ '~/.zsh/aliases.zsh',
-      \ '~/.zsh/lib_src/lib']
+      \ '~/.zsh/aliases.zsh']
 let g:startify_fortune_use_unicode = 1
 " When adding/removing files from session
 " automatically make saved session reflect
