@@ -1,0 +1,3 @@
+rc () {
+	${=EDITOR} ~/.zsh/.zsh_dotfiles/.zshrc
+}

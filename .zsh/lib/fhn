@@ -1,0 +1,4 @@
+fhn () {
+	print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | \
+    fzf +s --tac --prompt='edit-> ' | awk '!($1="")')
+}

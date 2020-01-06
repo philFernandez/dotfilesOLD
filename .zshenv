@@ -12,7 +12,7 @@ if [[ $VIMRUNTIME ]]; then
   source $HOME/.zsh/aliases.zsh
 
   # source zsh functions
-  source $HOME/.zsh/lib_src/lib
+  #source $HOME/.zsh/lib_src/lib
 
   # source only the aliases from OMZSH's git plugin
   # this breaks things now

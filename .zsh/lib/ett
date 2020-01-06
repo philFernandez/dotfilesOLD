@@ -1,0 +1,3 @@
+ett () {
+	${=EDITOR} ~/.zsh_theme
+}

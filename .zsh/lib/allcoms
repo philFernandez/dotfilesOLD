@@ -1,0 +1,3 @@
+allcoms () {
+	print -l $commands | fzf --height 40%
+}

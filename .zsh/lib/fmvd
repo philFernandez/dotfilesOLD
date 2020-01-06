@@ -1,0 +1,6 @@
+fmvd () {
+	local destination=$1 
+	local dir_to_move=$(fd . -td | fzf) 
+	local final_destination=$(fd . -td $destination | fzf) 
+	mv -vi $dir_to_move $final_destination
+}

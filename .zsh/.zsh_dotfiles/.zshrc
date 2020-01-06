@@ -6,9 +6,9 @@ stty -ixon
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Completion {{{1
 zmodload zsh/complist
@@ -40,13 +40,19 @@ _comp_options+=(globdots)
 autoload -Uz edit-command-line
 autoload -Uz printc
 autoload -Uz k
-autoload -Uz lib
-lib
+#autoload -Uz $ZSH_CUSTOM/lib/**/*
 
+# Source any *.zsh file in ~/.zsh top directory
 for config_file ($ZSH_CUSTOM/*.zsh(N)); do
   source $config_file
 done
 unset config_file
+
+# Autoload functions
+for fun ($ZSH_CUSTOM/lib/*(N)); do
+  autoload -Uz $fun
+done
+
 
 autoload zrecompile
 

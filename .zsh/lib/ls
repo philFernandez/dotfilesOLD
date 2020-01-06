@@ -1,0 +1,9 @@
+ls () {
+	if [ $# -ge 1 ]
+	then
+		lsd $@ --group-dirs first
+	else
+		lsd $pwd --group-dirs first
+	fi
+}
+/bin/ls

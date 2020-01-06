@@ -1,0 +1,3 @@
+fnote () {
+	vnote $(/bin/ls -1 ~/Notes/viNotes | fzf)
+}

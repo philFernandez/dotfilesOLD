@@ -1,0 +1,4 @@
+gcamp () {
+	local commitMessage=$1 
+	git commit -a -m $commitMessage && git push origin $(git_current_branch)
+}

@@ -1,0 +1,4 @@
+fhx () {
+	eval $( fc -l 1 | awk '{print substr($0, index($0,$2))}' \
+    | fzf +s --height 40% --tac --prompt='execute-> ' )
+}

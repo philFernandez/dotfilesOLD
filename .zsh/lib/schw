@@ -1,0 +1,15 @@
+schw () {
+	local SEARCH_T="$1" 
+	clear
+	if [ -d ~/.reminders ]
+	then
+		(
+			cd ~/.reminders && ag --nonumbers --nocolor "$SEARCH_T" | LESS+=-S bat --theme 'Monokai Extended Bright' --style=grid,numbers
+		)
+	else
+		echo '\u001b[38;5;226mrun command: \u001b[38;5;069m<remon>' '\u001b[38;5;226mto turn on reminders'
+		(
+			cd ~/.reminders.silent && ag --nonumbers --nocolor "$SEARCH_T" | LESS+=-S bat --theme 'Monokai Extended Bright' --style=grid,numbers
+		)
+	fi
+}

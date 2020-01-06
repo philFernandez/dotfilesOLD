@@ -1,0 +1,3 @@
+eg () {
+	${=EDITOR} ~/.zsh/global_aliases.zsh
+}

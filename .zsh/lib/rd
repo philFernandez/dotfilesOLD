@@ -1,0 +1,29 @@
+rd () {
+	if [ $# -ge 1 ]
+	then
+		local typeof
+		if [ $# -gt 1 ]
+		then
+			for i in {1..$#}
+			do
+				typeof="$(file --brief $@[i])" 
+				if [ "$typeof" = "directory" ]
+				then
+					rm -v -vrf "$@[i]"
+				else
+					print -P $FG[192]'warning:' $reset_color"$@[i]" 'not removed.' >&2
+				fi
+			done
+		else
+			typeof="$(file --brief $1)" 
+			if [ "$typeof" = "directory" ]
+			then
+				rm -v -vrf "$1"
+			else
+				print -P "%F{192} warning:%f $1 not removed." >&2
+			fi
+		fi
+	else
+		print -P "%F{192} usage:%f rd <dir_1> [dir_n]" >&2
+	fi
+}

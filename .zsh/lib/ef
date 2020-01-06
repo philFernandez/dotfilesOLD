@@ -1,0 +1,3 @@
+ef () {
+	${=EDITOR} ~/.zsh/lib_src/lib
+}

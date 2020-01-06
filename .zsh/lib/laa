@@ -1,0 +1,8 @@
+laa () {
+	if [ $# -ge 1 ]
+	then
+		lsd -la $@ --date relative --group-dirs first
+	else
+		lsd -la $pwd --date relative --group-dirs first
+	fi
+}

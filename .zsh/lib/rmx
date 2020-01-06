@@ -1,0 +1,3 @@
+rmx () {
+	fd -HI -tx -d1 | xargs rm
+}

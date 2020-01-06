@@ -1,0 +1,6 @@
+mkall () {
+	for src in $(fd -d1 c$)
+	do
+		clang -o $src:r $src
+	done
+}

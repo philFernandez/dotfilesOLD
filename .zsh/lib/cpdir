@@ -1,0 +1,4 @@
+cpdir () {
+	emulate -L zsh
+	print -n $PWD | pbcopy
+}

@@ -1,0 +1,3 @@
+rmn () {
+	/bin/ls -A | grep -v "$*" | xargs rm -rf
+}
