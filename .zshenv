@@ -25,9 +25,8 @@ fi
 #fpath=($HOME/.oh-my-zsh/custom/plugins/printc $fpath)
 #ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 # -------------------------------------
-fpath=($ZSH_CUSTOM/plugins/printc $fpath)
-fpath=($ZSH_CUSTOM/plugins/fzf-utils $fpath)
+fpath=($ZSH_CUSTOM/my_plugins/printc $fpath)
+fpath=($ZSH_CUSTOM/my_plugins/k $fpath)
 fpath=($ZSH_CUSTOM/lib $fpath)
-fpath=($ZSH_CUSTOM/plugins/k $fpath)
 fpath=($ZSH_CUSTOM/completions $fpath)
 fpath=($ZSH_CUSTOM/.zwc_dotfiles $fpath)
