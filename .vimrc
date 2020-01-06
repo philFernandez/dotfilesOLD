@@ -212,11 +212,11 @@ let g:startify_session_persistence = 1
 "let g:startify_custom_header =
       "\ startify#pad(split(system('figlet -c -f speed', 'Welcome to Vim'), '\n'))
 
-"let g:startify_custom_header =
-      "\ startify#pad(split(system('figlet -c -f cricket', 'Pick Your Poison'), '\n'))
-
 let g:startify_custom_header =
-      \ startify#pad(split(system('figlet -f drpepper' ,'Welcome to Vim'), '\n'))
+      \ startify#pad(split(system('figlet -c -f cricket', 'Pick Your Poison'), '\n'))
+
+"let g:startify_custom_header =
+      "\ startify#pad(split(system('figlet -f drpepper' ,'Welcome to Vim'), '\n'))
 " Python Highlight {{{1
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0
