@@ -1,3 +1,9 @@
+"                        _   _
+"                       ( ) ( ) _
+"                       | | | |(_)  ___ ___   _ __   ___
+"                       | | | || |/' _ ` _ `\( '__)/'___)
+"                       | \_/ || || ( ) ( ) || |  ( (___
+"                       `\___/'(_)(_) (_) (_)(_)  `\____)
 " need to be first {{{1
 set nocompatible
 let mapleader=','
@@ -212,8 +218,11 @@ let g:startify_session_persistence = 1
 "let g:startify_custom_header =
       "\ startify#pad(split(system('figlet -c -f speed', 'Welcome to Vim'), '\n'))
 
+"let g:startify_custom_header =
+      "\ startify#pad(split(system('figlet -c -f cricket', 'Pick Your Poison'), '\n'))
+
 let g:startify_custom_header =
-      \ startify#pad(split(system('figlet -c -f cricket', 'Pick Your Poison'), '\n'))
+      \ startify#pad(split(system('figlet -c -f smshadow', 'Welcome to Vim'), '\n'))
 
 "let g:startify_custom_header =
       "\ startify#pad(split(system('figlet -f drpepper' ,'Welcome to Vim'), '\n'))
