@@ -10,7 +10,7 @@ then
       then
         rm -v -vrf "$@[i]"
       else
-        print -P $FG[192]'warning:' $reset_color"$@[i]" 'not removed.' >&2
+        print -P -u2 "%F{192}warning:%f $@[i] not removed."
       fi
     done
   else
@@ -19,10 +19,10 @@ then
     then
       rm -v -vrf "$1"
     else
-      print -P "%F{192} warning:%f $1 not removed." >&2
+      print -P -u2 "%F{192}warning:%f $1 not removed."
     fi
   fi
 else
-  print -P "%F{192} usage:%f rd <dir_1> [dir_n]" >&2
+  print -P -u2 "%F{192}usage:%f rd <dir_1> [dir_n]"
 fi
 # vi: ft=zsh
