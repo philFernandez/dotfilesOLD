@@ -6,17 +6,16 @@ stty -ixon
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  #source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # Completion {{{1
 zmodload zsh/complist
-# The following lines were added by compinstall
 
+# The following lines were added by compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _match _approximate _prefix
 zstyle ':completion:*' completions 1
-#zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*:matches' group 'yes'
 zstyle ':completion:*'         group-name ''
 zstyle ':completion:*' list-dirs-first true
@@ -40,7 +39,7 @@ _comp_options+=(globdots)
 autoload -Uz edit-command-line
 autoload -Uz printc
 autoload -Uz k
-#autoload -Uz $ZSH_CUSTOM/lib/**/*
+autoload zrecompile
 
 # Source any *.zsh file in ~/.zsh top directory
 for config_file ($ZSH_CUSTOM/*.zsh(N)); do
@@ -48,13 +47,13 @@ for config_file ($ZSH_CUSTOM/*.zsh(N)); do
 done
 unset config_file
 
-# Autoload functions
-for fun ($ZSH_CUSTOM/lib/*(N)); do
+typeset -U lib
+lib=( ${$(echo $ZSH_CUSTOM/lib/*):r:t} )
+# Autoload user defined lib functions
+for fun in $lib; do
   autoload -Uz $fun
 done
-
-
-autoload zrecompile
+unset lib fun
 
 # Bindkey {{{1
 KEYTIMEOUT=1
