@@ -1,3 +1,2 @@
-ev () {
-	${=EDITOR} ~/.vimrc
-}
+${=EDITOR} ~/.vimrc
+# vi: ft=zsh

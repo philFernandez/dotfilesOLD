@@ -1,3 +1,2 @@
-rmn () {
-	/bin/ls -A | grep -v "$*" | xargs rm -rf
-}
+/bin/ls -A | grep -v "$*" | xargs rm -rf
+# vi: ft=zsh

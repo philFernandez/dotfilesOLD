@@ -1,3 +1,2 @@
-ef () {
-	${=EDITOR} ~/.zsh/lib_src/lib
-}
+${=EDITOR} ~/.zsh/lib_src/lib
+# vi: ft=zsh

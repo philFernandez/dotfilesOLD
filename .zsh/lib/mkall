@@ -1,6 +1,5 @@
-mkall () {
-	for src in $(fd -d1 c$)
-	do
-		clang -o $src:r $src
-	done
-}
+for src in $(fd -d1 c$)
+do
+  clang -o $src:r $src
+done
+# vi: ft=zsh

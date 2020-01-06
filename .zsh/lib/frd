@@ -1,25 +1,24 @@
-frd () {
-	local directories_to_remove=() 
-	local processed_files=() 
-	local query= 
-	while getopts ":q:" opt
-	do
-		case "$opt" in
-			(q) query=$OPTARG  ;;
-			(?) print '-q is the only valid option' ;;
-		esac
-	done
-	shift $((OPTIND-1))
-	directories_to_remove=$(fd -HI -td -d${1:-1} | \
-    fzf -q "$query" --height 40% --multi --prompt='rd ') 
-	if [[ -n "$directories_to_remove" ]]
-	then
-		processed_files=(${(f)${directories_to_remove}}) 
-		directories_to_remove=() 
-		for procd_file in $processed_files
-		do
-			directories_to_remove+=(${(q-)procd_file}) 
-		done
-		print -z rd ${=directories_to_remove}
-	fi
-}
+local directories_to_remove=()
+local processed_files=()
+local query=
+while getopts ":q:" opt
+do
+  case "$opt" in
+    (q) query=$OPTARG  ;;
+    (?) print '-q is the only valid option' ;;
+  esac
+done
+shift $((OPTIND-1))
+directories_to_remove=$(fd -HI -td -d${1:-1} | \
+  fzf -q "$query" --height 40% --multi --prompt='rd ')
+if [[ -n "$directories_to_remove" ]]
+then
+  processed_files=(${(f)${directories_to_remove}})
+  directories_to_remove=()
+  for procd_file in $processed_files
+  do
+    directories_to_remove+=(${(q-)procd_file})
+  done
+  print -z rd ${=directories_to_remove}
+fi
+# vi: ft=zsh

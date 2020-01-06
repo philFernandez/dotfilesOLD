@@ -1,3 +1,2 @@
-et () {
-	${=EDITOR} ~/.p10k.zsh
-}
+${=EDITOR} ~/.p10k.zsh
+# vi: ft=zsh

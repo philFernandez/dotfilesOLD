@@ -1,35 +1,34 @@
-bk () {
-	if [[ $# -eq 1 ]]
-	then
-		case $1 in
-			(2) cd ../../
-				clear
-				lsd --group-dirs first ;;
-			(3) cd ../../../
-				clear
-				lsd --group-dirs first ;;
-			(4) cd ../../../../
-				clear
-				lsd --group-dirs first ;;
-			(5) cd ../../../../../
-				clear
-				lsd --group-dirs first ;;
-			(6) cd ../../../../../../
-				clear
-				lsd --group-dirs first ;;
-			(7) cd ../../../../../../../
-				clear
-				lsd --group-dirs first ;;
-			(8) cd ../../../../../../../../
-				clear
-				lsd --group-dirs first ;;
-			(9) cd ../../../../../../../../../
-				clear
-				lsd --group-dirs first ;;
-		esac
-	else
-		cd ..
-		clear
-		lsd --group-dirs first
-	fi
-}
+if [[ $# -eq 1 ]]
+then
+  case $1 in
+    (2) cd ../../
+      clear
+      lsd --group-dirs first ;;
+    (3) cd ../../../
+      clear
+      lsd --group-dirs first ;;
+    (4) cd ../../../../
+      clear
+      lsd --group-dirs first ;;
+    (5) cd ../../../../../
+      clear
+      lsd --group-dirs first ;;
+    (6) cd ../../../../../../
+      clear
+      lsd --group-dirs first ;;
+    (7) cd ../../../../../../../
+      clear
+      lsd --group-dirs first ;;
+    (8) cd ../../../../../../../../
+      clear
+      lsd --group-dirs first ;;
+    (9) cd ../../../../../../../../../
+      clear
+      lsd --group-dirs first ;;
+  esac
+else
+  cd ..
+  clear
+  lsd --group-dirs first
+fi
+# vi: ft=zsh

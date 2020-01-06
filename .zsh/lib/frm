@@ -1,25 +1,24 @@
-frm () {
-	local files_to_remove=() 
-	local processed_files=() 
-	local query= 
-	while getopts ":q:" opt
-	do
-		case "$opt" in
-			(q) query=$OPTARG  ;;
-			(?) print '-q is the only valid option' ;;
-		esac
-	done
-	shift $((OPTIND-1))
-	files_to_remove=$(fd -HI -tf -tl -d${1:-1} --exclude .DS_Store | \
-    fzf -q "$query" --multi --height 40% --prompt='rm ') 
-	if [[ -n "$files_to_remove" ]]
-	then
-		processed_files=(${(f)${files_to_remove}}) 
-		files_to_remove=() 
-		for procd_file in $processed_files
-		do
-			files_to_remove+=(${(q-)procd_file}) 
-		done
-		print -z rm ${=files_to_remove}
-	fi
-}
+local files_to_remove=()
+local processed_files=()
+local query=
+while getopts ":q:" opt
+do
+  case "$opt" in
+    (q) query=$OPTARG  ;;
+    (?) print '-q is the only valid option' ;;
+  esac
+done
+shift $((OPTIND-1))
+files_to_remove=$(fd -HI -tf -tl -d${1:-1} --exclude .DS_Store | \
+  fzf -q "$query" --multi --height 40% --prompt='rm ')
+if [[ -n "$files_to_remove" ]]
+then
+  processed_files=(${(f)${files_to_remove}})
+  files_to_remove=()
+  for procd_file in $processed_files
+  do
+    files_to_remove+=(${(q-)procd_file})
+  done
+  print -z rm ${=files_to_remove}
+fi
+# vi: ft=zsh

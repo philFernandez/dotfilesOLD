@@ -1,3 +1,2 @@
-ett () {
-	${=EDITOR} ~/.zsh_theme
-}
+${=EDITOR} ~/.zsh_theme
+# vi: ft=zsh

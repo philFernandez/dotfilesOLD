@@ -1,12 +1,11 @@
-zsh_stats () {
-	if [ $# -eq 1 ]
-	then
-		if [[ $1 =~ '^[0-9]+$' ]]
-		then
-			local numToShow="$1" 
-			fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n${numToShow}
-		fi
-	else
-		fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n20
-	fi
-}
+if [ $# -eq 1 ]
+then
+  if [[ $1 =~ '^[0-9]+$' ]]
+  then
+    local numToShow="$1"
+    fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n${numToShow}
+  fi
+else
+  fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n20
+fi
+# vi: ft=zsh

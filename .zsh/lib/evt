@@ -1,3 +1,2 @@
-evt () {
-	${=EDITOR} ~/.vim/after/plugin/color_settings.vim
-}
+${=EDITOR} ~/.vim/after/plugin/color_settings.vim
+# vi: ft=zsh

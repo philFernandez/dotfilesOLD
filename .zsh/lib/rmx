@@ -1,3 +1,2 @@
-rmx () {
-	fd -HI -tx -d1 | xargs rm
-}
+fd -HI -tx -d1 | xargs rm
+# vi: ft=zsh

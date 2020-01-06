@@ -1,3 +1,2 @@
-rc () {
-	${=EDITOR} ~/.zsh/.zsh_dotfiles/.zshrc
-}
+${=EDITOR} ~/.zsh/.zsh_dotfiles/.zshrc
+# vi: ft=zsh

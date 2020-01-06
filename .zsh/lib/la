@@ -1,8 +1,7 @@
-la () {
-	if [ $# -ge 1 ]
-	then
-		lsd --almost-all $@ --group-dirs first
-	else
-		lsd --almost-all $pwd --group-dirs first
-	fi
-}
+if [ $# -ge 1 ]
+then
+  lsd --almost-all $@ --group-dirs first
+else
+  lsd --almost-all $pwd --group-dirs first
+fi
+# vi: ft=zsh

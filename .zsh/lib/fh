@@ -1,4 +1,3 @@
-fh () {
-	print -z $( fc -l 1 | awk '{print substr($0, index($0,$2))}' \
-    | fzf +s --tac --height 40% --prompt='edit-> ')
-}
+print -z $( fc -l 1 | awk '{print substr($0, index($0,$2))}' \
+  | fzf +s --tac --height 40% --prompt='edit-> ')
+# vi: ft=zsh

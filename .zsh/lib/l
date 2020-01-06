@@ -1,8 +1,7 @@
-l () {
-	if [ $# -ge 1 ]
-	then
-		lsd -l $@ --almost-all -l --blocks name
-	else
-		lsd -l $pwd --almost-all -l --blocks name
-	fi
-}
+if [ $# -ge 1 ]
+then
+  lsd -l $@ --almost-all -l --blocks name
+else
+  lsd -l $pwd --almost-all -l --blocks name
+fi
+# vi: ft=zsh

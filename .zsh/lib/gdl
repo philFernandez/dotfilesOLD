@@ -1,8 +1,7 @@
-gdl () {
-	if [ $# -ge 1 ]
-	then
-		git diff "$@"
-	else
-		git diff
-	fi
-}
+if [ $# -ge 1 ]
+then
+  git diff "$@"
+else
+  git diff
+fi
+# vi: ft=zsh

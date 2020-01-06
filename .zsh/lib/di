@@ -1,5 +1,4 @@
-di () {
-	local destination
-	destination=$(print -l $dirstack | fzf --height 20%) 
-	[[ -n "$destination" ]] && print -z cd $destination
-}
+local destination
+destination=$(print -l $dirstack | fzf --height 20%)
+[[ -n "$destination" ]] && print -z cd $destination
+# vi: ft=zsh

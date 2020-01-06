@@ -1,3 +1,2 @@
-allcoms () {
-	print -l $commands | fzf --height 40%
-}
+print -l $commands | fzf --height 40%
+# vi: ft=zsh

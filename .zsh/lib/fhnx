@@ -1,4 +1,3 @@
-fhnx () {
-	eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | \
-    fzf +s --tac --prompt='execute-> ' | awk '!($1="")')
-}
+eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | \
+  fzf +s --tac --prompt='execute-> ' | awk '!($1="")')
+# vi: ft=zsh

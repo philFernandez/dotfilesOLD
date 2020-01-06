@@ -1,3 +1,2 @@
-eg () {
-	${=EDITOR} ~/.zsh/global_aliases.zsh
-}
+${=EDITOR} ~/.zsh/global_aliases.zsh
+# vi: ft=zsh

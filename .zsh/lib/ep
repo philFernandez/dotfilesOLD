@@ -1,3 +1,2 @@
-ep () {
-	${=EDITOR} ~/.zsh/aliases.zsh
-}
+${=EDITOR} ~/.zsh/aliases.zsh
+# vi: ft=zsh

@@ -1,27 +1,26 @@
-fcd () {
-	local dir
-	zparseopts -D -A opts - d: q: Q:
-	if [[ -n ${opts[-q]} ]]
-	then
-		query="'${opts[-q]}" 
-	else
-		local query=${opts[-Q]} 
-	fi
-	local depth=${opts[-d]} 
-	if [[ -n "$depth" ]]
-	then
-		dir="$(fd . ${1:-.} -I -H -td -d$depth | fzf -q "$query" --sort \
-      --preview=" lsd -A --color=always \
-      --icon=always --group-dirs first {}" \
-      --preview-window="down:50%" --prompt='cd ')" 
-	else
-		dir="$(fd . ${1:-.} -I -H -td | fzf -q "$query" --sort \
-            --preview=" lsd -A --color=always \
-            --icon=always --group-dirs first {}" \
-            --preview-window="down:50%" --prompt='cd ')" 
-	fi
-	if [[ -n "$dir" ]]
-	then
-		cd "$dir"
-	fi
-}
+local dir
+zparseopts -D -A opts - d: q: Q:
+if [[ -n ${opts[-q]} ]]
+then
+  query="'${opts[-q]}"
+else
+  local query=${opts[-Q]}
+fi
+local depth=${opts[-d]}
+if [[ -n "$depth" ]]
+then
+  dir="$(fd . ${1:-.} -I -H -td -d$depth | fzf -q "$query" --sort \
+    --preview=" lsd -A --color=always \
+    --icon=always --group-dirs first {}" \
+    --preview-window="down:50%" --prompt='cd ')"
+else
+  dir="$(fd . ${1:-.} -I -H -td | fzf -q "$query" --sort \
+          --preview=" lsd -A --color=always \
+          --icon=always --group-dirs first {}" \
+          --preview-window="down:50%" --prompt='cd ')"
+fi
+if [[ -n "$dir" ]]
+then
+  cd "$dir"
+fi
+# vi: ft=zsh

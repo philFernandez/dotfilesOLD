@@ -1,3 +1,2 @@
-fnote () {
-	vnote $(/bin/ls -1 ~/Notes/viNotes | fzf)
-}
+vnote $(/bin/ls -1 ~/Notes/viNotes | fzf)
+# vi: ft=zsh

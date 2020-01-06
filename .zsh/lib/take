@@ -1,3 +1,2 @@
-take () {
-	mkdir -p $@ && cd $@
-}
+mkdir -p $@ && cd $@
+# vi: ft=zsh

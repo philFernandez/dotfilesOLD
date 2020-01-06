@@ -1,19 +1,18 @@
-fv () {
-	local all_files
-	if [ "$1" == '-l' ]
-	then
-		for i in {2..$#}
-		do
-			echo "$@[i]"
-			all_files="$all_files ""$@[i]" 
-		done
-		cat $(echo $all_files) | nl -ba | sed -e 's/  //g' -e 's/^ //g' | fzf
-	else
-		for i in {1..$#}
-		do
-			echo "$@[i]"
-			all_files="$all_files ""$@[i]" 
-		done
-		cat $(echo $all_files) | fzf
-	fi
-}
+local all_files
+if [ "$1" == '-l' ]
+then
+  for i in {2..$#}
+  do
+    echo "$@[i]"
+    all_files="$all_files ""$@[i]"
+  done
+  cat $(echo $all_files) | nl -ba | sed -e 's/  //g' -e 's/^ //g' | fzf
+else
+  for i in {1..$#}
+  do
+    echo "$@[i]"
+    all_files="$all_files ""$@[i]"
+  done
+  cat $(echo $all_files) | fzf
+fi
+# vi: ft=zsh

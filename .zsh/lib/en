@@ -1,3 +1,2 @@
-en () {
-	${=EDITOR} ~/.zshenv
-}
+${=EDITOR} ~/.zshenv
+# vi: ft=zsh

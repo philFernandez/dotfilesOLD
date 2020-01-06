@@ -1,4 +1,3 @@
-cpdir () {
-	emulate -L zsh
-	print -n $PWD | pbcopy
-}
+emulate -L zsh
+print -n $PWD | pbcopy
+# vi: ft=zsh

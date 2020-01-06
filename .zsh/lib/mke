@@ -1,3 +1,2 @@
-mke () {
-	chmod +x "$*"
-}
+chmod +x "$*"
+# vi: ft=zsh

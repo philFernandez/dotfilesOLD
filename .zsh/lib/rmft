@@ -1,13 +1,12 @@
-rmft () {
-	if [ $# != 1 ]
-	then
-		echo 'rmft usage: rmft <file extension>'
-	elif [ $1 == '-h' ]
-	then
-		echo 'rmft removes all files of a particular type'
-		echo 'rmft usage: rmft <file extension>'
-	else
-		filetype=$1
-		rm *.$filetype
-	fi
-}
+if [ $# != 1 ]
+then
+  echo 'rmft usage: rmft <file extension>'
+elif [ $1 == '-h' ]
+then
+  echo 'rmft removes all files of a particular type'
+  echo 'rmft usage: rmft <file extension>'
+else
+  filetype=$1
+  rm *.$filetype
+fi
+# vi: ft=zsh

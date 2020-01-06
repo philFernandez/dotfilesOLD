@@ -1,29 +1,28 @@
-fvim () {
-	local files
-	local query= 
-	local depth= 
-	while getopts ":q:d:" opt
-	do
-		case "$opt" in
-			(q) query=$OPTARG  ;;
-			(d) depth=$OPTARG  ;;
-			(?) print '\-q and/or \-d are the only valid options'
-				return 1 ;;
-		esac
-	done
-	shift $((OPTIND-1))
-	if [[ -n $depth ]]
-	then
-		files="$(fd . ${1:-.} -H -I -tf -tl -d$depth --ignore-file $HOME/.cust_ignore | \
-      fzf -m --preview="bat --color=always --style=numbers {}" \
-      -q "$query" --preview-window="down:90%" --prompt='vim ')" 
-	else
-		files="$(fd . ${1:-.} -H -I -tf -tl --ignore-file $HOME/.cust_ignore | \
-            fzf -m --preview="bat --color=always --style=numbers {}" \
-            -q "$query" --preview-window="down:90%" --prompt='vim ')" 
-	fi
-	if [[ -n $files ]]
-	then
-		vim $files
-	fi
-}
+local files
+local query=
+local depth=
+while getopts ":q:d:" opt
+do
+  case "$opt" in
+    (q) query=$OPTARG  ;;
+    (d) depth=$OPTARG  ;;
+    (?) print '\-q and/or \-d are the only valid options'
+      return 1 ;;
+  esac
+done
+shift $((OPTIND-1))
+if [[ -n $depth ]]
+then
+  files="$(fd . ${1:-.} -H -I -tf -tl -d$depth --ignore-file $HOME/.cust_ignore | \
+    fzf -m --preview="bat --color=always --style=numbers {}" \
+    -q "$query" --preview-window="down:90%" --prompt='vim ')"
+else
+  files="$(fd . ${1:-.} -H -I -tf -tl --ignore-file $HOME/.cust_ignore | \
+          fzf -m --preview="bat --color=always --style=numbers {}" \
+          -q "$query" --preview-window="down:90%" --prompt='vim ')"
+fi
+if [[ -n $files ]]
+then
+  vim $files
+fi
+# vi: ft=zsh
