@@ -48,7 +48,7 @@ done
 unset config_file
 
 typeset -U lib
-lib=( ${$(echo $ZSH_CUSTOM/lib/*):r:t} )
+lib=( ${$(echo $ZSH_CUSTOM/lib/*):r:r:t} )
 # Autoload user defined lib functions
 for fun in $lib; do
   autoload -Uz $fun
@@ -192,7 +192,8 @@ setopt NONOMATCH \
   AUTO_CD \
   AUTO_PUSHD \
   PUSHD_IGNORE_DUPS \
-  PUSHD_MINUS
+  PUSHD_MINUS \
+  INTERACTIVE_COMMENTS
 
   # Auto Comp Defns {{{1
   #fpath=(~/.oh-my-zsh/custom/completions $fpath)
