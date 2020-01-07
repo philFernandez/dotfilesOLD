@@ -1,6 +1,7 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 # Commands and Shortcuts {{{1
+alias kf='k -f'
 alias z=k
 alias diff='git diff --no-index --color-words'
 alias sqlite3='/usr/local/Cellar/sqlite/3.30.1/bin/sqlite3'
