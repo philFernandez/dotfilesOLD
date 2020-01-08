@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+FUNC="$ZSH_CUSTOM/lib/${1}"
+TEMPLATE="# $1
+
+
+# vi: ft=zsh"
+
+# If function does not exists then copy TEMPLATE into it,
+# and open it. If it does exist just open existing function
+if ! [[ -e $FUNC ]]; then
+  echo "$TEMPLATE" > "$FUNC"
+fi
+
+"$EDITOR" "$FUNC"
+
