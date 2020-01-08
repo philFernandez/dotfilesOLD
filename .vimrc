@@ -39,12 +39,11 @@ Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-scripts/dbext.vim', { 'for': 'sql' }
 Plug 'terryma/vim-multiple-cursors' " https://github.com/terryma/vim-multiple-cursors
-Plug 'metakirby5/codi.vim' " execute repl code in scratch pad
 Plug 'hauleth/vim-backscratch' " re-route commands output to scratch pad, or take notes
 Plug 'Clavelito/indent-awk.vim'
+Plug 'svermeulen/vim-easyclip'
 Plug 'ryanoasis/vim-devicons'
 " Un-used plugins {{{1
-"Plug 'svermeulen/vim-easyclip'
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
 "Plug 'sirver/UltiSnips'
 "Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
@@ -259,8 +258,11 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "inoremap <C-Space> <C-x><C-o>
 "inoremap <C-@> <c-x><c-o>
 
-" Vim-Notes {{{1
+
+" Easy Clip & Vim-Notes {{{1
 let g:notes_directories = ['~/Notes/viNotes']
+let g:EasyClipAutoFormat = 1
+let g:EasyClipUseSubstituteDefaults = 1
 " ALE {{{1
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
@@ -277,19 +279,6 @@ let g:ale_linters = {
       "\ }
 " Keymaps {{{1
 nnoremap <silent><localleader>a :ALEToggle<cr>
-autocmd BufEnter * ++once :echo strftime('%m/%d/%Y @ %I:%M %p')
-nnoremap <leader>t :echo strftime('%m/%d/%Y @ %I:%M %p')<CR>
-" ==== mimick easyclip ====
-" remap m -> d
-noremap m d
-" redirect d to black hole
-nnoremap d "_d
-" replace selected line without yanking
-vnoremap p "_dP
-" make pasting match indent level
-"nnoremap p p=`]
-"nnoremap P P=`]
-" =========================
 
 map <silent><c-t> :TagbarOpenAutoClose<CR>
 nnoremap <silent><leader>f :NERDTreeToggle<CR>
