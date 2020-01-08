@@ -1,2 +1,2 @@
-${=EDITOR} ~/.p10k.zsh
+${=EDITOR} ~/.zsh/.zwc_dotfiles/.p10k.zsh
 # vi: ft=zsh
