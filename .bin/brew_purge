@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/local/bin/zsh
 
 # Removes brew package and all of its dependencies that
 # aren't relied on by other brew packages

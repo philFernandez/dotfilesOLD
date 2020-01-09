@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/local/bin/zsh
 ############ FUZZY MAN ##############
 # fuzzy finder for manpages
 # usage: fman <take no parameters> OR fman -p for preview mode

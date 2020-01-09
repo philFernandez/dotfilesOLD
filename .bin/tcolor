@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/local/bin/zsh
 
 #declare -a color_codes
 

@@ -1,4 +1,6 @@
-#!/bin/zsh
+#!/usr/local/bin/zsh
+
+autoload -Uz zrecompile
 
 FUNC="$ZSH_CUSTOM/lib/${1}"
 TEMPLATE="# $1
@@ -7,10 +9,12 @@ TEMPLATE="# $1
 # vi: ft=zsh"
 
 # If function does not exists then copy TEMPLATE into it,
-# and open it. If it does exist just open existing function
+# and open it, and run first time compilation after closing.
+# If it does exist just open existing function, and recompile
+# after closing.
 if ! [[ -e $FUNC ]]; then
   echo "$TEMPLATE" > "$FUNC"
+  "$EDITOR" "$FUNC" && (cd $FUNC:h && zrecompile -p -U -z $FUNC:t)
+else
+  "$EDITOR" "$FUNC" && zrecompile
 fi
-
-"$EDITOR" "$FUNC"
-
