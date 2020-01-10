@@ -146,7 +146,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " }}}
 " highlightedyank {{{1
-let g:highlightedyank_highlight_duration = -1
+let g:highlightedyank_highlight_duration = 2500
 " Lightline {{{1
 let g:lightline = {
       \ 'colorscheme': 'wombat',
