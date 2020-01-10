@@ -1,0 +1,8 @@
+# TRAPINT
+
+flasher 1 ""
+print -- "\033[38;5;001m SIGINT CAUGHT\033[38;5;003m Aborting...\033[0m"
+return $(( 128 + $1 ))
+
+
+# vi: ft=zsh

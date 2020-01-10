@@ -1,0 +1,11 @@
+# Pass in the lower and upper limits of the range that
+# contains the unicode icons to be printed. Passed in
+# limits are in decimal.
+echo
+for unicode in {$1..$2}; do
+  icon=$(printf '\\u%x\n' $unicode)
+  echo -n "$icon "
+done
+echo
+
+# vi: ft=zsh
