@@ -1,0 +1,6 @@
+#compdef mkf
+
+userlib=${$(fd . -tf ~/.zsh/lib | rg -v '(zwc$|old$)'):t}
+
+_alternative \
+  "dirs:user directory:($userlib)"
