@@ -212,7 +212,8 @@
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=009
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=239
   # Make the icon bold.
-  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='%B${P9K_CONTENT// }'
+  #typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='%B${P9K_CONTENT// }'
+  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='🍎'
 
   ################################[ prompt_char: prompt symbol ]################################
   # Transparent background.
