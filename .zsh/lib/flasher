@@ -8,7 +8,7 @@ clear
 
 while [[ $i -lt $duration ]]; do
   echoti flash && \
-    echo "\033[38;5;001m$msg"
+    echo -ne "$msg"
   sleep 0.04
   ((i++))
 done
