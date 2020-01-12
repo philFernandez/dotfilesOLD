@@ -43,12 +43,12 @@ Plug 'hauleth/vim-backscratch' " re-route commands output to scratch pad, or tak
 Plug 'Clavelito/indent-awk.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'ryanoasis/vim-devicons'
+Plug 'mattn/emmet-vim', { 'for': 'html' }
 " Un-used plugins {{{1
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
 "Plug 'sirver/UltiSnips'
 "Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 "Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-"Plug 'mattn/emmet-vim', { 'for': 'html' }
 call plug#end()
 " UI Settings {{{1
 set showtabline=2

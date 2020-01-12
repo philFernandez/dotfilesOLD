@@ -153,8 +153,8 @@ export LSCOLORS=ExGxbadxCxbxbxCxCxbxbx
 
 export CLICOLOR=true
 
-#export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || rg --hidden --no-ignore --files)'
-export FZF_DEFAULT_COMMAND='(rg --hidden --no-ignore --files 2> /dev/null)'
+export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || rg --hidden --no-ignore --files 2> /dev/null)'
+#export FZF_DEFAULT_COMMAND='(rg --hidden --no-ignore --files 2> /dev/null)'
 
 #export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -H)'
 
