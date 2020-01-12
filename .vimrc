@@ -49,6 +49,11 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 " Un-used plugins {{{1
 "Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
 "Plug 'sirver/UltiSnips'
+" Un-used plugins {{{1
+"Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
+"Plug 'sirver/UltiSnips'
+"Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
+"Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
 " UI Settings {{{1
 set showtabline=2
