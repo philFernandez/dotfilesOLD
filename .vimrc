@@ -263,6 +263,10 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "inoremap <C-Space> <C-x><C-o>
 "inoremap <C-@> <c-x><c-o>
 
+" Tern JS
+" Show function signature in completion menu
+let g:tern_show_signature_in_pum = 1
+
 
 " Easy Clip & Vim-Notes {{{1
 let g:notes_directories = ['~/Notes/viNotes']
@@ -283,6 +287,7 @@ let g:ale_linters = {
       "\ '.*\.java$': {'ale_enabled': 0},
       "\ }
 " Keymaps {{{1
+let g:user_emmet_leader_key='<C-W>'
 nnoremap <silent><localleader>a :ALEToggle<cr>
 
 map <silent><c-t> :TagbarOpenAutoClose<CR>
