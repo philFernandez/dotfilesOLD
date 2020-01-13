@@ -12,10 +12,6 @@ fi
 
 # Autoload {{{1
 zmodload zsh/complist
-autoload -Uz calendar
-calendar -s > /dev/null
-autoload -Uz calendar_{edit,showdate,sort}
-zstyle ':datetime:calendar:' calendar-file ~/.local/calendar
 autoload -Uz compinit
 compinit
 autoload -Uz edit-command-line
