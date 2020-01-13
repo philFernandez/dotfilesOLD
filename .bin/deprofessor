@@ -10,5 +10,5 @@ autoload zmv
 
 #for f (*) if [[ $f =~ " " ]]; then /bin/mv -f $f ${f:gs/\ /_/}; fi
 
-zmv -v '(* *)' '${1// /_}'
+zmv -v '(* *)' '${1// /_}' 2> /dev/null
 

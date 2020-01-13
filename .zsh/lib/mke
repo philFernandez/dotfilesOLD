@@ -1,2 +1,4 @@
-chmod +x "$*"
+for input_file in $*; do
+  chmod +x $input_file
+done
 # vi: ft=zsh
