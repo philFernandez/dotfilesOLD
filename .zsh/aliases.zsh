@@ -24,7 +24,6 @@ alias regex='man pcresyntax'
 alias tree='lsd --tree --group-dirs first'
 alias cls=clear
 alias c=clear
-alias rm='rm -v'
 alias cl='clear;lsd --group-dirs first'
 alias cll='clear;ls -A'
 alias clll='clear;ls -Al'
