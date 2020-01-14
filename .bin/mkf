@@ -1,6 +1,15 @@
 #!/usr/local/bin/zsh
 
 autoload -Uz zrecompile
+if [[ $1 == '-h' ]] || [[ $1 == '--h' ]]; then
+  cat << EOF
+usage: mkf func_name
+
+If func_name exists, open it.
+Else create it and open it.
+EOF
+exit 0
+fi
 
 FUNC="$ZSH_CUSTOM/lib/${1}"
 TEMPLATE="# $1
