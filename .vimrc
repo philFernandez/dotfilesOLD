@@ -44,18 +44,11 @@ Plug 'Clavelito/indent-awk.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'ryanoasis/vim-devicons'
 Plug 'cespare/vim-toml'
+Plug 'SirVer/ultisnips'
 Plug 'gko/vim-coloresque', { 'for': [ 'html', 'css', 'javascript' ] }
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Un-used plugins {{{1
-"Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
-"Plug 'sirver/UltiSnips'
-" Un-used plugins {{{1
-"Plug 'c9s/perlomni.vim', { 'for': [ 'perl', 'perl6' ] }
-"Plug 'sirver/UltiSnips'
-"Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
-"Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
 " UI Settings {{{1
 set showtabline=2
@@ -197,9 +190,11 @@ let g:lightline = {
       \
       \ }
 " Ultisnips {{{1
-"let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
-"let g:UltiSnipsSnippetDirectories=["ultisnips"]
-"let g:UltiSnipsExpandTrigger="<leader>n"
+let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
+let g:UltiSnipsSnippetDirectories=["ultisnips"]
+let g:UltiSnipsExpandTrigger="<leader>n"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " Startify {{{1
 
 " Show devicons
