@@ -1,0 +1,29 @@
+#!/usr/local/bin/bash
+
+# Copy a test c source file to where ever you're working
+# and open it with EDITOR
+
+WORKSPACE="${PWD}/main.c"
+C_SOURCE="${PWD}/$1"
+
+TEMPLATE='#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <unistd.h>
+
+// A tester template with all of the most used include files
+
+int main() {
+
+}
+'
+
+if [ -n "$1" ]; then
+  echo "$TEMPLATE" > "$C_SOURCE"
+  "$EDITOR" "$C_SOURCE"
+else
+  echo "$TEMPLATE" > "$WORKSPACE"
+  "$EDITOR" "$WORKSPACE"
+fi
+

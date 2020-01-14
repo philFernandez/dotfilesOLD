@@ -1,0 +1,9 @@
+#!/usr/local/bin/zsh
+
+# Adjust applescript's instructions based on which chrome window/tab
+# you're working in.
+/usr/bin/osascript <<-APPLESCRIPT
+tell application "Google Chrome" to tell the active tab of its second window
+  reload
+end tell
+APPLESCRIPT
