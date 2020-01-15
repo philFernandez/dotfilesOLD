@@ -124,6 +124,9 @@ HIST_STAMPS="mm/dd/yyyy"
 # set vscode as default editor
 #export EDITOR='code -w'
 
+
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
 export RANGER_LOAD_DEFAULT_RC=false
 #export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 #export K_TOGGLE_PREV="ctrl-p"
