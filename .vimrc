@@ -148,16 +148,25 @@ nmap ga <Plug>(EasyAlign)
 " highlightedyank {{{1
 let g:highlightedyank_highlight_duration = 2500
 " Lightline {{{1
+
+"function! GitStatus()
+  "let [a,m,r] = GitGutterGetHunkSummary()
+  "return printf('+%d ~%d -%d', a, m, r)
+"endfunction
+
+"set statusline+=%{GitStatus()}
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \
       \   'active': {
       \     'left': [ [ 'mode', 'paste', 'spell' ],
-      \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \               [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+      \               [ 'hunksummary' ] ]
       \   },
       \
       \   'component_function': {
-      \     'gitbranch': 'gitbranch#name'
+      \     'gitbranch': 'gitbranch#name',
+      \     'hunksummary': 'hunkstatus#gitgutter'
       \   },
       \
       \   'tab': {
