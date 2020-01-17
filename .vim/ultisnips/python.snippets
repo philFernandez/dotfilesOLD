@@ -28,3 +28,10 @@ endsnippet
 snippet route "flask route decorator" b
 @app.route('$1')$2
 endsnippet
+
+snippet try "try except block" b
+try:
+	${1:${VISUAL}Statement}
+except ${2:Exception}:
+	$3
+endsnippet
