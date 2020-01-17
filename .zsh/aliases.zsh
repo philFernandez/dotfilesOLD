@@ -1,6 +1,7 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 # Commands and Shortcuts {{{1
+alias ag=rg
 alias python=python3
 alias kf='k -f'
 alias z=k
