@@ -17,5 +17,5 @@ alias -g G='| rg --no-filename --color never'
 alias -g GC='| rg --no-filename --color always'
 alias -g F='|fzf'
 alias -g DSF='| diff-so-fancy | less --tabs=4 -RFX'
-alias -g COLSOU='| sort | fzf --reverse --preview "bat --theme=Monokai\ Extended\ Bright \
+alias -g FB='| sort | fzf --reverse --preview "bat --theme=Monokai\ Extended\ Bright \
   --style=numbers,changes --color always {}" --preview-window="down:95%"'
