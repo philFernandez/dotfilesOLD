@@ -1,9 +1,10 @@
-"                        _   _
-"                       ( ) ( ) _
-"                       | | | |(_)  ___ ___   _ __   ___
-"                       | | | || |/' _ ` _ `\( '__)/'___)
-"                       | \_/ || || ( ) ( ) || |  ( (___
-"                       `\___/'(_)(_) (_) (_)(_)  `\____)
+            "================================================================"
+            "        '||'  '|' '||' '||    ||' '||''|.     ..|'''.|          "
+            "         '|.  .'   ||   |||  |||   ||   ||  .|'     '           "
+            "          ||  |    ||   |'|..'||   ||''|'   ||                  "
+            "           |||     ||   | '|' ||   ||   |.  '|.      .          "
+            "            |     .||. .|. | .||. .||.  '|'  ''|....'           "
+            "================================================================"
 " need to be first {{{1
 set nocompatible
 let mapleader=','
@@ -115,7 +116,7 @@ set shiftwidth=2
 set smarttab
 set tabstop=2
 " Autocmds {{{1
-autocmd BufUnload lib,.zshrc silent! :Zrecompile
+"autocmd BufUnload lib,.zshrc silent! :Zrecompile
 " Search {{{1
 set hlsearch
 set ignorecase
