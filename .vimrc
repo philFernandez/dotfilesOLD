@@ -6,7 +6,6 @@
             "            |     .||. .|. | .||. .||.  '|'  ''|....'           "
             "================================================================"
 " need to be first {{{1
-set nocompatible
 let mapleader=','
 let maplocalleader='\'
 
@@ -53,6 +52,10 @@ Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript' ] }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
+set nocompatible
+filetype plugin indent on
+syntax on
+
 " UI Settings {{{1
 set showtabline=2
 set background=dark
@@ -89,6 +92,12 @@ set tags=./.git/tags;
 set tags+=./tags;
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers
+set display=lastline
+set showcmd
+set ttyfast
+set wrapscan
+set report=0
+set synmaxcol=200
 let g:tex_flavor = "latex"
 
 if !isdirectory("/Users/philthy/.vim/.vim-undo-dir")
@@ -116,6 +125,8 @@ set shiftround
 set shiftwidth=2
 set smarttab
 set tabstop=2
+
+
 " Autocmds {{{1
 "autocmd BufUnload lib,.zshrc silent! :Zrecompile
 " Search {{{1
