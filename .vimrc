@@ -57,6 +57,10 @@ filetype plugin indent on
 syntax on
 
 " UI Settings {{{1
+" fix issues with lagging when matching parenthisis/brackets
+let g:matchparen_insert_timeout = 2
+let g:matchparen_timeout = 2
+"-------------------------------------
 set showtabline=2
 set background=dark
 set laststatus=2
