@@ -183,7 +183,8 @@ setopt NONOMATCH \
   AUTO_PUSHD \
   PUSHD_IGNORE_DUPS \
   PUSHD_MINUS \
-  INTERACTIVE_COMMENTS
+  INTERACTIVE_COMMENTS \
+  COMPLETE_ALIASES
 
   # Auto Comp Defns {{{1
   #fpath=(~/.oh-my-zsh/custom/completions $fpath)
