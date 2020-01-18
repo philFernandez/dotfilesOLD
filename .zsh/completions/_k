@@ -1,0 +1,11 @@
+#compdef k
+
+
+
+saved_dirs=${$(cat ~/.cache/k_cache):t}
+
+_alternative \
+  "dirs:user directory:($saved_dirs)"
+
+
+
