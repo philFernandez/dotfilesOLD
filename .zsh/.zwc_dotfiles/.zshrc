@@ -20,7 +20,7 @@ fi
 # Autoload {{{1
 zmodload zsh/complist # has to be before compinit
 autoload -U compinit
-compinit
+compinit -u
 autoload -Uz edit-command-line
 autoload -Uz printc
 autoload -Uz k
