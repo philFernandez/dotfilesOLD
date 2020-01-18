@@ -9,6 +9,7 @@
 set nocompatible
 let mapleader=','
 let maplocalleader='\'
+
 " Vim Plug {{{1
 call plug#begin('~/.vim/plugged')
 Plug 'xavierd/clang_complete', { 'for':  [ 'cpp', 'c' ] }
@@ -48,7 +49,7 @@ Plug 'cespare/vim-toml'
 Plug 'SirVer/ultisnips'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'gko/vim-coloresque', { 'for': [ 'html', 'css', 'javascript' ] }
-Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript' ] }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
@@ -272,7 +273,6 @@ let g:jedi#show_call_signatures = "2"
 " C Completion =======================================
 let g:clang_make_default_keymappings=0
 let g:AutoPairsMapCR = 0
-imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
 let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete

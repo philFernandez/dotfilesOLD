@@ -1,6 +1,11 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 # Commands and Shortcuts {{{1
+alias orange='tab 255 125 24'
+alias red='tab 255 38 0'
+alias green='tab 39 190 0'
+alias blue='tab 39 190 255'
+alias yellow='tab 221 226 106'
 alias ag=rg
 alias python=python3
 alias kf='k -f'
@@ -16,8 +21,8 @@ alias shwa='c;shwf -a'
 alias shw='c;shwf'
 alias md='mkdir -p'
 alias f=ranger
-alias light='iterm2_profile Light'
-alias dark='iterm2_profile Default'
+alias light='echo "\x1B]1337;SetProfile=Light\x07"'
+alias dark='echo "\x1B]1337;SetProfile=Default\x07"'
 alias ppath='printf "\033[38;5;038m%s\033[0m\n" $path'
 alias pfpath='printf "\033[38;5;214m%s\033[0m\n" $fpath'
 alias server='TERM=xterm-256color ssh philthy@192.168.0.36'
