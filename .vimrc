@@ -72,9 +72,10 @@ set ttimeoutlen=0
 hi ALEWarning guibg=NONE guifg=NONE
 
 set cursorline
-set cursorlineopt=screenline
 autocmd InsertEnter * set nocursorline
 autocmd InsertLeave * set cursorline
+
+
 " Other VIM {{{1
 set mouse=a
 set lazyredraw
@@ -95,7 +96,6 @@ set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Librar
 set display=lastline
 set showcmd
 set ttyfast
-set wrapscan
 set report=0
 set synmaxcol=200
 let g:tex_flavor = "latex"
@@ -118,6 +118,7 @@ au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 "autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
 autocmd FileType vim,zsh,bash,sh,python setlocal formatoptions-=ro
 au BufWrite * :RemoveTrailingSpaces
+
 " Indent Settings {{{1
 set autoindent
 set expandtab " use spaces instead of tabs
@@ -126,9 +127,6 @@ set shiftwidth=2
 set smarttab
 set tabstop=2
 
-
-" Autocmds {{{1
-"autocmd BufUnload lib,.zshrc silent! :Zrecompile
 " Search {{{1
 set hlsearch
 set ignorecase
@@ -139,6 +137,8 @@ set incsearch
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
 set nowrap
+set wrapscan " continue search on next line
+
 " Fold {{{1
 " za - toggle fold under cursor
 " zA - toggle fold under cursor recursively
@@ -313,6 +313,7 @@ let g:ale_linters = {
 "let g:ale_pattern_options = {
       "\ '.*\.java$': {'ale_enabled': 0},
       "\ }
+
 " Keymaps {{{1
 let g:user_emmet_leader_key='<C-W>'
 nnoremap <silent><localleader>a :ALEToggle<cr>
@@ -381,6 +382,8 @@ command! -bang -nargs=? -complete=dir Files
 " ctrl-t = tab
 nnoremap <silent> <leader>l :Buf<CR>
 nnoremap <silent> <leader>k :Win<CR>
+
+
 " commands {{{1
 command! Zrecompile :!zrecompile
 " modeline{{{1
