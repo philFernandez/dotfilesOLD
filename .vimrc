@@ -46,10 +46,11 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'ryanoasis/vim-devicons'
 Plug 'cespare/vim-toml'
 Plug 'SirVer/ultisnips'
+Plug 'vim-scripts/applescript.vim'
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'gko/vim-coloresque', { 'for': [ 'html', 'css', 'javascript' ] }
-Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript' ] }
+Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
@@ -288,7 +289,6 @@ let g:jedi#show_call_signatures = "2"
 
 " C Completion =======================================
 let g:clang_make_default_keymappings=0
-let g:AutoPairsMapCR = 0
 let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
@@ -299,6 +299,12 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " Show function signature in completion menu
 let g:tern_show_signature_in_pum = 1
 
+" AutoPairs {{{1
+if exists("AutoPairs")
+  let g:AutoPairsMapCR = 0
+  imap <expr><CR> "\<CR>\<Plug>AutoPairsReturn"
+  let g:AutoPairsShortcutToggle = '<F10>'
+endif
 
 " Easy Clip & Vim-Notes {{{1
 let g:notes_directories = ['~/Notes/viNotes']
@@ -342,7 +348,6 @@ nnoremap <c-l> <c-w>l
 
 tnoremap <c-n> <c-\><c-n>
 
-let g:AutoPairsShortcutToggle = '<F10>'
 "copy into sys clipboard
 vnoremap <silent> cp "+y
 "past from sys clipboard

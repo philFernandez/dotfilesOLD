@@ -1,19 +1,22 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/osascript
 
-# Adjust applescript's instructions based on which chrome window/tab
-# you're working in.
-#/usr/bin/osascript <<-APPLESCRIPT
-#tell application "Google Chrome" to tell the active tab of its second window
-  #reload
-#end tell
-#APPLESCRIPT
+set targetURL to "http://127.0.0.1:5000"
 
-# usage: reload-browser2 'any.part.of.url'
-# will reload any page that matches 'any.part.of.url'
-sleep 2
-URL_PIECE=$1
-/usr/bin/osascript <<-APL
+
 tell application "Google Chrome"
-  reload (tabs of window 1 whose URL contains "$URL_PIECE")
+  set window_list to every window
+  delay 0.9
+
+  repeat with the_window in window_list
+    reload (tabs of the_window whose URL contains targetURL)
+  end repeat
+
 end tell
-APL
+
+
+
+# vi: ft=applescript
+
+
+
+
