@@ -77,6 +77,8 @@ bindkey -s '^R' 'exec zsh\n'
 
 bindkey '^h' _complete_help
 
+# Make delete key work in vi-mode
+bindkey -a '^[[3~' delete-char
 
 # Files to Source {{{1
 
