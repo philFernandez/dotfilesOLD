@@ -1,3 +1,9 @@
+" This file loads up after ~/.vimrc, and after
+" plugins are loaded (i think?) so setting
+" highlight options here is good, where they
+" would otherwise risk being overriden by
+" plugins if they were set in ~/.vimrc
+
 " Settings {{{1
 " vim:foldenable foldmethod=marker foldcolumn=1
 set termguicolors " keep this before color theme setting
@@ -28,8 +34,9 @@ color molokai
 
 " Custom text settings {{{1
 " Uncomment this if themes search highlight is not satasfactory
-"hi Search cterm=bold gui=bold guifg=yellow guibg=blue
-hi Search cterm=bold,underline gui=bold guifg=yellow guibg=NONE
+hi Search cterm=bold gui=bold guifg=yellow guibg=blue
+"hi Search cterm=bold,underline gui=bold guifg=yellow guibg=NONE
+" Prevent annoying highlighting of matching pairs
 hi MatchParen NONE
 " Get italic comments in themes that dont already have them
 "hi Comment cterm=italic gui=italic
