@@ -9,7 +9,6 @@ alias yellow='tab 221 226 106'
 alias ag=rg
 alias python=python3
 alias kf='k -f'
-alias z=k
 alias watch='watch -td -n 0.1'
 alias sqlite3='/usr/local/Cellar/sqlite/3.30.1/bin/sqlite3'
 alias sql='/usr/local/Cellar/sqlite/3.30.1/bin/sqlite3'
