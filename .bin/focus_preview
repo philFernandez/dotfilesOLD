@@ -7,8 +7,8 @@
 
 # Usage: fd -e tex | entr -pr focus_preview /path/to/file.tex
 
-# Pass in full path to *.tex file
-TEXFILELOC=$1
+# Pass *.tex file
+TEXFILELOC="${PWD}/${1}"
 TEXFILE=${TEXFILELOC:t:r}
 
 # Compile tex file into pdf
