@@ -1,0 +1,27 @@
+#!/usr/local/bin/zsh
+
+# This script compiles the passed in tex file, then brings preview
+# into focus so changes are reflected there, then brings iTerm
+# back into focus to continue editing. Automatically run with
+# 'entr' utility
+
+# Usage: fd -e tex | entr -pr focus_preview /path/to/file.tex
+
+# Pass in full path to *.tex file
+TEXFILELOC=$1
+TEXFILE=${TEXFILELOC:t:r}
+
+# Compile tex file into pdf
+pdflatex $TEXFILELOC
+
+# Applescript brings preview into focus so changes will update,
+# then brings iterm2 back into focus to continue editing
+osascript << EOF
+tell application "Preview"
+  activate windows where name contains "$TEXFILE"
+end tell
+
+tell application "iTerm"
+  activate
+end tell
+EOF
