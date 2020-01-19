@@ -1,4 +1,10 @@
+local cmd='chmod +x'
+if [[ $1 = '-r' ]]; then
+  cmd='chmod -x'
+  shift
+fi
+
 for input_file in $*; do
-  chmod +x $input_file
+  eval "$cmd $input_file"
 done
 # vi: ft=zsh
