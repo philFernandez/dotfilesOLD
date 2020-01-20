@@ -243,7 +243,8 @@ let g:startify_bookmarks = [
       \ '~/.vimrc',
       \ '~/.zsh/.zwc_dotfiles/.zshrc',
       \ '~/.zshenv',
-      \ '~/.zsh/aliases.zsh']
+      \ '~/.zsh/aliases.zsh',
+      \ '~/Library/Preferences/org.dystroy.broot/conf.toml']
 let g:startify_fortune_use_unicode = 1
 " When adding/removing files from session
 " automatically make saved session reflect
