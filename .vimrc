@@ -274,10 +274,13 @@ set completeopt+=menuone
 set completeopt+=noselect
 set completeopt-=preview
 set shortmess+=c
+let g:mucomplete#chains = {
+      \ 'default' : ['path', 'omni', 'keyn', 'c-n', 'tags', 'incl', 'defs'],
+      \ 'vim'     : ['path', 'cmd', 'keyn'],
+      \ 'text'    : ['path', 'keyn']
+      \ }
 " utomatic completion at startup (w/o this have to press tab)
 let g:mucomplete#enable_auto_at_startup = 1
-let g:mucomplete#chains = {}
-let g:mucomplete#chains.java = [ 'user', 'tags', 'file', 'c-p']
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 

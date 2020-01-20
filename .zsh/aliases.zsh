@@ -27,7 +27,8 @@ alias pfpath='printf "\033[38;5;214m%s\033[0m\n" $fpath'
 alias server='TERM=xterm-256color ssh philthy@192.168.0.36'
 alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias regex='man pcresyntax'
-alias tree='lsd --tree --group-dirs first'
+alias tree2='lsd --tree --group-dirs first'
+alias tree='br'
 alias cls=clear
 alias c=clear
 alias cl='clear;lsd --group-dirs first'
