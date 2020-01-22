@@ -154,7 +154,6 @@ alias brews='brew list -1'
 alias show='brew info'
 alias search='brew search'
 # show all casks
-alias casks='brew search --casks' # <package> (optional)
 alias install='brew -v install'
 
 # fuzzy function aliases {{{1
