@@ -47,6 +47,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'cespare/vim-toml'
 Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/applescript.vim'
+Plug 'lilyball/vim-swift'
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'gko/vim-coloresque', { 'for': [ 'html', 'css', 'javascript' ] }
