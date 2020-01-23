@@ -275,11 +275,11 @@ set completeopt+=menuone
 set completeopt+=noselect
 set completeopt-=preview
 set shortmess+=c
-let g:mucomplete#chains = {
-      \ 'default' : ['path', 'omni', 'keyn', 'c-n', 'tags', 'incl', 'defs'],
-      \ 'vim'     : ['path', 'cmd', 'keyn'],
-      \ 'text'    : ['path', 'keyn']
-      \ }
+"let g:mucomplete#chains = {
+      "\ 'default' : ['path', 'omni', 'keyn', 'c-n', 'tags', 'incl', 'defs'],
+      "\ 'vim'     : ['path', 'cmd', 'keyn'],
+      "\ 'text'    : ['path', 'keyn']
+      "\ }
 " utomatic completion at startup (w/o this have to press tab)
 let g:mucomplete#enable_auto_at_startup = 1
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -397,6 +397,7 @@ command! -bang -nargs=? -complete=dir Files
 nnoremap <silent> <leader>l :Buf<CR>
 nnoremap <silent> <leader>k :Win<CR>
 
+map <c-b> :w<CR>:!rsync -avr ~/Spring_2020/CSC159/Code_CSc159/00_General/Code/ fernandp@titan.ecs.csus.edu:/gaia/class/student/fernandp/CSC159/Code/<CR>
 
 " commands {{{1
 command! Zrecompile :!zrecompile
