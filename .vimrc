@@ -105,7 +105,7 @@ set showcmd
 set ttyfast
 set report=0
 set synmaxcol=200
-"let g:tex_flavor = "latex"
+let g:tex_flavor = "latex"
 
 if !isdirectory("/Users/philthy/.vim/.vim-undo-dir")
   call mkdir("/Users/philthy/.vim/.vim-undo-dir", "", 0700)

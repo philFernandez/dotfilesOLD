@@ -5,6 +5,13 @@
         #         .|'      .     '||  ||    ||   ||   |.  '|.      .         #
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
+
+
+# iTerm tab title {{{1
+# Sets Tab to empty
+echo -ne '\e]1;\e\'
+# echo -ne '\e]1;New Title Here\e\'
+
 # p10k {{{1
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh

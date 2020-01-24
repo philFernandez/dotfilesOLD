@@ -5,7 +5,7 @@
 # back into focus to continue editing. Automatically run with
 # 'entr' utility
 
-# Usage: fd -e tex | entr -pr focus_preview /path/to/file.tex
+# Usage: fd -e tex | entr -pr focus_preview file.tex
 
 # Pass *.tex file
 TEXFILELOC="${PWD}/${1}"
