@@ -19,7 +19,7 @@ alias shwc='c;shwf -c'
 alias shwa='c;shwf -a'
 alias shw='c;shwf'
 alias md='mkdir -p'
-alias f=ranger
+alias f="ranger && echo -ne '\033]0;' '\007'"
 alias light='echo "\x1B]1337;SetProfile=Light\x07"'
 alias dark='echo "\x1B]1337;SetProfile=Default\x07"'
 alias ppath='printf "\033[38;5;038m%s\033[0m\n" $path'
