@@ -398,7 +398,7 @@ command! -bang -nargs=? -complete=dir Files
 nnoremap <silent> <leader>l :Buf<CR>
 nnoremap <silent> <leader>k :Win<CR>
 
-map <c-b> :w<CR>:!rsync -avr ~/Spring_2020/CSC159/Code/ fernandp@titan.ecs.csus.edu:/gaia/class/student/fernandp/CSC159/Code/<CR>
+map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC135/Homework/PL_1/html/ fernandp@titan.ecs.csus.edu:/gaia/class/student/fernandp/html/<CR>
 
 " commands {{{1
 command! Zrecompile :!zrecompile
