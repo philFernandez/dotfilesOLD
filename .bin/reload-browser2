@@ -1,21 +1,25 @@
-#!/usr/bin/osascript
+#!/usr/local/bin/zsh
 
-set targetURL to "http://127.0.0.1:5000"
+# pass in target URL
+TARGET=$1
 
+/usr/bin/osascript << EOF
+set targetURL to "$TARGET"
 
 tell application "Google Chrome"
   set window_list to every window
   delay 0.9
 
-  repeat with the_window in window_list
-    reload (tabs of the_window whose URL contains targetURL)
-  end repeat
+repeat with the_window in window_list
+  reload (tabs of the_window whose URL contains targetURL)
+end repeat
 
 end tell
+EOF
 
 
 
-# vi: ft=applescript
+
 
 
 
