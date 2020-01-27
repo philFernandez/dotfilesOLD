@@ -213,24 +213,13 @@ setopt NONOMATCH \
 
 # Completion {{{1
 # The following lines were added by compinstall
-zstyle ':completion:*' completer _expand _complete _ignored _match _approximate _prefix
-zstyle ':completion:*' completions 1
-zstyle ':completion:*:matches' group 'yes'
-zstyle ':completion:*'         group-name ''
-zstyle ':completion:*' list-dirs-first true
-zstyle ':completion:*' glob 1
-zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' match-original both
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'l:|=* r:|=*' 'r:|[._-]=** r:|=**'
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
 zstyle ':completion:*' max-errors 2
 zstyle ':completion:*' menu select=1
-zstyle ':completion:*' prompt '%e'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' substitute 1
-zstyle :compinstall filename '/Users/philthy/.zsh/.zsh_dotfiles/.zshrc'
-# End of lines added by compinstall
-_comp_options+=(globdots)
+zstyle :compinstall filename '/Users/philthy/.zsh/.zwc_dotfiles/.zshrc'
 # modeline (¡¡KEEP AT BOTTOM!!){{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
