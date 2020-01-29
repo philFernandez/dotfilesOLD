@@ -16,8 +16,8 @@
 #echo -ne "\033]0;"Put Text Here"\007" # window title i think?
 #echo -ne "\033]1;"Put Text Here"\007" # tab title i think?
 
-echo -ne "\033]0;""\007" # window title i think?
-echo -ne "\033]1;""\007" # tab title i think?
+#echo -ne "\033]0;""\007" # window title i think?
+#echo -ne "\033]1;""\007" # tab title i think?
 # p10k {{{1
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
