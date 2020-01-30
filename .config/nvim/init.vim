@@ -74,7 +74,23 @@ set cursorline
 autocmd InsertEnter * set nocursorline
 autocmd InsertLeave * set cursorline
 
+" fix broken cursor line --------------------------------
+function! s:CustomizeColors()
+  if has('guirunning') || has('termguicolors')
+    let cursorline_gui=''
+    let cursorline_cterm='ctermfg=white'
+  else
+    let cursorline_gui='guifg=white'
+    let cursorline_cterm=''
+  endif
+  exec 'hi CursorLine ' . cursorline_gui . ' ' . cursorline_cterm
+endfunction
 
+augroup OnColorScheme
+  autocmd!
+  autocmd ColorScheme,BufEnter,BufWinEnter * call s:CustomizeColors()
+augroup END
+" -------------------------------------------------------
 " Other VIM {{{1
 set mouse=a
 set lazyredraw
@@ -106,36 +122,23 @@ endif
 "set undodir=/tmp/.vim-undo-dir
 set undodir=/Users/philthy/.vim/.vim-undo-dir
 set undofile
-"au BufWrite *.c,*.py,*.java :Autoformat
 
 " keep window position static when switching between buffers
 au BufLeave * let b:winview = winsaveview()
 au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 " --------------------------------------------------------------------------
 
-" No automatic comments on next line
-"autocmd BufRead,BufNewFile * setlocal formatoptions-=ro
-autocmd FileType vim,zsh,bash,sh,python setlocal formatoptions-=ro
+" Autoformat {{{1
+if !exists('g:formatdef_latexindent')
+  let g:formatdef_latexindent = '"latexindent.pl - 2>/dev/null"'
+endif
+let g:formatters_tex = ['latexindent']
+
+au BufWrite *.tex :Autoformat
 au BufWrite * :RemoveTrailingSpaces
 
-" fix broken cursor line --------------------------------
-function! s:CustomizeColors()
-	if has('guirunning') || has('termguicolors')
-		let cursorline_gui=''
-		let cursorline_cterm='ctermfg=white'
-	else
-		let cursorline_gui='guifg=white'
-		let cursorline_cterm=''
-	endif
-	exec 'hi CursorLine ' . cursorline_gui . ' ' . cursorline_cterm
-endfunction
-
-augroup OnColorScheme
-	autocmd!
-	autocmd ColorScheme,BufEnter,BufWinEnter * call s:CustomizeColors()
-augroup END
-" -------------------------------------------------------
-
+" No automatic comments on next line
+autocmd FileType vim,zsh,bash,sh,python setlocal formatoptions-=ro
 " Indent Settings {{{1
 set autoindent
 set expandtab " use spaces instead of tabs
@@ -289,6 +292,10 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 " Keymaps {{{1
 let g:user_emmet_leader_key='<C-W>'
 "nnoremap <silent><localleader>a :ALEToggle<cr>

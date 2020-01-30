@@ -23,6 +23,6 @@ else
 fi
 if [[ -n $files ]]
 then
-  vim $files
+  $EDITOR $files
 fi
 # vi: ft=zsh
