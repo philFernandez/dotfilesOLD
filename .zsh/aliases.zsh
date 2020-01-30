@@ -1,6 +1,7 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 # Commands and Shortcuts {{{1
+alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias orange='tab 255 125 24'
 alias red='tab 255 38 0'
 alias green='tab 39 190 0'

@@ -184,13 +184,28 @@ nmap ga <Plug>(EasyAlign)
 let g:highlightedyank_highlight_duration = 2500
 " Lightline {{{1
 
+"let g:lightline = {
+      "\ 'colorscheme': 'wombat',
+      "\ 'active': {
+      "\   'left': [ [ 'mode', 'paste' ],
+      "\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      "\ },
+      "\ 'component_function': {
+      "\   'cocstatus': 'coc#status'
+      "\ },
+      "\ }
+
+" Use auocmd to force lightline update.
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+
 let g:lightline = {}
 
 let g:lightline.colorscheme = 'wombat'
 
 let g:lightline.component_function = {
       \ 'gitbranch'  : 'gitbranch#name',
-      \ 'hunksummary': 'hunkstatus#gitgutter'
+      \ 'hunksummary': 'hunkstatus#gitgutter',
+      \ 'cocstatus'  : 'coc#status'
       \ }
 
 let g:lightline.component_expand = {
@@ -208,7 +223,7 @@ let g:lightline.tabline = {
 
 let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste', 'spell' ],
-      \           [ 'gitbranch', 'readonly', 'hunksummary' ] ]
+      \           [ 'cocstatus', 'gitbranch', 'readonly', 'hunksummary' ] ]
       \ }
 
 let g:lightline.separator = {
