@@ -255,7 +255,7 @@ function! StartifyEntryFormat()
 endfunction
 
 let g:startify_bookmarks = [
-      \ '~/.vimrc',
+      \ '~/.config/nvim/init.vim',
       \ '~/.zsh/.zwc_dotfiles/.zshrc',
       \ '~/.zshenv',
       \ '~/.zsh/aliases.zsh',

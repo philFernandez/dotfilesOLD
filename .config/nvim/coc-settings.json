@@ -10,5 +10,6 @@
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     }
 
-  }
+  },
+  "coc.source.file.ignoreHidden": false
 }
