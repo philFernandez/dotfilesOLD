@@ -1,2 +1,2 @@
-${=EDITOR} ~/.vimrc
+${=EDITOR} ~/.config/nvim/init.vim
 # vi: ft=zsh
