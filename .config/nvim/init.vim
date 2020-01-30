@@ -91,6 +91,7 @@ augroup OnColorScheme
   autocmd ColorScheme,BufEnter,BufWinEnter * call s:CustomizeColors()
 augroup END
 " -------------------------------------------------------
+au TermOpen * setlocal nonumber
 " Other VIM {{{1
 set mouse=a
 set lazyredraw
