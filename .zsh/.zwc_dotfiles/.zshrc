@@ -159,7 +159,7 @@ export RANGER_LOAD_DEFAULT_RC=false
 #export K_LINE_FG_COLOR=$K_HEADER_FGCOLOR
 
 # set vim as default editor
-export EDITOR=/usr/local/bin/vim
+export EDITOR=nvim
 
 export UPDATE_ZSH_DAYS=7
 
