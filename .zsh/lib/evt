@@ -1,2 +1,2 @@
-${=EDITOR} ~/.vim/after/plugin/color_settings.vim
+${=EDITOR} ~/.local/share/nvim/site/after/plugin/color_settings.vim
 # vi: ft=zsh
