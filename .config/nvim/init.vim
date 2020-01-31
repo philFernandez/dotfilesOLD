@@ -207,12 +207,12 @@ let g:lightline.component_type = {
 
 let g:lightline.tabline = {
       \ 'left' : [['buffers']],
-      \ 'right': [['modified']]
+      \ 'right': [['modified'], ['cocstatus']]
       \ }
 
 let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste', 'spell' ],
-      \           [ 'cocstatus', 'gitbranch', 'readonly', 'hunksummary' ] ]
+      \           [ 'gitbranch', 'readonly', 'hunksummary' ] ]
       \ }
 
 let g:lightline.separator = {
@@ -301,6 +301,7 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+autocmd FileType json syntax match Comment +\/\/.\+$+
 " Keymaps {{{1
 let g:user_emmet_leader_key='<C-W>'
 "nnoremap <silent><localleader>a :ALEToggle<cr>

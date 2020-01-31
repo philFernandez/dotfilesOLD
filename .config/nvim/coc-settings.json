@@ -1,15 +1,25 @@
 {
+  // General coc.nvim settings
   "coc.source.vimtex.enable": true,
+  "coc.source.file.ignoreHidden": false,
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
 
+  // Specific language servers
   "languageserver": {
-
+    // C/C++
     "clangd": {
       "command": "clangd",
       "args": ["--background-index"],
       "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     }
-
   },
-  "coc.source.file.ignoreHidden": false
+
+  // Coc-python settings (python things are installed in a virtualenv
+  // ~/.local/share/virtualenvs/Libs-LCd87nCH)
+  "python.venvPath": "~/.local/share/virtualenvs",
+  "python.jediPath": "~/.local/share/virtualenvs/Libs-LCd87nCH/lib/python3.8/site-packages",
+  "python.linting.pylintPath": "~/.local/share/virtualenvs/Libs-LCd87nCH/bin/pylint",
+  "python.formatting.autopep8Path": "/Users/philthy/.local/share/virtualenvs/Libs-LCd87nCH/bin/autopep8"
+
 }
