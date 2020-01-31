@@ -1,0 +1,9 @@
+# q
+
+if [[ $jobtexts = 'nvim' ]]; then
+  fg
+else
+  exit
+fi
+
+# vi: ft=zsh
