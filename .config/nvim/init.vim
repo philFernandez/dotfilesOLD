@@ -116,12 +116,12 @@ set report=0
 set synmaxcol=200
 let g:tex_flavor = "latex"
 
-if !isdirectory("/Users/philthy/.vim/.vim-undo-dir")
-  call mkdir("/Users/philthy/.vim/.vim-undo-dir", "", 0700)
+if !isdirectory("/Users/philthy/.local/share/nvim/.vim-undo-dir")
+  call mkdir("/Users/philthy/.local/share/nvim/.vim-undo-dir", "", 0700)
 endif
 
 "set undodir=/tmp/.vim-undo-dir
-set undodir=/Users/philthy/.vim/.vim-undo-dir
+set undodir=/Users/philthy/.local/share/nvim/.vim-undo-dir
 set undofile
 
 " keep window position static when switching between buffers
