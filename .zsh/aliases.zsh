@@ -1,6 +1,7 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 # Commands and Shortcuts {{{1
+alias spede='TERM=xterm-256color ssh user@192.168.0.65'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias orange='tab 255 125 24'
 alias red='tab 255 38 0'
@@ -53,6 +54,7 @@ alias v='nvim'
 alias py='python3'
 alias fl='fd -HI -d1'
 alias zrl='zrecompile && exec zsh'
+
 # Directory Things {{{1
 alias -- -='cd -'
 alias 1='cd -'
