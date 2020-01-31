@@ -1,0 +1,37 @@
+snippet def
+def ${1:func_name}():
+	$2
+	return ${3:return_val}
+$0
+endsnippet
+
+snippet #! "#!/usr/bin/env python3" b
+#!/usr/bin/env python3
+endsnippet
+
+snippet with "with" b
+with ${1:expr}`!p snip.rv = " as " if t[2] else ""`${2:var}:
+	${3:${VISUAL:pass}}
+$0
+endsnippet
+
+snippet for "for loop" b
+for ${1:item} in ${2:iterable}:
+	${3:${VISUAL:pass}}
+endsnippet
+
+snippet if "if statement" b
+if ${1:Condition}:
+	${2:Statement}
+endsnippet
+
+snippet route "flask route decorator" b
+@app.route('$1')$2
+endsnippet
+
+snippet try "try except block" b
+try:
+	${1:${VISUAL}Statement}
+except ${2:Exception}:
+	$3
+endsnippet
