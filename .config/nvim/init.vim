@@ -44,6 +44,7 @@ Plug 'cespare/vim-toml'
 Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/applescript.vim'
 Plug 'lilyball/vim-swift'
+Plug 'maximbaz/lightline-ale'
 "Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
@@ -185,8 +186,6 @@ nmap ga <Plug>(EasyAlign)
 let g:highlightedyank_highlight_duration = 2500
 " Lightline {{{1
 
-" Use auocmd to force lightline update.
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 let g:lightline = {}
 
@@ -194,21 +193,30 @@ let g:lightline.colorscheme = 'wombat'
 
 let g:lightline.component_function = {
       \ 'gitbranch'  : 'gitbranch#name',
-      \ 'hunksummary': 'hunkstatus#gitgutter',
-      \ 'cocstatus'  : 'coc#status'
+      \ 'hunksummary': 'hunkstatus#gitgutter'
       \ }
 
 let g:lightline.component_expand = {
-      \ 'buffers': 'lightline#bufferline#buffers'
+      \ 'buffers': 'lightline#bufferline#buffers',
+      \ 'linter_checking': 'lightline#ale#checking',
+      \ 'linter_infos': 'lightline#ale#infos',
+      \ 'linter_warnings': 'lightline#ale#warnings',
+      \ 'linter_errors': 'lightline#ale#errors',
+      \ 'linter_ok': 'lightline#ale#ok'
       \ }
 
 let g:lightline.component_type = {
-      \ 'buffers' : 'tabsel'
+      \ 'buffers' : 'tabsel',
+      \ 'linter_checking': 'right',
+      \ 'linter_infos': 'right',
+      \ 'linter_warnings': 'warning',
+      \ 'linter_errors': 'error',
+      \ 'linter_ok': 'right'
       \ }
 
 let g:lightline.tabline = {
       \ 'left' : [['buffers']],
-      \ 'right': [['modified'], ['cocstatus']]
+      \ 'right': [['modified'], ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok']]
       \ }
 
 let g:lightline.active = {
@@ -245,6 +253,16 @@ let g:lightline#bufferline#number_map = {
       \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
       \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
 " ------------------------------------------------
+
+" ALE Lightline ----------(separate plugin)-------
+let g:lightline#ale#indicator_checking = ' '
+let g:lightline#ale#indicator_infos = ' '
+let g:lightline#ale#indicator_warnings = ' '
+let g:lightline#ale#indicator_errors = ' '
+let g:lightline#ale#indicator_ok = ' '
+
+" ------------------------------------------------
+
 
 " Ultisnips {{{1
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
