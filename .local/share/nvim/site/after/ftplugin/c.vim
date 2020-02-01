@@ -18,6 +18,6 @@ nnoremap <c-b><c-b> :split term://gcc -o %:r % && ./%:r<cr>
 let g:AutoPairsMapCR = 0
 imap <silent><CR> <CR><Plug>AutoPairsReturn
 
-set shiftwidth=3
-set tabstop=3
+set shiftwidth=4
+set tabstop=4
 set colorcolumn=80

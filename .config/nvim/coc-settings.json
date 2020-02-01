@@ -7,6 +7,8 @@
   //"diagnostic.enableMessage": "never",
   //"diagnostic.virtualText": true,
   //"diagnostic.enable": false,
+  //"diagnostic.refreshOnInsertMode": true,
+  "diagnostic.displayByAle": true,
 
   // Specific language servers
   "languageserver": {

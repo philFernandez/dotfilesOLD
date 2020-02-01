@@ -1,6 +1,9 @@
-# q
+# q closes shell normally, but if nvim job is running
+# it drops back into nvim instance
 
-if [[ $jobtexts = 'nvim' ]]; then
+curjobs=(${=jobtexts})
+
+if [[ $curjobs[1] = 'nvim' ]]; then
   fg
 else
   exit

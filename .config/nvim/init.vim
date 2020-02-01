@@ -16,6 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
+Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
@@ -29,7 +30,7 @@ Plug 'xolox/vim-notes'
 Plug '/usr/local/opt/fzf/'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf.vim'
-"Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
+Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
 Plug 'tpope/vim-surround'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'rafi/awesome-vim-colorschemes'
@@ -302,6 +303,11 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 autocmd FileType json syntax match Comment +\/\/.\+$+
+" ALE {{{1
+let g:ale_fixers = {
+      \ 'c' : ['clang-format']
+      \}
+let g:ale_fix_on_save = 1
 " Keymaps {{{1
 let g:user_emmet_leader_key='<C-W>'
 "nnoremap <silent><localleader>a :ALEToggle<cr>
