@@ -3,11 +3,6 @@
   "coc.source.vimtex.enable": true,
   "coc.source.file.ignoreHidden": false,
   "coc.preferences.formatOnSaveFiletypes": ["python"],
-  //"diagnostic.checkCurrentLine": true,
-  //"diagnostic.enableMessage": "never",
-  //"diagnostic.virtualText": true,
-  //"diagnostic.enable": false,
-  //"diagnostic.refreshOnInsertMode": true,
   "diagnostic.displayByAle": true,
 
   // Specific language servers

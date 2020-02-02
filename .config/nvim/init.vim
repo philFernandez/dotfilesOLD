@@ -6,6 +6,8 @@
 "           |||     ||   | '|' ||   ||   |.  '|.      .          "
 "            |     .||. .|. | .||. .||.  '|'  ''|....'           "
 "================================================================"
+" Notes {{{1
+" gO opens TOC in help pages
 " need to be first {{{1
 let mapleader=','
 let maplocalleader='\'
@@ -186,7 +188,6 @@ nmap ga <Plug>(EasyAlign)
 let g:highlightedyank_highlight_duration = 2500
 " Lightline {{{1
 
-
 let g:lightline = {}
 
 let g:lightline.colorscheme = 'wombat'
@@ -216,12 +217,13 @@ let g:lightline.component_type = {
 
 let g:lightline.tabline = {
       \ 'left' : [['buffers']],
-      \ 'right': [['modified'], ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok']]
+      \ 'right': [['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'], ['modified']]
       \ }
 
 let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste', 'spell' ],
-      \           [ 'gitbranch', 'readonly', 'hunksummary' ] ]
+      \           [ 'gitbranch', 'readonly', 'hunksummary' ] ],
+      \ 'right': [['lineinfo'], ['fileformat', 'fileencoding', 'filetype']]
       \ }
 
 let g:lightline.separator = {
@@ -260,9 +262,7 @@ let g:lightline#ale#indicator_infos = ' '
 let g:lightline#ale#indicator_warnings = ' '
 let g:lightline#ale#indicator_errors = ' '
 let g:lightline#ale#indicator_ok = ' '
-
 " ------------------------------------------------
-
 
 " Ultisnips {{{1
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
