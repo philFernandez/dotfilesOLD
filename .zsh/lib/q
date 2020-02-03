@@ -1,7 +1,7 @@
 # q closes shell normally, but if nvim job is running
 # it drops back into nvim instance
 
-curjobs=(${=jobtexts})
+local curjobs=(${=jobtexts})
 
 if [[ $curjobs[1] = 'nvim' ]]; then
   fg

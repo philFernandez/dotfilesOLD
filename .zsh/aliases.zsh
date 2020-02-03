@@ -1,7 +1,8 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 # Commands and Shortcuts {{{1
-alias spede='TERM=xterm-256color ssh user@192.168.0.65'
+alias ssh='TERM=xterm-256color ssh'
+alias spede='ssh philthy@192.168.0.67'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias orange='tab 255 125 24'
 alias red='tab 255 38 0'
@@ -27,7 +28,7 @@ alias light='echo "\x1B]1337;SetProfile=Light\x07"'
 alias dark='echo "\x1B]1337;SetProfile=Default\x07"'
 alias ppath='printf "\033[38;5;038m%s\033[0m\n" $path'
 alias pfpath='printf "\033[38;5;214m%s\033[0m\n" $fpath'
-alias server='TERM=xterm-256color ssh philthy@192.168.0.36'
+alias server='ssh philthy@192.168.0.36'
 alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias regex='man pcresyntax'
 alias tree2='lsd --tree --group-dirs first'

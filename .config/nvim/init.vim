@@ -8,6 +8,12 @@
 "================================================================"
 " Notes {{{1
 " gO opens TOC in help pages
+
+" Type Math and other Symbols
+" :digs! (opens chart)
+" <c-k> <char> <char> (in insert mode, types the symbol)
+" π is typed with <c-k> p*
+" ≤ is <c-k> =<, ≠ is <c-k> !=, ≥ is <c-k> >=
 " need to be first {{{1
 let mapleader=','
 let maplocalleader='\'
@@ -151,6 +157,8 @@ set shiftround
 set shiftwidth=2
 set smarttab
 set tabstop=2
+
+let g:NERDAltDelims_c = 2
 
 " Search {{{1
 set hlsearch
