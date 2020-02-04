@@ -1,0 +1,5 @@
+# emo
+
+print $emoji[$(<~/.zsh/.emoji | fzf)]
+
+# vi: ft=zsh

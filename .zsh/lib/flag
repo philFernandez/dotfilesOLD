@@ -1,0 +1,5 @@
+# flag
+
+print $emoji_flags[$(<~/.zsh/.emoji_flags | fzf)]
+
+# vi: ft=zsh

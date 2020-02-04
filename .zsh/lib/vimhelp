@@ -1,0 +1,12 @@
+# vimhelp
+# If no parameter, then just open general vim help
+# otherwise search for help page matching parameter
+
+local HELP_STR="$1"
+if [[ $# -ne '1' ]]; then
+  nvim +:":help | onl"
+else
+  nvim +:":help $HELP_STR | onl"
+fi
+
+# vi: ft=zsh
