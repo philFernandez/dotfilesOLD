@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+/usr/local/Cellar/sqlite/3.31.1/bin/sqlite3 /Users/philthy/.histdb/zsh-history.db << EOF | fzf
+SELECT argv FROM commands;
+EOF
