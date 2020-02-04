@@ -2,7 +2,7 @@
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 # Commands and Shortcuts {{{1
 alias ssh='TERM=xterm-256color ssh'
-alias spede='ssh philthy@192.168.0.67'
+alias spede='ssh user@192.168.0.65'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias orange='tab 255 125 24'
 alias red='tab 255 38 0'
@@ -14,8 +14,8 @@ alias emacs='emacs -nw'
 alias python=python3
 alias kf='k -f'
 alias watch='watch -td -n 0.1'
-alias sqlite3='/usr/local/Cellar/sqlite/3.30.1/bin/sqlite3'
-alias sql='/usr/local/Cellar/sqlite/3.30.1/bin/sqlite3'
+alias sqlite3='/usr/local/Cellar/sqlite/3.31.1/bin/sqlite3'
+alias sql='/usr/local/Cellar/sqlite/3.31.1/bin/sqlite3'
 alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
 alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'
 alias lls='/bin/ls'
