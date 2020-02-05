@@ -21,7 +21,6 @@ let maplocalleader='\'
 " Vim Plug {{{1
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'lervag/vimtex'
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
 Plug 'dense-analysis/ale'
@@ -125,6 +124,7 @@ set ttyfast
 set report=0
 set synmaxcol=200
 let g:tex_flavor = "latex"
+let g:tex_no_error=1
 
 if !isdirectory("/Users/philthy/.local/share/nvim/.vim-undo-dir")
   call mkdir("/Users/philthy/.local/share/nvim/.vim-undo-dir", "", 0700)
@@ -340,6 +340,7 @@ let g:user_emmet_leader_key='<C-W>'
 
 map <silent><c-t> :TagbarOpenAutoClose<CR>
 nnoremap <silent><leader>f :NERDTreeToggle<CR>
+nnoremap <silent><esc> :NERDTreeClose<CR>
 
 " Delete contents of line w/o removing the line itself
 nnoremap dl I<Esc>d$

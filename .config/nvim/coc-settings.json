@@ -1,6 +1,5 @@
 {
   // General coc.nvim settings
-  "coc.source.vimtex.enable": true,
   "coc.source.file.ignoreHidden": false,
   "coc.preferences.formatOnSaveFiletypes": ["python"],
   "diagnostic.displayByAle": true,
@@ -21,6 +20,11 @@
   "python.venvPath": "~/.local/share/virtualenvs",
   "python.jediPath": "~/.local/share/virtualenvs/Libs-LCd87nCH/lib/python3.8/site-packages",
   "python.linting.pylintPath": "~/.local/share/virtualenvs/Libs-LCd87nCH/bin/pylint",
-  "python.formatting.autopep8Path": "/Users/philthy/.local/share/virtualenvs/Libs-LCd87nCH/bin/autopep8"
+  "python.formatting.autopep8Path": "/Users/philthy/.local/share/virtualenvs/Libs-LCd87nCH/bin/autopep8",
 
+  // coc-texlab
+  "latex.build.executable": "/Library/TeX/texbin/latexmk",
+  "latex.build.args": ["-pdf"],
+  "latex.build.onSave": true,
+  "latex.lint.onChange": true
 }
