@@ -24,7 +24,7 @@
 
   // coc-texlab
   "latex.build.executable": "/Library/TeX/texbin/latexmk",
-  "latex.build.args": ["-pdf"],
+  "latex.build.args": ["-lualatex"],
   "latex.build.onSave": true,
   "latex.lint.onChange": true
 }

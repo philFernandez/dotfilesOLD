@@ -336,7 +336,6 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 " Keymaps {{{1
 let g:user_emmet_leader_key='<C-W>'
-"nnoremap <silent><localleader>a :ALEToggle<cr>
 
 map <silent><c-t> :TagbarOpenAutoClose<CR>
 nnoremap <silent><leader>f :NERDTreeToggle<CR>

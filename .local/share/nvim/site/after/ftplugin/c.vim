@@ -17,9 +17,11 @@ nnoremap <c-b><c-b> :!gcc -o %:r % && ./%:r<cr>
 
 
 " Need this for clang_complete and AutoPairs to work together
-let g:AutoPairsMapCR = 0
-imap <silent><CR> <CR><Plug>AutoPairsReturn
+"let g:AutoPairsMapCR = 0
+"imap <silent><CR> <CR><Plug>AutoPairsReturn
 
 set shiftwidth=4
 set tabstop=4
 set colorcolumn=80
+
+nnoremap <silent><localleader>a :ALEToggle<cr>
