@@ -6,7 +6,8 @@ then
     echo "$@[i]"
     all_files="$all_files ""$@[i]"
   done
-  cat $(echo $all_files) | nl -ba | sed -e 's/  //g' -e 's/^ //g' | fzf
+  #cat $(echo $all_files) | nl -ba | sed -e 's/  //g' -e 's/^ //g' | fzf
+  cat $(echo $all_files) | awk '{printf "%d   %s\n", NR, $0}'| fzf
 else
   for i in {1..$#}
   do
