@@ -70,7 +70,7 @@ bindkey -M vicmd ' ' vi-add-eol # space goes to eol in insert mode
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
-bindkey "^?" backward-delete-char
+bindkey "\e[3~" delete-char # make del key work correctly
 bindkey '^X^E' edit-command-line # open vim for writing command
 zle -N edit-command-line
 bindkey '^F' vi-end-of-line # accept autocomplete
