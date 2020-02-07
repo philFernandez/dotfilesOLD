@@ -1,3 +1,4 @@
+
         ######################################################################
         #        |'''''||   .|'''.|  '||'  '||' '||''|.     ..|'''.|         #
         #            .|'    ||..  '   ||    ||   ||   ||  .|'     '          #
@@ -5,7 +6,6 @@
         #         .|'      .     '||  ||    ||   ||   |.  '|.      .         #
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
-
 
 # {{{1 iterm2 set tab/window title
 # Set iterm window/tab titles empty
@@ -222,6 +222,6 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 zstyle ':completion:*' max-errors 2
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/Users/philthy/.zsh/.zwc_dotfiles/.zshrc'
-# modeline (¡¡KEEP AT BOTTOM!!){{{1
+zstyle ':completion:*' insert-unambiguous true
+# MODELINE {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
