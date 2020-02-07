@@ -1,0 +1,9 @@
+# regtest: pass in pattern_file containing regex to test
+# and pass in file with text to test match.
+
+local pattern_file=$1
+local test_file=$2
+watch -td -n 0.1 "cat $pattern_file && echo ------------ \
+  && rg --no-filename -w -f $pattern_file $test_file"
+
+# vi: ft=zsh
