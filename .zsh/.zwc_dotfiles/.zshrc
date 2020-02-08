@@ -146,6 +146,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # set vscode as default editor
 #export EDITOR='code -w'
 
+export BAT_THEME="Monokai Extended Light"
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
