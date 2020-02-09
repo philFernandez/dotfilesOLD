@@ -1,4 +1,4 @@
-
+au BufEnter * setlocal ft=notes
 " allows editing and line wrapping
 
 " insert bullet point

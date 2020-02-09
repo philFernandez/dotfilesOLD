@@ -23,7 +23,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
@@ -202,30 +202,21 @@ let g:lightline.colorscheme = 'wombat'
 
 let g:lightline.component_function = {
       \ 'gitbranch'  : 'gitbranch#name',
+      \ 'cocstatus'  : 'coc#status',
       \ 'hunksummary': 'hunkstatus#gitgutter'
       \ }
 
 let g:lightline.component_expand = {
       \ 'buffers': 'lightline#bufferline#buffers',
-      \ 'linter_checking': 'lightline#ale#checking',
-      \ 'linter_infos': 'lightline#ale#infos',
-      \ 'linter_warnings': 'lightline#ale#warnings',
-      \ 'linter_errors': 'lightline#ale#errors',
-      \ 'linter_ok': 'lightline#ale#ok'
       \ }
 
 let g:lightline.component_type = {
       \ 'buffers' : 'tabsel',
-      \ 'linter_checking': 'right',
-      \ 'linter_infos': 'right',
-      \ 'linter_warnings': 'warning',
-      \ 'linter_errors': 'error',
-      \ 'linter_ok': 'right'
       \ }
 
 let g:lightline.tabline = {
       \ 'left' : [['buffers']],
-      \ 'right': [['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'], ['modified']]
+      \ 'right': [['modified'], ['cocstatus']]
       \ }
 
 let g:lightline.active = {
@@ -265,11 +256,10 @@ let g:lightline#bufferline#number_map = {
 " ------------------------------------------------
 
 " ALE Lightline ----------(separate plugin)-------
-let g:lightline#ale#indicator_checking = ' '
-let g:lightline#ale#indicator_infos = ' '
-let g:lightline#ale#indicator_warnings = ' '
-let g:lightline#ale#indicator_errors = ' '
-let g:lightline#ale#indicator_ok = ' '
+"let g:lightline#ale#indicator_infos = ' '
+"let g:lightline#ale#indicator_warnings = ' '
+"let g:lightline#ale#indicator_errors = ' '
+"let g:lightline#ale#indicator_ok = ' '
 " ------------------------------------------------
 
 " Ultisnips {{{1
@@ -330,10 +320,10 @@ function! s:check_back_space() abort
 endfunction
 autocmd FileType json syntax match Comment +\/\/.\+$+
 " ALE {{{1
-let g:ale_fixers = {
-      \ 'c' : ['clang-format']
-      \}
-let g:ale_fix_on_save = 1
+"let g:ale_fixers = {
+      "\ 'c' : ['clang-format']
+      "\}
+"let g:ale_fix_on_save = 1
 " Keymaps {{{1
 let g:user_emmet_leader_key='<C-W>'
 
@@ -355,7 +345,8 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-tnoremap <c-n> <c-\><c-n>
+"tnoremap <c-n> <c-\><c-n>
+tnoremap <c-k> <c-\><c-n><c-w>k
 
 "copy into sys clipboard
 vnoremap <silent> cp "+y

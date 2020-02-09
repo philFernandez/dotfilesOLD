@@ -125,6 +125,7 @@ fi
 # Plugins {{{1
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
+
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # histdb ----------------
@@ -146,7 +147,10 @@ HIST_STAMPS="mm/dd/yyyy"
 # set vscode as default editor
 #export EDITOR='code -w'
 
-export BAT_THEME="Monokai Extended Light"
+export BAT_THEME="Monokai Extended Bright"
+
+# for light theme
+#export BAT_THEME="Monokai Extended Light"
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
@@ -215,8 +219,8 @@ setopt NONOMATCH \
 
 # Completion {{{1
 # The following lines were added by compinstall
-#zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle ':completion:*' completer _list _complete _ignored _correct _approximate
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+#zstyle ':completion:*' completer _list _complete _ignored _correct _approximate
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'

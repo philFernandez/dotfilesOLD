@@ -1,8 +1,9 @@
 {
   // General coc.nvim settings
   "coc.source.file.ignoreHidden": false,
-  "coc.preferences.formatOnSaveFiletypes": ["python"],
-  "diagnostic.displayByAle": true,
+  "coc.preferences.formatOnSaveFiletypes": ["python", "c"],
+  //"diagnostic.displayByAle": true,
+  "diagnostic.checkCurrentLine": true,
 
   // Specific language servers
   "languageserver": {
