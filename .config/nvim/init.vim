@@ -158,7 +158,10 @@ set shiftwidth=2
 set smarttab
 set tabstop=2
 
+" NERDTree/Commenter {{{1
 let g:NERDAltDelims_c = 2
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeMinimalUI = 1
 
 " Search {{{1
 set hlsearch
@@ -326,7 +329,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 "let g:ale_fix_on_save = 1
 " Keymaps {{{1
 let g:user_emmet_leader_key='<C-W>'
-
+let g:tagbar_vertical = 30
 map <silent><c-t> :TagbarOpenAutoClose<CR>
 nnoremap <silent><leader>f :NERDTreeToggle<CR>
 nnoremap <silent><esc> :NERDTreeClose<CR>
@@ -345,8 +348,8 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-"tnoremap <c-n> <c-\><c-n>
-tnoremap <c-k> <c-\><c-n><c-w>k
+tnoremap <c-n> <c-\><c-n>
+"tnoremap <c-k> <c-\><c-n><c-w>k
 
 "copy into sys clipboard
 vnoremap <silent> cp "+y
