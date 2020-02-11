@@ -159,9 +159,7 @@ set smarttab
 set tabstop=2
 
 " NERDTree/Commenter {{{1
-let g:NERDAltDelims_c = 2
 let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeMinimalUI = 1
 
 " Search {{{1
 set hlsearch
