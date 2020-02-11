@@ -92,6 +92,8 @@ bindkey '^h' _complete_help
 
 # Make delete key work in vi-mode
 bindkey -a '^[[3~' delete-char
+# Make backspace key work in vi-mode
+bindkey "^?" backward-delete-char
 
 # Files to Source {{{1
 

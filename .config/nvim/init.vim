@@ -343,12 +343,12 @@ nnoremap dl I<Esc>d$
 "=======================
 
 " pane navigation
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+"nnoremap <c-j> <c-w>j
+"nnoremap <c-k> <c-w>k
+"nnoremap <c-h> <c-w>h
+"nnoremap <c-l> <c-w>l
 
-tnoremap <c-n> <c-\><c-n>
+"tnoremap <c-m> <c-\><c-n>
 "tnoremap <c-k> <c-\><c-n><c-w>k
 
 "copy into sys clipboard
