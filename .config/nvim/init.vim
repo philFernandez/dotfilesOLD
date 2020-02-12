@@ -155,7 +155,9 @@ set shiftround
 set shiftwidth=2
 set smarttab
 set tabstop=2
-
+" Various Plugin Settings {{{1
+let g:user_emmet_leader_key='<C-W>'
+let g:tagbar_vertical = 30
 " NERDTree/Commenter {{{1
 let g:NERDTreeQuitOnOpen = 1
 
@@ -315,11 +317,13 @@ function! s:check_back_space() abort
 endfunction
 autocmd FileType json syntax match Comment +\/\/.\+$+
 " Keymaps {{{1
-let g:user_emmet_leader_key='<C-W>'
-let g:tagbar_vertical = 30
+
 map <silent><c-t> :TagbarOpenAutoClose<CR>
 nnoremap <silent><leader>f :NERDTreeToggle<CR>
 nnoremap <silent><esc> :NERDTreeClose<CR>
+
+" Show hightlight group of token under cursor
+map <F10> :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
 
 " Delete contents of line w/o removing the line itself
 nnoremap dl I<Esc>d$
