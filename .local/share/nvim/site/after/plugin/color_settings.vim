@@ -14,7 +14,6 @@ set termguicolors " keep this before color theme setting
 
 " Themes that I like {{{1
 "color solarized8_high
-"color onehalfdark
 "color materialbox
 "color onedark
 "color tender

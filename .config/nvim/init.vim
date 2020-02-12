@@ -23,7 +23,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
-"Plug 'dense-analysis/ale'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
@@ -43,7 +43,6 @@ Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
-Plug 'terryma/vim-multiple-cursors' " https://github.com/terryma/vim-multiple-cursors
 Plug 'Clavelito/indent-awk.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'ryanoasis/vim-devicons'
@@ -51,7 +50,6 @@ Plug 'cespare/vim-toml'
 Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/applescript.vim'
 Plug 'lilyball/vim-swift'
-Plug 'maximbaz/lightline-ale'
 "Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
@@ -256,12 +254,6 @@ let g:lightline#bufferline#number_map = {
       \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
 " ------------------------------------------------
 
-" ALE Lightline ----------(separate plugin)-------
-"let g:lightline#ale#indicator_infos = ' '
-"let g:lightline#ale#indicator_warnings = ' '
-"let g:lightline#ale#indicator_errors = ' '
-"let g:lightline#ale#indicator_ok = ' '
-" ------------------------------------------------
 
 " Ultisnips {{{1
 let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
@@ -303,11 +295,13 @@ if exists("AutoPairs")
   let g:AutoPairsShortcutToggle = '<F10>'
 endif
 
-" Easy Clip & Vim-Notes {{{1
-let g:notes_directories = ['~/Notes/viNotes']
+" Easy Clip {{{1
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseSubstituteDefaults = 1
-
+" Vimwiki & Vinotes {{{1
+let g:notes_directories = ['~/Notes/viNotes']
+let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 " Completion {{{1
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -320,11 +314,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 autocmd FileType json syntax match Comment +\/\/.\+$+
-" ALE {{{1
-"let g:ale_fixers = {
-      "\ 'c' : ['clang-format']
-      "\}
-"let g:ale_fix_on_save = 1
 " Keymaps {{{1
 let g:user_emmet_leader_key='<C-W>'
 let g:tagbar_vertical = 30
