@@ -147,7 +147,7 @@ au BufWrite *.tex :Autoformat
 au BufWrite * :RemoveTrailingSpaces
 
 " No automatic comments on next line
-autocmd FileType vim,zsh,bash,sh,python setlocal formatoptions-=ro
+autocmd FileType * setlocal formatoptions-=ro
 " Indent Settings {{{1
 set autoindent
 set expandtab " use spaces instead of tabs
