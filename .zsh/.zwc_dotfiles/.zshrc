@@ -6,12 +6,12 @@
         #         .|'      .     '||  ||    ||   ||   |.  '|.      .         #
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
-
 # {{{1 iterm2 set tab/window title
 # Set iterm window/tab titles empty
 # if you want to set it to somehthing,
 # put the text between the two things (\033] and \007)
 # outside of the quotes
+#printf "\e[038;5;%dm" $[$RANDOM%229]; cowsay $(fortune -a wisdom)
 
 #echo -ne "\033]0;"Put Text Here"\007" # window title i think?
 #echo -ne "\033]1;"Put Text Here"\007" # tab title i think?

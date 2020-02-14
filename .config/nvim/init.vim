@@ -304,6 +304,13 @@ let g:EasyClipUseSubstituteDefaults = 1
 let g:notes_directories = ['~/Notes/viNotes']
 let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" Dont highjack all markdown files
+let g:vimwiki_global_ext = 0
+" Conceal fences around fenced code
+let g:vimwiki_conceal_pre = 1
+let g:vimwiki_conceallevel=3
+
 " Completion {{{1
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -387,8 +394,9 @@ command! -bang -nargs=? -complete=dir Files
 nnoremap <silent> <leader>l :Buf<CR>
 nnoremap <silent> <leader>k :Win<CR>
 
-map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC135/Homework/PL_1/html/ fernandp@titan.ecs.csus.edu:/gaia/class/student/fernandp/html/<CR>
-map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC159/Homework/Phase1/p-code2/ user@192.168.0.65:/home/user/CSC159/TEST<CR>
+"map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC135/Homework/PL_1/html/ fernandp@titan.ecs.csus.edu:/gaia/class/student/fernandp/html/<CR>
+"map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC159/Homework/Phase1/p-code2/ user@192.168.0.65:/home/user/CSC159/TEST<CR>
+map <c-b> :w<CR>:!rsync -avr --exclude '.git' --exclude '.idea' --exclude '.vim' ~/Spring_2020/CSC159/Homework/Phase2/CSC159_Phase1/ user@192.168.0.65:/home/user/CSC159/Phase2<CR>
 
 " commands {{{1
 command! Zrecompile :!zrecompile
