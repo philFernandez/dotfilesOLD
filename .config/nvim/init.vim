@@ -80,6 +80,7 @@ set ttimeoutlen=0
 set cursorline
 autocmd InsertEnter * set nocursorline
 autocmd InsertLeave * set cursorline
+set scrollback=1
 
 " fix broken cursor line --------------------------------
 function! s:CustomizeColors()
@@ -102,8 +103,8 @@ augroup TermThings
   " Events Available: TermOpen, TermEnter, TermLeave, TermClose
   autocmd!
   autocmd TermOpen * setlocal nonumber
-  autocmd TermOpen,TermEnter * setlocal notermguicolors
-  autocmd TermClose,TermLeave * setlocal termguicolors
+  "autocmd TermOpen,TermEnter * setlocal notermguicolors
+  "autocmd TermClose,TermLeave * setlocal termguicolors
 augroup END
 
 " Other VIM {{{1
@@ -353,7 +354,7 @@ nnoremap dl I<Esc>d$
 "nnoremap <c-h> <c-w>h
 "nnoremap <c-l> <c-w>l
 
-tnoremap <c-n> <c-\><c-n>
+"tnoremap <c-k> <c-\><c-n>
 "tnoremap <c-k> <c-\><c-n><c-w>k
 
 "copy into sys clipboard
