@@ -98,7 +98,14 @@ augroup OnColorScheme
   autocmd ColorScheme,BufEnter,BufWinEnter * call s:CustomizeColors()
 augroup END
 " -------------------------------------------------------
-au TermOpen * setlocal nonumber
+augroup TermThings
+  " Events Available: TermOpen, TermEnter, TermLeave, TermClose
+  autocmd!
+  autocmd TermOpen * setlocal nonumber
+  autocmd TermOpen,TermEnter * setlocal notermguicolors
+  autocmd TermClose,TermLeave * setlocal termguicolors
+augroup END
+
 " Other VIM {{{1
 set mouse=a
 set lazyredraw
@@ -346,7 +353,7 @@ nnoremap dl I<Esc>d$
 "nnoremap <c-h> <c-w>h
 "nnoremap <c-l> <c-w>l
 
-"tnoremap <c-m> <c-\><c-n>
+tnoremap <c-n> <c-\><c-n>
 "tnoremap <c-k> <c-\><c-n><c-w>k
 
 "copy into sys clipboard
