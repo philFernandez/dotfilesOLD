@@ -37,9 +37,9 @@ Plug 'xolox/vim-notes'
 Plug '/usr/local/opt/fzf/'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c' ] }
+Plug 'justinmk/vim-syntax-extra', { 'for': [ 'cpp', 'c', 'vimwiki' ] }
 Plug 'tpope/vim-surround'
-Plug 'vim-python/python-syntax', { 'for': 'python' }
+Plug 'vim-python/python-syntax', { 'for': [ 'python', 'vimwiki' ]}
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
@@ -52,7 +52,7 @@ Plug 'vim-scripts/applescript.vim'
 Plug 'lilyball/vim-swift'
 "Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mengelbrecht/lightline-bufferline'
-Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
+Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango', 'vimwiki' ] }
 "Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
 set nocompatible
@@ -396,7 +396,7 @@ nnoremap <silent> <leader>k :Win<CR>
 
 "map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC135/Homework/PL_1/html/ fernandp@titan.ecs.csus.edu:/gaia/class/student/fernandp/html/<CR>
 "map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC159/Homework/Phase1/p-code2/ user@192.168.0.65:/home/user/CSC159/TEST<CR>
-map <c-b> :w<CR>:!rsync -avr --exclude '.git' --exclude '.idea' --exclude '.vim' ~/Spring_2020/CSC159/Homework/Phase2/CSC159_Phase1/ user@192.168.0.65:/home/user/CSC159/Phase2<CR>
+"map <c-b> :w<CR>:!rsync -avr --exclude '.git' --exclude '.idea' --exclude '.vim' ~/Spring_2020/CSC159/Homework/Phase2/CSC159_Phase1/ user@192.168.0.65:/home/user/CSC159/Phase2<CR>
 
 " commands {{{1
 command! Zrecompile :!zrecompile
