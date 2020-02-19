@@ -1,3 +1,4 @@
+# run codename1 app
 cn1() {
   (clear;cd ~/eclipse-workspace/A4Prj && java -cp dist/A4Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a4.Starter)
 }

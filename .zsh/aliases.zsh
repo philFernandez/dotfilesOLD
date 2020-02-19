@@ -8,6 +8,7 @@ alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias orange='tab 255 125 24'
 alias red='tab 255 38 0'
 alias green='tab 39 190 0'
+alias teal='tab 0 255 200'
 alias blue='tab 39 190 255'
 alias yellow='tab 221 226 106'
 alias ag=rg
@@ -76,7 +77,6 @@ alias zshcond="man -P 'less +1884' zshall"
 alias zshexpn="man -P 'less +2538' zshall"
 alias zshprompt="man -P 'less +2099' zshall"
 # Bat & Fzf {{{1
-alias bat="LESS+=-S bat"
 alias fhw='shw | fzf'
 alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 	"bat --theme=Monokai\ Extended\ Bright \

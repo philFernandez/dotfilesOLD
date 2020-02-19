@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # Remove any undo files that are > ~1 week old
-UNDO_DIR=$HOME/.vim/.vim-undo-dir
+UNDO_DIR=$HOME/.local/share/nvim/.vim-undo-dir
 cd "$UNDO_DIR" && find . -mtime +5 -exec rm {} \;
 
