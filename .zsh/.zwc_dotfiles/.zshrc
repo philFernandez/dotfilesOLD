@@ -149,6 +149,7 @@ HIST_STAMPS="mm/dd/yyyy"
 #export EDITOR='code -w'
 
 export BAT_THEME="Monokai Extended Bright"
+export BAT_STYLE="changes,header,numbers,snip"
 
 # for light theme
 #export BAT_THEME="Monokai Extended Light"
