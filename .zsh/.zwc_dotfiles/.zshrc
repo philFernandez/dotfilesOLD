@@ -19,8 +19,17 @@
 #echo -ne "\033]1;""\007" # tab title i think?
 # p10k {{{1
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
+
 stty -ixon
+
+# Generated p10k theme
+[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
+
+# My old p9k theme
+#[[ ! -f $HOME/.powerlevel_settings ]] || source $HOME/.powerlevel_settings
+
+# My original generated p10k theme
+#[[ ! -f $ZDOTDIR/.myP10k.zsh ]] || source $ZDOTDIR/.myP10k.zsh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -28,6 +37,7 @@ stty -ixon
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 
 # Autoload {{{1
 zmodload zsh/complist # has to be before compinit
@@ -96,33 +106,10 @@ bindkey "^?" backward-delete-char
 
 # Files to Source {{{1
 
-#[[ -d ~/.reminders ]] && [[ ! "$VIMRUNTIME" ]] && [[ ! "$RANGER_LEVEL" ]] && \
-  #(
-  #cd ~/.reminders;
-  #shw_rc() {
-    #local list_of_files
-    #for entry in $(/bin/ls); do
-      #if [ -s $entry ]; then
-        #list_of_files+=("$entry")
-      #fi
-    #done
-    #bat -p $list_of_files
-  #}
-#shw_rc
-#)
-
-# set theme in another file that isn't under source control
-
-# only load all of powerlevel9k settings if powerlevel9k is the set theme
-#if [[ $ZSH_THEME == 'powerlevel10k/powerlevel10k' ]]; then
-#source ~/.powerlevel_settings
-#fi
 
 if [[ -s ~/.dircolors ]]; then
   source ~/.dircolors
 fi
-
-
 # Plugins {{{1
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 

@@ -38,8 +38,10 @@ hi Search cterm=bold gui=bold guifg=yellow guibg=blue
 "hi Search cterm=bold,underline gui=bold guifg=yellow guibg=NONE
 " Prevent annoying highlighting of matching pairs
 hi MatchParen NONE
-hi VimwikiWeblink1 cterm=bold gui=bold guifg=lightgreen
-hi Vimwikilink cterm=bold gui=bold guifg=lightgreen
+hi VimwikiWeblink1 cterm=bold gui=bold guifg=cyan
+hi Vimwikilink cterm=bold gui=bold guifg=cyan
+hi Vimwikibold cterm=bold gui=bold guifg=lightgreen
+hi VimwikiTag guifg=grey
 " Get italic comments in themes that dont already have them
 "hi Comment cterm=italic gui=italic
 

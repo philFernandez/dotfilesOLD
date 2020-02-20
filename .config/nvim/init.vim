@@ -11,7 +11,7 @@
 
 " Type Math and other Symbols
 " :digs! (opens chart)
-" <c-k> <char> <char> (in insert mode, types the symbol)
+" <c-k> <char><char> (in insert mode, types the symbol)
 " π is typed with <c-k> p*
 " ≤ is <c-k> =<, ≠ is <c-k> !=, ≥ is <c-k> >=
 " need to be first {{{1
@@ -317,7 +317,7 @@ let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
 let g:vimwiki_global_ext = 0
 " Conceal fences around fenced code
 let g:vimwiki_conceal_pre = 1
-let g:vimwiki_conceallevel=3
+let g:vimwiki_conceallevel=2
 
 " Completion {{{1
 inoremap <silent><expr> <TAB>
