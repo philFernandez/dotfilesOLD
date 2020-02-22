@@ -78,9 +78,8 @@ set ttimeoutlen=0
 "---------------------
 
 set cursorline
-autocmd InsertEnter * set nocursorline
-autocmd InsertLeave * set cursorline
-set scrollback=1
+"autocmd InsertEnter * set nocursorline
+"autocmd InsertLeave * set cursorline
 
 " fix broken cursor line --------------------------------
 function! s:CustomizeColors()
