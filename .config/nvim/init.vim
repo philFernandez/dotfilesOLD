@@ -76,7 +76,9 @@ set splitright
 set timeoutlen=1000
 set ttimeoutlen=0
 "---------------------
-set cursorline
+"set cursorline
+"autocmd InsertEnter * set nocursorline
+"autocmd InsertLeave * set cursorline
 
 " fix broken cursor line --------------------------------
 function! s:CustomizeColors()
