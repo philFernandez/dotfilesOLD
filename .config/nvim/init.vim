@@ -315,9 +315,11 @@ let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
 
 " Dont highjack all markdown files
 let g:vimwiki_global_ext = 0
+" Dont highjack tab key
+let g:vimwiki_table_mappings = 0
 " Conceal fences around fenced code
 let g:vimwiki_conceal_pre = 1
-let g:vimwiki_conceallevel=2
+let g:vimwiki_conceallevel=3
 
 " Completion {{{1
 inoremap <silent><expr> <TAB>
