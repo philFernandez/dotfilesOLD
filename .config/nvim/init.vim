@@ -166,6 +166,7 @@ let g:user_emmet_leader_key='<C-W>'
 let g:tagbar_vertical = 30
 " NERDTree/Commenter {{{1
 let g:NERDTreeQuitOnOpen = 1
+let g:NERDAltDelims_c = 1
 
 " Search {{{1
 set hlsearch
