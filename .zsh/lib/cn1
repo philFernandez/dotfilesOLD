@@ -1,5 +1,7 @@
 # run codename1 app
-cn1() {
-  (clear;cd ~/eclipse-workspace/A4Prj && java -cp dist/A4Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a4.Starter)
-}
+# Takes number as parameter that represents the assignment number
+# ie, assignment 1 requires cn1 1, assignment 2 requires cn1 2, etc
+local n=$1
+echo ~/eclipse-workspace/A${n}Prj
+(clear;cd ~/eclipse-workspace/A${n}Prj && java -cp dist/A${n}Prj.jar:JavaSE.jar com.codename1.impl.javase.Simulator com.mycompany.a${n}.Starter)
 # vi: ft=zsh

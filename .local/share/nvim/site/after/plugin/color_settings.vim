@@ -55,8 +55,8 @@ set guicursor+=i:block-iCursor/iCursor-blinkon0
 " =========================================================================
 
 " Vimwiki Customization =====================================
-hi VimwikiWeblink1 cterm=bold gui=bold guifg=cyan
-hi Vimwikilink cterm=bold gui=bold guifg=cyan
+hi VimwikiWeblink1 cterm=bold gui=bold guifg=#66D9EF
+hi Vimwikilink cterm=bold gui=bold guifg=#66D9EF
 hi Vimwikibold cterm=bold gui=bold guifg=lightgreen
 hi VimwikiTag guifg=grey
 hi VimwikiTodo gui=bold guifg=yellow
@@ -69,5 +69,4 @@ hi VimwikiItalicT gui=bold,italic guifg=#FF2600
 hi VimwikiBoldT gui=bold guifg=#FF2600
 hi VimwikiDelTextT gui=italic guifg=grey
 " ===========================================================
-
 

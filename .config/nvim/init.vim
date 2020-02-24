@@ -319,7 +319,8 @@ let g:vimwiki_table_mappings = 0
 " Conceal fences around fenced code
 let g:vimwiki_conceal_pre = 1
 let g:vimwiki_conceallevel=3
-
+" Conceal tags
+autocmd FileType vimwiki :syntax match Entity ":\w*:" conceal
 " Completion {{{1
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
