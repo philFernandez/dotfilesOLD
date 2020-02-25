@@ -2,6 +2,10 @@
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 # Commands and Shortcuts {{{1
 alias wiki='vim -c VimwikiIndex'
+alias gwiki='green && tname Wiki && wiki'
+alias ovim='orange && tname Editor && nvim'
+alias bf='blue && tname Ranger && ranger'
+alias tcmd='teal && tname CMDs'
 alias ssh='TERM=xterm-256color ssh'
 alias spede='ssh user@192.168.0.65'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
@@ -38,7 +42,7 @@ alias tree2='lsd --tree --group-dirs first'
 
 alias cls=clear
 alias c=clear
-alias cl='clear;lsd --group-dirs first'
+alias cl='clear;lsd --group-dirs first -1'
 alias cll='clear;ls -A'
 alias clll='clear;ls -Al'
 alias ll='lsd --almost-all -l --blocks date,name --date relative'
