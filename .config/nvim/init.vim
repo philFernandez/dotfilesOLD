@@ -320,7 +320,7 @@ let g:vimwiki_table_mappings = 0
 let g:vimwiki_conceal_pre = 1
 let g:vimwiki_conceallevel=3
 " Conceal tags
-autocmd FileType vimwiki :syntax match Entity ":\w*:" conceal
+"autocmd FileType vimwiki :syntax match Entity ":\w*:" conceal
 " Completion {{{1
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -367,7 +367,7 @@ nnoremap <silent> cv "+p
 map <plug>DisableNERDCommenterAltDelims <plug>NERDCommenterAltDelims
 map <plug>DisableCalendarH <plug>CalendarH
 map <plug>DisableCalendarV <plug>CalendarV
-nnoremap <silent> <leader>ca :Calendar<cr>
+nnoremap <silent> <leader>ca :CalendarH<cr>
 nnoremap gm m
 nnoremap <silent> <c-s> :Startify<CR>
 nnoremap <silent> <leader>cd :cd %:p:h<cr>
