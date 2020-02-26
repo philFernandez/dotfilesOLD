@@ -42,7 +42,7 @@ alias tree2='lsd --tree --group-dirs first'
 
 alias cls=clear
 alias c=clear
-alias cl='clear;lsd --group-dirs first -1'
+alias cl='clear;lsd --group-dirs first'
 alias cll='clear;ls -A'
 alias clll='clear;ls -Al'
 alias ll='lsd --almost-all -l --blocks date,name --date relative'

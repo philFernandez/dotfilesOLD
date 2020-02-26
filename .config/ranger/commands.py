@@ -16,8 +16,35 @@ import os
 from ranger.api.commands import Command
 
 
+class cpdir(Command):
+    """
+    :cpdir
+
+    Copies current directory to system clipboard
+    """
+    escape_macros_for_shell = True
+
+    def execute(self):
+        command = 'pwd | tr -d "\n" | pbcopy'
+        self.fm.execute_command(command)
+
+
+class finder(Command):
+    """
+    :finder
+
+    Opens current directory in Finder.app
+    """
+
+    def execute(self):
+        command = 'open .'
+        self.fm.execute_command(command)
+
+
 # Any class that is a subclass of "Command" will be integrated into ranger as a
 # command.  Try typing ":my_edit<ENTER>" in ranger!
+
+
 class my_edit(Command):
     # The so-called doc-string of the class will be visible in the built-in
     # help that is accessible by typing "?c" inside ranger.
