@@ -56,8 +56,8 @@ Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
 "Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
 set nocompatible
+syntax enable
 filetype plugin indent on
-syntax on
 
 " UI Settings {{{1
 " fix issues with lagging when matching parenthisis/brackets
