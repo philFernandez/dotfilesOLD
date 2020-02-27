@@ -1,0 +1,17 @@
+# hex2dec
+
+if [[ $1 = '-r' ]]; then
+  # convert decimal to hexidecimal
+  printf "0x%X\n" $2
+else
+  # convert hexidecimal to decimal
+  local hex
+  hex=$1
+  if [[ $hex[1] != '0' ]] || [[ $hex[2] != 'x' ]]; then
+    print "input must be in form 0x###"
+    return 1
+  fi
+  printf "%d\n" $1
+fi
+
+# vi: ft=zsh

@@ -1,0 +1,9 @@
+# cd into direcory by only giving some of its ending chars
+# Ex: like cd *1 to cd into Folder_1
+#     Now we can do cde 1
+
+
+cd *$1
+
+
+# vi: ft=zsh
