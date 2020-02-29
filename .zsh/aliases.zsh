@@ -1,5 +1,7 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
+alias score='scores && echo "                 Avg    $(avg)"'
+
 # Commands and Shortcuts {{{1
 alias wiki='vim -c VimwikiIndex'
 alias gwiki='green && tname Wiki && wiki'
@@ -62,6 +64,7 @@ alias v='nvim'
 alias py='python3'
 alias fl='fd -HI -d1'
 alias zrl='zrecompile && exec zsh'
+
 
 
 # Directory Things {{{1

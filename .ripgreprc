@@ -29,6 +29,8 @@ path:style:bold
 -S
 --glob
 !.git/*
+--ignore-file
+/Users/philthy/.rgignore
 #######################
 
 ## Types ##############
