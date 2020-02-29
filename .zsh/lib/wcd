@@ -1,0 +1,17 @@
+# wcd cd to the directory of an executable
+
+local the_prog
+local the_dir
+
+the_prog=$1
+the_dir=${$(which $the_prog):h}
+
+if [[ $the_dir[1] == '/' ]]; then
+  cd ${=the_dir}
+else
+  which $the_prog
+  #echo $(which $the_prog)
+fi
+
+
+# vi: ft=zsh
