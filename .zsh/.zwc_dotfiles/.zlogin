@@ -1,5 +1,7 @@
 # Get rid of this if java 1.8 is needed
 #path=("/usr/local/opt/openjdk/bin" $path)
+# Kotlin
+path=("/Users/philthy/Downloads/kotlin-native-macos-1.3.61/bin" $path)
 path=("/usr/local/Cellar/imagemagick@6/6.9.10-91/bin" $path)
 path=("/usr/local/opt/llvm@9/bin" $path)
 path=("/Users/philthy/Documents/Software/latexindent" $path)

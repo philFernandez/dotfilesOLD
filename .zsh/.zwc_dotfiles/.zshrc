@@ -167,11 +167,11 @@ export LSCOLORS=ExGxbadxCxbxbxCxCxbxbx
 
 export CLICOLOR=true
 
-export FZF_DEFAULT_COMMAND="(git ls-tree -r --name-only HEAD 2> /dev/null \
-|| rg --hidden --no-ignore --files 2> /dev/null)"
+#export FZF_DEFAULT_COMMAND="(git ls-tree -r --name-only HEAD 2> /dev/null \
+#|| rg --hidden --no-ignore --files 2> /dev/null)"
 #export FZF_DEFAULT_COMMAND='(rg --hidden --no-ignore --files 2> /dev/null)'
 
-#export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -H)'
+export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -HI)'
 
 export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
 --color pointer:220 --color hl+:118 --color fg:251

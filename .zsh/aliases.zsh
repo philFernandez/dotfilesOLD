@@ -40,6 +40,7 @@ alias server='ssh philthy@192.168.0.36'
 alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias regex='man pcresyntax'
 alias tree2='lsd --tree --group-dirs first'
+alias time='/usr/bin/time'
 #alias tree='br'
 
 alias cls=clear

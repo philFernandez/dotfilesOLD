@@ -1,6 +1,6 @@
 if [[ $1 == '-y' ]]
 then
-  fd -HI -d1 --exclude .DS_Store -0 | xargs -0 rm -vfr
+  fd -HI -d1 --exclude .DS_Store -0 | xargs -0 rm -fr
 else
   print -n 'Are you sure you want to zap everything?!?! [yn] '
   read -q yes_zap
@@ -8,7 +8,7 @@ else
   echo
   if [[ $yes_zap == 'y' ]]
   then
-    fd -HI -d1 --exclude .DS_Store -0 | xargs -0 rm -vfr
+    fd -HI -d1 --exclude .DS_Store -0 | xargs -0 rm -fr
   fi
 fi
 # vi: ft=zsh
