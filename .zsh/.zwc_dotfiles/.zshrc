@@ -23,13 +23,13 @@
 stty -ixon
 
 # Generated p10k theme
-[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
+#[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 
 # My old p9k theme
 #[[ ! -f $HOME/.powerlevel_settings ]] || source $HOME/.powerlevel_settings
 
 # My original generated p10k theme
-#[[ ! -f $ZDOTDIR/.myP10k.zsh ]] || source $ZDOTDIR/.myP10k.zsh
+[[ ! -f $ZDOTDIR/.myP10k.zsh ]] || source $ZDOTDIR/.myP10k.zsh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -171,7 +171,7 @@ export CLICOLOR=true
 #|| rg --hidden --no-ignore --files 2> /dev/null)"
 #export FZF_DEFAULT_COMMAND='(rg --hidden --no-ignore --files 2> /dev/null)'
 
-export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD || fd . -HI)'
+export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD 2> /dev/null || fd . -HI)'
 
 export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
 --color pointer:220 --color hl+:118 --color fg:251

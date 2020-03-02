@@ -1,6 +1,6 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
-alias score='scores && echo "                 Avg    $(avg)"'
+alias score='scores && printf "\nAverage %18s %6.2f\n" Score $(avg)'
 
 # Commands and Shortcuts {{{1
 alias wiki='vim -c VimwikiIndex'
