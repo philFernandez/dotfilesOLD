@@ -410,5 +410,6 @@ map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC135/Homework/PL_1
 
 " commands {{{1
 command! Zrecompile :!zrecompile
+command! KillBuffs silent! execute "%bd|e#|bd#"
 " modeline{{{1
 " vim:foldenable foldmethod=marker foldcolumn=1
