@@ -40,16 +40,16 @@ hi MatchParen NONE
 hi Comment cterm=italic gui=italic
 
 " Cursor Colors ===========================================================
-hi! nCursor ctermfg=1 ctermbg=1 guifg=#FF8103 guibg=#FF8103
-hi! iCursor ctermfg=1 ctermbg=1 guifg=#00FF00 guibg=#00FF00
-hi! vCursor ctermfg=1 ctermbg=1 guifg=#FFFB00 guibg=#FFFB00
-hi! rCursor ctermfg=1 ctermbg=1 guifg=#FF0000 guibg=#FF0000
-hi! cCursor ctermfg=1 ctermbg=1 guifg=#7A81FF guibg=#7A81FF
-set guicursor=n:block-nCursor/nCursor-blinkwait300-blinkon200-blinkoff140
-set guicursor=c-ci-cr:block-cCursor/cCursor-
-set guicursor+=v:block-vCursor/vCursor-blinkon0
-set guicursor+=r:hor50-rCursor/rCursor-blinkon0
-set guicursor+=i:block-iCursor/iCursor-blinkon0
+"hi! nCursor ctermfg=1 ctermbg=1 guifg=#FF8103 guibg=#FF8103
+"hi! iCursor ctermfg=1 ctermbg=1 guifg=#00FF00 guibg=#00FF00
+"hi! vCursor ctermfg=1 ctermbg=1 guifg=#FFFB00 guibg=#FFFB00
+"hi! rCursor ctermfg=1 ctermbg=1 guifg=#FF0000 guibg=#FF0000
+"hi! cCursor ctermfg=1 ctermbg=1 guifg=#7A81FF guibg=#7A81FF
+"set guicursor=n:block-nCursor/nCursor-blinkwait300-blinkon200-blinkoff140
+"set guicursor=c-ci-cr:block-cCursor/cCursor-
+"set guicursor+=v:block-vCursor/vCursor-blinkon0
+"set guicursor+=r:hor50-rCursor/rCursor-blinkon0
+"set guicursor+=i:block-iCursor/iCursor-blinkon0
 " change insert cursor to vertical beam (comment out above if use)
 "set guicursor+=i-ci:ver1-iCursor/iCursor-blinkwait300-blinkon200-blinkoff140
 " =========================================================================

@@ -108,7 +108,7 @@ augroup END
 " Other VIM {{{1
 set mouse=a
 set lazyredraw
-set autoread
+"set autoread
 set backspace=indent,eol,start
 set confirm
 set hidden
@@ -116,7 +116,7 @@ set history=1000
 set noswapfile
 set autowrite
 set updatetime=100
-set scrolloff=3
+"set scrolloff=3
 set wildmenu
 set tags=./.git/tags;
 set tags+=./tags;
@@ -124,9 +124,9 @@ set tags+=./tags;
 "set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers
 set display=lastline
 set showcmd
-set ttyfast
-set report=0
-set synmaxcol=200
+"set ttyfast
+"set report=0
+"set synmaxcol=200
 let g:tex_flavor = "latex"
 let g:tex_no_error=1
 
@@ -318,7 +318,7 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_table_mappings = 0
 " Conceal fences around fenced code
 let g:vimwiki_conceal_pre = 1
-let g:vimwiki_conceallevel=3
+"let g:vimwiki_conceallevel=3
 " Conceal tags
 "autocmd FileType vimwiki :syntax match Entity ":\w*:" conceal
 " Completion {{{1
