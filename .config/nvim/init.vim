@@ -310,7 +310,8 @@ let g:EasyClipUseSubstituteDefaults = 1
 " Vimwiki & Vinotes {{{1
 let g:notes_directories = ['~/Notes/viNotes']
 let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+                      \ 'syntax': 'markdown', 'ext': '.md',
+                      \ 'auto_tags' : 1, 'auto_diary_index': 1}]
 
 " Dont highjack all markdown files
 let g:vimwiki_global_ext = 0
@@ -318,9 +319,16 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_table_mappings = 0
 " Conceal fences around fenced code
 let g:vimwiki_conceal_pre = 1
+" Checklist highlighting
+let g:vimwiki_hl_cb_checked = 1
+" Better checklists symbols
+let g:vimwiki_listsyms = ' ○◐●✓'
+
+
 "let g:vimwiki_conceallevel=3
-" Conceal tags
-"autocmd FileType vimwiki :syntax match Entity ":\w*:" conceal
+
+" Try this if highlighting messes up
+"au BufEnter *.wiki :syntax sync fromstart
 " Completion {{{1
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -403,6 +411,7 @@ command! -bang -nargs=? -complete=dir Files
 " ctrl-t = tab
 nnoremap <silent> <leader>l :Buf<CR>
 nnoremap <silent> <leader>k :Win<CR>
+nnoremap <silent> <leader>t :Tags<CR>
 
 "map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC135/Homework/PL_1/html/ fernandp@titan.ecs.csus.edu:/gaia/class/student/fernandp/html/<CR>
 "map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC159/Homework/Phase1/p-code2/ user@192.168.0.65:/home/user/CSC159/TEST<CR>
