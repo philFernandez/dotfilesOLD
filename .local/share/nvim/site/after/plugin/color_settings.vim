@@ -58,7 +58,7 @@ hi Comment cterm=italic gui=italic
 hi VimwikiWeblink1 cterm=bold gui=bold guifg=#66D9EF
 hi Vimwikilink cterm=bold gui=bold guifg=#66D9EF
 hi Vimwikibold cterm=bold gui=bold guifg=lightgreen
-hi VimwikiTag guifg=grey
+hi VimwikiTag guifg=#212223
 hi VimwikiTodo gui=bold guifg=yellow
 hi VimwikiHeader2 gui=bold guifg=#FF9300
 hi VimwikiHeader3 gui=bold guifg=#FFD479
@@ -66,6 +66,7 @@ hi VimwikiHeader4 gui=bold guifg=#0091FF
 hi VimwikiHeader5 gui=bold guifg=#80CAFF
 hi VimwikiHeader6 gui=bold guifg=#CCF0FF
 hi VimwikiItalicT gui=bold,italic guifg=#FF2600
+hi VimwikiItalic gui=italic guifg=#FFFF66
 hi VimwikiBoldT gui=bold guifg=#FF2600
 hi VimwikiDelTextT gui=italic guifg=grey
 " ===========================================================

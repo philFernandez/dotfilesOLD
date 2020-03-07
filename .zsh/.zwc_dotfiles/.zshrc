@@ -157,8 +157,8 @@ export EDITOR=nvim
 
 export UPDATE_ZSH_DAYS=7
 
-export SAVEHIST=5000
-export HISTSIZE=5000
+export SAVEHIST=500000
+export HISTSIZE=500000
 
 #export LSCOLORS=exGxcxdxCxbxbxCxCxbxbx
 export LSCOLORS=ExGxbadxCxbxbxCxCxbxbx

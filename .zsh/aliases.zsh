@@ -1,6 +1,5 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
-alias score='scores && printf "\nAverage %18s %6.2f\n" Score $(avg)'
 alias togo='(cd ~/Spring_2020/Gordon/Assig1/Section5 && echo $[$(ls C)-2])'
 alias finished='(cd ~/Spring_2020/Gordon/Assig1/Section5/Done && ls C)'
 
