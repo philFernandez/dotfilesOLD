@@ -5,6 +5,8 @@
         #         .|'      .     '||  ||    ||   ||   |.  '|.      .         #
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
+export SECTION5=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig1/Section5
+export SECTION6=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig1/Section6
 # {{{1 iterm2 set tab/window title
 # Set iterm window/tab titles empty
 # if you want to set it to somehthing,
