@@ -364,7 +364,7 @@ nnoremap <A-k> <c-w>k
 nnoremap <A-h> <c-w>h
 nnoremap <A-l> <c-w>l
 
-"tnoremap <c-k> <c-\><c-n>
+tnoremap <A-n> <c-\><c-n>
 "tnoremap <c-k> <c-\><c-n><c-w>k
 
 "copy into sys clipboard
