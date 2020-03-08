@@ -359,10 +359,10 @@ nnoremap dl I<Esc>d$
 "=======================
 
 " pane navigation
-"nnoremap <c-j> <c-w>j
-"nnoremap <c-k> <c-w>k
-"nnoremap <c-h> <c-w>h
-"nnoremap <c-l> <c-w>l
+nnoremap <A-j> <c-w>j
+nnoremap <A-k> <c-w>k
+nnoremap <A-h> <c-w>h
+nnoremap <A-l> <c-w>l
 
 "tnoremap <c-k> <c-\><c-n>
 "tnoremap <c-k> <c-\><c-n><c-w>k
