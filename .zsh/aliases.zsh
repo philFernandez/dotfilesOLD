@@ -1,7 +1,9 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
-alias togo='(cd ~/Spring_2020/Gordon/Assig1/Section6 && echo $[$(ls C)-2])'
+alias togo='(cd ~/Spring_2020/Gordon/Assig1/Section6 && echo $[$(ls C)-3 + $(cd OnHold && ls C)])'
 alias finished='(cd ~/Spring_2020/Gordon/Assig1/Section6/Done && ls C)'
+alias sc5='scores $SECTION5'
+alias sc6='scores $SECTION6'
 
 # Commands and Shortcuts {{{1
 alias wiki='vim -c VimwikiIndex'
