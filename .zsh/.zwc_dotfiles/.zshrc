@@ -156,6 +156,8 @@ export RANGER_LOAD_DEFAULT_RC=false
 
 # set vim as default editor
 export EDITOR=nvim
+#export PAGER=less
+export PAGER="bat -p"
 
 export UPDATE_ZSH_DAYS=7
 

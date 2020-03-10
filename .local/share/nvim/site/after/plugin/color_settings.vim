@@ -55,6 +55,7 @@ hi Comment cterm=italic gui=italic
 " =========================================================================
 
 " Vimwiki Customization =====================================
+hi VimwikiHeaderChar cterm=bold guifg=orange
 hi VimwikiWeblink1 cterm=bold gui=bold guifg=#66D9EF
 hi Vimwikilink cterm=bold gui=bold guifg=#66D9EF
 hi Vimwikibold cterm=bold gui=bold guifg=lightgreen

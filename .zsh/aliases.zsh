@@ -6,6 +6,8 @@ alias sc5='scores $SECTION5'
 alias sc6='scores $SECTION6'
 
 # Commands and Shortcuts {{{1
+alias finder='open .'
+alias wiki2='vim -c "VimwikiIndex 2"'
 alias wiki='vim -c VimwikiIndex'
 alias gwiki='green && tname Wiki && wiki'
 alias ovim='orange && tname Editor && nvim'
