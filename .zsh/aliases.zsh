@@ -206,3 +206,4 @@ alias fvim6='fvim -d 6'
 
 # {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
+alias white='tab 255 255 255'

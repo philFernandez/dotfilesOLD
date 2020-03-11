@@ -2,7 +2,9 @@ set tw=95
 set nonumber
 set concealcursor=n
 set nocursorline
-" Change checked items to red (for grading CSC133)
-nnoremap <leader>g :hi VimwikiCheckBoxDone gui=bold guifg=red<CR>
-nnoremap <c-b><c-b> :!pandoc % --to=html5 > ~/Notes/Vimwiki_html/%:t:r.html<CR>
+"nnoremap <c-b><c-b> :!pandoc % --to=html5 > ~/Notes/Vimwiki_html/%:t:r.html<CR>
+
+command! W silent! :w|Vimwiki2HTML
+command! Wa silent! :wa|VimwikiAll2HTML
+command! Wb silent! :wa|Vimwiki2HTMLBrowse
 

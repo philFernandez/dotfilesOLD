@@ -1,4 +1,3 @@
-
 "================================================================"
 "        '||'  '|' '||' '||    ||' '||''|.     ..|'''.|          "
 "         '|.  .'   ||   |||  |||   ||   ||  .|'     '           "
@@ -312,12 +311,20 @@ let g:notes_directories = ['~/Notes/viNotes']
 let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md',
                       \ 'auto_tags' : 1, 'auto_diary_index': 1},
+                      \
                       \{'path': '~/Notes/vimwiki2',
                       \ 'name': 'Wiki2',
                       \ 'auto_tags': 1,
                       \ 'index': 'index2',
                       \ 'template_path': '~/Notes/.vimwiki_html_template',
-                      \ 'path_html': '~/Notes/vimwiki2_html'}]
+                      \ 'path_html': '~/Notes/vimwiki2_html'},
+                      \
+                      \ {'path': '~/Documents/vimwiki3',
+                      \  'name': 'Cool Wiki',
+                      \  'auto_tags': 1,
+                      \  'index': 'CoolPage',
+                      \  'template_path': '~/Documents/vimwiki3/templates',
+                      \  'path_html': '~/Documents/vimwiki3/html'}]
 
 " Dont highjack all markdown files
 let g:vimwiki_global_ext = 0
