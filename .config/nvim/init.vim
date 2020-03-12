@@ -49,6 +49,7 @@ Plug 'cespare/vim-toml'
 Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/applescript.vim'
 Plug 'lilyball/vim-swift'
+Plug 'chrisbra/csv.vim'
 "Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
@@ -164,7 +165,7 @@ set tabstop=2
 let g:user_emmet_leader_key='<C-W>'
 let g:tagbar_vertical = 30
 " NERDTree/Commenter {{{1
-let g:NERDTreeQuitOnOpen = 1
+"let g:NERDTreeQuitOnOpen = 1
 let g:NERDAltDelims_c = 1
 
 " Search {{{1
@@ -342,6 +343,8 @@ let g:vimwiki_listsyms = ' ○◐●✓'
 
 " Try this if highlighting messes up
 "au BufEnter *.wiki :syntax sync fromstart
+" CSV Files {{{1
+let g:csv_delim='|'
 " Completion {{{1
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
