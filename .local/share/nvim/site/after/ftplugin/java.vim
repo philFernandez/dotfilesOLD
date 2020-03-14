@@ -13,4 +13,3 @@ function BuildAndRunJava()
   exe '!clear;javac %;java %:r'
 endfunction
 nnoremap <c-b><c-b> :call BuildAndRunJava()<cr>
-syntax on
