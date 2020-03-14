@@ -16,15 +16,17 @@ set termguicolors " keep this before color theme setting
 "color onedark
 "color tender
 "color angr
-color molokai
+
+"color molokai
+
 "color molokayo
 "color deus
 "color yellow-moon
 "color seoul256
-"color OceanicNext
+color OceanicNext
 "color hybrid_material
-"let g:oceanic_next_terminal_bold=1
-"let g:oceanic_next_terminal_italic=1
+let g:oceanic_next_terminal_bold=1
+let g:oceanic_next_terminal_italic=1
 " Light Themes {{{1
 "color lightning
 "color flattened_light
@@ -38,6 +40,7 @@ hi Search cterm=bold gui=bold guifg=yellow guibg=blue
 hi MatchParen NONE
 " Get italic comments in themes that dont already have them
 hi Comment cterm=italic gui=italic
+hi Error guifg=None guibg=None
 
 " Cursor Colors ===========================================================
 "hi! nCursor ctermfg=1 ctermbg=1 guifg=#FF8103 guibg=#FF8103
