@@ -14,8 +14,11 @@
 " π is typed with <c-k> p*
 " ≤ is <c-k> =<, ≠ is <c-k> !=, ≥ is <c-k> >=
 " need to be first {{{1
+set nocompatible
 let mapleader=','
 let maplocalleader='\'
+syntax enable
+filetype plugin indent on
 
 " Vim Plug {{{1
 call plug#begin(stdpath('data') . '/plugged')
@@ -55,9 +58,6 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
 "Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
-set nocompatible
-syntax enable
-filetype plugin indent on
 
 " UI Settings {{{1
 " fix issues with lagging when matching parenthisis/brackets
