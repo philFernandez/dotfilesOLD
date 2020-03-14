@@ -4,6 +4,8 @@ alias togo='(cd ~/Spring_2020/Gordon/Assig1/Section6 && echo $[$(ls C)-3 + $(cd 
 alias finished='(cd ~/Spring_2020/Gordon/Assig1/Section6/Done && ls C)'
 alias sc5='scores $SECTION5'
 alias sc6='scores $SECTION6'
+alias rubric="tab 200 20 255 && tname 'RUBRIC' && vim -c 'VimwikiIndex 2' -c 'tag Rubric' -c 'KillBuffs'"
+alias 135="yellow && tname CSC135 && vim -c 'VimwikiIndex 2' -c 'tag Zoom_CSC135' -c 'KillBuffs'"
 
 # Commands and Shortcuts {{{1
 alias finder='open .'

@@ -338,13 +338,15 @@ let g:vimwiki_hl_cb_checked = 1
 " Better checklists symbols
 let g:vimwiki_listsyms = ' ○◐●✓'
 
-
 "let g:vimwiki_conceallevel=3
 
 " Try this if highlighting messes up
 "au BufEnter *.wiki :syntax sync fromstart
 " CSV Files {{{1
 let g:csv_delim='|'
+"let g:csv_nomap_J = 1
+"let g:csv_nomap_K = 1
+let g:no_csv_maps = 1
 " Completion {{{1
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
