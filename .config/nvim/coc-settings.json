@@ -4,6 +4,10 @@
   "coc.preferences.formatOnSaveFiletypes": ["python", "c"],
   //"diagnostic.displayByAle": true,
   "diagnostic.checkCurrentLine": true,
+  "suggest.floatEnable": false,
+  "diagnostic.messageTarget": "echo",
+  "signature.target": "echo",
+  "coc.preferences.hoverTarget": "echo",
 
   // Specific language servers
   "languageserver": {

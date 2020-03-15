@@ -119,9 +119,9 @@ source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # histdb ----------------
-source ~/.zsh/zsh-histdb/sqlite-history.zsh
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd histdb-update-outcome
+#source ~/.zsh/zsh-histdb/sqlite-history.zsh
+#autoload -Uz add-zsh-hook
+#add-zsh-hook precmd histdb-update-outcome
 # -----------------------
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 

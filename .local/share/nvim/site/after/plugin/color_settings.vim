@@ -5,7 +5,6 @@
 " plugins if they were set in ~/.vimrc
 " Now we gonna repplace some shit boi.
 " Settings {{{1
-" vim:foldenable foldmethod=marker foldcolumn=1
 set termguicolors " keep this before color theme setting
 " Best dark and best light {{{1
 "color flattened_dark
@@ -16,9 +15,7 @@ set termguicolors " keep this before color theme setting
 "color onedark
 "color tender
 "color angr
-
-"color molokai
-
+"color molokai " my favorite
 "color molokayo
 "color deus
 "color yellow-moon
@@ -31,8 +28,7 @@ let g:oceanic_next_terminal_italic=1
 "color lightning
 "color flattened_light
 "color carbonized-light
-
-" Custom text settings {{{1
+" {{{1 Custom text settings
 " Uncomment this if themes search highlight is not satasfactory
 hi Search cterm=bold gui=bold guifg=yellow guibg=blue
 "hi Search cterm=bold,underline gui=bold guifg=yellow guibg=NONE
@@ -57,7 +53,7 @@ hi Error guifg=None guibg=None
 "set guicursor+=i-ci:ver1-iCursor/iCursor-blinkwait300-blinkon200-blinkoff140
 " =========================================================================
 
-" Vimwiki Customization =====================================
+"{{{1 Vimwiki Customization
 hi VimwikiHeaderChar cterm=bold guifg=#32A852
 hi VimwikiWeblink1 cterm=bold gui=bold guifg=#66D9EF
 hi Vimwikilink cterm=bold gui=bold guifg=#66D9EF
@@ -73,5 +69,21 @@ hi VimwikiItalicT gui=bold,italic guifg=#FF2600
 hi VimwikiItalic gui=italic guifg=#FFFF66
 hi VimwikiBoldT gui=bold guifg=#FF2600
 hi VimwikiDelTextT gui=italic guifg=grey
-" ===========================================================
+" {{{1 Java Highlighting
+let java_highlight_functions = 1
+let java_highlight_all = 1
+" If you are trying this at runtime, you need to reload the syntax file
 
+" Some more highlights, in addition to those suggested by cmcginty
+highlight link javaScopeDecl Statement
+highlight link javaType Type
+highlight link javaDocTags PreProc
+
+syn region javaMethod start="^\z(\s*\)\(public\|private\|protected\)\_.*{\s*$" end="^\z1}\s*$" transparent fold keepend
+syn region javaLoop start="^\z(\s*\)\(for\|if\|while\|switch\).*{\s*$" end="^\z1}\s*$" transparent fold keepend
+syn region javaCase start="^\z(\s*\)\(case\|default\).*:\s*$" end="^\s*break;\s*$" transparent fold keepend
+syn region javaTryCatch start="^\z(\s*\)\(try\|catch\).*{\s*$" end="^\z1}\s*$" transparent fold keepend
+syn region javadoc start="^\s*/\*\*" end="^.*\*/" transparent fold keepend
+syn region javaBlockComment start="^\s*/\*" end="^.*\*/" transparent fold keepend
+" modeline{{{1
+" vim:foldenable foldmethod=marker foldcolumn=1

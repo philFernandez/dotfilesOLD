@@ -5,11 +5,11 @@ set tabstop=4
 set colorcolumn=80
 
 " Build java
-nnoremap <c-b><c-p> :!clear;javac %<cr>
+nnoremap <c-b><c-p> :!javac %<cr>
 " Run java
-nnoremap <c-b><c-r> :!clear;java %:r<cr>
+nnoremap <c-b><c-r> :!java %:r<cr>
 " Build AND Run java
 function BuildAndRunJava()
-  exe '!clear;javac %;java %:r'
+  exe '!javac %;java %:r'
 endfunction
 nnoremap <c-b><c-b> :call BuildAndRunJava()<cr>

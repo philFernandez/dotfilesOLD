@@ -224,7 +224,7 @@ let g:lightline.component_type = {
 
 let g:lightline.tabline = {
       \ 'left' : [['buffers']],
-      \ 'right': [['modified'], ['cocstatus']]
+      \ 'right': [['modified']]
       \ }
 
 let g:lightline.active = {

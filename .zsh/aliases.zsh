@@ -6,6 +6,9 @@ alias sc5='scores $SECTION5'
 alias sc6='scores $SECTION6'
 alias rubric="tab 200 20 255 && tname 'RUBRIC' && vim -c 'VimwikiIndex 2' -c 'tag Rubric' -c 'KillBuffs'"
 alias 135="yellow && tname CSC135 && vim -c 'VimwikiIndex 2' -c 'tag Zoom_CSC135' -c 'KillBuffs'"
+alias vjava='fd -e java'
+alias ojava='fd -e java -X nvim -R'
+alias mjar='fd A1Prj.jar -x cp {} ~/eclipse-workspace/A1Prj/dist/'
 
 # Commands and Shortcuts {{{1
 alias finder='open .'
@@ -28,7 +31,6 @@ alias purple='tab 122 12 122'
 alias darkGreen='tab 51 102 0'
 alias ag=rg
 alias emacs='emacs -nw'
-alias python=python3
 alias kf='k -f'
 alias watch='watch -td -n 0.1'
 alias sqlite3='/usr/local/Cellar/sqlite/3.31.1/bin/sqlite3'
@@ -73,7 +75,7 @@ alias v='nvim'
 #alias rg='rg --colors --colors match:fg:yellow --colors match:style:bold --colors line:style:bold --colors line:fg:yellow --colors path:fg:200,100,50 --colors path:style:bold -S'
 alias py='python3'
 alias fl='fd -HI -d1'
-alias zrl='zrecompile && exec zsh'
+alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
 
 
 
