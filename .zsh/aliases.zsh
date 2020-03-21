@@ -9,6 +9,9 @@ alias 135="yellow && tname CSC135 && vim -c 'VimwikiIndex 2' -c 'tag Zoom_CSC135
 alias vjava='fd -e java'
 alias ojava='fd -e java -X nvim -R'
 alias mjar='fd A1Prj.jar -x cp {} ~/eclipse-workspace/A1Prj/dist/'
+alias both='echo "---------------------------------------" && echo "Section 5" && echo "---------------------------------------"&& sc5 && echo "---------------------------------------" && echo "Section 6"  && echo "---------------------------------------"&& sc6 && echo "---------------------------------------"'
+alias corona='(cd ~/Source_Code/Python/Corona && python3 Corona.py -v L)'
+alias acorona='(cd ~/Source_Code/Python/Corona && python3 Corona.py)'
 
 # Commands and Shortcuts {{{1
 alias finder='open .'

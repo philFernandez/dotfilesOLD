@@ -23,9 +23,10 @@
   // Coc-python settings (python things are installed in a virtualenv
   // ~/.local/share/virtualenvs/Libs-LCd87nCH)
   "python.venvPath": "~/.local/share/virtualenvs",
-  "python.jediPath": "~/.local/share/virtualenvs/Libs-LCd87nCH/lib/python3.8/site-packages",
-  "python.linting.pylintPath": "~/.local/share/virtualenvs/Libs-LCd87nCH/bin/pylint",
-  "python.formatting.autopep8Path": "/Users/philthy/.local/share/virtualenvs/Libs-LCd87nCH/bin/autopep8",
+  "python.jediPath": "~/.local/share/virtualenvs/DataVisual-VN1j2dx-/lib/python3.8/site-packages",
+  "python.linting.pylintPath": "/usr/local/bin/pylint",
+  "python.formatting.provider": "autopep8",
+
 
   // coc-texlab
   "latex.build.executable": "/Library/TeX/texbin/latexmk",

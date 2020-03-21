@@ -1,6 +1,6 @@
 # tname
 
-local name=$1:u
+local name=$1
 
 echo -ne "\033]0;"$name"\007"
 
