@@ -4,15 +4,12 @@ alias togo='(cd ~/Spring_2020/Gordon/Assig1/Section6 && echo $[$(ls C)-3 + $(cd 
 alias finished='(cd ~/Spring_2020/Gordon/Assig1/Section6/Done && ls C)'
 alias sc5='scores $SECTION5'
 alias sc6='scores $SECTION6'
-alias rubric="tab 200 20 255 && tname 'RUBRIC' && vim -c 'VimwikiIndex 2' -c 'tag Rubric' -c 'KillBuffs'"
-alias 135="yellow && tname CSC135 && vim -c 'VimwikiIndex 2' -c 'tag Zoom_CSC135' -c 'KillBuffs'"
 alias vjava='fd -e java'
 alias ojava='fd -e java -X nvim -R'
 alias mjar='fd A1Prj.jar -x cp {} ~/eclipse-workspace/A1Prj/dist/'
 alias both='echo "---------------------------------------" && echo "Section 5" && echo "---------------------------------------"&& sc5 && echo "---------------------------------------" && echo "Section 6"  && echo "---------------------------------------"&& sc6 && echo "---------------------------------------"'
 alias corona='(cd ~/Source_Code/Python/Corona && python3 Corona.py -v L)'
 alias acorona='(cd ~/Source_Code/Python/Corona && python3 Corona.py)'
-
 # Commands and Shortcuts {{{1
 alias finder='open .'
 alias wiki2='vim -c "VimwikiIndex 2"'
@@ -56,9 +53,8 @@ alias regex='man pcresyntax'
 alias tree2='lsd --tree --group-dirs first'
 alias time='/usr/bin/time'
 #alias tree='br'
-
 alias cls=clear
-alias c=clear
+alias c='cl -1'
 alias cl='clear;lsd --group-dirs first'
 alias cll='clear;ls -A'
 alias clll='clear;ls -Al'
@@ -79,9 +75,6 @@ alias v='nvim'
 alias py='python3'
 alias fl='fd -HI -d1'
 alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
-
-
-
 # Directory Things {{{1
 alias -- -='cd -'
 alias 1='cd -'
@@ -147,7 +140,6 @@ alias gsl='git shortlog'
 alias gslc='git shortlog -s | xargs'
 alias gco='git checkout'
 # Version Controled Dotfiles {{{1
-
 # show files that aren't under source control in ~/.zsh/lib
 # must be in ~/.zsh/lib to run
 alias ldiff="sort <(fd G -v '(old$|zwc$)') <(config ls-files G -v .gitignore) | uniq -u"
@@ -156,8 +148,6 @@ alias ldiff2="diff -u <(fd G -v '(old$|zwc$)') <(config ls-files G -v .gitignore
 # must be in ~/.bin to run
 alias sdiff="sort <(fd -tx) <(config ls-files) | uniq -u"
 alias sdiff2="diff -u <(fd -tx) <(config ls-files) DSF"
-
-
 alias preconf='setopt completealiases'
 alias postconf='unsetopt completealiases'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -186,7 +176,6 @@ alias show='brew info'
 alias search='brew search'
 # show all casks
 alias install='brew -v install'
-
 # fuzzy function aliases {{{1
 alias fcd1='fcd -d 1'
 alias fcd2='fcd -d 2'
@@ -208,9 +197,5 @@ alias fvim3='fvim -d 3'
 alias fvim4='fvim -d 4'
 alias fvim5='fvim -d 5'
 alias fvim6='fvim -d 6'
-
-
-
 # {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1
-alias white='tab 255 255 255'

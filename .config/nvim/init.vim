@@ -199,6 +199,7 @@ set nofoldenable
 " vim-easy-align {{{1
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+vmap <Enter> <Plug>(EasyAlign)
 " }}}
 " highlightedyank {{{1
 let g:highlightedyank_highlight_duration = 2500
