@@ -311,6 +311,7 @@ let g:EasyClipUseSubstituteDefaults = 1
 " Vimwiki & Vinotes {{{1
 let g:notes_directories = ['~/Notes/viNotes']
 let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
+                      \ 'name': 'Wiki1',
                       \ 'syntax': 'markdown', 'ext': '.md',
                       \ 'auto_tags' : 1, 'auto_diary_index': 1},
                       \
@@ -322,7 +323,7 @@ let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
                       \ 'path_html': '~/Notes/vimwiki2_html'},
                       \
                       \ {'path': '~/Documents/vimwiki3',
-                      \  'name': 'Cool Wiki',
+                      \  'name': 'Wiki3',
                       \  'auto_tags': 1,
                       \  'index': 'CoolPage',
                       \  'template_path': '~/Documents/vimwiki3/templates',
@@ -361,6 +362,7 @@ function! s:check_back_space() abort
 endfunction
 autocmd FileType json syntax match Comment +\/\/.\+$+
 " Keymaps {{{1
+nnoremap <leader>r :Rg<CR>
 
 map <silent><c-t> :TagbarOpenAutoClose<CR>
 nnoremap <silent><leader>f :NERDTreeToggle<CR>
@@ -398,7 +400,6 @@ nnoremap <silent> <leader>ca :CalendarH<cr>
 nnoremap gm m
 nnoremap <silent> <c-s> :Startify<CR>
 nnoremap <silent> <leader>cd :cd %:p:h<cr>
-nnoremap <silent> <leader>rn :set relativenumber!<cr>
 nnoremap <silent> <leader>n :set number!<cr>
 nnoremap <silent> <leader>s :set spell!<cr>
 nnoremap sa ggVG

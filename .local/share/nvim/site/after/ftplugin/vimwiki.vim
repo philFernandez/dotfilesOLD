@@ -5,6 +5,7 @@ set nocursorline
 
 " Make paste not use auto-format
 map p <leader>p
+nnoremap <silent> <leader>l :Tags<CR>
 
 command! W silent! :w|Vimwiki2HTML
 command! Wa silent! :wa|VimwikiAll2HTML
