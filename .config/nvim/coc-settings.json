@@ -4,10 +4,10 @@
   "coc.preferences.formatOnSaveFiletypes": ["python", "c"],
   //"diagnostic.displayByAle": true,
   "diagnostic.checkCurrentLine": true,
-  "suggest.floatEnable": false,
-  "diagnostic.messageTarget": "echo",
-  "signature.target": "echo",
-  "coc.preferences.hoverTarget": "echo",
+  "suggest.floatEnable": true,
+  "diagnostic.messageTarget": "float",
+  "signature.target": "float",
+  "coc.preferences.hoverTarget": "float",
 
   // Specific language servers
   "languageserver": {

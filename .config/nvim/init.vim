@@ -202,7 +202,7 @@ nmap ga <Plug>(EasyAlign)
 vmap <Enter> <Plug>(EasyAlign)
 " }}}
 " highlightedyank {{{1
-let g:highlightedyank_highlight_duration = 2500
+"let g:highlightedyank_highlight_duration = 2500
 " Lightline {{{1
 
 let g:lightline = {}
