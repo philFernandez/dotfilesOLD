@@ -20,10 +20,13 @@ set termguicolors " keep this before color theme setting
 "color deus
 "color yellow-moon
 "color seoul256
-color OceanicNext
 "color hybrid_material
-let g:oceanic_next_terminal_bold=1
-let g:oceanic_next_terminal_italic=1
+
+"color OceanicNext
+"let g:oceanic_next_terminal_bold=1
+"let g:oceanic_next_terminal_italic=1
+color dogrun
+
 " Light Themes {{{1
 "color lightning
 "color flattened_light

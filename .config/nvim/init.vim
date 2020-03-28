@@ -366,7 +366,6 @@ nnoremap <leader>r :Rg<CR>
 
 map <silent><c-t> :TagbarOpenAutoClose<CR>
 nnoremap <silent><leader>f :NERDTreeToggle<CR>
-nnoremap <silent><esc> :NERDTreeClose<CR>
 
 " Show hightlight group of token under cursor
 map <F10> :echo synIDattr(synID(line("."),col("."),1),"name")<CR>
