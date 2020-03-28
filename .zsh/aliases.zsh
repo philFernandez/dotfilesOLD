@@ -22,7 +22,7 @@ alias ovim='orange && tname Editor && nvim'
 alias bf='blue && tname Ranger && ranger'
 alias tcmd='teal && tname CMDs'
 alias ssh='TERM=xterm-256color ssh'
-alias spede='ssh user@192.168.0.65'
+alias spede='ssh user@192.168.0.26'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias orange='tab 255 125 24'
 alias red='tab 255 38 0'

@@ -13,7 +13,7 @@ usage() {
 
 google() {
   osascript << EOF
-tell application "Google Chrome"
+tell application "Chromium"
   open location "$1"
 end tell
 EOF
