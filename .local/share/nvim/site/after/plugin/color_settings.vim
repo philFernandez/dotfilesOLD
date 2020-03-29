@@ -15,7 +15,7 @@ set termguicolors " keep this before color theme setting
 "color onedark
 "color tender
 "color angr
-"color molokai " my favorite
+color molokai " my favorite
 "color molokayo
 "color deus
 "color yellow-moon
@@ -25,7 +25,6 @@ set termguicolors " keep this before color theme setting
 "color OceanicNext
 "let g:oceanic_next_terminal_bold=1
 "let g:oceanic_next_terminal_italic=1
-color dogrun
 
 " Light Themes {{{1
 "color lightning
@@ -40,6 +39,9 @@ hi MatchParen NONE
 " Get italic comments in themes that dont already have them
 hi Comment cterm=italic gui=italic
 hi Error guifg=None guibg=None
+
+
+hi cTodo gui=bold,italic guifg=red
 
 " Cursor Colors ===========================================================
 "hi! nCursor ctermfg=1 ctermbg=1 guifg=#FF8103 guibg=#FF8103

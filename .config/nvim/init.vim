@@ -105,6 +105,8 @@ augroup TermThings
   "autocmd TermClose,TermLeave * setlocal termguicolors
 augroup END
 
+let g:fzf_preview_window = 'right:75%'
+
 " Other VIM {{{1
 set mouse=a
 set lazyredraw
@@ -165,8 +167,8 @@ set tabstop=2
 let g:user_emmet_leader_key='<C-W>'
 let g:tagbar_vertical = 30
 " NERDTree/Commenter {{{1
-"let g:NERDTreeQuitOnOpen = 1
 let g:NERDAltDelims_c = 1
+let g:NERDTreeQuitOnOpen = 1
 
 " Search {{{1
 set hlsearch
@@ -420,10 +422,6 @@ nnoremap <silent> <F5> :resize +2<cr>
 nnoremap <silent> <F6> :resize -2<cr>
 nnoremap <silent> <F7> :vertical resize +2<cr>
 nnoremap <silent> <F8> :vertical resize -2<cr>
-
-command! -bang -nargs=? -complete=dir Files
-      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-
 " How to open buffers
 " ctrl-v = vertical split
 " ctrl-x = split
@@ -437,6 +435,9 @@ nnoremap <silent> <leader>t :Tags<CR>
 "map <c-b> :w<CR>:!rsync -avr --exclude '.git' --exclude '.idea' --exclude '.vim' ~/Spring_2020/CSC159/Homework/Phase2/CSC159_Phase1/ user@192.168.0.65:/home/user/CSC159/Phase2<CR>
 
 " commands {{{1
+"command! -bang -nargs=? -complete=dir Files
+      "\ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+
 command! Zrecompile :!zrecompile
 command! Cpdir silent! :!cpdir
 command! KillBuffs silent! execute "%bd|e#|bd#"
