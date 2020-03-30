@@ -34,8 +34,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
 Plug '/usr/local/opt/fzf/'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf.vim'
@@ -105,7 +103,7 @@ augroup TermThings
   "autocmd TermClose,TermLeave * setlocal termguicolors
 augroup END
 
-let g:fzf_preview_window = 'right:75%'
+let g:fzf_preview_window = 'right:50%'
 
 " Other VIM {{{1
 set mouse=a
@@ -310,8 +308,7 @@ endif
 " Easy Clip {{{1
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseSubstituteDefaults = 1
-" Vimwiki & Vinotes {{{1
-let g:notes_directories = ['~/Notes/viNotes']
+" Vimwiki {{{1
 let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
                       \ 'name': 'Wiki1',
                       \ 'syntax': 'markdown', 'ext': '.md',
@@ -437,6 +434,11 @@ nnoremap <silent> <leader>t :Tags<CR>
 " commands {{{1
 "command! -bang -nargs=? -complete=dir Files
       "\ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+
+
+"command! -bang -nargs=? -complete=dir Files
+    "\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
 
 command! Zrecompile :!zrecompile
 command! Cpdir silent! :!cpdir
