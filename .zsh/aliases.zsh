@@ -11,6 +11,9 @@ alias both='echo "---------------------------------------" && echo "Section 5" &
 alias corona='(cd ~/Source_Code/Python/Corona && python3 Corona.py -v L)'
 alias acorona='(cd ~/Source_Code/Python/Corona && python3 Corona.py)'
 alias scorona='imgcat ~/Notes/vimwiki_images/Corona/*'
+alias eclsrc="cd $ECLSRC"
+alias ecl="cd $ECL"
+alias sec5="cd $SECTION5"
 # Commands and Shortcuts {{{1
 alias finder='open .'
 alias wiki2='vim -c "VimwikiIndex 2"'

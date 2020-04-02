@@ -7,6 +7,8 @@
         ######################################################################
 export SECTION5=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig2/Section5
 export SECTION6=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig2/Section6
+export ECLSRC=/Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/
+export ECL=/Users/philthy/eclipse-workspace/A2Prj/
 # {{{1 iterm2 set tab/window title
 # Set iterm window/tab titles empty
 # if you want to set it to somehthing,

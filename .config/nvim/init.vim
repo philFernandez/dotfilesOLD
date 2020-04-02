@@ -9,11 +9,12 @@
 " gO opens TOC in help pages
 
 " Type Math and other Symbols
-" :digs! (opens chart)
+" :dig! (opens chart)
 " <c-k> <char><char> (in insert mode, types the symbol)
 " π is typed with <c-k> p*
 " ≤ is <c-k> =<, ≠ is <c-k> !=, ≥ is <c-k> >=
 " need to be first {{{1
+
 set nocompatible
 let mapleader=','
 let maplocalleader='\'
@@ -387,9 +388,9 @@ tnoremap <A-n> <c-\><c-n>
 "tnoremap <c-k> <c-\><c-n><c-w>k
 
 "copy into sys clipboard
-vnoremap <silent> cp "+y
+vnoremap <silent> CP "+y
 "past from sys clipboard
-nnoremap <silent> cv "+p
+nnoremap <silent> CV "+p
 "Disable keybindings so that we can use <leader>ca for Calendar
 map <plug>DisableNERDCommenterAltDelims <plug>NERDCommenterAltDelims
 map <plug>DisableCalendarH <plug>CalendarH
@@ -407,9 +408,9 @@ nnoremap <silent> bc :bdelete!<cr>
 nnoremap <silent> <leader><space> :nohl<cr>
 nnoremap J }
 nnoremap K {
-map q :q<cr>
+"map q :q<cr>
 vnoremap q :q<cr>
-nnoremap <silent> cc :clo<cr>
+nnoremap <silent> CC :clo<cr>
 nnoremap <space> A
 nnoremap <silent> <leader>m :pclose<cr>
 nnoremap <c-p> :Files<cr>

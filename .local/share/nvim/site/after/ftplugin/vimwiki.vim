@@ -4,6 +4,7 @@ set concealcursor=n
 set nocursorline
 
 " Make paste not use auto-format
+map P <leader>P
 map p <leader>p
 nnoremap <silent> <leader>l :Tags<CR>
 
