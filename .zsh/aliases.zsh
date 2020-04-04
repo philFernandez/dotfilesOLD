@@ -14,6 +14,7 @@ alias scorona='imgcat ~/Notes/vimwiki_images/Corona/*'
 alias eclsrc="cd $ECLSRC"
 alias ecl="cd $ECL"
 alias sec5="cd $SECTION5"
+alias cpsrc="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/ && mv tags /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/"
 # Commands and Shortcuts {{{1
 alias finder='open .'
 alias wiki2='vim -c "VimwikiIndex 2"'
