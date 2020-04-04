@@ -16,6 +16,9 @@ alias ecl="cd $ECL"
 alias sec5="cd $SECTION5"
 alias cpsrc="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/ && mv tags /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/"
 # Commands and Shortcuts {{{1
+alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki2_html/style.css"
+alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki2_html/style.css"
+alias bat="LESS+=-S bat"
 alias finder='open .'
 alias wiki2='vim -c "VimwikiIndex 2"'
 alias wiki='vim -c VimwikiIndex'
