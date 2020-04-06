@@ -402,6 +402,7 @@ nnoremap <silent> <leader>cd :cd %:p:h<cr>
 nnoremap <silent> <leader>n :set number!<cr>
 nnoremap <silent> <leader>s :set spell!<cr>
 nnoremap sa ggVG
+nnoremap <F13> ggVGd
 nnoremap <silent> bn :bnext<cr>
 nnoremap <silent> bp :bNext<cr>
 nnoremap <silent> bc :bdelete!<cr>
