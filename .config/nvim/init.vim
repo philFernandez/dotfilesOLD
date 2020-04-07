@@ -59,10 +59,6 @@ Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
 call plug#end()
 
 " UI Settings {{{1
-" fix issues with lagging when matching parenthisis/brackets
-"let g:matchparen_insert_timeout = 2
-"let g:matchparen_timeout = 2
-"-------------------------------------
 set showtabline=2
 set background=dark
 set laststatus=2
@@ -79,7 +75,7 @@ set ttimeoutlen=0
 "autocmd InsertEnter * set nocursorline
 "autocmd InsertLeave * set cursorline
 
-" fix broken cursor line --------------------------------
+" fix broken cursor line for neovim only ----------------
 function! s:CustomizeColors()
   if has('guirunning') || has('termguicolors')
     let cursorline_gui=''
@@ -109,7 +105,6 @@ let g:fzf_preview_window = 'right:50%'
 " Other VIM {{{1
 set mouse=a
 set lazyredraw
-"set autoread
 set backspace=indent,eol,start
 set confirm
 set hidden
@@ -117,17 +112,11 @@ set history=1000
 set noswapfile
 set autowrite
 set updatetime=100
-"set scrolloff=3
 set wildmenu
 set tags=./.git/tags;
 set tags+=./tags;
-"set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
-"set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers
 set display=lastline
 set showcmd
-"set ttyfast
-"set report=0
-"set synmaxcol=200
 let g:tex_flavor = "latex"
 let g:tex_no_error=1
 
@@ -135,7 +124,6 @@ if !isdirectory("/Users/philthy/.local/share/nvim/.vim-undo-dir")
   call mkdir("/Users/philthy/.local/share/nvim/.vim-undo-dir", "", 0700)
 endif
 
-"set undodir=/tmp/.vim-undo-dir
 set undodir=/Users/philthy/.local/share/nvim/.vim-undo-dir
 set undofile
 
@@ -202,8 +190,6 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 vmap <Enter> <Plug>(EasyAlign)
 " }}}
-" highlightedyank {{{1
-"let g:highlightedyank_highlight_duration = 2500
 " Lightline {{{1
 
 let g:lightline = {}
@@ -385,7 +371,6 @@ nnoremap <A-h> <c-w>h
 nnoremap <A-l> <c-w>l
 
 tnoremap <A-n> <c-\><c-n>
-"tnoremap <c-k> <c-\><c-n><c-w>k
 
 "copy into sys clipboard
 vnoremap <silent> CP "+y
@@ -428,19 +413,6 @@ nnoremap <silent> <F8> :vertical resize -2<cr>
 nnoremap <silent> <leader>l :Buf<CR>
 nnoremap <silent> <leader>k :Win<CR>
 nnoremap <silent> <leader>t :Tags<CR>
-
-"map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC135/Homework/PL_1/html/ fernandp@titan.ecs.csus.edu:/gaia/class/student/fernandp/html/<CR>
-"map <c-b> :w<CR>:!rsync -avr --exclude '.git' ~/Spring_2020/CSC159/Homework/Phase1/p-code2/ user@192.168.0.65:/home/user/CSC159/TEST<CR>
-"map <c-b> :w<CR>:!rsync -avr --exclude '.git' --exclude '.idea' --exclude '.vim' ~/Spring_2020/CSC159/Homework/Phase2/CSC159_Phase1/ user@192.168.0.65:/home/user/CSC159/Phase2<CR>
-
-" commands {{{1
-"command! -bang -nargs=? -complete=dir Files
-      "\ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-
-
-"command! -bang -nargs=? -complete=dir Files
-    "\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
 
 command! Zrecompile :!zrecompile
 command! Cpdir silent! :!cpdir

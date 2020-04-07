@@ -87,6 +87,10 @@ alias purple='tab 122 12 122'
 alias darkGreen='tab 51 102 0'
 alias peach='tab 255 177 100'
 alias oceanic='tab 52 90 107'
+# Triad 1
+alias triad1a='tab 49 198 165'
+alias triad1b='tab 165 49 198'
+alias triad1c='tab 198 165 49'
 # Directory Things {{{1
 alias -- -='cd -'
 alias 1='cd -'
