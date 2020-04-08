@@ -52,6 +52,7 @@ Plug 'SirVer/ultisnips'
 Plug 'vim-scripts/applescript.vim'
 Plug 'lilyball/vim-swift'
 Plug 'chrisbra/csv.vim'
+Plug 'adimit/prolog.vim'
 "Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
@@ -394,7 +395,7 @@ nnoremap <silent> bc :bdelete!<cr>
 nnoremap <silent> <leader><space> :nohl<cr>
 nnoremap J }
 nnoremap K {
-"map q :q<cr>
+map Q :q<cr>
 vnoremap q :q<cr>
 nnoremap <silent> CC :clo<cr>
 nnoremap <space> A
