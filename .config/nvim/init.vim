@@ -375,8 +375,11 @@ tnoremap <A-n> <c-\><c-n>
 
 "copy into sys clipboard
 vnoremap <silent> CP "+y
-"past from sys clipboard
+"paste from sys clipboard
 nnoremap <silent> CV "+p
+" copy line into sys clipboard
+map <silent> CL I<Esc>v$h"+y
+
 "Disable keybindings so that we can use <leader>ca for Calendar
 map <plug>DisableNERDCommenterAltDelims <plug>NERDCommenterAltDelims
 map <plug>DisableCalendarH <plug>CalendarH
@@ -396,7 +399,6 @@ nnoremap <silent> <leader><space> :nohl<cr>
 nnoremap J }
 nnoremap K {
 map Q :q<cr>
-vnoremap q :q<cr>
 nnoremap <silent> CC :clo<cr>
 nnoremap <space> A
 nnoremap <silent> <leader>m :pclose<cr>
@@ -414,9 +416,15 @@ nnoremap <silent> <F8> :vertical resize -2<cr>
 nnoremap <silent> <leader>l :Buf<CR>
 nnoremap <silent> <leader>k :Win<CR>
 nnoremap <silent> <leader>t :Tags<CR>
-
+" Macros {{{1
+" Switch out grading rubric for new one
+let @a = 'ggjVGkkkkkkkkdsay€kbkp'
+" Boilerplate C
+let @c = 'i#include <stdio.h>#include <stdlib.h>@in€kb€kb€kb#include <string.h>@€kb#include <unistd.h>int main(o{kjddOq€kb'
+" Commands {{{1
 command! Zrecompile :!zrecompile
 command! Cpdir silent! :!cpdir
 command! KillBuffs silent! execute "%bd|e#|bd#"
+command! Finder silent! :!finder
 " modeline{{{1
 " vim:foldenable foldmethod=marker foldcolumn=1

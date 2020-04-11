@@ -35,7 +35,7 @@ let g:oceanic_next_terminal_italic=1
 hi Search cterm=bold gui=bold guifg=yellow guibg=blue
 "hi Search cterm=bold,underline gui=bold guifg=yellow guibg=NONE
 " Prevent annoying highlighting of matching pairs
-hi MatchParen NONE
+"hi MatchParen NONE
 " Get italic comments in themes that dont already have them
 hi Comment cterm=italic gui=italic
 hi Error guifg=None guibg=None

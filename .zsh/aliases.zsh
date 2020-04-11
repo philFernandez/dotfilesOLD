@@ -1,5 +1,6 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
+alias prolog='swipl'
 alias togo='(cd ~/Spring_2020/Gordon/Assig2/Section5 && echo $[$(ls C)-1])'
 alias finished='(cd ~/Spring_2020/Gordon/Assig2/Section5/Done && ls C)'
 alias sc5='scores $SECTION5'
@@ -15,6 +16,9 @@ alias eclsrc="cd $ECLSRC"
 alias ecl="cd $ECL"
 alias sec5="cd $SECTION5"
 alias cpsrc="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/ && mv tags /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/"
+alias range="scores . | sort -nk4 | rg -v average"
+alias range5="(cd $SECTION5 && range)"
+alias range6="(cd $SECTION6 && range)"
 # Commands and Shortcuts {{{1
 alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki2_html/style.css"
 alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki2_html/style.css"
@@ -91,6 +95,10 @@ alias oceanic='tab 52 90 107'
 alias triad1a='tab 49 198 165'
 alias triad1b='tab 165 49 198'
 alias triad1c='tab 198 165 49'
+# Tetrad 1
+alias tetrad1a='tab 100 59 204'
+alias tetrad1b='tab 204 100 59'
+alias tetrad1c='tab 162 204 59'
 # Directory Things {{{1
 alias -- -='cd -'
 alias 1='cd -'
@@ -183,7 +191,8 @@ alias nman='LESS+="-N" man'
 alias update="brew -v update && \
   printc -nC spring '==>'; printc -b ' Outdated' \
   && brew outdated && brew cask outdated"
-alias upgrade='brew upgrade && brew cask upgrade'
+alias upgrade='brew upgrade'
+alias cupgrade='brew cask upgrade'
 alias outdated='brew -v outdated && brew cask outdated'
 alias dryclean='brew cleanup --dry-run'
 alias clean='brew cleanup -s'
