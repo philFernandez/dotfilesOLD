@@ -1,12 +1,13 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 alias prolog='swipl'
-alias togo='(cd ~/Spring_2020/Gordon/Assig2/Section5 && echo $[$(ls C)-1])'
-alias finished='(cd ~/Spring_2020/Gordon/Assig2/Section5/Done && ls C)'
+alias togo='(cd ~/Spring_2020/Gordon/Assig2/Section6 && echo $[$(ls C)-1])'
+alias finished='(cd ~/Spring_2020/Gordon/Assig2/Section6/Done && ls C)'
 alias sc5='scores $SECTION5'
 alias sc6='scores $SECTION6'
-alias vjava='fd -e java'
-alias ojava='fd -e java -X nvim -R'
+alias vj='fd -e java'
+alias oj='fd -e java -X nvim -R'
+alias cj="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/ && mv tags /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/"
 alias mjar='fd A1Prj.jar -x cp {} ~/eclipse-workspace/A1Prj/dist/'
 alias both='echo "---------------------------------------" && echo "Section 5" && echo "---------------------------------------"&& sc5 && echo "---------------------------------------" && echo "Section 6"  && echo "---------------------------------------"&& sc6 && echo "---------------------------------------"'
 alias corona='(cd ~/Source_Code/Python/Corona && python3 Corona.py -v L)'
@@ -15,7 +16,6 @@ alias scorona='imgcat ~/Notes/vimwiki_images/Corona/*'
 alias eclsrc="cd $ECLSRC"
 alias ecl="cd $ECL"
 alias sec5="cd $SECTION5"
-alias cpsrc="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/ && mv tags /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/"
 alias range="scores . | sort -nk4 | rg -v average"
 alias range5="(cd $SECTION5 && range)"
 alias range6="(cd $SECTION6 && range)"
@@ -81,6 +81,7 @@ alias fl='fd -HI -d1'
 alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
 # Tab Colors {{{1
 # run cmd "colors" to lists all colors from cmd line
+alias black='tab 0 0 0'
 alias orange='tab 255 125 24'
 alias red='tab 255 38 0'
 alias green='tab 39 190 0'

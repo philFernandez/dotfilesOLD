@@ -161,7 +161,6 @@ let g:NERDTreeQuitOnOpen = 1
 " Search {{{1
 set hlsearch
 set ignorecase
-set noincsearch
 set smartcase
 set incsearch
 " Text Render (wrap) {{{1
@@ -392,9 +391,9 @@ nnoremap <silent> <leader>n :set number!<cr>
 nnoremap <silent> <leader>s :set spell!<cr>
 nnoremap sa ggVG
 nnoremap <F13> ggVGd
-nnoremap <silent> bn :bnext<cr>
-nnoremap <silent> bp :bNext<cr>
-nnoremap <silent> bc :bdelete!<cr>
+"nnoremap <silent> bn :bnext<cr>
+"nnoremap <silent> bp :bNext<cr>
+"nnoremap <silent> bc :bdelete!<cr>
 nnoremap <silent> <leader><space> :nohl<cr>
 nnoremap J }
 nnoremap K {

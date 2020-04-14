@@ -27,7 +27,7 @@ if [[ $help ]]; then
 fi
 
 if [[ $open_args ]] && [[ ! $search_args ]]; then
-  local url="https://${open_args[2]}"
+  local url="${open_args[2]}"
   printc -bnC lime "opening: "
   printc -iC aqua "${url}"
   google $url

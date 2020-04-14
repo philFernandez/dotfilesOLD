@@ -32,5 +32,6 @@
   "latex.build.executable": "/Library/TeX/texbin/latexmk",
   "latex.build.args": ["-lualatex"],
   "latex.build.onSave": true,
-  "latex.lint.onChange": true
+  "latex.lint.onChange": true,
+  "java.format.settings.url": "/Users/philthy/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
 }
