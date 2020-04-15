@@ -22,9 +22,10 @@ set termguicolors " keep this before color theme setting
 "color seoul256
 "color hybrid_material
 
-color OceanicNext
-let g:oceanic_next_terminal_bold=1
-let g:oceanic_next_terminal_italic=1
+color atom
+"color OceanicNext
+"let g:oceanic_next_terminal_bold=1
+"let g:oceanic_next_terminal_italic=1
 
 " Light Themes {{{1
 "color lightning
@@ -63,7 +64,7 @@ hi VimwikiHeaderChar cterm=bold guifg=#32A852
 hi VimwikiWeblink1 cterm=bold gui=bold guifg=#66D9EF
 hi Vimwikilink cterm=bold gui=bold guifg=#66D9EF
 hi Vimwikibold cterm=bold gui=bold guifg=lightgreen
-hi VimwikiTag guifg=#212223
+hi VimwikiTag guifg=#2F4050
 hi VimwikiTodo gui=bold guifg=yellow
 hi VimwikiHeader2 gui=bold guifg=#FF9300
 hi VimwikiHeader3 gui=bold guifg=#FFD479

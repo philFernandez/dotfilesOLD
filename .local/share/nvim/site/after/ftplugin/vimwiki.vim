@@ -1,4 +1,4 @@
-set tw=95
+set tw=0
 set nonumber
 set concealcursor=n
 set nocursorline

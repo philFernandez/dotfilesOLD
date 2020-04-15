@@ -391,9 +391,9 @@ nnoremap <silent> <leader>n :set number!<cr>
 nnoremap <silent> <leader>s :set spell!<cr>
 nnoremap sa ggVG
 nnoremap <F13> ggVGd
-"nnoremap <silent> bn :bnext<cr>
-"nnoremap <silent> bp :bNext<cr>
-"nnoremap <silent> bc :bdelete!<cr>
+nnoremap <silent> bn :bnext<cr>
+nnoremap <silent> bp :bNext<cr>
+nnoremap <silent> bc :bdelete!<cr>
 nnoremap <silent> <leader><space> :nohl<cr>
 nnoremap J }
 nnoremap K {
@@ -417,9 +417,7 @@ nnoremap <silent> <leader>k :Win<CR>
 nnoremap <silent> <leader>t :Tags<CR>
 " Macros {{{1
 " Switch out grading rubric for new one
-let @a = 'ggjVGkkkkkkkkdsay€kbkp'
-" Boilerplate C
-let @c = 'i#include <stdio.h>#include <stdlib.h>@in€kb€kb€kb#include <string.h>@€kb#include <unistd.h>int main(o{kjddOq€kb'
+let @a = 'ggjVGkkkkkkkkd^Msay<80>kbkp'
 " Commands {{{1
 command! Zrecompile :!zrecompile
 command! Cpdir silent! :!cpdir

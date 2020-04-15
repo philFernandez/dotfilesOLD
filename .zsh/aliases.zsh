@@ -19,7 +19,12 @@ alias sec5="cd $SECTION5"
 alias range="scores . | sort -nk4 | rg -v average"
 alias range5="(cd $SECTION5 && range)"
 alias range6="(cd $SECTION6 && range)"
+alias 135="vim +VimwikiIndex2 +'tag Zoom_CSC135' +KillBuffs"
+alias 138="vim +VimwikiIndex2 +'tag Zoom_CSC138' +KillBuffs"
+alias 159="vim +VimwikiIndex2 +'tag Zoom_CSC159' +KillBuffs"
+alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
 # Commands and Shortcuts {{{1
+alias dec2hex='hex2dec -r'
 alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki2_html/style.css"
 alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki2_html/style.css"
 alias bat="LESS+=-S bat --wrap never"
@@ -82,6 +87,7 @@ alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
 # Tab Colors {{{1
 # run cmd "colors" to lists all colors from cmd line
 alias black='tab 0 0 0'
+alias pink='tab 255 192 203'
 alias orange='tab 255 125 24'
 alias red='tab 255 38 0'
 alias green='tab 39 190 0'
