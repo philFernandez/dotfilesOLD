@@ -417,7 +417,8 @@ nnoremap <silent> <leader>k :Win<CR>
 nnoremap <silent> <leader>t :Tags<CR>
 " Macros {{{1
 " Switch out grading rubric for new one
-let @a = 'ggjVGkkkkkkkkd^Msay<80>kbkp'
+"let @a = 'ggjVGkkkkkkkkd^Msay<80>kbkp'
+let @a = 'saddd,4saybpPGddgg'
 " Commands {{{1
 command! Zrecompile :!zrecompile
 command! Cpdir silent! :!cpdir
