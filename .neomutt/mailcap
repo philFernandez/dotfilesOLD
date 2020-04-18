@@ -1,3 +1,4 @@
+text/html; lynx %s; nametemplate=%s.html
 text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
 image/gif; imgcat %s
 image/jpg; imgcat %s

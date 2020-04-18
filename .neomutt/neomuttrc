@@ -19,19 +19,33 @@ unset record
 set postponed = "+Drafts"
 # This is not all of the folders inside my Outlook account.
 # These are just the most useful.
-mailboxes ! +Grading_Work +Drafts "+Deleted Items" "+Advising Appointments" "+Sac State Financial Aid" +SAVED "+Senior Project" "+Tutoring Zoom Servers"
+mailboxes ! +Grading_Work +Drafts "+Deleted Items" "+Advising Appointments" \
+  "+Sac State Financial Aid" +SAVED "+Senior Project" "+Tutoring Zoom Servers" \
+  "+Sent Items"
 
 set mailcap_path = "/Users/philthy/.neomutt/mailcap"
 auto_view text/html
 
-#unset crypt_use_gpgme
 source /usr/local/share/doc/neomutt/samples/gpg.rc
 set pgp_default_key = "0xF839B273A4B419876C3CA57D5DDCB5B8DB8DEF8C"
-#set crypt_opportunistic_encrypt
-#set postpone_encrypt
+
+# Makes faster
+set sleep_time = 0
+set sort = "reverse-date"
+set noconfirmappend		# don't ask me if i want to append to mailboxes
+
+# Cache
+set header_cache = "~/.neomutt/cache/headers/"
+set message_cachedir = "~/.neomutt/cache/"
+
+
 
 
 # Keybindings -----------------
+bind pager g noop
+bind pager gg noop
+bind pager gg top
+bind pager G bottom
 # Scroll up and down window with K and J
 bind pager K  previous-line #scroll inside the message rather than the index
 bind pager J next-line"
@@ -142,3 +156,39 @@ color sidebar_spoolfile color207 default
 color sidebar_unread color136 default
 # --------------------------------------------------------------------------
 
+# general ------------ foreground ---- background -----------------------------
+color error      color231 color212
+color indicator  color231 color241
+color markers    color210 default
+color message    default  default
+color normal     default  default
+color prompt     default  default
+color search     color84  default
+color status     color141 color236
+color tilde      color231 default
+color tree       color141 default
+
+# message index ------ foreground ---- background -----------------------------
+color index      color210 default ~D                                                # deleted messages
+color index      color84  default ~F                                                # flagged messages
+color index      color117 default ~N                                                # new messages
+color index      color212 default ~Q                                                # messages which have been replied to
+color index      color215 default ~T                                                # tagged messages
+color index      color141 default ~v                                                # messages part of a collapsed thread
+
+# message headers ---- foreground ---- background -----------------------------
+color hdrdefault color117 default
+color header     color231 default ^Subject:.*
+# message body ------- foreground ---- background -----------------------------
+color attachment color228 default
+color body       color231 default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses
+color body       color228 default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs
+color body       color231 default (^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text
+color body       color231 default (^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text
+color body       color231 default (^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text
+color quoted     color61  default
+color quoted1    color117 default
+color quoted2    color84  default
+color quoted3    color215 default
+color quoted4    color212 default
+color signature  color212 default
