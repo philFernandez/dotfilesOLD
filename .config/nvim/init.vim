@@ -134,12 +134,12 @@ au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 " --------------------------------------------------------------------------
 
 " Autoformat {{{1
-if !exists('g:formatdef_latexindent')
-  let g:formatdef_latexindent = '"latexindent.pl - 2>/dev/null"'
-endif
-let g:formatters_tex = ['latexindent']
+"if !exists('g:formatdef_latexindent')
+  "let g:formatdef_latexindent = '"latexindent.pl - 2>/dev/null"'
+"endif
+"let g:formatters_tex = ['latexindent']
 
-au BufWrite *.tex :Autoformat
+"au BufWrite *.tex :Autoformat
 au BufWrite * :RemoveTrailingSpaces
 
 " No automatic comments on next line

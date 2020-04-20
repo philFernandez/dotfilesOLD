@@ -1,3 +1,5 @@
+set alias_file = "~/.neomutt/aliases"
+source $alias_file
 
 # Incoming
 set folder = "imaps://pfernandez@csus.edu@outlook.office365.com:993"
@@ -45,6 +47,9 @@ set noconfirmappend		# don't ask me if i want to append to mailboxes
 set header_cache = "~/.neomutt/cache/headers/"
 set message_cachedir = "~/.neomutt/cache/"
 
+# Notifications
+set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail' \
+-message '%n new messages, %u unread.'"
 
 
 
@@ -60,8 +65,28 @@ bind pager J next-line"
 bind pager <up> previous-line #scroll inside the message rather than the index
 bind pager <down> next-line"
 
-# Bind 'D' to REALLY delete an email
-#bind index D purge-message
+# Bind 'P' to REALLY delete an email
+bind index P purge-message
+
+# Move the highlight to the previous mailbox
+bind index,pager \Cp sidebar-prev
+# Move the highlight to the next mailbox
+bind index,pager \Cn sidebar-next
+# Open the highlighted mailbox
+bind index,pager <F5> sidebar-open
+# Move the highlight to the previous page
+# This is useful if you have a LOT of mailboxes.
+bind index,pager <F3> sidebar-page-up
+# Move the highlight to the next page
+# This is useful if you have a LOT of mailboxes.
+bind index,pager <F4> sidebar-page-down
+# Move the highlight to the previous mailbox containing new, or flagged,
+# mail.
+#bind index,pager <F5> sidebar-prev-new
+# Move the highlight to the next mailbox containing new, or flagged, mail.
+bind index,pager <F6> sidebar-next-new
+# Toggle the visibility of the Sidebar.
+bind index,pager B sidebar-toggle-visible
 
 # Example NeoMutt config file for the sidebar feature.
 
@@ -115,28 +140,13 @@ set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
 #       path     – mailbox path
 #       unsorted – do not sort the mailboxes
 set sidebar_sort_method = 'unsorted'
-# --------------------------------------------------------------------------
-# FUNCTIONS – shown with an example mapping
-# --------------------------------------------------------------------------
-# Move the highlight to the previous mailbox
-bind index,pager \Cp sidebar-prev
-# Move the highlight to the next mailbox
-bind index,pager \Cn sidebar-next
-# Open the highlighted mailbox
-bind index,pager <F5> sidebar-open
-# Move the highlight to the previous page
-# This is useful if you have a LOT of mailboxes.
-bind index,pager <F3> sidebar-page-up
-# Move the highlight to the next page
-# This is useful if you have a LOT of mailboxes.
-bind index,pager <F4> sidebar-page-down
-# Move the highlight to the previous mailbox containing new, or flagged,
-# mail.
-#bind index,pager <F5> sidebar-prev-new
-# Move the highlight to the next mailbox containing new, or flagged, mail.
-bind index,pager <F6> sidebar-next-new
-# Toggle the visibility of the Sidebar.
-bind index,pager B sidebar-toggle-visible
+
+# MACROS
+#macro compose \e5 "F pandoc -c ~/.neomutt/pandoc.css -s -f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
+macro compose \e5 "F pandoc -s -H ~/.neomutt/pandoc.html \
+  -f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
+set wait_key = "no"
+
 # --------------------------------------------------------------------------
 # COLORS – some unpleasant examples are given
 # --------------------------------------------------------------------------

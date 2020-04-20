@@ -87,6 +87,7 @@ alias fl='fd -HI -d1'
 alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
 # Tab Colors {{{1
 # run cmd "colors" to lists all colors from cmd line
+alias lightred='tab 251 107 98'
 alias black='tab 0 0 0'
 alias pink='tab 255 192 203'
 alias orange='tab 255 125 24'
