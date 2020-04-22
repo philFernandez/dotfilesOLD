@@ -47,9 +47,9 @@ set noconfirmappend		# don't ask me if i want to append to mailboxes
 set header_cache = "~/.neomutt/cache/headers/"
 set message_cachedir = "~/.neomutt/cache/"
 
-# Notifications
-set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail' \
--message '%n new messages, %u unread.'"
+# Notifications (Has Problems as this) FIX!!
+#set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail' \
+#-message '%n new messages, %u unread.'"
 
 
 
@@ -142,8 +142,8 @@ set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
 set sidebar_sort_method = 'unsorted'
 
 # MACROS
-#macro compose \e5 "F pandoc -c ~/.neomutt/pandoc.css -s -f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
-macro compose \e5 "F pandoc -s -H ~/.neomutt/pandoc.html \
+
+macro compose \e5 "F pandoc --template ~/.neomutt/template.html \
   -f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
 set wait_key = "no"
 
