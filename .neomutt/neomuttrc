@@ -1,57 +1,20 @@
 set alias_file = "~/.neomutt/aliases"
 source $alias_file
 
-# Incoming
-set folder = "imaps://pfernandez@csus.edu@outlook.office365.com:993"
-# Outgoing
-set smtp_url = "smtp://pfernandez@csus.edu@smtp.office365.com:587"
+source mailboxes.muttrc
 
-set ascii_chars = "yes"
-
-set from = "pfernandez@csus.edu"
-set realname = "Phil Fernandez"
-
-set imap_pass = "`pass neomutt/pfernandez`"
-set smtp_pass = $imap_pass
-
-#source ~/.neomutt/gpg.rc
-
-# Mailboxes
-set spoolfile = "+INBOX"
-set trash = "+Deleted Items"
-unset record
-set postponed = "+Drafts"
-# This is not all of the folders inside my Outlook account.
-# These are just the most useful.
-mailboxes "=INBOX"
-mailboxes "=Grading_Work"
-mailboxes "=Drafts"
-mailboxes "=Deleted Items"
-mailboxes "=Advising Appointments"
-mailboxes "=Sac State Financial Aid"
-mailboxes "=SAVED"
-mailboxes "=Senior Project"
-mailboxes "=Tutoring Zoom Servers"
-mailboxes "=Sent Items"
-
+set sort = 'reverse-date'
 set mailcap_path = "/Users/philthy/.neomutt/mailcap"
 auto_view text/html
 
 
 # Makes faster
 set sleep_time = 0
-set sort = "reverse-date"
-set noconfirmappend		# don't ask me if i want to append to mailboxes
 
-# Cache
-set header_cache = "~/.neomutt/cache/headers/"
-set message_cachedir = "~/.neomutt/cache/"
-
-# Notifications (Has Problems as this) FIX!!
-#set new_mail_command="terminal-notifier -title '%v' -subtitle 'New Mail' \
-#-message '%n new messages, %u unread.'"
-
-
+mailboxes "/Users/philthy/Mail/Gmail_Offlineimap/INBOX/"
+mailboxes "/Users/philthy/Mail/Gmail_Offlineimap/[Gmail].Sent Mail/"
+mailboxes "/Users/philthy/Mail/Outlook_Offlineimap/INBOX/"
+mailboxes "/Users/philthy/Mail/Outlook_Offlineimap/Sent Items/"
 
 # Keybindings -----------------
 bind pager g noop
@@ -145,6 +108,11 @@ set sidebar_sort_method = 'unsorted'
 
 macro compose \e5 "F pandoc --template ~/.neomutt/template.html \
   -f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
+
+macro index A "<modify-labels>+archive -unread -inbox\\n" "Archive message"
+macro index c "<change-vfolder>?" "Change to vfolder overview"
+macro index \\\\ "<vfolder-from-query>" "Search mailbox"
+
 set wait_key = "no"
 
 # --------------------------------------------------------------------------

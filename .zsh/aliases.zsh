@@ -25,7 +25,7 @@ alias 159="vim +VimwikiIndex2 +'tag Zoom_CSC159' +KillBuffs"
 alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
 alias csv='cp ~/Notes/vimwiki2/Grading/Mapper.wiki ~/Source_Code/Excel/Mapper.txt && rm ~/Source_Code/Excel/doit.csv && (cd ~/Source_Code/Excel && csvmap doit)'
 # Commands and Shortcuts {{{1
-alias m='neomutt'
+alias m='offlineimap -q -u quiet && neomutt'
 alias pdf="open *pdf"
 alias dec2hex='hex2dec -r'
 alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki2_html/style.css"
@@ -85,9 +85,14 @@ alias v='nvim'
 alias py='python3'
 alias fl='fd -HI -d1'
 alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
+alias ddg='lynx duckduckgo.com/lite'
+alias sp='lynx startpage.com'
+alias lynx='lynx -accept_all_cookies -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss'
 # Tab Colors {{{1
 # run cmd "colors" to lists all colors from cmd line
+alias material='tab 15 89 97'
 alias lightred='tab 251 107 98'
+alias maroon='tab 122 12 0'
 alias black='tab 0 0 0'
 alias pink='tab 255 192 203'
 alias orange='tab 255 125 24'
