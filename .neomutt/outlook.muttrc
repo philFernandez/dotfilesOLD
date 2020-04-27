@@ -12,6 +12,8 @@ set mbox_type = Maildir
 set ssl_starttls = yes
 set ssl_force_tls = yes
 
+named-mailboxes Outlook-Inbox "/Users/philthy/Mail/Outlook_Offlineimap/INBOX/"
+named-mailboxes Outlook-Sent "/Users/philthy/Mail/Outlook_Offlineimap/Sent Items/"
+named-mailboxes all-sent "/Users/philthy/sent/"
 
-unmailboxes *
 

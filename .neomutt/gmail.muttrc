@@ -12,5 +12,7 @@ set mbox_type = Maildir
 set ssl_starttls = yes
 set ssl_force_tls = yes
 
-unmailboxes *
+named-mailboxes Gmail-Inbox "/Users/philthy/Mail/Gmail_Offlineimap/INBOX/"
+named-mailboxes Gmail-Sent "/Users/philthy/Mail/Gmail_Offlineimap/[Gmail].Sent Mail/"
+
 
