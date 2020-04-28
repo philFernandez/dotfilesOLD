@@ -4,7 +4,8 @@ set from = "norcal618@gmail.com"
 set sendmail = "/usr/local/bin/msmtp -a gmail"
 set folder = "~/Mail/Gmail_Offlineimap"
 set spoolfile = "+INBOX"
-set my_msmtp_pass = `pass neomutt/gmail`
+# Gets password whenever loading account.... Slow
+#set my_msmtp_pass = `pass neomutt/gmail`
 
 alias me "Phil Fernandez" "norcal618@gmail.com"
 

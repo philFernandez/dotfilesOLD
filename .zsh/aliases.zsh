@@ -25,6 +25,7 @@ alias 159="vim +VimwikiIndex2 +'tag Zoom_CSC159' +KillBuffs"
 alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
 alias csv='cp ~/Notes/vimwiki2/Grading/Mapper.wiki ~/Source_Code/Excel/Mapper.txt && rm ~/Source_Code/Excel/doit.csv && (cd ~/Source_Code/Excel && csvmap doit)'
 # Commands and Shortcuts {{{1
+alias oli="offlineimap"
 alias m='offlineimap -q -u quiet && neomutt'
 alias pdf="open *pdf"
 alias dec2hex='hex2dec -r'

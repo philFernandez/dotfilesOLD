@@ -4,7 +4,8 @@ set from = "pfernandez@csus.edu"
 set sendmail = "/usr/local/bin/msmtp -a outlook"
 set folder = "~/Mail/Outlook_Offlineimap"
 set spoolfile = "+INBOX"
-set my_msmtp_pass = `pass neomutt/pfernandez`
+# Gets password whenever loading account.... Slow
+#set my_msmtp_pass = `pass neomutt/pfernandez`
 
 alias me "Phil Fernandez" "pfernandez@csus.edu"
 

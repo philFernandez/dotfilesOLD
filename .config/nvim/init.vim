@@ -1,10 +1,10 @@
-"================================================================"
-"        '||'  '|' '||' '||    ||' '||''|.     ..|'''.|          "
-"         '|.  .'   ||   |||  |||   ||   ||  .|'     '           "
-"          ||  |    ||   |'|..'||   ||''|'   ||                  "
-"           |||     ||   | '|' ||   ||   |.  '|.      .          "
-"            |     .||. .|. | .||. .||.  '|'  ''|....'           "
-"================================================================"
+"      ==================================================        "
+"     |  '||'  '|' '||' '||    ||' '||''|.     ..|'''.|  |       "
+"     |   '|.  .'   ||   |||  |||   ||   ||  .|'     '   |       "
+"     |    ||  |    ||   |'|..'||   ||''|'   ||          |       "
+"     |     |||     ||   | '|' ||   ||   |.  '|.      .  |       "
+"     |      |     .||. .|. | .||. .||.  '|'  ''|....'   |       "
+"      ==================================================        "
 " Notes {{{1
 " gO opens TOC in help pages
 
@@ -269,17 +269,18 @@ let g:startify_bookmarks = [
       \ '~/.config/nvim/init.vim',
       \ '~/.zsh/.zwc_dotfiles/.zshrc',
       \ '~/.zshenv',
-      \ '~/.zsh/aliases.zsh',
-      \ '~/Library/Preferences/org.dystroy.broot/conf.toml']
+      \ '~/.zsh/aliases.zsh']
 let g:startify_fortune_use_unicode = 1
 " When adding/removing files from session
 " automatically make saved session reflect
 " changes
 let g:startify_session_persistence = 1
 
-let g:startify_custom_header =
-      \ startify#pad(split(system('figlet -cf epic', 'neo-vim'), '\n'))
+"let g:startify_custom_header =
+      "\ startify#pad(split(system('figlet -cf epic', 'neo-vim'), '\n'))
 
+let g:startify_custom_header =
+      \ startify#pad(split(system('cat ~/Downloads/label', ''), '\n'))
 " Python Highlight {{{1
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0

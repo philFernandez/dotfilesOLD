@@ -8,6 +8,7 @@ set mailcap_path = "/Users/philthy/.neomutt/mailcap"
 auto_view text/html
 
 
+
 # Makes faster
 set sleep_time = 0
 
@@ -103,7 +104,12 @@ set sidebar_sort_method = 'unsorted'
 
 macro compose \e5 "F pandoc --template ~/.neomutt/template.html \
   -f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
+
+# Reload offlineimap from inside neomutt to refresh new mail
+macro index,pager,compose \e4 ':`offlineimap -q -u quiet`<enter>'
+
 set wait_key = "no"
+
 
 # --------------------------------------------------------------------------
 # COLORS – some unpleasant examples are given
@@ -112,7 +118,7 @@ set wait_key = "no"
 #       color OBJECT FOREGROUND BACKGROUND
 # Color of the current, open, mailbox
 # Note: This is a general NeoMutt option which colors all selected items.
-color indicator color231 color232
+color indicator color228 color232
 # Sidebar-specific color of the selected item
 color sidebar_indicator cyan black
 # Color of the highlighted, but not open, mailbox.
@@ -162,8 +168,11 @@ color status     color144 color234
 #color index      color174 color237 ~F
 #color index      color174 color237 ~D
 
-color index_author color011 color237 '.*'
-color index_date   color202 color237
+
+color index_author  color011 color237 '.*'
+color index_date    color202 color237
+color index_size    color132 color237
+color index_subject color148 color237 '.*'
 
 # header stuff
 color hdrdefault color223 color237

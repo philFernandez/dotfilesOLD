@@ -1,5 +1,5 @@
-text/html; lynx %s; nametemplate=%s.html
 text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
-image/gif; imgcat %s
-image/jpg; imgcat %s
+#text/html; "/Applications/Chromium.app/Contents/MacOS/Chromium" %s; nametemplate=%s.html; needsterminal;
+application/octet-stream; "/Applications/Chromium.app/Contents/MacOS/Chromium" %s;
+image/*; "/Applications/Chromium.app/Contents/MacOS/Chromium" %s;
 #application/pgp-keys; pgp -f < %s ; copiousoutput
