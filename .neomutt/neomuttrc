@@ -32,7 +32,7 @@ bind index,pager \Cp sidebar-prev
 # Move the highlight to the next mailbox
 bind index,pager \Cn sidebar-next
 # Open the highlighted mailbox
-bind index,pager <F5> sidebar-open
+bind index,pager <space> sidebar-open
 # Move the highlight to the previous page
 # This is useful if you have a LOT of mailboxes.
 bind index,pager <F3> sidebar-page-up
@@ -57,7 +57,7 @@ set sidebar_visible = no
 # How wide should the Sidebar be in screen columns?
 
 # Note: Some characters, e.g. Chinese, take up two columns each.
-set sidebar_width = 35
+set sidebar_width = 25
 # Should the mailbox paths be abbreviated?
 set sidebar_short_path = yes
 # Number of top-level mailbox path subdirectories to truncate for display

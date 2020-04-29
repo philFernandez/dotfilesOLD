@@ -5,6 +5,7 @@
         #         .|'      .     '||  ||    ||   ||   |.  '|.      .         #
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
+cat ~/Downloads/label1.0
 export SECTION5=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig2/Section5
 export SECTION6=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig2/Section6
 export ECLSRC=/Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/
