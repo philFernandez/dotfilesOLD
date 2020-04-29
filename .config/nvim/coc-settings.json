@@ -38,7 +38,7 @@
   // Java
   "java.format.settings.url": "/Users/philthy/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
 
-  // Javascript
-  "tsserver.npm": "/Users/philthy/.bin/npm",
-  "javascript.suggest.includeAutomaticOptionalChainCompletions": true
+  "tsserver.npm": "/usr/local/bin/npm",
+  "tsserver.log": "verbose"
+
 }

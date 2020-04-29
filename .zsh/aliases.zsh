@@ -33,8 +33,7 @@ alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki2_htm
 alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki2_html/style.css"
 alias bat="LESS+=-S bat --wrap never"
 alias finder='open .'
-alias wiki2='vim -c "VimwikiIndex 2"'
-alias wiki='vim -c VimwikiIndex'
+alias wiki='vim -c "VimwikiIndex 2"'
 alias gwiki='green && tname Wiki && wiki2'
 alias ovim='orange && tname Editor && nvim'
 alias bf='blue && tname Ranger && ranger'
