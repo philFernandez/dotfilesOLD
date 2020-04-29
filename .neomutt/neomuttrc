@@ -102,11 +102,13 @@ set sidebar_sort_method = 'unsorted'
 
 # MACROS
 
-macro compose \e5 "F pandoc --template ~/.neomutt/template.html \
-  -f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
+#macro compose \e5 "F pandoc --template ~/.neomutt/template.html \
+  #-f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
 
+macro compose \e5 "F pandoc -s -c /Users/philthy/.neomutt/pandoc.html \
+        -f markdown -t html \ny^T^Utext/html; charset=utf-8\n"
 # Reload offlineimap from inside neomutt to refresh new mail
-macro index,pager,compose \e4 ':`offlineimap -q -u quiet`<enter>'
+macro index,pager,compose \e4 '<enter-command>`offlineimap -q -u quiet`<enter>'
 
 set wait_key = "no"
 

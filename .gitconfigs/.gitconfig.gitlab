@@ -6,15 +6,13 @@
 	email = norcal618@gmail.com
 
 [pager]
-	diff = false
-	branch = false
-  ;log = false
-  shortlog = false
+  diff = true
+  branch = false
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
 
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = true
 [color "diff-highlight"]
@@ -29,3 +27,4 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+

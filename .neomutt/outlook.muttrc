@@ -15,6 +15,8 @@ set ssl_force_tls = yes
 
 named-mailboxes Outlook-Inbox "/Users/philthy/Mail/Outlook_Offlineimap/INBOX/"
 named-mailboxes Outlook-Sent "/Users/philthy/Mail/Outlook_Offlineimap/Sent Items/"
+named-mailboxes FinAid "/Users/philthy/Mail/Outlook_Offlineimap/Sac State Financial Aid"
+named-mailboxes Graduation_Application "/Users/philthy/Mail/Outlook_Offlineimap/Graduation_Application"
 named-mailboxes all-sent "/Users/philthy/sent/"
 
 
