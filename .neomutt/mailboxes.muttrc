@@ -2,6 +2,8 @@
 
 macro index,pager <F1> '<sync-mailbox><enter-command>source ~/.neomutt/outlook.muttrc<enter><change-folder>!<enter>;<check-stats>'
 macro index,pager <F2> '<sync-mailbox><enter-command>source ~/.neomutt/gmail.muttrc<enter><change-folder>!<enter>;<check-stats>'
+macro index,pager <F3> '<sync-mailbox><enter-command>source ~/.neomutt/maildcom.muttrc<enter><change-folder>!<enter>;<check-stats>'
+
 
 # Load outlook by default
 source ~/.neomutt/outlook.muttrc

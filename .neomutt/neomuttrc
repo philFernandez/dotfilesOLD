@@ -35,10 +35,10 @@ bind index,pager \Cn sidebar-next
 bind index,pager <space> sidebar-open
 # Move the highlight to the previous page
 # This is useful if you have a LOT of mailboxes.
-bind index,pager <F3> sidebar-page-up
+#bind index,pager <F3> sidebar-page-up
 # Move the highlight to the next page
 # This is useful if you have a LOT of mailboxes.
-bind index,pager <F4> sidebar-page-down
+#bind index,pager <F4> sidebar-page-down
 # Move the highlight to the previous mailbox containing new, or flagged,
 # mail.
 #bind index,pager <F5> sidebar-prev-new
