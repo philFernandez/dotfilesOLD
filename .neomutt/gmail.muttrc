@@ -3,6 +3,8 @@ set realname = "Phil Fernandez"
 set from = "norcal618@gmail.com"
 set sendmail = "/usr/local/bin/msmtp -a gmail"
 set folder = "~/Mail/Gmail_Offlineimap"
+set trash = "~/Mail/Gmail_Trash"
+set record = "~/Mail/Gmail_Offlineimap/[Gmail].Sent Mail"
 set spoolfile = "+INBOX"
 # Gets password whenever loading account.... Slow
 #set my_msmtp_pass = `pass neomutt/gmail`
@@ -15,5 +17,6 @@ set ssl_force_tls = yes
 
 named-mailboxes Gmail-Inbox "/Users/philthy/Mail/Gmail_Offlineimap/INBOX/"
 named-mailboxes Gmail-Sent "/Users/philthy/Mail/Gmail_Offlineimap/[Gmail].Sent Mail/"
+named-mailboxes Gmail-Trash "/Users/philthy/Mail/Gmail_Trash"
 
 

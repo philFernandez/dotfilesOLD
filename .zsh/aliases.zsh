@@ -1,13 +1,13 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 alias prolog='swipl'
-alias togo='(cd ~/Spring_2020/Gordon/Assig2/Section6 && echo $[$(ls C)-1])'
-alias finished='(cd ~/Spring_2020/Gordon/Assig2/Section6/Done && ls C)'
+alias togo='(cd ~/Spring_2020/Gordon/Assig3/Section5 && echo $[$(ls C)-1])'
+alias finished='(cd ~/Spring_2020/Gordon/Assig3/Section5/Done && ls C)'
 alias sc5='scores $SECTION5'
 alias sc6='scores $SECTION6'
 alias vj='fd -e java'
 alias oj='fd -e java -X nvim -R'
-alias cj="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/ && mv tags /Users/philthy/eclipse-workspace/A2Prj/src/com/mycompany/a2/"
+alias cj="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A3Prj/src/com/mycompany/a3/ && mv tags /Users/philthy/eclipse-workspace/A3Prj/src/com/mycompany/a3/"
 alias mjar='fd A1Prj.jar -x cp {} ~/eclipse-workspace/A1Prj/dist/'
 alias both='echo "---------------------------------------" && echo "Section 5" && echo "---------------------------------------"&& sc5 && echo "---------------------------------------" && echo "Section 6"  && echo "---------------------------------------"&& sc6 && echo "---------------------------------------"'
 alias corona='(cd ~/Source_Code/Python/Corona && python3 Corona.py -v L)'
@@ -23,7 +23,10 @@ alias 135="vim +VimwikiIndex2 +'tag Zoom_CSC135' +KillBuffs"
 alias 138="vim +VimwikiIndex2 +'tag Zoom_CSC138' +KillBuffs"
 alias 159="vim +VimwikiIndex2 +'tag Zoom_CSC159' +KillBuffs"
 alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
-alias csv='cp ~/Notes/vimwiki2/Grading/Mapper.wiki ~/Source_Code/Excel/Mapper.txt && rm ~/Source_Code/Excel/doit.csv && (cd ~/Source_Code/Excel && csvmap doit)'
+#alias csv='cp ~/Notes/vimwiki2/Grading/Mapper.wiki ~/Source_Code/Excel/Mapper.txt && rm ~/Source_Code/Excel/doit.csv && (cd ~/Source_Code/Excel && csvmap doit)'
+alias grade="rm ~/Source_Code/Excel/doit.csv && rm ~/Source_Code/Excel/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/vimwiki2/Grading/WorkingRubric.wiki ~/Source_Code/Excel/Mapper.txt && csvmap doit"
+alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
+
 # Commands and Shortcuts {{{1
 alias oli="offlineimap"
 alias m='offlineimap -q -u quiet && neomutt'
@@ -70,7 +73,7 @@ alias c='cl -1'
 alias cl='clear;lsd --group-dirs first'
 alias cll='clear;ls -A'
 alias clll='clear;ls -Al'
-alias ll='lsd --almost-all -l --blocks date,name --date relative'
+alias ll='lsd --almost-all -l --blocks date,name --date relative -t'
 #alias q='exit'
 alias reload='exec zsh'
 alias vi='nvim'

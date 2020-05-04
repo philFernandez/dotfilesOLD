@@ -39,6 +39,6 @@
   "java.format.settings.url": "/Users/philthy/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
 
   "tsserver.npm": "/usr/local/bin/npm",
-  "tsserver.log": "verbose"
+  "javascript.format.enabled": true
 
 }

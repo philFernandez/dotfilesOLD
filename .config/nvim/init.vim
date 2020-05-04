@@ -421,7 +421,7 @@ nnoremap <silent> <leader>t :Tags<CR>
 "let @a = 'ggjVGkkkkkkkkd^Msay<80>kbkp'
 let @a = 'saddd,4saybpPGddgg'
 " Commands {{{1
-command! S silent! execute "w|!pandoc -s -c pandoc.css markdown/app.md -o app.html"
+command! S silent! execute "w|!pandoc -s -c ~/Spring_2020/CSC135/Homework/PL_4/App/pandoc.css ~/Spring_2020/CSC135/Homework/PL_4/App/markdown/app.md  -o ~/Spring_2020/CSC135/Homework/PL_4/App/app.html"
 command! Zrecompile :!zrecompile
 command! Cpdir silent! :!cpdir
 command! KillBuffs silent! execute "%bd|e#|bd#"

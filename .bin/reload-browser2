@@ -8,7 +8,7 @@ set targetURL to "$TARGET"
 
 tell application "Chromium"
   set window_list to every window
-  delay 0.9
+  delay 2.9
 
 repeat with the_window in window_list
   reload (tabs of the_window whose URL contains targetURL)
