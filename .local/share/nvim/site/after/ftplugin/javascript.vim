@@ -3,4 +3,4 @@ nnoremap <silent> <c-b><c-b> :!node %<cr>
 
 set colorcolumn=80
 " Need this to trigger mucomplete on keyword.blah
-set iskeyword+=.
+"set iskeyword+=.

@@ -4,7 +4,6 @@ set from = "pfernandez@csus.edu"
 set sendmail = "/usr/local/bin/msmtp -a outlook"
 set folder = "~/Mail/Outlook_Offlineimap"
 set trash = "~/Mail/Outlook_Trash"
-set record = "~/Mail/Outlook_Offlineimap/Sent Items"
 set spoolfile = "+INBOX"
 # Gets password whenever loading account.... Slow
 #set my_msmtp_pass = `pass neomutt/pfernandez`
@@ -20,4 +19,8 @@ named-mailboxes Outlook-Sent "/Users/philthy/Mail/Outlook_Offlineimap/Sent Items
 named-mailboxes FinAid "/Users/philthy/Mail/Outlook_Offlineimap/Sac State Financial Aid"
 named-mailboxes Graduation_Application "/Users/philthy/Mail/Outlook_Offlineimap/Graduation_Application"
 named-mailboxes Grading_Work "/Users/philthy/Mail/Outlook_Offlineimap/Grading_Work"
+named-mailboxes all-sent "/Users/philthy/sent/"
 named-mailboxes Outlook-Trash "/Users/philthy/Mail/Outlook_Trash"
+
+
+
