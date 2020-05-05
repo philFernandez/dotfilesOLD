@@ -68,6 +68,7 @@ set ruler
 set number
 set splitbelow
 set splitright
+set scrolloff=5
 " Get rid of delay when entering normal mode
 set timeoutlen=1000
 set ttimeoutlen=0

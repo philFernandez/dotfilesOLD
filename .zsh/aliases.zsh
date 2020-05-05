@@ -1,8 +1,8 @@
 # Temp Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
 alias prolog='swipl'
-alias togo='(cd ~/Spring_2020/Gordon/Assig3/Section5 && echo $[$(ls C)-1])'
-alias finished='(cd ~/Spring_2020/Gordon/Assig3/Section5/Done && ls C)'
+alias togo='(cd ~/Spring_2020/Gordon/Assig3/Section6 && echo $[$(ls C)-1])'
+alias finished='(cd ~/Spring_2020/Gordon/Assig3/Section6/Done && ls C)'
 alias sc5='scores $SECTION5'
 alias sc6='scores $SECTION6'
 alias vj='fd -e java'
