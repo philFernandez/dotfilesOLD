@@ -93,6 +93,14 @@ hr {
   width: 100%;
 }
 
+td > a {
+  color: #1e90ff;
+  text-decoration: none;
+
+}
+
+td > a:hover { color: #ff4500; }
+
 del {
   text-decoration: line-through;
   color: #777777;
