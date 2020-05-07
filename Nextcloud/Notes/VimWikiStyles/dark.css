@@ -87,6 +87,15 @@ th, td {
   padding: 0.3em;
 }
 
+td > a {
+  color: #1e90ff;
+  font-weight: bold;
+  text-decoration: none;
+
+}
+
+td > a:hover { color: #ff4500; }
+
 th {
   background-color: #f0f0f0;
   color: rgb(25, 25, 25);
