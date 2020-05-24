@@ -5,10 +5,10 @@
         #         .|'      .     '||  ||    ||   ||   |.  '|.      .         #
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
-export SECTION5=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig3/Section5
-export SECTION6=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig3/Section6
-export ECLSRC=/Users/philthy/eclipse-workspace/A3Prj/src/com/mycompany/a3/
-export ECL=/Users/philthy/eclipse-workspace/A3Prj
+export SECTION5=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig4/Section5
+export SECTION6=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig4/Section6
+export ECLSRC=/Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a4/
+export ECL=/Users/philthy/eclipse-workspace/A4Prj
 # {{{1 iterm2 set tab/window title
 # Set iterm window/tab titles empty
 # if you want to set it to somehthing,

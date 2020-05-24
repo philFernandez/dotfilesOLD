@@ -36,7 +36,6 @@
   "latex.lint.onChange": true,
 
   // Java
-  "java.format.settings.url": "/Users/philthy/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
 
   "tsserver.npm": "/usr/local/bin/npm",
   "javascript.format.enabled": true

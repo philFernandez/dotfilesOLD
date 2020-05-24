@@ -7,8 +7,8 @@ alias sc5='scores $SECTION5'
 alias sc6='scores $SECTION6'
 alias vj='fd -e java'
 alias oj='fd -e java -X nvim -R'
-alias cj="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A3Prj/src/com/mycompany/a3/ && mv tags /Users/philthy/eclipse-workspace/A3Prj/src/com/mycompany/a3/"
-alias mjar='fd A1Prj.jar -x cp {} ~/eclipse-workspace/A1Prj/dist/'
+alias cj="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a3/ && mv tags /Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a3/"
+alias mjar='fd A4Prj.jar -x cp {} ~/eclipse-workspace/A4Prj/dist/'
 alias both='echo "---------------------------------------" && echo "Section 5" && echo "---------------------------------------"&& sc5 && echo "---------------------------------------" && echo "Section 6"  && echo "---------------------------------------"&& sc6 && echo "---------------------------------------"'
 alias corona='(cd ~/Source_Code/Python/Corona && python3 Corona.py -v L)'
 alias acorona='(cd ~/Source_Code/Python/Corona && python3 Corona.py)'
@@ -24,10 +24,11 @@ alias 138="vim +VimwikiIndex2 +'tag Zoom_CSC138' +KillBuffs"
 alias 159="vim +VimwikiIndex2 +'tag Zoom_CSC159' +KillBuffs"
 alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
 #alias csv='cp ~/Notes/vimwiki2/Grading/Mapper.wiki ~/Source_Code/Excel/Mapper.txt && rm ~/Source_Code/Excel/doit.csv && (cd ~/Source_Code/Excel && csvmap doit)'
-alias grade="rm ~/Source_Code/Excel/doit.csv && rm ~/Source_Code/Excel/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/vimwiki2/Grading/WorkingRubric.wiki ~/Source_Code/Excel/Mapper.txt && csvmap doit"
+alias grade="rm ~/Source_Code/Excel/doit.csv && rm ~/Source_Code/Excel/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/vimwiki2/Grading/Mapper_Assig3.wiki ~/Source_Code/Excel/Mapper.txt && csvmap doit"
 alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
 
 # Commands and Shortcuts {{{1
+alias ip="ifconfig | rg '\d{3}\.\d{3}\.\d\.\d{2}\b' -o --color=never"
 alias oli="offlineimap"
 alias m='offlineimap -q -u quiet && neomutt'
 alias pdf="open *pdf"
