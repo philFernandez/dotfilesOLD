@@ -1,5 +1,25 @@
 #!/usr/local/bin/zsh
 
+echo '
+This script is deprecated.
+
+Alternatively run:
+
+brew rm unwanted
+for pkg in $(brew deps unwanted); do
+  brew rm $pkg
+done
+
+This will not remove packages that other packages depend on.
+
+Check for missing dependencies just in case:
+
+brew missing
+'
+
+exit 0
+
+
 # Removes brew package and all of its dependencies that
 # aren't relied on by other brew packages
 

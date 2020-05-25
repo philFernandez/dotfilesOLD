@@ -21,12 +21,9 @@
   },
 
   // Coc-python settings (python things are installed in a virtualenv
-  // ~/.local/share/virtualenvs/Libs-LCd87nCH)
-//  "python.venvPath": "~/.local/share/virtualenvs",
- // "python.jediPath": "~/.local/share/virtualenvs/DataVisual-VN1j2dx-/lib/python3.8/site-packages",
     "python.jediPath": "/Users/philthy/.local/share/virtualenvs/Rubric-TCWDy9sy/lib/python3.8/site-packages",
-  //"python.linting.pylintPath": "/usr/local/bin/pylint",
-    "python.formatting.provider": "autopep8",
+    "python.formatting.provider": "black",
+    "python.linting.mypyEnabled": true,
 
 
   // coc-texlab

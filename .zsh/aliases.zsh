@@ -97,7 +97,6 @@ alias lynx='lynx -accept_all_cookies -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss
 alias material='tab 15 89 97'
 alias lightred='tab 251 107 98'
 alias maroon='tab 122 12 0'
-alias black='tab 0 0 0'
 alias pink='tab 255 192 203'
 alias orange='tab 255 125 24'
 alias red='tab 255 38 0'
