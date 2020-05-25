@@ -2,7 +2,6 @@
   // General coc.nvim settings
   "coc.source.file.ignoreHidden": false,
   "coc.preferences.formatOnSaveFiletypes": ["python", "c"],
-  //"diagnostic.displayByAle": true,
   "diagnostic.checkCurrentLine": true,
   "suggest.floatEnable": true,
   "diagnostic.messageTarget": "float",
@@ -20,9 +19,12 @@
     }
   },
 
-  // Coc-python settings (python things are installed in a virtualenv
-    "python.jediPath": "/Users/philthy/.local/share/virtualenvs/Rubric-TCWDy9sy/lib/python3.8/site-packages",
+    // Coc-python settings
+    // black and mypy are installed via pipx
+    // Jedi is not available through pipx so installed via pip3
+    "python.formatting.blackPath": "~/.local/bin/black",
     "python.formatting.provider": "black",
+    "python.linting.mypyPath": "~/.local/bin/mypy",
     "python.linting.mypyEnabled": true,
 
 
@@ -32,8 +34,8 @@
   "latex.build.onSave": true,
   "latex.lint.onChange": true,
 
-  // Java
 
+  // TypeScript \ JavaScript
   "tsserver.npm": "/usr/local/bin/npm",
   "javascript.format.enabled": true
 
