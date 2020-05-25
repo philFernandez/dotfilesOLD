@@ -5,8 +5,10 @@
   "diagnostic.checkCurrentLine": true,
   "suggest.floatEnable": true,
   "diagnostic.messageTarget": "float",
-  "signature.target": "float",
   "coc.preferences.hoverTarget": "float",
+  "signature.target": "float",
+  // Make the floating func signature go away when I start typing
+  "signature.hideOnTextChange": true,
 
   // Specific language servers
   "languageserver": {
@@ -24,6 +26,7 @@
     // Jedi is not available through pipx so installed via pip3
     "python.formatting.blackPath": "~/.local/bin/black",
     "python.formatting.provider": "black",
+    "python.linting.pylintEnabled": false,
     "python.linting.mypyPath": "~/.local/bin/mypy",
     "python.linting.mypyEnabled": true,
 
