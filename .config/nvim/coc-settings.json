@@ -38,7 +38,7 @@
   "latex.lint.onChange": true,
 
 
-  // TypeScript \ JavaScript
+  // TypeScript | JavaScript
   "tsserver.npm": "/usr/local/bin/npm",
   "javascript.format.enabled": true
 
