@@ -7,8 +7,8 @@
   "diagnostic.messageTarget": "float",
   "coc.preferences.hoverTarget": "float",
   "signature.target": "float",
-  // Make the floating func signature go away when I start typing
-  "signature.hideOnTextChange": true,
+  // Make the floating func signature stay below cursor
+  "signature.preferShownAbove": false,
 
   // Specific language servers
   "languageserver": {
