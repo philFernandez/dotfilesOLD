@@ -51,6 +51,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'ryanoasis/vim-devicons'
 Plug 'cespare/vim-toml'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'vim-scripts/applescript.vim'
 Plug 'lilyball/vim-swift'
 Plug 'chrisbra/csv.vim'
@@ -257,7 +258,7 @@ let g:lightline#bufferline#number_map = {
 
 
 " Ultisnips {{{1
-let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
+"let g:UltiSnipsSnippetsDir="~/.vim/ultisnips"
 let g:UltiSnipsSnippetDirectories=["ultisnips"]
 let g:UltiSnipsExpandTrigger="<leader>n"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
