@@ -1,62 +1,21 @@
 # Temp Aliases {{{1
-alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
-alias prolog='swipl'
-alias togo='(cd ~/Spring_2020/Gordon/Assig3/Section6 && echo $[$(ls C)-1])'
-alias finished='(cd ~/Spring_2020/Gordon/Assig3/Section6/Done && ls C)'
-alias sc5='scores $SECTION5'
-alias sc6='scores $SECTION6'
-alias vj='fd -e java'
-alias oj='fd -e java -X nvim -R'
-alias cj="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a3/ && mv tags /Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a3/"
-alias mjar='fd A4Prj.jar -x cp {} ~/eclipse-workspace/A4Prj/dist/'
-alias both='echo "---------------------------------------" && echo "Section 5" && echo "---------------------------------------"&& sc5 && echo "---------------------------------------" && echo "Section 6"  && echo "---------------------------------------"&& sc6 && echo "---------------------------------------"'
-alias corona='(cd ~/Source_Code/Python/Corona && python3 Corona.py -v L)'
-alias acorona='(cd ~/Source_Code/Python/Corona && python3 Corona.py)'
-alias scorona='imgcat ~/Notes/vimwiki_images/Corona/*'
-alias eclsrc="cd $ECLSRC"
-alias ecl="cd $ECL"
-alias sec5="cd $SECTION5"
-alias range="scores . | sort -nk4 | rg -v average"
-alias range5="(cd $SECTION5 && range)"
-alias range6="(cd $SECTION6 && range)"
-alias 135="vim +VimwikiIndex2 +'tag Zoom_CSC135' +KillBuffs"
-alias 138="vim +VimwikiIndex2 +'tag Zoom_CSC138' +KillBuffs"
-alias 159="vim +VimwikiIndex2 +'tag Zoom_CSC159' +KillBuffs"
-alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
-#alias csv='cp ~/Notes/vimwiki2/Grading/Mapper.wiki ~/Source_Code/Excel/Mapper.txt && rm ~/Source_Code/Excel/doit.csv && (cd ~/Source_Code/Excel && csvmap doit)'
-alias grade="rm ~/Source_Code/Excel/doit.csv && rm ~/Source_Code/Excel/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/vimwiki2/Grading/Mapper_Assig3.wiki ~/Source_Code/Excel/Mapper.txt && csvmap doit"
-alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
-
 # Commands and Shortcuts {{{1
 alias ip="ifconfig | rg '\d{3}\.\d{3}\.\d\.\d{2}\b' -o --color=never"
 alias oli="offlineimap"
 alias m='offlineimap -q -u quiet && neomutt'
-alias pdf="open *pdf"
 alias dec2hex='hex2dec -r'
 alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki2_html/style.css"
 alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki2_html/style.css"
 alias bat="LESS+=-S bat --wrap never"
 alias finder='open .'
 alias wiki='vim -c "VimwikiIndex 2"'
-alias gwiki='green && tname Wiki && wiki2'
-alias ovim='orange && tname Editor && nvim'
-alias bf='blue && tname Ranger && ranger'
-alias tcmd='teal && tname CMDs'
 alias ssh='TERM=xterm-256color ssh'
-alias spede='ssh user@192.168.0.26'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
-alias ag=rg
-alias emacs='emacs -nw'
 alias kf='k -f'
 alias watch='watch -td -n 0.1'
 alias sqlite3='/usr/local/Cellar/sqlite/3.31.1/bin/sqlite3'
 alias sql='/usr/local/Cellar/sqlite/3.31.1/bin/sqlite3'
-alias remoff='/bin/mv -f ~/.reminders ~/.reminders.silent'
-alias remon='/bin/mv -f ~/.reminders.silent ~/.reminders'
 alias lls='/bin/ls'
-alias shwc='c;shwf -c'
-alias shwa='c;shwf -a'
-alias shw='c;shwf'
 alias md='mkdir -p'
 alias f="ranger"
 alias light='echo "\x1B]1337;SetProfile=Light\x07"'
@@ -68,14 +27,13 @@ alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias regex='man pcresyntax'
 alias tree2='lsd --tree --group-dirs first'
 alias time='/usr/bin/time'
-#alias tree='br'
 alias cls=clear
 alias c='cl -1'
 alias cl='clear;lsd --group-dirs first'
 alias cll='clear;ls -A'
 alias clll='clear;ls -Al'
 alias ll='lsd --almost-all -l --blocks date,name --date relative -t'
-#alias q='exit'
+alias q='exit'
 alias reload='exec zsh'
 alias vi='nvim'
 alias vim='nvim'
@@ -84,13 +42,9 @@ alias vi='nvim'
 alias mv='mv -v'
 alias ds='du -sh 2> /dev/null'
 alias v='nvim'
-#alias bash='/usr/local/bin/bash'
-#alias rg='rg --colors --colors match:fg:yellow --colors match:style:bold --colors line:style:bold --colors line:fg:yellow --colors path:fg:200,100,50 --colors path:style:bold -S'
 alias py='python3'
 alias fl='fd -HI -d1'
 alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
-alias ddg='lynx duckduckgo.com/lite'
-alias sp='lynx startpage.com'
 alias lynx='lynx -accept_all_cookies -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss'
 # Tab Colors {{{1
 # run cmd "colors" to lists all colors from cmd line
