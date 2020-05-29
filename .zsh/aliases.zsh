@@ -1,4 +1,25 @@
-# Temp Aliases {{{1
+# Grading Aliases {{{1
+alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
+alias togo='(cd ~/Spring_2020/Gordon/Assig3/Section6 && echo $[$(ls C)-1])'
+alias finished='(cd ~/Spring_2020/Gordon/Assig3/Section6/Done && ls C)'
+alias sc5='scores $SECTION5'
+alias sc6='scores $SECTION6'
+alias vj='fd -e java'
+alias oj='fd -e java -X nvim -R'
+alias cj="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a3/ && mv tags /Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a3/"
+alias mjar='fd A4Prj.jar -x cp {} ~/eclipse-workspace/A4Prj/dist/'
+alias both='echo "---------------------------------------" && echo "Section 5" && echo "---------------------------------------"&& sc5 && echo "---------------------------------------" && echo "Section 6"  && echo "---------------------------------------"&& sc6 && echo "---------------------------------------"'
+alias eclsrc="cd $ECLSRC"
+alias ecl="cd $ECL"
+alias sec5="cd $SECTION5"
+alias range="scores . | sort -nk4 | rg -v average"
+alias range5="(cd $SECTION5 && range)"
+alias range6="(cd $SECTION6 && range)"
+alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
+alias grade="rm ~/Source_Code/Excel/doit.csv && rm ~/Source_Code/Excel/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/vimwiki2/Grading/Mapper_Assig3.wiki ~/Source_Code/Excel/Mapper.txt && csvmap doit"
+alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
+alias pdf="open *pdf"
+
 # Commands and Shortcuts {{{1
 alias ip="ifconfig | rg '\d{3}\.\d{3}\.\d\.\d{2}\b' -o --color=never"
 alias oli="offlineimap"

@@ -1,2 +1,0 @@
-histdb "$1" | awk '{print substr($0, index($0,$4))}' | grep -v 'T/tmp'
-# vi: ft=zsh

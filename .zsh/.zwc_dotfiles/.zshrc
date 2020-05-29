@@ -5,8 +5,6 @@
         #         .|'      .     '||  ||    ||   ||   |.  '|.      .         #
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
-export SECTION5=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig4/Section5
-export SECTION6=/Users/philthy/Nextcloud/CSUS/Spring_2020/Gordon/Assig4/Section6
 export ECLSRC=/Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a4/
 export ECL=/Users/philthy/eclipse-workspace/A4Prj
 # {{{1 iterm2 set tab/window title
