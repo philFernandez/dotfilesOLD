@@ -55,7 +55,6 @@ Plug 'honza/vim-snippets'
 Plug 'vim-scripts/applescript.vim'
 Plug 'lilyball/vim-swift'
 Plug 'chrisbra/csv.vim'
-Plug 'adimit/prolog.vim'
 "Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
@@ -341,7 +340,7 @@ let g:csv_delim='|'
 "let g:csv_nomap_J = 1
 "let g:csv_nomap_K = 1
 let g:no_csv_maps = 1
-" Completion {{{1
+" Completion | Coc-Nvim {{{1
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -353,6 +352,19 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" Change all instances of word under cursor
+nnoremap <leader>x :CocCommand document.renameCurrentWord<CR>
+
+" Choose individual instances of word under cursor to change
+nmap <expr> <silent> <C-d> <SID>select_current_word()
+function! s:select_current_word()
+  if !get(g:, 'coc_cursors_activated', 0)
+    return "\<Plug>(coc-cursors-word)"
+  endif
+  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+endfunc
+
 " Keymaps {{{1
 nnoremap <leader>r :Rg<CR>
 
