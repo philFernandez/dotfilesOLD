@@ -15,6 +15,7 @@ alias -g NL=' | nl -b a'
 alias -g BIN='~/.bin'
 alias -g C=" | awk END'{print NR}'"
 alias -g G='| rg --no-filename --color never'
+alias -g A='|gawk'
 alias -g GN='|rg -v'
 alias -g GC='| rg --no-filename --color always'
 alias -g F='|fzf'
