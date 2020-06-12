@@ -26,9 +26,9 @@
     // Jedi is not available through pipx so installed via pip3
     "python.formatting.blackPath": "~/.local/bin/black",
     "python.formatting.provider": "black",
-    "python.linting.pylintEnabled": false,
-    "python.linting.mypyPath": "~/.local/bin/mypy",
-    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": true,
+    //"python.linting.mypyPath": "~/.local/bin/mypy",
+    //"python.linting.mypyEnabled": true,
 
 
   // coc-texlab

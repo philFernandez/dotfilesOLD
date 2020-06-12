@@ -1,4 +1,5 @@
 #!/bin/bash
 
 # Bypass chromes bologna about certs
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors &> /dev/null &
+#/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors &> /dev/null &
+/Applications/Chromium.app/Contents/MacOS/Chromium --ignore-certificate-errors &> /dev/null &

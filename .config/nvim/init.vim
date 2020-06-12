@@ -185,7 +185,7 @@ set wrapscan " continue search on next line
 " zk - jump up to previous fold
 set foldmethod=indent
 "set foldnestmax=1
-set foldlevel=0
+set foldlevel=99
 " uncomment to disable fold on file open
 set nofoldenable
 " vim-easy-align {{{1
@@ -442,4 +442,4 @@ command! Cpdir silent! :!cpdir
 command! KillBuffs silent! execute "%bd|e#|bd#"
 command! Finder silent! :!finder
 " modeline{{{1
-" vim:foldenable foldmethod=marker foldcolumn=1
+" vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
