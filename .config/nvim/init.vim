@@ -58,7 +58,7 @@ Plug 'chrisbra/csv.vim'
 "Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
-"Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 call plug#end()
 
 " UI Settings {{{1
