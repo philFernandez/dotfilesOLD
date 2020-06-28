@@ -151,9 +151,9 @@ autocmd FileType * setlocal formatoptions-=ro
 set autoindent
 set expandtab " use spaces instead of tabs
 set shiftround
-set shiftwidth=2
+set shiftwidth=4
 set smarttab
-set tabstop=2
+set tabstop=4
 " Various Plugin Settings {{{1
 let g:user_emmet_leader_key='<C-W>'
 let g:tagbar_vertical = 30
