@@ -116,6 +116,7 @@ alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 	--style=numbers,changes --color always {}" \
 	--preview-window="down:95%"'
 # Git {{{1
+alias gzap='git checkout .'
 alias github='ln -sf ~/.gitconfigs/.gitconfig.github ~/.gitconfig'
 alias gitlab='ln -sf ~/.gitconfigs/.gitconfig.gitlab ~/.gitconfig'
 alias glor='LESS+=-N git log --oneline --decorate --reverse'
@@ -217,4 +218,5 @@ alias fvim4='fvim -d 4'
 alias fvim5='fvim -d 5'
 alias fvim6='fvim -d 6'
 # {{{1
-# vim:foldenable foldmethod=marker foldcolumn=1
+# vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
+
