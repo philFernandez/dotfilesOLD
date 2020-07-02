@@ -11,7 +11,7 @@ set termguicolors " keep this before color theme setting
 "color seoul256-light
 " Themes that I like {{{1
 "color solarized8_high
-"color materialbox
+color materialbox
 "color onedark
 "color tender
 "color angr
@@ -22,7 +22,7 @@ set termguicolors " keep this before color theme setting
 "color seoul256
 "color hybrid_material
 
-color atom
+"color atom
 "color OceanicNext
 "let g:oceanic_next_terminal_bold=1
 "let g:oceanic_next_terminal_italic=1
@@ -92,4 +92,4 @@ syn region javaTryCatch start="^\z(\s*\)\(try\|catch\).*{\s*$" end="^\z1}\s*$" t
 syn region javadoc start="^\s*/\*\*" end="^.*\*/" transparent fold keepend
 syn region javaBlockComment start="^\s*/\*" end="^.*\*/" transparent fold keepend
 " modeline{{{1
-" vim:foldenable foldmethod=marker foldcolumn=1
+" vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
