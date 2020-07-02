@@ -25,13 +25,13 @@ export ECL=/Users/philthy/eclipse-workspace/A4Prj
 stty -ixon
 
 # Generated p10k theme
-#[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
+[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 
 # My old p9k theme
 #[[ ! -f $HOME/.powerlevel_settings ]] || source $HOME/.powerlevel_settings
 
 # My original generated p10k theme
-[[ ! -f $ZDOTDIR/.myP10k.zsh ]] || source $ZDOTDIR/.myP10k.zsh
+#[[ ! -f $ZDOTDIR/.myP10k.zsh ]] || source $ZDOTDIR/.myP10k.zsh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -223,4 +223,4 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' insert-unambiguous true
 # MODELINE {{{1
-# vim:foldenable foldmethod=marker foldcolumn=1
+# vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
