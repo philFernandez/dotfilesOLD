@@ -33,16 +33,20 @@ color materialbox
 "color carbonized-light
 " {{{1 Custom text settings
 " Uncomment this if themes search highlight is not satasfactory
-hi Search cterm=bold gui=bold guifg=yellow guibg=blue
+"hi Search cterm=bold gui=bold guifg=yellow guibg=blue
 "hi Search cterm=bold,underline gui=bold guifg=yellow guibg=NONE
+
 " Prevent annoying highlighting of matching pairs
 "hi MatchParen NONE
+
 " Get italic comments in themes that dont already have them
 hi Comment cterm=italic gui=italic
-hi Error guifg=None guibg=None
+
+"hi Error guifg=None guibg=None
 
 
 hi cTodo gui=bold,italic guifg=red
+
 
 " Cursor Colors ===========================================================
 "hi! nCursor ctermfg=1 ctermbg=1 guifg=#FF8103 guibg=#FF8103
