@@ -176,10 +176,14 @@
   # Left prompt terminator for lines without any segments.
   typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=
 
+  # Pool of colors for random color pickers
+  declare -a color
+  color=(1 2 3 4 6 9 10 11 12 14 25 26 29 30 31 32 \
+      35 37 38 42 43 44 75 7681 87 113 114 115 116 \
+      117 121 136 155 172 173 179 185 202 208 209 214 215)
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-                                                 # random int [1, 14]
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$(( RANDOM % (14 - 1 + 1) + 1 ))
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$color[$(( RANDOM % ($#color - 1 + 1) + 1 ))]
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=235
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
@@ -210,7 +214,7 @@
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
                                             # random int [1, 14]
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=$(( RANDOM % (14 - 1 + 1) + 1 ))
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=$color[$(( RANDOM % ($#color - 1 + 1) + 1 ))]
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$POWERLEVEL9K_OS_ICON_BACKGROUND
   # If directory is too long, shorten some of its segments to the shortest possible unique
@@ -509,7 +513,7 @@
   ###################[ command_execution_time: duration of the last command ]###################
   # Execution time color.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=3
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=$color[$(( RANDOM % ($#color - 1 + 1) + 1 ))]
   # Show duration of the last command if takes longer than this many seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
   # Show this many fractional digits. Zero means round to seconds.
@@ -1564,8 +1568,8 @@
 
   ####################################[ time: current time ]####################################
   # Current time color.
-  # typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
-  # typeset -g POWERLEVEL9K_TIME_BACKGROUND=7
+   typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
+   typeset -g POWERLEVEL9K_TIME_BACKGROUND=$color[$(( RANDOM % ($#color - 1 + 1) + 1 ))]
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   #typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%I:%M%p}'
