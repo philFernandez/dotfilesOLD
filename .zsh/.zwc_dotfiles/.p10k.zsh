@@ -180,7 +180,7 @@
   # OS identifier color.
   # These will also control the color of dir: current directory (line 210)
                                                  # random int [9, 14]
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$(( RANDOM % (14 - 9 + 1) + 9 ))
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$(( RANDOM % (14 - 1 + 1) + 1 ))
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=235
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
@@ -210,7 +210,7 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=$[$POWERLEVEL9K_OS_ICON_FOREGROUND-8]
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=$(( RANDOM % (14 - 1 + 1) + 1 ))
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$POWERLEVEL9K_OS_ICON_BACKGROUND
   # If directory is too long, shorten some of its segments to the shortest possible unique
