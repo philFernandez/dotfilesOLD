@@ -21,7 +21,6 @@ alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
 alias pdf="open *pdf"
 
 # Commands and Shortcuts {{{1
-alias cat='bat -pp'
 alias ka='k -a'
 alias ptest='python -m unittest -v'
 alias python='/Library/Frameworks/Python.framework/Versions/3.8/bin/python3'
@@ -32,7 +31,6 @@ alias m='offlineimap -q -u quiet && neomutt'
 alias dec2hex='hex2dec -r'
 alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki2_html/style.css"
 alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki2_html/style.css"
-alias bat="LESS+=-S bat --wrap never"
 alias finder='open .'
 alias wiki='vim -c "VimwikiIndex 2"'
 alias ssh='TERM=xterm-256color ssh'
@@ -113,6 +111,8 @@ alias zshcond="man -P 'less +1884' zshall"
 alias zshexpn="man -P 'less +2538' zshall"
 alias zshprompt="man -P 'less +2099' zshall"
 # Bat & Fzf {{{1
+alias cat='bat -pp'
+alias bat="LESS+=-S bat --wrap never"
 alias fhw='shw | fzf'
 alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 	"bat --theme=Monokai\ Extended\ Bright \
