@@ -1,7 +1,7 @@
 if [ $# -ge 1 ]
 then
-  lsd -l $@ --almost-all --blocks name
+  lsd -l $@ --almost-all --blocks name --group-dirs first
 else
-  lsd -l $pwd --almost-all --blocks name
+  lsd -l $pwd --almost-all --blocks name --group-dirs first
 fi
 # vi: ft=zsh
