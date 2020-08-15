@@ -51,6 +51,7 @@ alias timestamp='date +"%m/%d/%Y @ %I:%M %p"'
 alias regex='man pcresyntax'
 alias tree2='lsd --tree --group-dirs first'
 alias time='/usr/bin/time'
+alias csl=clear
 alias cls=clear
 alias c='cl -1'
 alias cl='clear;lsd --group-dirs first'
