@@ -29,8 +29,10 @@ alias ip="ifconfig | rg '\d{3}\.\d{3}\.\d\.\d{2}\b' -o --color=never"
 alias oli="offlineimap"
 alias m='offlineimap -q -u quiet && neomutt'
 alias dec2hex='hex2dec -r'
-alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki2_html/style.css"
-alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki2_html/style.css"
+alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki_html/style.css \
+    && command cp ~/Notes/VimWikiStyles/light.css ~/Notes/Fall2020_html/style.css"
+alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki_html/style.css \
+    && command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/Fall2020_html/style.css"
 alias finder='open .'
 alias wiki='vim -c "VimwikiIndex 2"'
 alias ssh='TERM=xterm-256color ssh'

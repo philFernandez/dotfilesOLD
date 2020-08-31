@@ -301,35 +301,35 @@ endif
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseSubstituteDefaults = 1
 " Vimwiki {{{1
-let g:vimwiki_list = [{'path': '~/Notes/vimwiki/',
-                      \ 'name': 'Wiki1',
-                      \ 'syntax': 'markdown', 'ext': '.md',
-                      \ 'auto_tags' : 1, 'auto_diary_index': 1},
-                      \
-                      \{'path': '~/Notes/vimwiki2',
-                      \ 'name': 'Wiki2',
+let g:vimwiki_list = [ {'path': '~/Notes/vimwiki',
+                      \ 'name': 'Wiki',
                       \ 'auto_tags': 1,
-                      \ 'index': 'index2',
+                      \ 'index': 'index',
                       \ 'template_path': '~/Notes/.vimwiki_html_template',
-                      \ 'path_html': '~/Notes/vimwiki2_html'},
+                      \ 'path_html': '~/Notes/vimwiki_html'},
                       \
-                      \ {'path': '~/Documents/vimwiki3',
-                      \  'name': 'Wiki3',
+                      \ {'path': '~/Notes/Fall2020',
+                      \  'name': 'Wiki2',
                       \  'auto_tags': 1,
-                      \  'index': 'CoolPage',
-                      \  'template_path': '~/Documents/vimwiki3/templates',
-                      \  'path_html': '~/Documents/vimwiki3/html'}]
+                      \  'index': 'Fall2020',
+                      \  'template_path': '~/Notes/.vimwiki_html_template',
+                      \  'path_html': '~/Notes/Fall2020_html'}]
 
 " Dont highjack all markdown files
 let g:vimwiki_global_ext = 0
-" Dont highjack tab key
-let g:vimwiki_table_mappings = 0
 " Conceal fences around fenced code
 let g:vimwiki_conceal_pre = 1
 " Checklist highlighting
 let g:vimwiki_hl_cb_checked = 1
 " Better checklists symbols
 let g:vimwiki_listsyms = ' ○◐●✓'
+
+" Prevent vimwiki from highjacking tab key
+let g:vimwiki_key_mappings =
+\ {
+\   'table_mappings': 0
+\ }
+
 
 "let g:vimwiki_conceallevel=3
 
