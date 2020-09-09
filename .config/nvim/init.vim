@@ -56,24 +56,26 @@ Plug 'vim-scripts/applescript.vim'
 Plug 'lilyball/vim-swift'
 Plug 'chrisbra/csv.vim'
 Plug 'mengelbrecht/lightline-bufferline'
+Plug 'tommcdo/vim-exchange' " cxx on line to exchange -> go to otherline and press .
+                            " also can do cx{motion} the same way
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
 call plug#end()
 
 " UI Settings {{{1
-set showtabline=2
 set background=dark
-set laststatus=2
-set noshowmode
-set ruler
-set number
-set splitbelow
-set splitright
+set showtabline=2
 set scrolloff=5
+set noshowmode
+set number
+set ruler
+set ttimeoutlen=0
+set splitright
+set laststatus=2
 " Get rid of delay when entering normal mode
 set timeoutlen=1000
-set ttimeoutlen=0
+set splitbelow
 "---------------------
 "set cursorline
 "autocmd InsertEnter * set nocursorline

@@ -29,8 +29,7 @@
   "python.formatting.blackPath": "~/.local/bin/black",
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["--target-version=py38", "-S", "--fast"],
-  "python.linting.pylintEnabled": false,
-  "python.linting.mypyEnabled": true,
+  "python.linting.flake8Enabled": true,
 
 
   // coc-texlab

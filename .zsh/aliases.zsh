@@ -23,7 +23,6 @@ alias pdf="open *pdf"
 # Commands and Shortcuts {{{1
 alias ka='k -a'
 alias ptest='python -m unittest -v'
-alias python='/Library/Frameworks/Python.framework/Versions/3.8/bin/python3'
 alias k9='kill -n 9'
 alias ip="ifconfig | rg '\d{3}\.\d{3}\.\d\.\d{2}\b' -o --color=never"
 alias oli="offlineimap"

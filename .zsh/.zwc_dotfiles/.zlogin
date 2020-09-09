@@ -9,3 +9,6 @@ path=("$HOME/.cargo/bin" $path)
 path=("$HOME/.bin" $path)
 path=("$HOME/.local/bin" $path)  # pipx install executables here
 path=("." $path)
+
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+
