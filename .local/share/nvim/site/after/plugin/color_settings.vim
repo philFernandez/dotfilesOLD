@@ -11,11 +11,11 @@ set termguicolors " keep this before color theme setting
 "color seoul256-light
 " Themes that I like {{{1
 "color solarized8_high
-color materialbox
+"color materialbox
 "color onedark
 "color tender
 "color angr
-"color molokai " my favorite
+color molokai " my favorite
 "color molokayo
 "color deus
 "color yellow-moon

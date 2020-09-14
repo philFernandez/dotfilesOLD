@@ -58,6 +58,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'tommcdo/vim-exchange' " cxx on line to exchange -> go to otherline and press .
                             " also can do cx{motion} the same way
+Plug 'tweekmonster/django-plus.vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
