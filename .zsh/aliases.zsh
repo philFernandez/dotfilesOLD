@@ -34,6 +34,7 @@ alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki_html/s
     && command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/Fall2020_html/style.css"
 alias finder='open .'
 alias wiki='vim -c "VimwikiIndex 2"'
+alias wiki2='vim -c "VimwikiIndex"'
 alias ssh='TERM=xterm-256color ssh'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias kf='k -f'
@@ -63,7 +64,6 @@ alias q='exit'
 alias reload='exec zsh'
 alias vi='nvim'
 alias vim='nvim'
-alias cp='cp -vp'
 alias vi='nvim'
 alias mv='mv -v'
 alias ds='du -sh 2> /dev/null'
@@ -148,7 +148,7 @@ alias glols="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgr
 alias glod="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'"
 alias glods="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short"
 alias glola="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all"
-alias glog='git log --oneline --decorate --graph'
+alias glog='git log --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
 alias gm='git merge'
 alias gp='git push'
@@ -191,7 +191,7 @@ alias nman='LESS+="-N" man'
 # Package Management {{{1
 alias update="brew -v update && \
   printc -nC spring '==>'; printc -b ' Outdated' \
-  && brew outdated && brew cask outdated"
+  && brew outdated && brew outdated --cask"
 alias upgrade='brew upgrade'
 alias cupgrade='brew cask upgrade'
 alias outdated='brew -v outdated && brew cask outdated'

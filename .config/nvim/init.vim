@@ -28,7 +28,8 @@ Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+"Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'vimwiki/vimwiki'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
@@ -326,6 +327,8 @@ let g:vimwiki_conceal_pre = 1
 let g:vimwiki_hl_cb_checked = 1
 " Better checklists symbols
 let g:vimwiki_listsyms = ' ○◐●✓'
+" Change TOC header
+let g:vimwiki_toc_header = 'TOC'
 
 " Prevent vimwiki from highjacking tab key
 let g:vimwiki_key_mappings =
@@ -333,6 +336,17 @@ let g:vimwiki_key_mappings =
 \   'table_mappings': 0
 \ }
 
+
+" -------------------------------------------
+" This macro and command are for vimwiki TOC
+" Macro makes a presentable link name, removing visible '#'
+
+" For the macro run ':to,fromnorm! @g'
+let @g = 'Iwwwvt]yf]i|p'
+
+" command gets rid of uneeded TOC entries resulting
+command! -range=% FixTOC :<line1>,<line2>g/\w\W\s=\|\w\s=/d
+" -------------------------------------------
 
 "let g:vimwiki_conceallevel=3
 
@@ -440,6 +454,7 @@ nnoremap <silent> <leader>t :Tags<CR>
 " Switch out grading rubric for new one
 "let @a = 'ggjVGkkkkkkkkd^Msay<80>kbkp'
 " Commands {{{1
+" vimwiki section has a command and a macro defined there
 command! Zrecompile :!zrecompile
 command! Cpdir silent! :!cpdir
 command! KillBuffs silent! execute "%bd|e#|bd#"
