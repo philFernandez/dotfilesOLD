@@ -79,7 +79,7 @@ set laststatus=2
 set timeoutlen=1000
 set splitbelow
 "---------------------
-"set cursorline
+set cursorline
 "autocmd InsertEnter * set nocursorline
 "autocmd InsertLeave * set cursorline
 
