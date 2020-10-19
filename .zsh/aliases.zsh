@@ -16,10 +16,16 @@ alias range="scores . | sort -nk4 | rg -v average"
 alias range5="(cd $SECTION5 && range)"
 alias range6="(cd $SECTION6 && range)"
 alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
-alias grade="rm ~/Source_Code/Excel/doit.csv && rm ~/Source_Code/Excel/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/vimwiki2/Grading/Mapper_Assig3.wiki ~/Source_Code/Excel/Mapper.txt && csvmap doit"
+alias grade="rm ~/Source_Code/Excel/NewStuff/doit.csv && rm ~/Source_Code/Excel/NewStuff/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/Fall2020/Grading/Mapper.wiki ~/Source_Code/Excel/NewStuff/Mapper.txt && csvmap doit"
 alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
 alias pdf="open *pdf"
-
+# Django {{{1
+alias runserver='python manage.py runserver'
+alias shell='python manage.py shell'
+alias migrate='python manage.py migrate'
+alias makemigrations='python manage.py makemigrations'
+alias createsuperuser='python manage.py createsuperuser'
+alias flush='python manage.py flush'
 # Commands and Shortcuts {{{1
 alias ka='k -a'
 alias ptest='python -m unittest -v'
