@@ -19,6 +19,7 @@ alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
 alias grade="rm ~/Source_Code/Excel/NewStuff/doit.csv && rm ~/Source_Code/Excel/NewStuff/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/Fall2020/Grading/Mapper.wiki ~/Source_Code/Excel/NewStuff/Mapper.txt && csvmap doit"
 alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
 alias pdf="open *pdf"
+alias pcent='(cd ~/Fall_2020/Grading_CSC133/Assig1/Students/On_Time && printf "%.2f%%\n" $[$(cd Done && ls C).0/($(ls C)-1+$(cd Done && ls C)+$(cd ../Late && ls C))*100])'
 # Django {{{1
 alias runserver='python manage.py runserver'
 alias shell='python manage.py shell'
