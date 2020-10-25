@@ -7,6 +7,7 @@
         ######################################################################
 export ECLSRC=/Users/philthy/eclipse-workspace/A1Prj/src/com/mycompany/a1/
 export ECL=/Users/philthy/eclipse-workspace/A1Prj
+echo "!!!!!!!!!! play with zenity (after you do things you're supposed to!!)"
 #export CLASSPATH=.:$HOME/javagaming8/javagaming/jogl/jogl-all.jar:$HOME/javagaming8/javagaming/jogl/gluegen-rt.jar:$HOME/javagaming8/javagaming/rage165/ray.jar:$HOME/javagaming8/javagaming/joml/joml-jdk8-1.9.25.jar:$HOME/javagaming8/javagaming/jinput/jinput.jar:$HOME/javagaming8/javagaming/jogl/joal.jar:$HOME/javagaming8/javagaming/vecmath/vecmath.jar:$HOME/javagaming8/javagaming/jbullet/jbullet.jar:$HOME/javagaming8/javagaming/graphicslib3D/graphicslib3D.jar
 # {{{1 iterm2 set tab/window title
 # Set iterm window/tab titles empty

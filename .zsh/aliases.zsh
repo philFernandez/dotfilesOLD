@@ -16,10 +16,10 @@ alias range="scores . | sort -nk4 | rg -v average"
 alias range5="(cd $SECTION5 && range)"
 alias range6="(cd $SECTION6 && range)"
 alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
-alias grade="rm ~/Source_Code/Excel/NewStuff/doit.csv && rm ~/Source_Code/Excel/NewStuff/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/Fall2020/Grading/Mapper.wiki ~/Source_Code/Excel/NewStuff/Mapper.txt && csvmap doit"
+alias grade="rm ~/Source_Code/Excel/NewStuff/doit.csv && rm ~/Source_Code/Excel/NewStuff/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/Fall2020/Grading/Mapper.wiki ~/Source_Code/Excel/NewStuff/Mapper.txt && csvmap doit && cat ~/Source_Code/Excel/NewStuff/doit.csv|pbcopy"
 alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
 alias pdf="open *pdf"
-alias pcent='(cd ~/Fall_2020/Grading_CSC133/Assig1/Students/On_Time && printf "%.2f%%\n" $[$(cd Done && ls C).0/($(ls C)-1+$(cd Done && ls C)+$(cd ../Late && ls C))*100])'
+alias pcent='(cd ~/Fall_2020/Grading_CSC133/Assig1/Students/On_Time && printf "%.2f%%\n" $[$(cd Done && ls C).0/($(ls C)-1+$(cd Done && ls C)+$(cd ../Late && ls C))*100]) && (cd ~/Fall_2020/Grading_CSC133/Assig1/Students/On_Time && echo $[$(l C)-1] remain)'
 # Django {{{1
 alias runserver='python manage.py runserver'
 alias shell='python manage.py shell'
@@ -32,8 +32,6 @@ alias ka='k -a'
 alias ptest='python -m unittest -v'
 alias k9='kill -n 9'
 alias ip="ifconfig | rg '\d{3}\.\d{3}\.\d\.\d{2}\b' -o --color=never"
-alias oli="offlineimap"
-alias m='offlineimap -q -u quiet && neomutt'
 alias dec2hex='hex2dec -r'
 alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki_html/style.css \
     && command cp ~/Notes/VimWikiStyles/light.css ~/Notes/Fall2020_html/style.css"
@@ -129,6 +127,7 @@ alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 	--style=numbers,changes --color always {}" \
 	--preview-window="down:95%"'
 # Git {{{1
+alias gce="git commit -a --allow-empty-message -m ''"
 alias gzap='git checkout .'
 alias github='ln -sf ~/.gitconfigs/.gitconfig.github ~/.gitconfig'
 alias gitlab='ln -sf ~/.gitconfigs/.gitconfig.gitlab ~/.gitconfig'
@@ -139,7 +138,6 @@ alias gaa='git add --all'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbd='git branch -d'
-alias gc='git commit -v'
 alias gcam='git commit -a -m'
 alias ggpull='git pull origin "$(git_current_branch)"'
 alias ggpush='git push origin "$(git_current_branch)"'
@@ -193,6 +191,7 @@ alias confls='config ls-tree -r master --name-only $HOME'
 alias cdl='config diff'
 alias cdiff='config diff'
 alias confzap='(cd && config checkout .)'
+alias cce="config commit -a --allow-empty-message -m ''"
 # make man pages display line numbers {{{1
 alias nman='LESS+="-N" man'
 # Package Management {{{1

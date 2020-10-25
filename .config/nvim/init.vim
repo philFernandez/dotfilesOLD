@@ -28,7 +28,7 @@ Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
-"Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'dag/vim-fish'
 Plug 'vimwiki/vimwiki'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chiel92/vim-autoformat'
