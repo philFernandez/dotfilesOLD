@@ -28,6 +28,7 @@ alias makemigrations='python manage.py makemigrations'
 alias createsuperuser='python manage.py createsuperuser'
 alias flush='python manage.py flush'
 # Commands and Shortcuts {{{1
+alias cpan="echo 'DO NOT USE cpan! It is SLOOOWW' us cpanm"
 alias ka='k -a'
 alias ptest='python -m unittest -v'
 alias k9='kill -n 9'

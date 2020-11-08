@@ -26,7 +26,7 @@
   //"python.formatting.yapfPath": "~/.local/bin/yapf",
   //"python.formatting.provider": "yapf",
   //"python.formatting.yapfArgs": ["--style=google", "--no-local-style", "-p"],
-  "python.formatting.blackPath": "~/.local/bin/black",
+//  "python.formatting.blackPath": "~/.local/bin/black",
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["--target-version=py38", "-S", "--fast"],
   "python.linting.flake8Enabled": true,
