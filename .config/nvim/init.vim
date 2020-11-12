@@ -27,6 +27,7 @@ Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
+Plug 'fatih/vim-go'
 Plug 'mattn/calendar-vim'
 Plug 'dag/vim-fish'
 Plug 'vimwiki/vimwiki'
