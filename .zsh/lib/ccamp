@@ -1,6 +1,7 @@
 if [[ $# -eq 1 ]]; then
     git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -a -m "$@" && git --git-dir=$HOME/.cfg/ --work-tree=$HOME push -u origin master
+else
+    git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -a --allow-empty-message -m '' && git --git-dir=$HOME/.cfg/ --work-tree=$HOME push -u origin master
+fi
 
-
-git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -a --allow-empty-message -m '' && git --git-dir=$HOME/.cfg/ --work-tree=$HOME push -u origin master
 # vi: ft=zsh

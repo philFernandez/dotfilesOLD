@@ -120,8 +120,7 @@ alias zshcond="man -P 'less +1884' zshall"
 alias zshexpn="man -P 'less +2538' zshall"
 alias zshprompt="man -P 'less +2099' zshall"
 # Bat & Fzf {{{1
-alias cat='bat -pp'
-alias bat="LESS+=-S bat --wrap never"
+alias bat="bat --wrap never"
 alias fhw='shw | fzf'
 alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 	"bat --theme=Monokai\ Extended\ Bright \
