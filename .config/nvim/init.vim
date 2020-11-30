@@ -318,7 +318,14 @@ let g:vimwiki_list = [ {'path': '~/Notes/vimwiki',
                       \  'auto_tags': 1,
                       \  'index': 'Fall2020',
                       \  'template_path': '~/Notes/.vimwiki_html_template',
-                      \  'path_html': '~/Notes/Fall2020_html'}]
+                      \  'path_html': '~/Notes/Fall2020_html'},
+                      \
+                      \ {'path': '~/Notes/Work',
+                      \  'name': 'WorkWiki',
+                      \  'auto_tags': 1,
+                      \  'index': 'WorkWikiIndex',
+                      \  'template_path': '~/Notes/.vimwiki_html_template',
+                      \  'path_html': '~/Notes/Work_html'}]
 
 " Dont highjack all markdown files
 let g:vimwiki_global_ext = 0

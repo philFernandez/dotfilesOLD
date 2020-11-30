@@ -7,6 +7,7 @@
 path=("/Applications/Racket v7.6/bin" $~path)
 path=("/usr/local/Cellar/llvm/*/bin" $~path)
 path=("/Users/philthy/Documents/Software/latexindent" $~path)
+path=("/Users/philthy/Documents/Software/apache-maven-3.6.3/bin" $~path)
 path=("/Library/Frameworks/Python.framework/Versions/3.8/bin" $~path)
 #path=("$HOME/.cargo/bin" $~path)
 path=("$HOME/.bin" $~path)

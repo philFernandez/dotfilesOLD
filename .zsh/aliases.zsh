@@ -1,6 +1,6 @@
 # Grading Aliases {{{1
 alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
-alias togo='(cd ~/Spring_2020/Gordon/Assig3/Section6 && echo $[$(ls C)-1])'
+alias togo='echo $[$(cd ~/Documents/Grading_CSC133/Assig2/OnTime && l C)+$(cd ~/Documents/Grading_CSC133/Assig2/Late && l C)]'
 alias finished='(cd ~/Spring_2020/Gordon/Assig3/Section6/Done && ls C)'
 alias sc5='scores $SECTION5'
 alias sc6='scores $SECTION6'
@@ -16,10 +16,11 @@ alias range="scores . | sort -nk4 | rg -v average"
 alias range5="(cd $SECTION5 && range)"
 alias range6="(cd $SECTION6 && range)"
 alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
-alias grade="rm ~/Source_Code/Excel/NewStuff/doit.csv && rm ~/Source_Code/Excel/NewStuff/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/Fall2020/Grading/Mapper.wiki ~/Source_Code/Excel/NewStuff/Mapper.txt && csvmap doit && cat ~/Source_Code/Excel/NewStuff/doit.csv|pbcopy"
+#alias grade="rm ~/Source_Code/Excel/NewStuff/doit.csv && rm ~/Source_Code/Excel/NewStuff/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/Fall2020/Grading/Mapper.wiki ~/Source_Code/Excel/NewStuff/Mapper.txt && csvmap doit && cat ~/Source_Code/Excel/NewStuff/doit.csv|pbcopy"
+alias grade="rm ~/Source_Code/Excel/NewStuff/Assig2/doit.csv && rm ~/Source_Code/Excel/NewStuff/Assig2/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/Fall2020/Grading/Mapper.wiki ~/Source_Code/Excel/NewStuff/Assig2/Mapper.txt && csvmap doit && cat ~/Source_Code/Excel/NewStuff/Assig2/doit.csv|pbcopy"
 alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
 alias pdf="open *pdf"
-alias pcent='(cd ~/Fall_2020/Grading_CSC133/Assig1/Students/On_Time && printf "%.2f%%\n" $[$(cd Done && ls C).0/($(ls C)-1+$(cd Done && ls C)+$(cd ../Late && ls C))*100]) && (cd ~/Fall_2020/Grading_CSC133/Assig1/Students/On_Time && echo $[$(l C)-1] remain)'
+alias pcent='printf "%.2f%%\n" "$[$(cd ~/Documents/Grading_CSC133/Assig2/Done && l C)/($(togo)+$(cd ~/Documents/Grading_CSC133/Assig2/Done && l C).0)*100]"'
 # Django {{{1
 alias runserver='python manage.py runserver'
 alias shell='python manage.py shell'
@@ -28,6 +29,7 @@ alias makemigrations='python manage.py makemigrations'
 alias createsuperuser='python manage.py createsuperuser'
 alias flush='python manage.py flush'
 # Commands and Shortcuts {{{1
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias cpan="echo 'DO NOT USE cpan! It is SLOOOWW' us cpanm"
 alias ka='k -a'
 alias ptest='python -m unittest -v'
@@ -41,6 +43,7 @@ alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki_html/s
 alias finder='open .'
 alias wiki='vim -c "VimwikiIndex 2"'
 alias wiki2='vim -c "VimwikiIndex"'
+alias workwiki=' vim -c "VimwikiIndex 3"'
 alias ssh='TERM=xterm-256color ssh'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias kf='k -f'
