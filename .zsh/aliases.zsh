@@ -29,6 +29,7 @@ alias makemigrations='python manage.py makemigrations'
 alias createsuperuser='python manage.py createsuperuser'
 alias flush='python manage.py flush'
 # Commands and Shortcuts {{{1
+alias h2="/Users/philthy/Documents/Software/h2/bin/h2.sh &"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias cpan="echo 'DO NOT USE cpan! It is SLOOOWW' us cpanm"
 alias ka='k -a'
@@ -80,7 +81,6 @@ alias v='nvim'
 alias py='python3'
 alias fl='fd -HI -d1'
 alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
-alias lynx='lynx -accept_all_cookies -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss'
 alias schedule='imgcat ~/Desktop/Schedule.png'
 # Tab Colors {{{1
 # run cmd "colors" to lists all colors from cmd line
