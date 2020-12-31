@@ -1,27 +1,5 @@
 # Grading Aliases {{{1
-alias b='(cd ~/eclipse-workspace/A4Prj && ant jar)'
-alias togo='echo $[$(cd ~/Documents/Grading_CSC133/Assig2/OnTime && l C)+$(cd ~/Documents/Grading_CSC133/Assig2/Late && l C)]'
-alias finished='(cd ~/Spring_2020/Gordon/Assig3/Section6/Done && ls C)'
-alias sc5='scores $SECTION5'
-alias sc6='scores $SECTION6'
-alias vj='fd -e java'
-alias oj='fd -e java -X nvim -R'
-alias cj="mvsrc && ctags -R /Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a3/ && mv tags /Users/philthy/eclipse-workspace/A4Prj/src/com/mycompany/a3/"
-alias mjar='fd A4Prj.jar -x cp {} ~/eclipse-workspace/A4Prj/dist/'
-alias both='echo "---------------------------------------" && echo "Section 5" && echo "---------------------------------------"&& sc5 && echo "---------------------------------------" && echo "Section 6"  && echo "---------------------------------------"&& sc6 && echo "---------------------------------------"'
-alias eclsrc="cd $ECLSRC"
-alias ecl="cd $ECL"
-alias sec5="cd $SECTION5"
-alias range="scores . | sort -nk4 | rg -v average"
-alias range5="(cd $SECTION5 && range)"
-alias range6="(cd $SECTION6 && range)"
-alias rubric="vim +VimwikiIndex2 +'tag Assig2' +KillBuffs"
-#alias grade="rm ~/Source_Code/Excel/NewStuff/doit.csv && rm ~/Source_Code/Excel/NewStuff/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/Fall2020/Grading/Mapper.wiki ~/Source_Code/Excel/NewStuff/Mapper.txt && csvmap doit && cat ~/Source_Code/Excel/NewStuff/doit.csv|pbcopy"
-#alias grade="rm ~/Source_Code/Excel/NewStuff/Assig2/doit.csv && rm ~/Source_Code/Excel/NewStuff/Assig2/Mapper.txt && cp /Users/philthy/Nextcloud/Notes/Fall2020/Grading/Mapper.wiki ~/Source_Code/Excel/NewStuff/Assig2/Mapper.txt && csvmap doit && cat ~/Source_Code/Excel/NewStuff/Assig2/doit.csv|pbcopy"
 alias grade="rm ~/Source_Code/Excel/NewStuff/Assig3/doit.csv && rm ~/Source_Code/Excel/NewStuff/Assig3/Mapper.txt && cp ~/Nextcloud/Notes/Fall2020/Grading/Assig3/Mapper.wiki ~/Source_Code/Excel/NewStuff/Assig3/Mapper.txt && csvmap doit && cat ~/Source_Code/Excel/NewStuff/Assig3/doit.csv|pbcopy"
-alias ms="(cd $ECL && rm -fr src/) && cp -r src $ECL"
-alias pdf="open *pdf"
-alias pcent='printf "%.2f%%\n" "$[$(cd ~/Documents/Grading_CSC133/Assig2/Done && l C)/($(togo)+$(cd ~/Documents/Grading_CSC133/Assig2/Done && l C).0)*100]"'
 # Django {{{1
 alias runserver='python manage.py runserver'
 alias shell='python manage.py shell'
