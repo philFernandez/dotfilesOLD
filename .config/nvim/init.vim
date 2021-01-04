@@ -69,7 +69,6 @@ call plug#end()
 " UI Settings {{{1
 set background=dark
 set showtabline=2
-set scrolloff=5
 set noshowmode
 set number
 set ruler
