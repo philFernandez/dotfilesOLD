@@ -21,9 +21,9 @@ alias lightwiki="command cp ~/Notes/VimWikiStyles/light.css ~/Notes/vimwiki_html
 alias darkwiki="command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/vimwiki_html/style.css \
     && command cp ~/Notes/VimWikiStyles/dark.css ~/Notes/Fall2020_html/style.css"
 alias finder='open .'
-alias wiki='vim -c "VimwikiIndex 2"'
+alias wiki3='vim -c "VimwikiIndex 2"'
 alias wiki2='vim -c "VimwikiIndex"'
-alias workwiki=' vim -c "VimwikiIndex 3"'
+alias wiki=' vim -c "VimwikiIndex 3"'
 alias ssh='TERM=xterm-256color ssh'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias kf='k -f'

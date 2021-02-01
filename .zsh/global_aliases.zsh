@@ -1,5 +1,6 @@
 alias -g L=' | less'
 alias -g B='|bat'
+alias -g J='|jq'
 alias -g SCH='~/Fall_2020'
 alias -g DOW='~/Downloads'
 alias -g DOC='~/Documents'
