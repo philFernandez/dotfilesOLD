@@ -1,3 +1,6 @@
+PROJ=/Users/philthy/Source_Code/HCL/SECURITY/hellojwt
+PROJ2=/Users/philthy/Source_Code/HCL/React/ToDo/app
+PROJ3=/Users/philthy/Source_Code/HCL/DEPLOY
 # Grading Aliases {{{1
 alias grade="rm ~/Source_Code/Excel/NewStuff/Assig3/doit.csv && rm ~/Source_Code/Excel/NewStuff/Assig3/Mapper.txt && cp ~/Nextcloud/Notes/Fall2020/Grading/Assig3/Mapper.wiki ~/Source_Code/Excel/NewStuff/Assig3/Mapper.txt && csvmap doit && cat ~/Source_Code/Excel/NewStuff/Assig3/doit.csv|pbcopy"
 # Django {{{1
@@ -11,6 +14,7 @@ alias flush='python manage.py flush'
 alias h2="/Users/philthy/Documents/Software/h2/bin/h2.sh &"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias cpan="echo 'DO NOT USE cpan! It is SLOOOWW' us cpanm"
+alias pat="bat -p"
 alias ka='k -a'
 alias ptest='python -m unittest -v'
 alias k9='kill -n 9'
@@ -124,7 +128,6 @@ alias gcam='git commit -a -m'
 alias ggpull='git pull origin "$(git_current_branch)"'
 alias ggpush='git push origin "$(git_current_branch)"'
 alias glgp='git log --stat -p'
-alias gl='git pull'
 alias glg='git log --stat'
 alias glgg='git log --graph'
 alias glgga='git log --graph --decorate --all'
@@ -136,7 +139,7 @@ alias glod="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgre
 alias glods="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short"
 alias glola="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all"
 alias glog='git log --decorate --graph'
-alias gloga='git log --oneline --decorate --graph --all'
+alias gl='git log --oneline --decorate --graph --all'
 alias gm='git merge'
 alias gp='git push'
 alias gsb='git status -sb'
