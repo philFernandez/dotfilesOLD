@@ -1,16 +1,8 @@
 PROJ=/Users/philthy/Source_Code/HCL/SECURITY/hellojwt
 PROJ2=/Users/philthy/Source_Code/HCL/React/ToDo/app
 PROJ3=/Users/philthy/Source_Code/HCL/DEPLOY
-# Grading Aliases {{{1
-alias grade="rm ~/Source_Code/Excel/NewStuff/Assig3/doit.csv && rm ~/Source_Code/Excel/NewStuff/Assig3/Mapper.txt && cp ~/Nextcloud/Notes/Fall2020/Grading/Assig3/Mapper.wiki ~/Source_Code/Excel/NewStuff/Assig3/Mapper.txt && csvmap doit && cat ~/Source_Code/Excel/NewStuff/Assig3/doit.csv|pbcopy"
-# Django {{{1
-alias runserver='python manage.py runserver'
-alias shell='python manage.py shell'
-alias migrate='python manage.py migrate'
-alias makemigrations='python manage.py makemigrations'
-alias createsuperuser='python manage.py createsuperuser'
-alias flush='python manage.py flush'
 # Commands and Shortcuts {{{1
+alias x="7z x"
 alias h2="/Users/philthy/Documents/Software/h2/bin/h2.sh &"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias cpan="echo 'DO NOT USE cpan! It is SLOOOWW' us cpanm"
