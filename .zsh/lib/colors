@@ -1,0 +1,5 @@
+# colors
+
+alias | rg "='tab" | bat -l sh --style grid
+
+# vi: ft=zsh

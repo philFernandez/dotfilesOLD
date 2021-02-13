@@ -1,0 +1,9 @@
+# dss
+
+print -P %F{001}%B%UMAIN DRIVE%u%b%f%B \|\| %b%F{040}%UDISK USAGE%u%f
+print -nP %F{yellow}
+df -PH | sed -n -e 1p -e 4p | awk '{print $2" "$3" "$4" "$5" "$6}' | column -t
+print -nP %f
+
+
+# vi: ft=zsh
