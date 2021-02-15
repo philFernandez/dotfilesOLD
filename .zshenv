@@ -26,6 +26,9 @@ fi
 #fpath=($HOME/.oh-my-zsh/custom/plugins/printc $fpath)
 #ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 # -------------------------------------
+if type brew &>/dev/null; then
+    fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fi
 fpath=($ZSH_CUSTOM/my_plugins/printc $fpath)
 fpath=($ZSH_CUSTOM/my_plugins/k $fpath)
 fpath=($ZSH_CUSTOM/lib $fpath)
