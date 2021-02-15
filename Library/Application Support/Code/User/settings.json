@@ -1,0 +1,170 @@
+{
+    // ------Latex Workshop----------------------------------------------------
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (lualatex)",
+            "tools": ["lualatexmk"]
+        },
+        {
+            "name": "latexmk 🔃",
+            "tools": ["latexmk"]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": ["latexmk_rconly"]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+        },
+        {
+            "name": "Compile Rnw files",
+            "tools": ["rnw2tex", "latexmk"]
+        },
+        {
+            "name": "Compile Jnw files",
+            "tools": ["jnw2tex", "latexmk"]
+        },
+        {
+            "name": "tectonic",
+            "tools": ["tectonic"]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    // ---Peacock--------------------------------------------------------------
+    "peacock.affectTabActiveBorder": true,
+    "peacock.affectTitleBar": false,
+    "peacock.affectAccentBorders": true,
+    "peacock.showColorInStatusBar": false,
+    "peacock.favoriteColors": [
+        {
+            "name": "Angular Red",
+            "value": "#dd0531"
+        },
+        {
+            "name": "Azure Blue",
+            "value": "#007fff"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#61dafb"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Svelte Orange",
+            "value": "#ff3d00"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        }
+    ],
+    // -----File-Type-Specific-------------------------------------------------------------------
+    "[html]": {
+        "editor.rulers": [90],
+        // "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "HookyQR.beautify",
+        "editor.formatOnSave": true
+    },
+    "[javascript]": {
+        "editor.rulers": [90],
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.rulers": [90],
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode",
+        "editor.formatOnSave": true
+    },
+    // JAVA ------------------------------------------------------------------
+    "[java]": {
+
+        // "editor.defaultFormatter": "redhat.java",
+        "editor.rulers": [90],
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.refactor.renameFromFileExplorer": "autoApply",
+    "java.format.enabled": true,
+    "java.format.settings.profile": "GoogleStyle",
+    "java.format.settings.url": "/Users/philthy/Source_Code/Java/Formatter/eclipse-java-google-style.xml",
+    "java.completion.overwrite": false,
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-1.8",
+            "path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home"
+        },
+        {
+            "name": "JavaSE-11",
+            "path": "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+        }
+    ],
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/Users/philthy/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+    "java.project.importOnFirstTimeStartup": "automatic",
+    // ------------------------------------------------------------------------
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "vim.foldfix": true,
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "/Users/philthy/.config/vscode.vimrc",
+    "editor.suggestSelection": "first",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.detectIndentation": false,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.showExitAlert": false,
+    "breadcrumbs.enabled": false,
+    "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.duration": 500,
+    "emmet.includeLanguages": {
+        "jsp": "html"
+    },
+
+    "files.trimTrailingWhitespace": true,
+    "html.format.wrapAttributes": "force-aligned",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "welcomePage",
+    "workbench.editor.wrapTabs": true,
+    "workbench.editor.decorations.badges": true,
+    "workbench.editor.decorations.colors": true,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "editor.cursorBlinking": "phase",
+    "editor.find.loop": false,
+    "editor.minimap.showSlider": "always",
+    "redhat.telemetry.enabled": false,
+    "explorer.openEditors.visible": 0,
+    "angular.experimental-ivy": true
+}
