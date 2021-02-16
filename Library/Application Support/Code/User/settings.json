@@ -76,7 +76,6 @@
     ],
     // -----File-Type-Specific-------------------------------------------------------------------
     "[html]": {
-        "editor.rulers": [90],
         // "editor.defaultFormatter": "vscode.html-language-features"
         "editor.defaultFormatter": "HookyQR.beautify",
         "editor.formatOnSave": true
@@ -155,7 +154,7 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "welcomePage",
+    "workbench.startupEditor": "none",
     "workbench.editor.wrapTabs": true,
     "workbench.editor.decorations.badges": true,
     "workbench.editor.decorations.colors": true,
