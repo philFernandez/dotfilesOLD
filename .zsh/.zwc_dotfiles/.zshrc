@@ -134,8 +134,6 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # Exports: {{{1 have to be below source $ZSH/oh-my-zsh.sh
 
-# set vscode as default editor
-#export EDITOR='code -w'
 
 export BAT_THEME="Monokai Extended Bright"
 export BAT_STYLE="changes,header,numbers,snip"
@@ -156,10 +154,11 @@ export RANGER_LOAD_DEFAULT_RC=false
 
 # set vim as default editor
 export EDITOR=nvim
+# set vscode as default editor
+# export EDITOR='code -w'
 #export PAGER=less
 # export PAGER="bat -p"
 
-export UPDATE_ZSH_DAYS=7
 
 export SAVEHIST=500000
 export HISTSIZE=500000

@@ -4,7 +4,6 @@ PROJ3=/Users/philthy/Source_Code/HCL/DEPLOY
 # Commands and Shortcuts {{{1
 alias x="7z x"
 alias h2="/Users/philthy/Documents/Software/h2/bin/h2.sh &"
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias cpan="echo 'DO NOT USE cpan! It is SLOOOWW' us cpanm"
 alias pat="bat -p"
 alias ka='k -a'
