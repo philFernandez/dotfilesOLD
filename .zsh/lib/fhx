@@ -1,3 +1,3 @@
 eval $( fc -l 1 | awk '{print substr($0, index($0,$2))}' \
-  | fzf +s --height 40% --tac --prompt='execute-> ' )
+  | fzf +s --height 70% --tac --prompt='execute-> ' --header="ZSH History {execute}" )
 # vi: ft=zsh

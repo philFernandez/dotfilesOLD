@@ -1,3 +1,3 @@
 print -z $( fc -l 1 | awk '{print substr($0, index($0,$2))}' \
-  | fzf +s --tac --height 40% --prompt='edit-> ')
+  | fzf +s --tac --height 70% --prompt='edit-> ' --header='ZSH History {edit}')
 # vi: ft=zsh

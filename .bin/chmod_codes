@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 
-print("""execute  : 1
-write    : 2
-read     : 4
-""")
+from rich.console import Console
+from rich.table import Table
+from rich import box
+
+console = Console()
+table = Table(title=":smiley: chmod usage :smile:", box=box.DOUBLE_EDGE)
+
+
+table.add_column("Read", style="yellow1", justify="center", no_wrap=True)
+table.add_column("Write", style="deep_sky_blue1", justify="center", no_wrap=True)
+table.add_column("Execute", style="green1", justify="center", no_wrap=True)
+table.add_row("4", "2", "1")
+console.print(table, justify="center")

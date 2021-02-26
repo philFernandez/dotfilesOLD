@@ -72,6 +72,26 @@
         {
             "name": "Vue Green",
             "value": "#42b883"
+        },
+        {
+            "name": "My Terminal Prompt",
+            "value": "#00afd6"
+        },
+        {
+            "name": "Bat Output Yellow",
+            "value": "#ebd67a"
+        },
+        {
+            "name": "Awesome",
+            "value": "#ff2052"
+        },
+        {
+            "name": "White",
+            "value": "#ffffff"
+        },
+        {
+            "name": "Black",
+            "value": "#000000"
         }
     ],
     // -----File-Type-Specific-------------------------------------------------------------------
@@ -100,6 +120,10 @@
     "[svelte]": {
         "editor.defaultFormatter": "svelte.svelte-vscode",
         "editor.formatOnSave": true
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
     },
     // JAVA ------------------------------------------------------------------
     "[java]": {
@@ -165,5 +189,9 @@
     "editor.minimap.showSlider": "always",
     "redhat.telemetry.enabled": false,
     "explorer.openEditors.visible": 0,
-    "angular.experimental-ivy": true
+    "angular.experimental-ivy": true,
+    "[css]": {
+        "editor.defaultFormatter": "HookyQR.beautify",
+        "editor.formatOnSave": true
+    }
 }
