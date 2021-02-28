@@ -97,19 +97,16 @@
     // -----File-Type-Specific-------------------------------------------------------------------
     "[html]": {
         // "editor.defaultFormatter": "vscode.html-language-features"
-        "editor.defaultFormatter": "HookyQR.beautify",
-        "editor.formatOnSave": true
+        "editor.defaultFormatter": "HookyQR.beautify"
     },
     "[javascript]": {
         "editor.rulers": [90],
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescript]": {
         "editor.rulers": [90],
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnPaste": true,
-        "editor.formatOnSave": true
+        "editor.formatOnPaste": true
     },
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -118,19 +115,18 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[svelte]": {
-        "editor.defaultFormatter": "svelte.svelte-vscode",
-        "editor.formatOnSave": true
+        "editor.defaultFormatter": "svelte.svelte-vscode"
     },
     "[python]": {
-        "editor.formatOnSave": true,
         "editor.formatOnPaste": true
+    },
+    "[css]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
     },
     // JAVA ------------------------------------------------------------------
     "[java]": {
-
         // "editor.defaultFormatter": "redhat.java",
         "editor.rulers": [90],
-        "editor.formatOnSave": true,
         "editor.tabSize": 4
     },
     "java.configuration.checkProjectSettingsExclusions": false,
@@ -156,6 +152,7 @@
     "vim.foldfix": true,
     "vim.vimrc.enable": true,
     "vim.vimrc.path": "/Users/philthy/.config/vscode.vimrc",
+    "editor.formatOnSave": true,
     "editor.suggestSelection": "first",
     "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontSize": 16,
@@ -188,9 +185,5 @@
     "editor.minimap.showSlider": "always",
     "redhat.telemetry.enabled": false,
     "explorer.openEditors.visible": 0,
-    "angular.experimental-ivy": true,
-    "[css]": {
-        "editor.defaultFormatter": "HookyQR.beautify",
-        "editor.formatOnSave": true
-    }
+    "angular.experimental-ivy": true
 }
