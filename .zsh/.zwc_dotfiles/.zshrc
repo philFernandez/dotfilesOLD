@@ -205,7 +205,7 @@ setopt NONOMATCH \
   compdef _git gdl=git-diff
   compdef _gnu_generic lsd
   compdef _gnu_generic fzf
-  compdef _gnu_generic bat
+  #compdef _gnu_generic bat
   #compdef _gnu_generic rg
   #compdef _pdfgrep pdfgrep
 
