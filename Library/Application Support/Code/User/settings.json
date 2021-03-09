@@ -92,6 +92,10 @@
         {
             "name": "Black",
             "value": "#000000"
+        },
+        {
+            "name": "Tomato",
+            "value": "tomato"
         }
     ],
     // -----File-Type-Specific-------------------------------------------------------------------
@@ -116,9 +120,6 @@
     },
     "[svelte]": {
         "editor.defaultFormatter": "svelte.svelte-vscode"
-    },
-    "[python]": {
-        "editor.formatOnPaste": true
     },
     "[css]": {
         "editor.defaultFormatter": "HookyQR.beautify"
@@ -185,5 +186,15 @@
     "editor.minimap.showSlider": "always",
     "redhat.telemetry.enabled": false,
     "explorer.openEditors.visible": 0,
-    "angular.experimental-ivy": true
+    "angular.experimental-ivy": true,
+    "workbench.productIconTheme": "fluent-icons",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ]
 }
