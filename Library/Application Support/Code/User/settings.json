@@ -96,12 +96,17 @@
         {
             "name": "Tomato",
             "value": "tomato"
+        },
+        {
+            "name": "cadetblue",
+            "value": "cadetblue"
         }
     ],
     // -----File-Type-Specific-------------------------------------------------------------------
     "[html]": {
-        // "editor.defaultFormatter": "vscode.html-language-features"
-        "editor.defaultFormatter": "HookyQR.beautify"
+        "editor.defaultFormatter": "vscode.html-language-features"
+        // "editor.defaultFormatter": "HookyQR.beautify",
+        // "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
         "editor.rulers": [90],

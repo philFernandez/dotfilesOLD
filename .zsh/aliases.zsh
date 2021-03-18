@@ -23,8 +23,8 @@ alias ssh='TERM=xterm-256color ssh'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias kf='k -f'
 alias watch='watch -td -n 0.1'
-alias sqlite3='/usr/local/Cellar/sqlite/3.34.0/bin/sqlite3'
-alias sql='/usr/local/Cellar/sqlite/3.34.0/bin/sqlite3'
+alias sqlite3='/usr/local/Cellar/sqlite/3.34.1/bin/sqlite3'
+alias sql='sqlite3'
 alias lls='/bin/ls'
 alias md='mkdir -p'
 alias f="ranger"
@@ -104,6 +104,7 @@ alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
 	--style=numbers,changes --color always {}" \
 	--preview-window="down:95%"'
 # Git {{{1
+alias gls="git ls-files"
 alias gce="git commit -a --allow-empty-message -m ''"
 alias gzap='git checkout .'
 alias github='ln -sf ~/.gitconfigs/.gitconfig.github ~/.gitconfig'
