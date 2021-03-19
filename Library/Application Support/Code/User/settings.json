@@ -201,5 +201,8 @@
             "viewType": "jupyter.notebook.ipynb",
             "filenamePattern": "*.ipynb"
         }
-    ]
+    ],
+    // This turns off the parameter hints popup. Can trigger it manually "shift+cmd+space"
+    "editor.parameterHints.enabled": false,
+    "editor.suggest.showTypeParameters": true
 }
