@@ -2,6 +2,8 @@ PROJ=/Users/philthy/Source_Code/HCL/SECURITY/hellojwt
 PROJ2=/Users/philthy/Source_Code/HCL/React/ToDo/app
 PROJ3=/Users/philthy/Source_Code/HCL/DEPLOY
 # Commands and Shortcuts {{{1
+alias lcs=clear
+alias tt=taskwarrior-tui
 alias x="7z x"
 alias h2="/Users/philthy/Documents/Software/h2/bin/h2.sh &"
 alias cpan="echo 'DO NOT USE cpan! It is SLOOOWW' us cpanm"

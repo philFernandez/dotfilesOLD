@@ -6,6 +6,11 @@
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
 # echo "!!!!!!!!!! play with zenity (after you do things you're supposed to!!)"
+echo
+echo
+echo "\033[1;m\033[38;5;1;mTurn off error ignore in ~/.config/flake8\033[0;m"
+echo
+echo
 #export CLASSPATH=.:$HOME/javagaming8/javagaming/jogl/jogl-all.jar:$HOME/javagaming8/javagaming/jogl/gluegen-rt.jar:$HOME/javagaming8/javagaming/rage165/ray.jar:$HOME/javagaming8/javagaming/joml/joml-jdk8-1.9.25.jar:$HOME/javagaming8/javagaming/jinput/jinput.jar:$HOME/javagaming8/javagaming/jogl/joal.jar:$HOME/javagaming8/javagaming/vecmath/vecmath.jar:$HOME/javagaming8/javagaming/jbullet/jbullet.jar:$HOME/javagaming8/javagaming/graphicslib3D/graphicslib3D.jar
 # {{{1 iterm2 set tab/window title
 # Set iterm window/tab titles empty
