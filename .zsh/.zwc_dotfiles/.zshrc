@@ -11,7 +11,13 @@ echo
 echo "\033[1;m\033[38;5;1;mTurn off error ignore in ~/.config/flake8\033[0;m"
 echo
 echo
-#export CLASSPATH=.:$HOME/javagaming8/javagaming/jogl/jogl-all.jar:$HOME/javagaming8/javagaming/jogl/gluegen-rt.jar:$HOME/javagaming8/javagaming/rage165/ray.jar:$HOME/javagaming8/javagaming/joml/joml-jdk8-1.9.25.jar:$HOME/javagaming8/javagaming/jinput/jinput.jar:$HOME/javagaming8/javagaming/jogl/joal.jar:$HOME/javagaming8/javagaming/vecmath/vecmath.jar:$HOME/javagaming8/javagaming/jbullet/jbullet.jar:$HOME/javagaming8/javagaming/graphicslib3D/graphicslib3D.jar
+
+# Temp ENV_VARS for Python JWT Project =====================
+export SECRET_KEY="\xceJg\x8b\x99\x19\x91/r\xc3a\xe4\x07\x13\xb76\xbeR\x8c\xe7\x95:\xfa\xef"
+export APP_SETTINGS="project.server.config.DevelopmentConfig"
+# ==========================================================
+
+
 # {{{1 iterm2 set tab/window title
 # Set iterm window/tab titles empty
 # if you want to set it to somehthing,
