@@ -8,6 +8,7 @@ ZDOTDIR="$ZSH_CUSTOM/.zwc_dotfiles"
 if [[ $VIMRUNTIME ]]; then
   # get 256color for vim's :terminal command
   TERM=xterm-256color-italic
+  COLORTERM=truecolor
   # source zsh aliases
   source $HOME/.zsh/aliases.zsh
 

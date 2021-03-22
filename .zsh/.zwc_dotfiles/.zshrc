@@ -146,7 +146,8 @@ HIST_STAMPS="mm/dd/yyyy"
 # Exports: {{{1 have to be below source $ZSH/oh-my-zsh.sh
 
 
-export BAT_THEME="Monokai Extended Bright"
+#export BAT_THEME="Monokai Extended Bright"
+export BAT_THEME="OneHalfDark"
 export BAT_STYLE="changes,header,numbers,snip"
 
 # for light theme

@@ -25,8 +25,6 @@ alias ssh='TERM=xterm-256color ssh'
 alias titan="ssh fernandp@titan.ecs.csus.edu"
 alias kf='k -f'
 alias watch='watch -td -n 0.1'
-alias sqlite3='/usr/local/Cellar/sqlite/3.34.1/bin/sqlite3'
-alias sql='sqlite3'
 alias lls='/bin/ls'
 alias md='mkdir -p'
 alias f="ranger"
@@ -211,3 +209,4 @@ alias fvim6='fvim -d 6'
 # {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
 
+alias bpython='ptpython'
