@@ -14,6 +14,8 @@ path=("$HOME/.bin" $~path)
 path=("$HOME/.local/bin" $~path)  # pipx install executables here
 path=("." $~path)
 
+eval "$(rbenv init -)"
+
 # The ~ in $~path does glob expansion so things with version number dirs can
 # be replaced with * and still work after a version update
 
