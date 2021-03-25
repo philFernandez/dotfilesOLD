@@ -165,8 +165,10 @@
     "editor.fontLigatures": true,
     "editor.detectIndentation": false,
     "terminal.integrated.fontSize": 15,
+    // Stops PATH from getting loaded more than once
+    "terminal.integrated.inheritEnv": false,
+    // --------------------------------------------
     "terminal.integrated.showExitAlert": false,
-    // "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
     "breadcrumbs.enabled": false,
     "explorer.confirmDelete": false,
     "git.enableSmartCommit": true,
@@ -200,6 +202,14 @@
     "python.linting.flake8Enabled": true,
     "python.languageServer": "Jedi",
     "python.jediEnabled": true,
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useBundler": true,
+    "ruby.useLanguageServer": true,
+    "[ruby]": {
+        "editor.defaultFormatter": "misogi.ruby-rubocop",
+        "editor.tabSize": 2
+    },
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",
