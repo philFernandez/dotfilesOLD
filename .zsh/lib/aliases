@@ -1,6 +1,6 @@
 if [ $# -ge 1 ]
 then
-  alias | rg --no-filename --color never "$*" | LESS+=-S bat --theme 'Monokai Extended Bright' --style=numbers -l sh
+  alias | rg --no-filename --color never "$*" | LESS+=-S bat --theme 'OneHalfDark' --style=numbers -l sh
 else
   alias | LESS+=-S bat --theme 'Monokai Extended Bright' --style=numbers -l sh
 fi

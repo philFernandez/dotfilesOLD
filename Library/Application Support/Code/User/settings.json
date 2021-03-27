@@ -202,14 +202,6 @@
     "python.linting.flake8Enabled": true,
     "python.languageServer": "Jedi",
     "python.jediEnabled": true,
-    "ruby.codeCompletion": "rcodetools",
-    "ruby.intellisense": "rubyLocate",
-    "ruby.useBundler": true,
-    "ruby.useLanguageServer": true,
-    "[ruby]": {
-        "editor.defaultFormatter": "misogi.ruby-rubocop",
-        "editor.tabSize": 2
-    },
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",
@@ -218,5 +210,10 @@
     ],
     // This turns off the parameter hints popup. Can trigger it manually "shift+cmd+space"
     "editor.parameterHints.enabled": false,
-    "editor.suggest.showTypeParameters": true
+    "editor.suggest.showTypeParameters": true,
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    }
 }
