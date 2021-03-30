@@ -6,10 +6,12 @@
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
 # echo "!!!!!!!!!! play with zenity (after you do things you're supposed to!!)"
-echo
-echo
-echo "\033[1;m\033[38;5;1;mTurn off error ignore in ~/.config/flake8\033[0;m"
-echo
+#echo
+#echo
+#echo "\033[1;m\033[38;5;1;mTurn off error ignore in ~/.config/flake8\033[0;m"
+#echo
+#echo
+figlet -f cybersmall "Hi $(id -un)" | lolcat
 echo
 
 # Temp ENV_VARS for Python JWT Project =====================
