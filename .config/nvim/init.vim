@@ -289,7 +289,9 @@ let g:startify_session_persistence = 1
       "\ startify#pad(split(system('figlet -cf epic', 'neo-vim'), '\n'))
 
 let g:startify_custom_header =
-      \ startify#pad(split(system('cowsay -f head-in', 'he uses vscode'), '\n'))
+      "\ startify#pad(split(system('cowsay -f head-in', 'he uses vscode'), '\n'))
+      \ startify#pad(split(system('cat ~/Documents/ren_and_stimpy.txt'), '\n'))
+
 " Python Highlight {{{1
 let g:python_highlight_all = 1
 let g:python_highlight_space_errors = 0

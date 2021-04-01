@@ -200,6 +200,7 @@
     "python.formatting.provider": "black",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
     "python.languageServer": "Jedi",
     "python.jediEnabled": true,
     "workbench.editorAssociations": [

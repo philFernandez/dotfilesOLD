@@ -16,7 +16,7 @@ path=("." $~path)
 # If you need ruby un comment this
 # eval "$(rbenv init -)"
 eval "$(pyenv init -)"
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+eval "$(pyenv virtualenv-init -)"
 
 # The ~ in $~path does glob expansion so things with version number dirs can
 # be replaced with * and still work after a version update
