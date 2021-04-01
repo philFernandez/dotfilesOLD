@@ -206,7 +206,8 @@ alias fvim3='fvim -d 3'
 alias fvim4='fvim -d 4'
 alias fvim5='fvim -d 5'
 alias fvim6='fvim -d 6'
-# {{{1
+# Added from command line & foldenable... {{{1
 # vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
 
 alias bpython='ptpython'
+alias rmv='rm -v'
