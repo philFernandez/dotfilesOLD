@@ -201,6 +201,12 @@
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
+    "python.linting.mypyArgs": [
+        "--ignore-missing-imports",
+        "--follow-imports=silent",
+        "--show-column-numbers",
+        "--check-untyped-defs"
+    ],
     "python.languageServer": "Jedi",
     "python.jediEnabled": true,
     "workbench.editorAssociations": [

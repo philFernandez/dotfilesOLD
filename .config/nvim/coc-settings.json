@@ -26,10 +26,11 @@
   //"python.formatting.yapfPath": "~/.local/bin/yapf",
   //"python.formatting.provider": "yapf",
   //"python.formatting.yapfArgs": ["--style=google", "--no-local-style", "-p"],
-//  "python.formatting.blackPath": "~/.local/bin/black",
+  "python.formatting.blackPath": "/Users/philthy/.pyenv/shims/black",
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--target-version=py38", "-S", "--fast"],
+  "python.formatting.blackArgs": ["--target-version=py39", "-S", "--fast"],
   "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false,
 
 
   // coc-texlab
