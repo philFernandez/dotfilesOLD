@@ -100,6 +100,10 @@
         {
             "name": "cadetblue",
             "value": "cadetblue"
+        },
+        {
+            "name": "Python Blue",
+            "value": "#346c96"
         }
     ],
     // -----File-Type-Specific-------------------------------------------------------------------
@@ -199,16 +203,16 @@
     "python.linting.enabled": true,
     "python.formatting.provider": "black",
     "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.mypyEnabled": true,
-    "python.linting.mypyArgs": [
-        "--ignore-missing-imports",
-        "--follow-imports=silent",
-        "--show-column-numbers",
-        "--check-untyped-defs"
-    ],
-    "python.languageServer": "Jedi",
-    "python.jediEnabled": true,
+    // "python.linting.flake8Enabled": true,
+    // "python.linting.mypyEnabled": true,
+    // "python.linting.mypyArgs": [
+    //     "--ignore-missing-imports",
+    //     "--follow-imports=silent",
+    //     "--show-column-numbers",
+    //     "--check-untyped-defs"
+    // ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.languageServer": "Pylance",
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",

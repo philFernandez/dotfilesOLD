@@ -146,8 +146,11 @@ if !exists('g:formatdef_latexindent')
   let g:formatdef_latexindent = '"latexindent.pl - 2>/dev/null"'
 endif
 let g:formatters_tex = ['latexindent']
+" let g:formatdef_black = '~/.pyenv/shims/black'
+let g:formatters_python = ['black']
 
-au BufWrite *.tex :Autoformat
+
+au BufWrite *.tex,*.py :Autoformat
 au BufWrite * :RemoveTrailingSpaces
 
 " No automatic comments on next line

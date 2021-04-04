@@ -2,6 +2,7 @@
 # Python and rust things are also set (automatically) in ~/.zprofile
 ###
 
+
 path=("/Applications/Racket v7.6/bin" $~path)
 path=("/usr/local/Cellar/llvm/*/bin" $~path)
 path=("/Users/philthy/Documents/Software/latexindent" $~path)
@@ -16,10 +17,13 @@ path=("." $~path)
 # If you need ruby un comment this
 # eval "$(rbenv init -)"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+
+# severly slows shell down
+# eval "$(pyenv virtualenv-init -)"
 
 # The ~ in $~path does glob expansion so things with version number dirs can
 # be replaced with * and still work after a version update
 
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+export CDPATH="$HOME/Source_Code"
 

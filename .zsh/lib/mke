@@ -1,3 +1,20 @@
+help() {
+    cat << EOF
+usage: mke [-r] <file>
+
+Adds or removes executable bit to/from file.
+
+Options:
+-r Remove executable bit from file.
+-h Show this help message.
+EOF
+}
+
+if [[ $1 = '-h' ]]; then
+    help
+    return 0
+fi
+
 local cmd='chmod +x'
 if [[ $1 = '-r' ]]; then
   cmd='chmod -x'
