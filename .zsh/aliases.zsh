@@ -178,12 +178,10 @@ alias update="brew -v update && \
 alias upgrade='brew upgrade'
 alias cupgrade='brew cask upgrade'
 alias outdated='brew -v outdated && brew cask outdated'
-alias dryclean='brew cleanup --dry-run'
-alias clean='brew cleanup -s'
+alias clean='brew cleanup --prune=all -s'
 alias brews='brew list -1'
 alias show='brew info'
 alias search='brew search'
-# show all casks
 alias install='brew -v install'
 # fuzzy function aliases {{{1
 alias fcd1='fcd -d 1'
