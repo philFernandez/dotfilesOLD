@@ -14,12 +14,17 @@ path=("$HOME/.bin" $~path)
 path=("$HOME/.local/bin" $~path)  # pipx install executables here
 path=("." $~path)
 
-# If you need ruby un comment this
+# rbenv shims ------------
 # eval "$(rbenv init -)"
-eval "$(pyenv init -)"
+# -------------------------
 
-# severly slows shell down
+# Pyenv shims -------------
+eval "$(pyenv init -)"
+# severly slows shell down (doesn't seem to be needed either, works the same without being eval'd)
 # eval "$(pyenv virtualenv-init -)"
+# -------------------------
+
+eval "$(pip completion --zsh)"
 
 # The ~ in $~path does glob expansion so things with version number dirs can
 # be replaced with * and still work after a version update
