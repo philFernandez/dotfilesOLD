@@ -11,7 +11,11 @@
 #echo "\033[1;m\033[38;5;1;mTurn off error ignore in ~/.config/flake8\033[0;m"
 #echo
 #echo
-figlet -f cybersmall "Hi $(id -un)" | lolcat
+if [[ $[$RANDOM%2] == 0 ]]; then
+    figlet -f cybersmall "Hi $(id -un)" | lolcat
+else
+    cowsay -f small "hi $USER" | lolcat
+fi
 echo
 
 # Temp ENV_VARS for Python JWT Project =====================
