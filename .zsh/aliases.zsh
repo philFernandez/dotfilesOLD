@@ -209,3 +209,4 @@ alias fvim6='fvim -d 6'
 
 alias bpython='ptpython'
 alias rmv='rm -v'
+alias gld='gdl'
