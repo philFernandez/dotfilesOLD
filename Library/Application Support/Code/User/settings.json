@@ -226,5 +226,10 @@
         "**/.bloop": true,
         "**/.metals": true,
         "**/.ammonite": true
-    }
+    },
+    "python.analysis.cacheFolderPath": "/Users/philthy/.cache/vscode_python_cache",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.experimentalLinkProvider": false,
+    "terminal.integrated.rendererType": "canvas",
+    "code-runner.runInTerminal": true
 }
