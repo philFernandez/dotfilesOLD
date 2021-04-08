@@ -210,3 +210,5 @@ alias fvim6='fvim -d 6'
 alias bpython='ptpython'
 alias rmv='rm -v'
 alias gld='gdl'
+alias el="vim ~/.zsh/.zwc_dotfiles/.zlogin"
+alias dad="https --json icanhazdadjoke.com | jq '.joke'"

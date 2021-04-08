@@ -147,7 +147,7 @@ if !exists('g:formatdef_latexindent')
 endif
 let g:formatters_tex = ['latexindent']
 " let g:formatdef_black = '~/.pyenv/shims/black'
-let g:formatters_python = ['black']
+let g:formatters_python = ['yapf']
 
 
 au BufWrite *.tex,*.py :Autoformat

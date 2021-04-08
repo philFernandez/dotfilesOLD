@@ -186,7 +186,7 @@
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$color[$(( RANDOM % ($#color - 1 + 1) + 1 ))]
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=235
   # Custom icon.
-  # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=""
 
   ################################[ prompt_char: prompt symbol ]################################
   # Transparent background.

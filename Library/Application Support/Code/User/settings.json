@@ -158,7 +158,7 @@
     "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/Users/philthy/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
     "java.project.importOnFirstTimeStartup": "automatic",
     // ------------------------------------------------------------------------
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    //"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "vim.foldfix": true,
     "vim.vimrc.enable": true,
     "vim.vimrc.path": "/Users/philthy/.config/vscode.vimrc",
@@ -231,5 +231,8 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.experimentalLinkProvider": false,
     "terminal.integrated.rendererType": "canvas",
-    "code-runner.runInTerminal": true
+    "code-runner.runInTerminal": true,
+    "errorLens.addAnnotationTextPrefixes": true,
+    "errorLens.statusBarMessageEnabled": true,
+    "errorLens.statusBarMessageType": "closestProblem"
 }

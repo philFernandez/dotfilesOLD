@@ -30,5 +30,5 @@ eval "$(pip completion --zsh)"
 # be replaced with * and still work after a version update
 
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
-export CDPATH="$HOME/Source_Code"
+export CDPATH="$HOME/Source_Code:$HOME"
 
