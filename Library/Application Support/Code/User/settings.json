@@ -164,7 +164,7 @@
     "vim.vimrc.path": "/Users/philthy/.config/vscode.vimrc",
     "editor.formatOnSave": true,
     "editor.suggestSelection": "first",
-    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontFamily": "MesloLGS NF",
     "editor.fontSize": 16,
     "editor.fontLigatures": true,
     "editor.detectIndentation": false,
@@ -234,5 +234,6 @@
     "code-runner.runInTerminal": true,
     "errorLens.addAnnotationTextPrefixes": true,
     "errorLens.statusBarMessageEnabled": true,
-    "errorLens.statusBarMessageType": "closestProblem"
+    "errorLens.statusBarMessageType": "closestProblem",
+    "terminal.integrated.fontFamily": "MesloLGS NF"
 }
