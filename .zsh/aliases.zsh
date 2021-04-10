@@ -1,3 +1,4 @@
+# vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
 PROJ=/Users/philthy/Source_Code/HCL/SECURITY/hellojwt
 PROJ2=/Users/philthy/Source_Code/HCL/React/ToDo/app
 PROJ3=/Users/philthy/Source_Code/HCL/DEPLOY
@@ -148,12 +149,10 @@ alias gslc='git shortlog -s | xargs'
 alias gco='git checkout'
 # Version Controled Dotfiles {{{1
 # show files that aren't under source control in ~/.zsh/lib
-# must be in ~/.zsh/lib to run
 alias ldiff="printc -ub -C cantaloupe Untracked Lib Functions: && (cd /Users/philthy/.zsh/lib && sort <(fd G -v '(old$|zwc$)') <(config ls-files G -v .gitignore) | uniq -u)"
 alias ldiff2="diff -u <(fd G -v '(old$|zwc$)') <(config ls-files G -v .gitignore) DSF"
 # show files that aren't under source control in ~/.bin
-# must be in ~/.bin to run
-alias sdiff="sort <(fd -tx) <(config ls-files) | uniq -u"
+alias sdiff=" printc -buC strawberry Untracked Bin Scripts: && (cd /Users/philthy/.bin && sort <(fd -tx) <(config ls-files) | uniq -u)"
 alias sdiff2="diff -u <(fd -tx) <(config ls-files) DSF"
 alias preconf='setopt completealiases'
 alias postconf='unsetopt completealiases'
@@ -204,11 +203,11 @@ alias fvim3='fvim -d 3'
 alias fvim4='fvim -d 4'
 alias fvim5='fvim -d 5'
 alias fvim6='fvim -d 6'
-# Added from command line & foldenable... {{{1
-# vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
+# Added from command line {{{1
 
 alias bpython='ptpython'
 alias rmv='rm -v'
 alias gld='gdl'
 alias el="vim ~/.zsh/.zwc_dotfiles/.zlogin"
 alias dad="https --json icanhazdadjoke.com | jq '.joke'"
+
