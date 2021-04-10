@@ -22,6 +22,6 @@ alias -g A='|gawk'
 alias -g GN='|rg -v'
 alias -g GC='| rg --no-filename --color always'
 alias -g F='|fzf'
-alias -g DSF='| diff-so-fancy | less --tabs=4 -RFX'
+alias -g DSF='| delta --line-numbers'
 alias -g FB='| sort | fzf --reverse --preview "bat --theme=Monokai\ Extended\ Bright \
   --style=numbers,changes --color always {}" --preview-window="down:95%"'
