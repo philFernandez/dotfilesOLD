@@ -149,7 +149,7 @@ alias gco='git checkout'
 # Version Controled Dotfiles {{{1
 # show files that aren't under source control in ~/.zsh/lib
 # must be in ~/.zsh/lib to run
-alias ldiff="sort <(fd G -v '(old$|zwc$)') <(config ls-files G -v .gitignore) | uniq -u"
+alias ldiff="printc -ub -C cantaloupe Untracked Lib Functions: && (cd /Users/philthy/.zsh/lib && sort <(fd G -v '(old$|zwc$)') <(config ls-files G -v .gitignore) | uniq -u)"
 alias ldiff2="diff -u <(fd G -v '(old$|zwc$)') <(config ls-files G -v .gitignore) DSF"
 # show files that aren't under source control in ~/.bin
 # must be in ~/.bin to run
