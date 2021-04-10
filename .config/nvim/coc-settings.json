@@ -22,16 +22,13 @@
   },
 
   // Coc-python settings
-  // Jedi is not available through pipx so installed via pip3
-  //"python.formatting.yapfPath": "~/.local/bin/yapf",
-  //"python.formatting.provider": "yapf",
-  //"python.formatting.yapfArgs": ["--style=google", "--no-local-style", "-p"],
-  "python.formatting.blackPath": "/Users/philthy/.pyenv/shims/black",
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--target-version=py39", "-S", "--fast"],
-  "python.linting.flake8Enabled": true,
+  "python.formatting.yapfPath": "~/.pyenv/shims/yapf",
+  "python.formatting.provider": "yapf",
+  "python.formatting.yapfArgs": ["--style=google", "--no-local-style", "-p"],
   "python.linting.pylintEnabled": false,
+  "python.linting.mypyPath": "~/.pyenv/shims/mypy",
   "python.linting.mypyEnabled": true,
+  "python.jediPath": "~/.pyenv/shims/jedi-language-server",
 
 
   // coc-texlab

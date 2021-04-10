@@ -104,6 +104,10 @@
         {
             "name": "Python Blue",
             "value": "#346c96"
+        },
+        {
+            "name": "Sea Green",
+            "value": "seagreen"
         }
     ],
     // -----File-Type-Specific-------------------------------------------------------------------
@@ -164,7 +168,8 @@
     "vim.vimrc.path": "/Users/philthy/.config/vscode.vimrc",
     "editor.formatOnSave": true,
     "editor.suggestSelection": "first",
-    "editor.fontFamily": "MesloLGS NF",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.fontSize": 16,
     "editor.fontLigatures": true,
     "editor.detectIndentation": false,
@@ -203,14 +208,6 @@
     "python.linting.enabled": true,
     "python.formatting.provider": "black",
     "python.linting.pylintEnabled": false,
-    // "python.linting.flake8Enabled": true,
-    // "python.linting.mypyEnabled": true,
-    // "python.linting.mypyArgs": [
-    //     "--ignore-missing-imports",
-    //     "--follow-imports=silent",
-    //     "--show-column-numbers",
-    //     "--check-untyped-defs"
-    // ],
     "python.analysis.typeCheckingMode": "basic",
     "python.languageServer": "Pylance",
     "workbench.editorAssociations": [
@@ -235,5 +232,14 @@
     "errorLens.addAnnotationTextPrefixes": true,
     "errorLens.statusBarMessageEnabled": true,
     "errorLens.statusBarMessageType": "closestProblem",
-    "terminal.integrated.fontFamily": "MesloLGS NF"
+    // Some custom colors
+    "workbench.colorCustomizations": {
+        // ? Sometimes yellow and black doesn't look right in terminal
+        // ? so this fixes them.               <->
+        "terminal.ansiYellow": "#ffff00",
+        "terminal.ansiBlack": "#000000",
+        // ? <- ------------------------------ <->
+        "terminalCursor.foreground": "#ff8801",
+        "editorCursor.foreground": "#ff8801"
+    }
 }
