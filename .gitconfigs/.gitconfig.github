@@ -3,7 +3,6 @@
 # Please adapt and uncomment the following lines:
   name = philFernandez
   email = norcal618@gmail.com
-
 [pager]
   diff = true
   branch = false
@@ -11,18 +10,8 @@
   templatedir = ~/.git_template
 
 [core]
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta
 [color]
 	ui = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+[delta]
+    line-numbers = true
