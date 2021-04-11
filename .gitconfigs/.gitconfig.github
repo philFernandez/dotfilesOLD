@@ -14,4 +14,4 @@
 [color]
 	ui = true
 [delta]
-    line-numbers = true
+    line-numbers = false
