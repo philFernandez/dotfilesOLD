@@ -5,6 +5,9 @@
         #         .|'      .     '||  ||    ||   ||   |.  '|.      .         #
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
+
+
+# {{{1 Temporary
 # echo "!!!!!!!!!! play with zenity (after you do things you're supposed to!!)"
 #echo
 #echo
@@ -81,48 +84,6 @@ for fun in $lib; do
 done
 unset lib fun
 
-# Bindkey {{{1
-KEYTIMEOUT=1
-bindkey -D emacs
-bindkey -v
-
-# Rebindings ( bindkey -M <keymap> <your binding> <command>  )
-# keymap is the group that the command lives in eg.
-# the keymap <menuselect> contains the command <vi-backward-char>
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -M vicmd ' ' vi-add-eol # space goes to eol in insert mode
-
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
-
-bindkey "\e[3~" delete-char # make del key work correctly
-bindkey '^X^E' edit-command-line # open vim for writing command
-zle -N edit-command-line
-bindkey '^F' vi-end-of-line # accept autocomplete
-bindkey '^A' vi-beginning-of-line
-bindkey '^G' vi-delete # press twice; acts sort of like '^U'
-#bindkey -M viins 'jj' vi-cmd-mode
-
-# makes binding for autoloaded 'k'
-# but it wont close unless i press enter twice
-#zle -N k
-#bindkey -s '^K' k
-
-bindkey -s '^R' 'exec zsh\n'
-#bindkey -s '^K' 'k\n'
-# ^i brings up completion
-# ^j accepts completions
-
-bindkey '^h' _complete_help
-
-# Make delete key work in vi-mode
-bindkey -a '^[[3~' delete-char
-# Make backspace key work in vi-mode
-bindkey "^?" backward-delete-char
-
 # Files to Source {{{1
 
 
@@ -131,16 +92,16 @@ if [[ -s ~/.dircolors ]]; then
 fi
 # Plugins {{{1
 source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
-
-
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# histdb ----------------
-#source ~/.zsh/zsh-histdb/sqlite-history.zsh
-#autoload -Uz add-zsh-hook
-#add-zsh-hook precmd histdb-update-outcome
-# -----------------------
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ----------- ZVM (vim mode plugin) ----------
+export ZVM_LAZY_KEYBINDINGS=false
+source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+export ZVM_READKEY_ENGINE=$ZVM_READKEY_ENGINE_ZLE
+export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+zvm_bindkey vicmd ' ' zvm_append_eol
+# --------------------------------------------
 
 # Variables {{{1
 DISABLE_UNTRACKED_FILES_DIRTY="true"
