@@ -191,7 +191,7 @@
     "files.trimTrailingWhitespace": true,
     "html.format.wrapAttributes": "force-aligned",
     "liveServer.settings.donotShowInfoMsg": true,
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "Night Owl",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
     "workbench.editor.decorations.badges": true,
@@ -216,7 +216,7 @@
             "filenamePattern": "*.ipynb"
         }
     ],
-    // This turns off the parameter hints popup. Can trigger it manually "shift+cmd+space"
+    // ? This turns off the parameter hints popup. Can trigger it manually "shift+cmd+space"
     "editor.parameterHints.enabled": false,
     "editor.suggest.showTypeParameters": true,
     "files.watcherExclude": {
@@ -232,14 +232,17 @@
     "errorLens.addAnnotationTextPrefixes": true,
     "errorLens.statusBarMessageEnabled": true,
     "errorLens.statusBarMessageType": "closestProblem",
-    // Some custom colors
+
+    // ** These colorCustomizations override theme settings **
     "workbench.colorCustomizations": {
-        // ? Sometimes yellow and black doesn't look right in terminal
-        // ? so this fixes them.               <->
+        // ? Sometimes yellow and black doesn't look right in terminal.
+        // * This fixes that.
         "terminal.ansiYellow": "#ffff00",
         "terminal.ansiBlack": "#000000",
-        // ? <- ------------------------------ <->
-        "terminalCursor.foreground": "#ff8801",
-        "editorCursor.foreground": "#ff8801"
+
+        "[Night Owl]": {
+            "sideBar.border": "#102a44",
+            "sideBar.background": "#001122"
+        }
     }
 }
