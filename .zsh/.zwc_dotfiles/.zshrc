@@ -6,6 +6,7 @@
         #        ||......| |'....|'  .||.  .||. .||.  '|'  ''|....'          #
         ######################################################################
 
+# search history based on text showing on screen with up/down
 
 # {{{1 Temporary
 # echo "!!!!!!!!!! play with zenity (after you do things you're supposed to!!)"
@@ -97,10 +98,19 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ----------- ZVM (vim mode plugin) ----------
 export ZVM_LAZY_KEYBINDINGS=false
+# "vv" in normal mode will open editor
 source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export ZVM_READKEY_ENGINE=$ZVM_READKEY_ENGINE_ZLE
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+export ZVM_VI_EDITOR=nvim
+# Bindings related to vim mode
 zvm_bindkey vicmd ' ' zvm_append_eol
+zvm_bindkey viins "^[[A" history-beginning-search-backward
+zvm_bindkey viins "^[[B" history-beginning-search-forward
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 # --------------------------------------------
 
 # Variables {{{1
