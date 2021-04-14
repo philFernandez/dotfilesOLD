@@ -1,4 +1,3 @@
-let mapleader = ','
 nnoremap <Space> A
 nnoremap J }
 nnoremap K {
