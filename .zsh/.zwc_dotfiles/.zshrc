@@ -97,12 +97,13 @@ source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ----------- ZVM (vim mode plugin) ----------
-export ZVM_LAZY_KEYBINDINGS=false
+# export ZVM_LAZY_KEYBINDINGS=false
 # "vv" in normal mode will open editor
 source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export ZVM_READKEY_ENGINE=$ZVM_READKEY_ENGINE_ZLE
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 export ZVM_VI_EDITOR=nvim
+export ZVM_ESCAPE_KEYTIMEOUT=0
 # Bindings related to vim mode
 zvm_bindkey vicmd ' ' zvm_append_eol
 zvm_bindkey viins "^[[A" history-beginning-search-backward
