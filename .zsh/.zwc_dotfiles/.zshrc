@@ -15,16 +15,10 @@
 #echo "\033[1;m\033[38;5;1;mTurn off error ignore in ~/.config/flake8\033[0;m"
 #echo
 #echo
-if [[ $[$RANDOM%2] == 0 ]]; then
-    figlet -f cybersmall "Hi $(id -un)" | lolcat
-else
-    cowsay -f small "hi $USER" | lolcat
-fi
-echo
 
 # Temp ENV_VARS for Python JWT Project =====================
-export SECRET_KEY="\xceJg\x8b\x99\x19\x91/r\xc3a\xe4\x07\x13\xb76\xbeR\x8c\xe7\x95:\xfa\xef"
-export APP_SETTINGS="project.server.config.DevelopmentConfig"
+#export SECRET_KEY="\xceJg\x8b\x99\x19\x91/r\xc3a\xe4\x07\x13\xb76\xbeR\x8c\xe7\x95:\xfa\xef"
+#export APP_SETTINGS="project.server.config.DevelopmentConfig"
 # ==========================================================
 
 
@@ -48,18 +42,14 @@ stty -ixon
 # Generated p10k theme
 [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 
+# Minimal Theme (Comment out above line, and the line that sources pk10 below in plugins)
+ #export PS1="%F{2}>%f "
+
 # My old p9k theme
 #[[ ! -f $HOME/.powerlevel_settings ]] || source $HOME/.powerlevel_settings
 
 # My original generated p10k theme
 #[[ ! -f $ZDOTDIR/.myP10k.zsh ]] || source $ZDOTDIR/.myP10k.zsh
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 
 # Autoload {{{1

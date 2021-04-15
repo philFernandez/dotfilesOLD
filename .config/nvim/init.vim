@@ -24,13 +24,10 @@ filetype plugin indent on
 " Vim Plug {{{1
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'Shougo/neco-vim'
-Plug 'udalov/kotlin-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
-Plug 'fatih/vim-go'
 Plug 'mattn/calendar-vim'
-Plug 'dag/vim-fish'
 Plug 'vimwiki/vimwiki'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chiel92/vim-autoformat'
@@ -55,13 +52,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'cespare/vim-toml'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'vim-scripts/applescript.vim'
-Plug 'lilyball/vim-swift'
 Plug 'chrisbra/csv.vim'
 Plug 'mengelbrecht/lightline-bufferline'
-Plug 'tommcdo/vim-exchange' " cxx on line to exchange -> go to otherline and press .
-                            " also can do cx{motion} the same way
-Plug 'tweekmonster/django-plus.vim'
 Plug 'mattn/emmet-vim', { 'for': [ 'html', 'javascript', 'htmldjango' ] }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
@@ -202,8 +194,6 @@ nmap ga <Plug>(EasyAlign)
 vmap <Enter> <Plug>(EasyAlign)
 " }}}
 " Lightline {{{1
-
-
 let g:lightline = {}
 
 let g:lightline.colorscheme = 'wombat'
@@ -234,13 +224,13 @@ let g:lightline.active = {
       \ }
 
 let g:lightline.separator = {
-      \ 'left' : '',
-      \ 'right': ''
+      \ 'left' : '',
+      \ 'right': ''
       \ }
 
 let g:lightline.subseparator = {
-      \ 'left': '',
-      \ 'right': ''
+      \ 'left': '',
+      \ 'right': ''
       \ }
 
 " Top bar of lightline ---(separate plugin)-------

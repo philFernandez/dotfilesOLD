@@ -24,7 +24,7 @@ eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 # -------------------------
 
-eval "$(pip completion --zsh)"
+#eval "$(pip completion --zsh)"
 
 # The ~ in $~path does glob expansion so things with version number dirs can
 # be replaced with * and still work after a version update
