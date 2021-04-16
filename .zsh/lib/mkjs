@@ -1,0 +1,26 @@
+# mkjs
+if [[ $# == 1 ]]; then
+    mkdir -p $1 && cd $1
+fi
+
+mkdir -p src/js
+mkdir -p src/style
+touch src/js/app.js
+touch src/style/style.css
+
+cat << EOF > src/index.html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="style/style.css" media="all">
+        <script defer src="js/app.js"></script>
+    </head>
+    <body>
+
+    </body>
+</html>
+EOF
+
+# vi: ft=zsh
