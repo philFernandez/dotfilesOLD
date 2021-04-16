@@ -1,0 +1,7 @@
+# ftbat
+
+
+fd -e $1 -X bat
+
+
+# vi: ft=zsh
