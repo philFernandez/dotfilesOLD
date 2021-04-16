@@ -1,0 +1,6 @@
+# disk
+
+df -PH | sed -n -e 1p -e 4p | awk '{print $2" "$3" "$4" "$5" "$6}' | column -t
+
+
+# vi: ft=zsh
