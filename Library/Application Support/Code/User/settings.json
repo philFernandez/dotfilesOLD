@@ -249,5 +249,9 @@
             "sideBar.border": "#102a44",
             "sideBar.background": "#001122"
         }
+    },
+    "jupyter.askForKernelRestart": false,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
