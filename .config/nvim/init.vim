@@ -224,13 +224,13 @@ let g:lightline.active = {
       \ }
 
 let g:lightline.separator = {
-      \ 'left' : '',
-      \ 'right': ''
+      \ 'left' : '',
+      \ 'right': ''
       \ }
 
 let g:lightline.subseparator = {
-      \ 'left': '',
-      \ 'right': ''
+      \ 'left': '',
+      \ 'right': ''
       \ }
 
 " Top bar of lightline ---(separate plugin)-------
