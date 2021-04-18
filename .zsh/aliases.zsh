@@ -172,7 +172,7 @@ alias cce="config commit -a --allow-empty-message -m ''"
 # make man pages display line numbers {{{1
 alias nman='LESS+="-N" man'
 # Package Management {{{1
-alias update="brew -v update && \
+alias update="brew update && \
   printc -nC spring '==>'; printc -b ' Outdated' \
   && brew outdated && brew outdated --cask"
 alias upgrade='brew upgrade'
