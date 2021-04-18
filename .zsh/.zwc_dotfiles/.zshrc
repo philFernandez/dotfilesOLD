@@ -93,7 +93,7 @@ source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export ZVM_READKEY_ENGINE=$ZVM_READKEY_ENGINE_ZLE
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 export ZVM_VI_EDITOR=nvim
-export ZVM_ESCAPE_KEYTIMEOUT=0
+export ZVM_KEYTIMEOUT=0.01
 # Bindings related to vim mode
 zvm_bindkey vicmd ' ' zvm_append_eol
 zvm_bindkey viins "^[[A" history-beginning-search-backward
