@@ -93,7 +93,9 @@ source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export ZVM_READKEY_ENGINE=$ZVM_READKEY_ENGINE_ZLE
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 export ZVM_VI_EDITOR=nvim
-export ZVM_KEYTIMEOUT=0.01
+# KEYTIMEOUT=1 messes up surround ys" cs" ' ds"  (unless you can do it in < 100th of sec)
+#      But S" works (in visual mode), and thats all I care about
+export ZVM_KEYTIMEOUT=0.01  # = KEYTIMEOUT=1
 # Bindings related to vim mode
 zvm_bindkey vicmd ' ' zvm_append_eol
 zvm_bindkey viins "^[[A" history-beginning-search-backward
