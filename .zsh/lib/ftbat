@@ -1,7 +1,7 @@
 # ftbat
 
 
-fd -e $1 -X bat
+fd -HI -e $1 -X bat
 
 
 # vi: ft=zsh

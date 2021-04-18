@@ -234,9 +234,7 @@
     "terminal.integrated.experimentalLinkProvider": false,
     "terminal.integrated.rendererType": "canvas",
     "code-runner.runInTerminal": true,
-    "errorLens.addAnnotationTextPrefixes": true,
-    "errorLens.statusBarMessageEnabled": true,
-    "errorLens.statusBarMessageType": "closestProblem",
+    // "errorLens.addAnnotationTextPrefixes": true,
 
     // ** These colorCustomizations override theme settings **
     "workbench.colorCustomizations": {
@@ -253,5 +251,6 @@
     "jupyter.askForKernelRestart": false,
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "python.pythonPath": "/Users/philthy/.pyenv/versions/3.9.4/bin/python"
 }

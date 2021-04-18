@@ -204,7 +204,7 @@ alias fvim3='fvim -d 3'
 alias fvim4='fvim -d 4'
 alias fvim5='fvim -d 5'
 alias fvim6='fvim -d 6'
-# Added from command line {{{1
+# Added from command line (mka) {{{1
 
 alias bpython='ptpython'
 alias rmv='rm -v'
@@ -212,3 +212,5 @@ alias gld='gdl'
 alias el="vim ~/.zsh/.zwc_dotfiles/.zlogin"
 alias dad="https --json icanhazdadjoke.com | jq '.joke'"
 
+alias rmi="rmindt"
+alias exe="exercism"
