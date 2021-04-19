@@ -211,6 +211,7 @@ alias rmv='rm -v'
 alias gld='gdl'
 alias el="vim ~/.zsh/.zwc_dotfiles/.zlogin"
 alias dad="https --json icanhazdadjoke.com | jq '.joke'"
+#alias dad='echo "\033[1;38;2;100;255;155m" && curl https://icanhazdadjoke.com && echo "\033[0m\n"'
 
 alias rmi="rmindt"
 alias exe="exercism"
