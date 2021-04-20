@@ -1,5 +1,7 @@
 alias -g L=' | less'
 alias -g B='|bat'
+alias -g EL=' |& less'  # |& pipes from stderr and stdout
+alias -g EB='|& bat'
 alias -g J='|jq'
 alias -g SCH='~/Fall_2020'
 alias -g DOW='~/Downloads'

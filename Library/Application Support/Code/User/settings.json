@@ -187,6 +187,14 @@
     "vim.searchHighlightTextColor": "black",
     "vim.leader": ",",
     "vim.showMarksInGutter": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.duration": 500,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["p"],
+            "after": ["p", "g", "v", "y"]
+        }
+    ],
     "editor.formatOnSave": true,
     "editor.suggestSelection": "first",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
@@ -203,8 +211,6 @@
     "explorer.confirmDelete": false,
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
-    "vim.highlightedyank.enable": true,
-    "vim.highlightedyank.duration": 500,
     "emmet.includeLanguages": {
         "jsp": "html"
     },
