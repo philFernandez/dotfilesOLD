@@ -17,13 +17,13 @@ autoload catch
             fi
         done
         echo
-        exit 1
+        return 1
     fi
 }
 
 
 if [[ $watch_flag ]]; then
-    command watch -n 0.1 -- "df -PH | sed -n -e 1p -e 4p | awk '{print \$2\" \"\$3\" \"\$4\" \"\$5\" \"\$6}' | column -t"
+    command watch -td -n 0.1 -- "df -PH | sed -n -e 1p -e 4p | awk '{print \$2\" \"\$3\" \"\$4\" \"\$5\" \"\$6}' | column -t"
 else
     df -PH | sed -n -e 1p -e 4p | awk '{print $2" "$3" "$4" "$5" "$6}' | column -t
 fi
