@@ -1,6 +1,32 @@
 # disk
+autoload throw
+autoload catch
 
-df -PH | sed -n -e 1p -e 4p | awk '{print $2" "$3" "$4" "$5" "$6}' | column -t
+
+{   # TRY
+    zparseopts -F -D - w=watch_flag 2> /dev/null
+    # THROW
+    [[ $status != 0 ]] && throw "INVALID_OPTS"
+} always {
+    # CATCH
+    if catch "INVALID_OPTS"; then
+        echo -n ${(L)CAUGHT}:
+        for arg in $*; do
+            if [[ $arg != '-w' ]]; then
+                echo -n " $arg"
+            fi
+        done
+        echo
+        exit 1
+    fi
+}
+
+
+if [[ $watch_flag ]]; then
+    command watch -n 0.1 -- "df -PH | sed -n -e 1p -e 4p | awk '{print \$2\" \"\$3\" \"\$4\" \"\$5\" \"\$6}' | column -t"
+else
+    df -PH | sed -n -e 1p -e 4p | awk '{print $2" "$3" "$4" "$5" "$6}' | column -t
+fi
 
 
 # vi: ft=zsh
