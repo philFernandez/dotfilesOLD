@@ -1,7 +1,7 @@
 if [ $# -ge 1 ]
 then
-  lsd -la $@ --date relative --group-dirs first
+  lsd --almost-all -l $@ --date relative --group-dirs first
 else
-  lsd -la $pwd --date relative --group-dirs first
+  lsd --almost-all -l $pwd --date relative --group-dirs first
 fi
 # vi: ft=zsh

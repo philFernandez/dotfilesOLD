@@ -108,6 +108,10 @@
         {
             "name": "Sea Green",
             "value": "seagreen"
+        },
+        {
+            "name": "Spring Green",
+            "value": "springgreen"
         }
     ],
     // Theme Customizations
@@ -205,14 +209,14 @@
     "terminal.integrated.inheritEnv": false,
     // --------------------------------------------
     "terminal.integrated.showExitAlert": false,
-    "breadcrumbs.enabled": false,
+    // "breadcrumbs.enabled": false,
     "explorer.confirmDelete": false,
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "emmet.includeLanguages": {
         "jsp": "html"
     },
-
+    "quokka.startViewStatusBar": false,
     "files.trimTrailingWhitespace": true,
     "html.format.wrapAttributes": "force-aligned",
     "liveServer.settings.donotShowInfoMsg": true,
@@ -223,6 +227,7 @@
     "workbench.editor.decorations.colors": true,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.currentLine.enabled": false,
+    "errorLens.enabledDiagnosticLevels": ["error", "warning", "info"],
     "editor.cursorBlinking": "phase",
     "editor.find.loop": false,
     "editor.minimap.showSlider": "always",
