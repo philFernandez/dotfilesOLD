@@ -231,6 +231,7 @@
     "editor.cursorBlinking": "phase",
     "editor.find.loop": false,
     "editor.minimap.showSlider": "always",
+    // "editor.minimap.renderCharacters": false,
     "redhat.telemetry.enabled": false,
     "explorer.openEditors.visible": 0,
     "angular.experimental-ivy": true,
