@@ -19,7 +19,6 @@ path=("." $~path)
 # -------------------------
 
 # Pyenv shims -------------
-eval "$(pyenv init -)"
 # severly slows shell down (doesn't seem to be needed either, works the same without being eval'd)
 # eval "$(pyenv virtualenv-init -)"
 # -------------------------

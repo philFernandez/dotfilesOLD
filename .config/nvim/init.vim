@@ -169,7 +169,7 @@ set incsearch
 " Text Render (wrap) {{{1
 set encoding=utf-8
 set linebreak " dont wrap in middle of word
-set nowrap
+"set nowrap
 set wrapscan " continue search on next line
 
 " Fold {{{1
@@ -403,11 +403,16 @@ nnoremap dl I<Esc>d$
 "map <C-X> <Nop>
 "=======================
 
-" pane navigation
-nnoremap <A-j> <c-w>j
-nnoremap <A-k> <c-w>k
-nnoremap <A-h> <c-w>h
-nnoremap <A-l> <c-w>l
+" pane navigation (A is for option key on mac)
+"nnoremap <A-j> <c-w>j
+"nnoremap <A-k> <c-w>k
+"nnoremap <A-h> <c-w>h
+"nnoremap <A-l> <c-w>l
+
+" scroll each visible line of wrapped line
+" (use g0 and g$ to move to begin and end of visible lines)
+nnoremap <A-j> gj
+nnoremap <A-k> gk
 
 tnoremap <A-n> <c-\><c-n>
 

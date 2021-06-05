@@ -105,6 +105,7 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 # --------------------------------------------
+eval "$(pyenv init -)"
 
 # Variables {{{1
 DISABLE_UNTRACKED_FILES_DIRTY="true"

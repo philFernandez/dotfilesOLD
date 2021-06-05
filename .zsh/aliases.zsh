@@ -57,7 +57,7 @@ alias v='nvim'
 alias py='python3'
 alias fl='fd -HI -d1'
 alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
-alias schedule='imgcat ~/Desktop/Schedule.png'
+alias icat=imgcat
 # Tab Colors {{{1
 # run cmd "colors" to lists all colors from cmd line
 alias material='tab 15 89 97'
