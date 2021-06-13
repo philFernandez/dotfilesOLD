@@ -201,15 +201,15 @@
     "editor.suggestSelection": "first",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.fontSize": 16,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.tabs.enabled": false,
+    // Stops PATH from getting loaded more than once
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.showExitAlert": false,
     "editor.fontFamily": "Victor Mono",
     "editor.fontSize": 17,
     "editor.fontLigatures": true,
     "editor.detectIndentation": false,
-    // Stops PATH from getting loaded more than once
-    "terminal.integrated.inheritEnv": false,
-    // --------------------------------------------
-    "terminal.integrated.showExitAlert": false,
-    // "breadcrumbs.enabled": false,
     "explorer.confirmDelete": false,
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
@@ -231,7 +231,7 @@
     "editor.cursorBlinking": "phase",
     "editor.find.loop": false,
     "editor.minimap.showSlider": "always",
-    // "editor.minimap.renderCharacters": false,
+    "editor.minimap.renderCharacters": false,
     "redhat.telemetry.enabled": false,
     "explorer.openEditors.visible": 0,
     "angular.experimental-ivy": true,
@@ -242,12 +242,9 @@
     "python.linting.pylintEnabled": false,
     "python.analysis.typeCheckingMode": "basic",
     "python.languageServer": "Pylance",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "jupyter.askForKernelRestart": false,
     // ? This turns off the parameter hints popup. Can trigger it manually "shift+cmd+space"
     "editor.parameterHints.enabled": false,
