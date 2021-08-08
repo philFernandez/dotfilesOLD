@@ -1,7 +1,4 @@
 # vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
-PROJ=/Users/philthy/Source_Code/HCL/SECURITY/hellojwt
-PROJ2=/Users/philthy/Source_Code/HCL/React/ToDo/app
-PROJ3=/Users/philthy/Source_Code/HCL/DEPLOY
 # Commands and Shortcuts {{{1
 alias lcs=clear
 alias tt=taskwarrior-tui
@@ -58,6 +55,7 @@ alias py='python3'
 alias fl='fd -HI -d1'
 alias zrl='zrecompile && (cd ~/.zsh/lib && fd -e old -x rm) && exec zsh'
 alias icat=imgcat
+alias mka="cp -r ~/Source_Code/Arduino/arduiono_vscode/.vscode ."
 # Tab Colors {{{1
 # run cmd "colors" to lists all colors from cmd line
 alias material='tab 15 89 97'

@@ -243,7 +243,7 @@
     "python.analysis.typeCheckingMode": "basic",
     "python.languageServer": "Pylance",
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
+        "*.ipynb": "jupyter-notebook"
     },
     "jupyter.askForKernelRestart": false,
     // ? This turns off the parameter hints popup. Can trigger it manually "shift+cmd+space"
@@ -258,8 +258,15 @@
     "terminal.integrated.experimentalLinkProvider": false,
     "terminal.integrated.rendererType": "canvas",
     "code-runner.runInTerminal": true,
+    "openscad.launchPath": "/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD",
     // * <== Intellisence and autocomplete things ==>
     "javascript.suggest.names": false,
-    "editor.tabCompletion": "on"
+    "editor.tabCompletion": "on",
+    "python.defaultInterpreterPath": "/Users/philthy/.pyenv/versions/3.9.4/bin/python",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "platformio-ide.activateOnlyOnPlatformIOProject": true
     // * <== ------------------------------------ ==>
 }

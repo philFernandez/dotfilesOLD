@@ -1,4 +1,4 @@
-#!/Users/philthy/Source_Code/Python/rmind/.venv/bin/python
+#!/Users/philthy/.pyenv/shims/python
 
 
 from rich.console import Console
