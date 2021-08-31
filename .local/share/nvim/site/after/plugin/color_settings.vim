@@ -16,8 +16,8 @@ set termguicolors " keep this before color theme setting
 "color tender
 "color angr
 "color molokai " my favorite
-color onehalfdark
-"color molokayo
+"color onehalfdark
+color molokayo
 "color deus
 "color yellow-moon
 "color seoul256

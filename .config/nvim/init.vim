@@ -173,16 +173,25 @@ set linebreak " dont wrap in middle of word
 set wrapscan " continue search on next line
 
 " Fold {{{1
-" za - toggle fold under cursor
-" zA - toggle fold under cursor recursively
-" zR - open all folds
-" zM - close all folds
-" zo - unfold area under cursor
-" zc - fold area under cursor
-" zO - unfold recursively under cursor
-" zC - fold recursively under cursor
-" zj - jump down to next fold
-" zk - jump up to previous fold
+"    Vim folding commands
+"---------------------------------
+"zf#j creates a fold from the cursor down # lines.
+"zf/ string creates a fold from the cursor to string .
+"zj moves the cursor to the next fold.
+"zk moves the cursor to the previous fold.
+"za toggle a fold at the cursor.
+"zo opens a fold at the cursor.
+"zO opens all folds at the cursor.
+"zc closes a fold under cursor.
+"zm increases the foldlevel by one.
+"zM closes all open folds.  (fold all)
+"zr decreases the foldlevel by one.
+"zR decreases the foldlevel to zero -- (un-fold all)
+"zd deletes the fold at the cursor.
+"zE deletes all folds.
+"[z move to start of open fold.
+"]z move to end of open fold.
+"---------------------------------
 set foldmethod=indent
 "set foldnestmax=1
 set foldlevel=99

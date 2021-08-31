@@ -18,6 +18,12 @@
       "args": ["--background-index"],
       "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "filetypes": ["c", "cpp", "objc", "objcpp"]
+    },
+    "arduino": {
+        "command": "~/Source_Code/Arduino/arduino-language-server/arduino-language-server",
+        "rootPatterns": ["*.ino"],
+        "filetypes": ["arduino"],
+        "args": ["-cli", "/usr/local/Cellar/arduino-cli/0.18.3_1/bin/arduino-cli", "-clangd", "/usr/local/Cellar/llvm/12.0.1/bin/clangd", "-cli-config", "/Users/philthy/Library/Arduino15/arduino-cli.yaml"]
     }
   },
 
