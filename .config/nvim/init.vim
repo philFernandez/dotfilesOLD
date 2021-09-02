@@ -23,9 +23,9 @@ filetype plugin indent on
 
 " Vim Plug {{{1
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'Shougo/neco-vim'
-Plug 'neoclide/coc-neco'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'Shougo/neco-vim'
+"Plug 'neoclide/coc-neco'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'

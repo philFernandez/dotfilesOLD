@@ -1,3 +1,5 @@
+# Run updates on all plugins under ~/.zsh
+echo "\033[1m\033[38;5;004mUPDATING PLUGINS IN ~/.zsh"
 for repo in $(fd .git$ -HIL -td -tl --exclude my_plugins ~/.zsh); do
   echo "\033[1m\033[38;5;002mChecking \
 \033[38;5;003m$repo:h:t\033[0m \
@@ -5,4 +7,12 @@ for repo in $(fd .git$ -HIL -td -tl --exclude my_plugins ~/.zsh); do
   (cd $repo:h && git pull)
   echo
 done
+
+# Run update on pico_sdk
+local PICO_SDK=/Users/philthy/Source_Code/Arduino/RP_2040/C_Cpp/pico-sdk
+echo "\033[1m\033[38;5;004mUPDATING PICO SDK"
+echo "\033[1m\033[38;5;002mChecking \
+\033[38;5;003m$PICO_SDK:t\033[0m \
+\033[1m\033[38;5;002mfor updates...\033[0m"
+(cd $PICO_SDK && git pull && git submodule update)
 # vi: ft=zsh
