@@ -197,15 +197,13 @@
             "after": ["p", "g", "v", "y"]
         }
     ],
-    "editor.formatOnSave": true,
+    "editor.bracketPairColorization.enabled": true,
     "editor.suggestSelection": "first",
     "editor.insertSpaces": true,
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.fontSize": 16,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.tabs.enabled": false,
-    // Stops PATH from getting loaded more than once
-    "terminal.integrated.inheritEnv": false,
     "terminal.integrated.showExitAlert": false,
     "editor.fontFamily": "Victor Mono",
     "editor.fontSize": 17,
@@ -255,9 +253,10 @@
         "**/.metals": true,
         "**/.ammonite": true
     },
+    // Stops path from getting loaded twice
+    "terminal.integrated.inheritEnv": false,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.experimentalLinkProvider": false,
-    "terminal.integrated.rendererType": "canvas",
     "code-runner.runInTerminal": true,
     "openscad.launchPath": "/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD",
     // * <== Intellisence and autocomplete things ==>
@@ -268,6 +267,8 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "platformio-ide.activateOnlyOnPlatformIOProject": true
+    "platformio-ide.activateOnlyOnPlatformIOProject": true,
+    "cmake.configureOnOpen": true,
+    "editor.formatOnSave": true
     // * <== ------------------------------------ ==>
 }
