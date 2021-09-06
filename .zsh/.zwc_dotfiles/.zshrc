@@ -116,7 +116,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # Exports: {{{1 have to be below source $ZSH/oh-my-zsh.sh
 
-export PICO_SDK_PATH=/Users/philthy/Source_Code/Arduino/RP_2040/C_Cpp/pico-sdk
+export GOPATH=$HOME/go
 
 #export BAT_THEME="Monokai Extended Bright"
 export BAT_THEME="OneHalfDark"
