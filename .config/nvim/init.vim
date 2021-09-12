@@ -400,6 +400,7 @@ set completeopt+=noselect
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " Add only if Vim beeps during completion
 let g:mucomplete#enable_auto_at_startup = 1
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Keymaps {{{1
 nnoremap <leader>r :Rg<CR>
