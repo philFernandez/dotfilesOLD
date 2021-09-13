@@ -371,36 +371,24 @@ let g:csv_delim='|'
 "let g:csv_nomap_J = 1
 "let g:csv_nomap_K = 1
 let g:no_csv_maps = 1
-" Completion | Coc-Nvim {{{1
-"inoremap <silent><expr> <TAB>
-      "\ pumvisible() ? "\<C-n>" :
-      "\ <SID>check_back_space() ? "\<TAB>" :
-      "\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-"function! s:check_back_space() abort
-  "let col = col('.') - 1
-  "return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-"autocmd FileType json syntax match Comment +\/\/.\+$+
-
-"" Change all instances of word under cursor
-"nnoremap <leader>x :CocCommand document.renameCurrentWord<CR>
-
-"" Choose individual instances of word under cursor to change
-"nmap <expr> <silent> <C-d> <SID>select_current_word()
-"function! s:select_current_word()
-  "if !get(g:, 'coc_cursors_activated', 0)
-    "return "\<Plug>(coc-cursors-word)"
-  "endif
-  "return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
-"endfunc
+" Completion  {{{1
 set completeopt+=menuone
 set completeopt+=noselect
+set completeopt-=preview
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " Add only if Vim beeps during completion
 let g:mucomplete#enable_auto_at_startup = 1
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" Vim-Go {{{1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
 
 " Keymaps {{{1
 nnoremap <leader>r :Rg<CR>
