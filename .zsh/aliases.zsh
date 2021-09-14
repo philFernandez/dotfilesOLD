@@ -182,6 +182,7 @@ alias brews='brew list -1'
 alias show='brew info'
 alias search='brew search'
 alias install='brew -v install'
+alias u="update && upgrade && clean"
 # fuzzy function aliases {{{1
 alias fcd1='fcd -d 1'
 alias fcd2='fcd -d 2'
