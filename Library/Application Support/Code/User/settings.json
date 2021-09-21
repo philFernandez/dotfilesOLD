@@ -268,7 +268,6 @@
     },
     "platformio-ide.activateOnlyOnPlatformIOProject": true,
     "cmake.configureOnOpen": true,
-    "editor.formatOnSave": true,
-    "editor.minimap.enabled": false
+    "editor.formatOnSave": true
     // * <== ------------------------------------ ==>
 }
