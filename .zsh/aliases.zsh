@@ -97,6 +97,7 @@ alias zshcond="man -P 'less +1884' zshall"
 alias zshexpn="man -P 'less +2538' zshall"
 alias zshprompt="man -P 'less +2099' zshall"
 # Bat & Fzf {{{1
+alias fbat='fd -HI -tf | fzf --bind "enter:execute(clear;bat --paging=always {})"'
 alias bat="bat --wrap never"
 alias fhw='shw | fzf'
 alias fzfbat='fd -tf --ignore-file $HOME/.cust_ignore | fzf --preview \
