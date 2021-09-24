@@ -26,7 +26,8 @@ call plug#begin(stdpath('data') . '/plugged')
 "Plug 'Shougo/neco-vim'
 "Plug 'neoclide/coc-neco'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'lifepillar/vim-mucomplete'
+"Plug 'lifepillar/vim-mucomplete'
+Plug 'neovim/nvim-lspconfig'
 Plug 'fatih/vim-go'
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
@@ -231,7 +232,7 @@ let g:lightline.tabline = {
 let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste', 'spell' ],
       \           [ 'gitbranch', 'readonly', 'hunksummary' ] ],
-      \ 'right': [['lineinfo'], ['fileformat', 'fileencoding', 'filetype']]
+      \ 'right': [['lineinfo', 'percent'], ['fileformat', 'fileencoding', 'filetype']]
       \ }
 
 let g:lightline.separator = {
