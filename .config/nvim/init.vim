@@ -26,8 +26,8 @@ call plug#begin(stdpath('data') . '/plugged')
 "Plug 'Shougo/neco-vim'
 "Plug 'neoclide/coc-neco'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'lifepillar/vim-mucomplete'
-Plug 'neovim/nvim-lspconfig'
+Plug 'lifepillar/vim-mucomplete'
+"Plug 'neovim/nvim-lspconfig'
 Plug 'fatih/vim-go'
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
