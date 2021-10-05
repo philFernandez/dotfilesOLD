@@ -59,6 +59,8 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
 call plug#end()
 
+" LUA Things (that I don't understand shit about) {{{1
+
 lua << EOF
 -- require'lspconfig'.jedi_language_server.setup{}
 
