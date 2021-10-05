@@ -167,7 +167,7 @@ alias clog='config log --oneline --decorate --graph --all'
 alias confls='config ls-tree -r master --name-only $HOME'
 alias cdl='config diff'
 alias cdiff='config diff'
-alias confzap='(cd && config checkout .)'
+alias czap='(cd && config checkout .)'
 alias cce="config commit -a --allow-empty-message -m ''"
 # make man pages display line numbers {{{1
 alias nman='LESS+="-N" man'
