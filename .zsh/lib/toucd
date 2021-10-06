@@ -1,0 +1,23 @@
+# toucd
+help() {
+    local RED="\033[1;38;5;1m"
+    local GREEN="\033[1;38;5;2m"
+    local YELLOW="\033[1;38;5;3m"
+    local RESET="\033[0m"
+    echo "$RED-----------------------------"
+    echo "${GREEN}usage: toucd <path/file>"
+    echo "$RED-----------------------------"
+    echo
+    echo "$YELLOW------------------------------------------------"
+    echo "${YELLOW}Creates path and file."
+    echo "$YELLOW------------------------------------------------$RESET"
+}
+if [[ $# != 1 || $1 == '-h' || $1 == '--help' ]]; then
+    help
+else
+    local dir_and_file=$1
+    mkdir -p $dir_and_file:h && (cd $dir_and_file:h && touch $dir_and_file:t)
+fi
+
+
+# vi: ft=zsh
