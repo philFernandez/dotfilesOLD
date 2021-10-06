@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+
+# See macOS builtin command `tops` for similar, more advanced, functionality
+
+import fileinput
+import argparse
+
+
+def do_replace(filename, text_to_search, replacement_text, do_backup=False):
+    if do_backup:
+        with fileinput.FileInput(filename, inplace=True, backup='.bak') as file:
+            for line in file:
+                print(line.replace(text_to_search, replacement_text), end='')
+    else:
+        with fileinput.FileInput(filename, inplace=True) as file:
+            for line in file:
+                print(line.replace(text_to_search, replacement_text), end='')
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-b", "--backup", help="backup any changed files",
+                        action="store_true")
+    parser.add_argument("input_file", help="filename to replace text inside")
+    parser.add_argument("search_term", help="text to be replaced")
+    parser.add_argument("replace_with", help="replacement text")
+    args = parser.parse_args()
+    if args.backup:
+        do_replace(args.input_file, args.search_term,
+                   args.replace_with, do_backup=True)
+    else:
+        do_replace(args.input_file, args.search_term, args.replace_with)
+
+
+if __name__ == '__main__':
+    main()
