@@ -26,6 +26,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'lifepillar/vim-mucomplete'
 Plug 'neovim/nvim-lspconfig'
 Plug 'fatih/vim-go'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'preservim/nerdtree'
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
