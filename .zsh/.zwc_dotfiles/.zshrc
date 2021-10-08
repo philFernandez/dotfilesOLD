@@ -160,10 +160,10 @@ export CLICOLOR=true
 
 export FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD 2> /dev/null || fd . -HI)'
 
-export FZF_DEFAULT_OPTS="--color hl:120 --color gutter:35 \
---color pointer:220 --color hl+:118 --color fg:251
---color marker:196 --color border:214 --color prompt:214 \
---color header:208 --color bg+:240 --reverse \
+export FZF_DEFAULT_OPTS="--color=hl:120,gutter:35,\
+pointer:220,hl+:118,fg:251,fg+:bright-blue,\
+marker:196,border:214,prompt:214,\
+header:208,bg+:240 --reverse \
 --bind=ctrl-t:top --border --multi"
 
 # Shell Options {{{1
