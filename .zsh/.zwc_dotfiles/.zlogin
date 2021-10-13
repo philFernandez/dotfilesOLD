@@ -7,6 +7,7 @@
 # path=("/Users/philthy/Documents/Software/apache-maven-3.6.3/bin" $~path)
 # path=("/usr/local/mysql-8.0.22-macos10.15-x86_64/bin" $~path)
 # path=("$HOME/.cargo/bin" $~path)
+path=("/usr/local/mysql/bin" $~path)
 path=("/usr/local/opt/sqlite/bin" $~path)
 path=("/usr/local/opt/llvm/bin" $~path)
 path=("/Users/philthy/Documents/Software/latexindent" $~path)
