@@ -1,6 +1,7 @@
 # vim:foldenable foldmethod=marker foldcolumn=1 foldlevel=0
 # Commands and Shortcuts {{{1
 alias lcs=clear
+alias gr='go run .'
 alias temps='/usr/local/bin/watch -n 0.4 -t "sudo powermetrics -s smc -n 1 -i 500"'
 alias x="7z x"
 alias h2="/Users/philthy/Documents/Software/h2/bin/h2.sh &"
