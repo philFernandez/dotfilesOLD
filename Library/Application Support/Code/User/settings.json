@@ -270,6 +270,7 @@
   "platformio-ide.activateOnlyOnPlatformIOProject": true,
   "cmake.configureOnOpen": true,
 "editor.formatOnSave": true,
-"errorLens.enabled": false
+"errorLens.enabled": false,
+"go.toolsManagement.autoUpdate": true
   // * <== ------------------------------------ ==>
 }
